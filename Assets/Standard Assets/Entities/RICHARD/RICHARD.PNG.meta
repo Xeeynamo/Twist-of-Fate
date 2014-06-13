@@ -35,7 +35,8 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
-  spritePixelsToUnits: 1
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 50
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings:
@@ -54,6 +55,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_STAND2
       rect:
         serializedVersion: 2
@@ -63,6 +65,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_STAND3
       rect:
         serializedVersion: 2
@@ -72,6 +75,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_STAND4
       rect:
         serializedVersion: 2
@@ -81,6 +85,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_STAND5
       rect:
         serializedVersion: 2
@@ -90,6 +95,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_STAND6
       rect:
         serializedVersion: 2
@@ -99,6 +105,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_STAND7
       rect:
         serializedVersion: 2
@@ -108,6 +115,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_STAND8
       rect:
         serializedVersion: 2
@@ -117,6 +125,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_WALK1
       rect:
         serializedVersion: 2
@@ -126,6 +135,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_WALK2
       rect:
         serializedVersion: 2
@@ -135,6 +145,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_WALK3
       rect:
         serializedVersion: 2
@@ -144,6 +155,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_WALK4
       rect:
         serializedVersion: 2
@@ -153,6 +165,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_WALK5
       rect:
         serializedVersion: 2
@@ -162,6 +175,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_WALK6
       rect:
         serializedVersion: 2
@@ -171,6 +185,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_WALK7
       rect:
         serializedVersion: 2
@@ -180,6 +195,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_WALK8
       rect:
         serializedVersion: 2
@@ -189,6 +205,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_WALK9
       rect:
         serializedVersion: 2
@@ -198,6 +215,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_WALK10
       rect:
         serializedVersion: 2
@@ -207,6 +225,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_WALK11
       rect:
         serializedVersion: 2
@@ -216,6 +235,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_WALK12
       rect:
         serializedVersion: 2
@@ -225,6 +245,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_WALK13
       rect:
         serializedVersion: 2
@@ -234,6 +255,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_WALK14
       rect:
         serializedVersion: 2
@@ -243,6 +265,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_WALK15
       rect:
         serializedVersion: 2
@@ -252,6 +275,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_WALK16
       rect:
         serializedVersion: 2
@@ -261,6 +285,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_STARTWALK1
       rect:
         serializedVersion: 2
@@ -270,6 +295,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_STARTWALK2
       rect:
         serializedVersion: 2
@@ -279,6 +305,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_STARTWALK3
       rect:
         serializedVersion: 2
@@ -288,6 +315,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_STARTWALK4
       rect:
         serializedVersion: 2
@@ -297,6 +325,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_WALKSTOPPING1
       rect:
         serializedVersion: 2
@@ -306,6 +335,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_WALKSTOPPING2
       rect:
         serializedVersion: 2
@@ -315,6 +345,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_WALKSTOPPING3
       rect:
         serializedVersion: 2
@@ -324,6 +355,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_WALKSTOPPING4
       rect:
         serializedVersion: 2
@@ -333,6 +365,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_WALKSTOPPING5
       rect:
         serializedVersion: 2
@@ -342,6 +375,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_WALKSTOPPING6
       rect:
         serializedVersion: 2
@@ -351,6 +385,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_WALKSTOPPING7
       rect:
         serializedVersion: 2
@@ -360,6 +395,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_GOINGDOWN4
       rect:
         serializedVersion: 2
@@ -369,6 +405,7 @@ TextureImporter:
         height: 32
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_GOINGDOWN3
       rect:
         serializedVersion: 2
@@ -378,6 +415,7 @@ TextureImporter:
         height: 32
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_GOINGDOWN2
       rect:
         serializedVersion: 2
@@ -387,6 +425,7 @@ TextureImporter:
         height: 32
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_GOINGDOWN1
       rect:
         serializedVersion: 2
@@ -396,6 +435,7 @@ TextureImporter:
         height: 32
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_GOINGDOWN5
       rect:
         serializedVersion: 2
@@ -405,6 +445,7 @@ TextureImporter:
         height: 32
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_GOINGDOWN7
       rect:
         serializedVersion: 2
@@ -414,6 +455,7 @@ TextureImporter:
         height: 32
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_GOINGDOWN6
       rect:
         serializedVersion: 2
@@ -423,6 +465,7 @@ TextureImporter:
         height: 32
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_GOINGDOWN8
       rect:
         serializedVersion: 2
@@ -432,6 +475,7 @@ TextureImporter:
         height: 32
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_GOINGDOWN10
       rect:
         serializedVersion: 2
@@ -441,6 +485,7 @@ TextureImporter:
         height: 32
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_GOINGDOWN9
       rect:
         serializedVersion: 2
@@ -450,6 +495,7 @@ TextureImporter:
         height: 32
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_GOINGDOWN11
       rect:
         serializedVersion: 2
@@ -459,6 +505,7 @@ TextureImporter:
         height: 32
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_GOINGDOWN12
       rect:
         serializedVersion: 2
@@ -468,6 +515,7 @@ TextureImporter:
         height: 32
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_GOINGDOWN13
       rect:
         serializedVersion: 2
@@ -477,6 +525,7 @@ TextureImporter:
         height: 32
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_GOINGDOWN14
       rect:
         serializedVersion: 2
@@ -486,6 +535,7 @@ TextureImporter:
         height: 32
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_DOWN
       rect:
         serializedVersion: 2
@@ -495,6 +545,7 @@ TextureImporter:
         height: 32
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_GOINGUP1
       rect:
         serializedVersion: 2
@@ -504,6 +555,7 @@ TextureImporter:
         height: 32
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_GOINGUP2
       rect:
         serializedVersion: 2
@@ -513,6 +565,7 @@ TextureImporter:
         height: 32
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_GOINGUP3
       rect:
         serializedVersion: 2
@@ -522,6 +575,7 @@ TextureImporter:
         height: 32
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_JUMP
       rect:
         serializedVersion: 2
@@ -531,6 +585,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_JUMPDOWN1
       rect:
         serializedVersion: 2
@@ -540,6 +595,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_JUMPDOWN2
       rect:
         serializedVersion: 2
@@ -549,6 +605,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_56
       rect:
         serializedVersion: 2
@@ -558,6 +615,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_57
       rect:
         serializedVersion: 2
@@ -567,6 +625,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_58
       rect:
         serializedVersion: 2
@@ -576,6 +635,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_59
       rect:
         serializedVersion: 2
@@ -585,6 +645,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_60
       rect:
         serializedVersion: 2
@@ -594,6 +655,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_61
       rect:
         serializedVersion: 2
@@ -603,6 +665,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_62
       rect:
         serializedVersion: 2
@@ -612,6 +675,7 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_63
       rect:
         serializedVersion: 2
@@ -621,5 +685,6 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

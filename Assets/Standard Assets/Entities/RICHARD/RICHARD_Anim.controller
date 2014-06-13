@@ -5,7 +5,7 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: controller
+  m_Name: RICHARD_Anim
   serializedVersion: 2
   m_AnimatorParameters:
   - m_Name: Stato
@@ -415,7 +415,7 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: stop_camm
+  m_Name: Si ferma
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
@@ -430,7 +430,7 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: camm
+  m_Name: Camminata
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
@@ -445,7 +445,7 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: salt
+  m_Name: Salta
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
@@ -460,7 +460,7 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: alz
+  m_Name: Si alza
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
@@ -475,7 +475,7 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: girata
+  m_Name: Girata
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
@@ -490,7 +490,7 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: start_camm
+  m_Name: Inizia camminata
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
@@ -505,7 +505,7 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: abbas
+  m_Name: Si abbassa
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
@@ -535,7 +535,7 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: giu
+  m_Name: Abbassato
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
