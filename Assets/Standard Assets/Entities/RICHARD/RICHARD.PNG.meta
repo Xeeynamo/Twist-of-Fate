@@ -549,5 +549,77 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
+    - name: RICHARD_56
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 848
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: RICHARD_57
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 848
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: RICHARD_58
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 848
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: RICHARD_59
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 800
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: RICHARD_60
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 800
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: RICHARD_61
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 800
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: RICHARD_62
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 928
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: RICHARD_63
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 928
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
   spritePackingTag: 
   userData: 

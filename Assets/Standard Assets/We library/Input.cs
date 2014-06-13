@@ -9,11 +9,11 @@ namespace We
 	{
 		public static bool MoveUp
 		{
-			get { return UnityEngine.Input.GetButton ("up"); }
+			get { return UnityEngine.Input.GetAxis("Vertical") > 0; }
 		}
 		public static bool MoveDown
 		{
-			get { return UnityEngine.Input.GetButton ("down"); }
+			get { return UnityEngine.Input.GetAxis("Vertical") < 0; }
 		}
 		public static bool MoveLeft
 		{
