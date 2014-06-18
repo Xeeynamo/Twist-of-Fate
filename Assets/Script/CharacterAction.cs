@@ -33,9 +33,12 @@ public class CharacterAction : MonoBehaviour {
 	//Variabili di gestione della fisica del personaggio, possono essere cambiate per cambiare le caratteristiche del movimento
 	private float camminata = 2f;
 	private float corsa = 3f;
-	private float forzaSalto = 10f;
-	private float gravità = 50f;
-	
+	private float forzaSalto = 150f;
+	private float gravità = 200f;
+
+	private float maxTempoSalto = 0.1f;
+	public float tempoSalto = 0f;
+
 	//Variabile contenente la velocità ATTUALE assunta dal personaggio
 	public Vector2 fisVel = new Vector2();
 	//controlla se il personaggio collide o meno con il terreno
@@ -54,9 +57,14 @@ public class CharacterAction : MonoBehaviour {
 	void Start () {
 
 	}
-	
+
+	void Update (){
+
+		}
+
 	// FixedUpdate is called once per frame
 	void FixedUpdate () {
+		setStato ();
 		if (statoCorrente == StatoInput.Base) {
 			//è fermo, annulla tutte le forze
 			
@@ -94,9 +102,15 @@ public class CharacterAction : MonoBehaviour {
 
 		if (statoCorrente == StatoInput.Salta) {
 			if(!salto){
-				fisVel.y=forzaSalto;
+				tempoSalto += Time.deltaTime;
 
+				if(tempoSalto<maxTempoSalto)
+					fisVel.y=tempoSalto*forzaSalto;
+				else{
 				salto = true;
+					fisVel.y = 0f;
+				}
+
 			}
 		}
 
@@ -125,6 +139,7 @@ public class CharacterAction : MonoBehaviour {
 		{
 			terra = true;
 			salto = false;
+			tempoSalto = 0;
 		}
 		else
 		{
@@ -139,9 +154,9 @@ public class CharacterAction : MonoBehaviour {
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		rgbody.AddForce (new Vector2(fisVel.x*100,fisVel.y*100));
 
-		setStato ();
-	}
 
+	}
+	//Gestione Input////
 	public void setStato(){
 		 if ((We.Input.MoveRight == true) && (We.Input.Attack == true))
 			statoCorrente = StatoInput.CorriDx;
@@ -159,8 +174,15 @@ public class CharacterAction : MonoBehaviour {
 			statoCorrente = StatoInput.Base;
 		
 		if (We.Input.Jump)
-			statoCorrente = StatoInput.Salta;	
+						statoCorrente = StatoInput.Salta;
+				else {
+		         	if(!terra){
+						salto = true;
+			            fisVel.y = 0f;
+	                     		}
+				}
 
 
 	}
+	////
 }
