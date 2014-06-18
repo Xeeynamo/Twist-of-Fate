@@ -13579,8 +13579,8 @@ GameObject:
   - 212: {fileID: 1607201383}
   - 95: {fileID: 1607201386}
   - 50: {fileID: 1607201387}
-  - 61: {fileID: 1607201388}
   - 114: {fileID: 1607201385}
+  - 58: {fileID: 1607201389}
   m_Layer: 0
   m_Name: RICHARD_STAND1
   m_TagString: Untagged
@@ -13635,6 +13635,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statoCorrente: 0
   direzionePg: 0
+  tempoSalto: 0
   fisVel: {x: 0, y: 0}
   terra: 1
   salto: 0
@@ -13660,15 +13661,15 @@ Rigidbody2D:
   m_GameObject: {fileID: 1607201382}
   m_Mass: 2.5
   m_LinearDrag: 0
-  m_AngularDrag: .5
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_FixedAngle: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!61 &1607201388
-BoxCollider2D:
+--- !u!58 &1607201389
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -13676,8 +13677,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .349999994, y: .839999974}
-  m_Center: {x: 0, y: 0}
+  m_Radius: .180000007
+  m_Center: {x: 0, y: -.239999995}
 --- !u!1 &1607811124
 GameObject:
   m_ObjectHideFlags: 0
