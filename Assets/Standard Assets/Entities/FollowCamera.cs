@@ -3,6 +3,16 @@ using System.Collections;
 
 public class FollowCamera : MonoBehaviour
 {
+    public enum BackgroundAlign
+    {
+        BottomLeft,
+        BottomRight,
+        TopLeft,
+        TopRight,
+        Centered,
+        Stretched
+    }
+
 	/// <summary>
 	/// Quando un oggetto è impostato in questa variabile, la telecamera
 	/// si sposta seguendo l'oggetto specificato. Questo fa in modo che
@@ -31,20 +41,34 @@ public class FollowCamera : MonoBehaviour
 	/// </summary>
 	public GameObject BoundBottomRight;
 
-	enum BorderType
-	{
-		Left,
-		Top,
-		Right,
-		Bottom
-	}
+    /// <summary>
+    /// Sfondo che seguirà la telecamera
+    /// </summary>
+    public GameObject SpriteBackground;
+
+    /// <summary>
+    /// Modalità con cui lo sfondo si applica alla vista della telecamera
+    /// </summary>
+    public BackgroundAlign BackgroundAlignment;
+
+    public float DbgWidth;
+    public float DbgHeight;
+    public float DbgBgWidth;
+    public float DbgBgHeight;
 
 	void Start ()
 	{
 	
 	}
 
-	float GetBorder(GameObject g1, GameObject g2, BorderType type)
+    private enum BorderType
+    {
+        Left,
+        Top,
+        Right,
+        Bottom
+    }
+	private float GetBorder(GameObject g1, GameObject g2, BorderType type)
 	{
 		const float UNREACHABLE_BORDER = 10000.0f;
 
@@ -104,6 +128,38 @@ public class FollowCamera : MonoBehaviour
 		pos.x = Mathf.Min (pos.x + width, GetBorder(BoundTopRight, BoundBottomRight, BorderType.Right)) - width;
 		pos.y = Mathf.Min (pos.y + height, GetBorder(BoundTopLeft, BoundTopRight, BorderType.Top)) - height;
 		pos.y = Mathf.Max (pos.y - height, GetBorder(BoundBottomLeft, BoundBottomRight, BorderType.Bottom)) + height;
+
+        if (SpriteBackground != null)
+        {
+            float bgHeight = SpriteBackground.renderer.bounds.size.x;
+            float bgWidth = SpriteBackground.renderer.bounds.size.y;
+            Vector3 newPos = new Vector3(0, 0, 0);
+            Vector3 newScale = new Vector3(1, 1, 1);
+            switch (BackgroundAlignment)
+            {
+                case BackgroundAlign.BottomLeft:
+                    break;
+                case BackgroundAlign.BottomRight:
+                    break;
+                case BackgroundAlign.TopLeft:
+                    break;
+                case BackgroundAlign.TopRight:
+                    break;
+                case BackgroundAlign.Centered:
+                    break;
+                case BackgroundAlign.Stretched:
+                    newPos = transform.position;
+                    //newScale.x = width / bgWidth;
+                    newScale.y = height / bgHeight;
+                    break;
+            }
+            SpriteBackground.transform.position = newPos;
+            //SpriteBackground.transform.localScale = newScale;
+            DbgWidth = width;
+            DbgHeight = height;
+            DbgBgWidth = bgWidth;
+            DbgBgHeight = bgHeight;
+        }
 
 		// inserisce i cambiamenti nella telcamera, spostandola. Questo avviene solo
 		// dopo aver fatto tutti i calcoli necessari.
