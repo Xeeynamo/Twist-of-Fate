@@ -31,12 +31,12 @@ public class CharacterAction : MonoBehaviour {
 	protected Rigidbody2D rgbody;
 
 	//Variabili di gestione della fisica del personaggio, possono essere cambiate per cambiare le caratteristiche del movimento
-	private float camminata = 2f;
-	private float corsa = 3f;
+	private float camminata = 1f;
+	private float corsa = 2.2f;
 	private float forzaSalto = 150f;
 	private float gravità = 200f;
 
-	private float maxTempoSalto = 0.1f;
+	private float maxTempoSalto = 0.09f;
 	public float tempoSalto = 0f;
 
 	//Variabile contenente la velocità ATTUALE assunta dal personaggio
@@ -47,10 +47,14 @@ public class CharacterAction : MonoBehaviour {
 	private int groundMask = 1 << 8; // Ground layer mask
 	private float lung = 0.45f; //Lunghezza raycast 
 
+	//Animatore
+	private CharacterAnimation anim;
+
 	public virtual void Awake()
 	{
 		trans = transform;
 		rgbody = rigidbody2D;
+		anim = this.GetComponent<CharacterAnimation>();
 	}
 
 	// Use this for initialization
@@ -67,35 +71,35 @@ public class CharacterAction : MonoBehaviour {
 		setStato ();
 		if (statoCorrente == StatoInput.Base) {
 			//è fermo, annulla tutte le forze
-			
+			anim.setAnimation(StatoInput.Base);
 			fisVel = Vector2.zero;
 		}
 
 		if (statoCorrente == StatoInput.CamminaDx) {
-		    //rivolto verso destra
 			//richiama l'animazione della camminata
+			anim.setAnimation(StatoInput.CamminaDx);
+			
 			//modifica la velocità di spostamento
-
 			fisVel.x=camminata;
 		}
 
 		if (statoCorrente == StatoInput.CamminaSx) {
-			//rivolto verso sinistra
 			//richiama l'animazione della camminata
+			anim.setAnimation(StatoInput.CamminaSx);
 			//modifica la velocità di spostamento
 			fisVel.x=-camminata;
 
 		}
 		if (statoCorrente == StatoInput.CorriDx) {
-			//rivolto verso destra
 			//richiama l'animazione della corsa
+			anim.setAnimation(StatoInput.CorriDx);
 			//modifica la velocità di spostamento
 			fisVel.x=corsa;
 		}
 		
 		if (statoCorrente == StatoInput.CorriSx) {
-			//rivolto verso sinistra
 			//richiama l'animazione della corsa
+			anim.setAnimation(StatoInput.CorriSx);
 			//modifica la velocità di spostamento
 			fisVel.x=-corsa;
 		}
@@ -115,6 +119,8 @@ public class CharacterAction : MonoBehaviour {
 		}
 
 		if (statoCorrente == StatoInput.Abbassato) {
+			//richiama l'animazione del personaggio che si abbassa
+			anim.setAnimation(StatoInput.Abbassato);
 
 		}
 
@@ -138,7 +144,6 @@ public class CharacterAction : MonoBehaviour {
 		if (Physics2D.Raycast(new Vector2(trans.position.x-0.1f,trans.position.y), Vector3.down, lung, groundMask)||Physics2D.Raycast(new Vector2(trans.position.x+0.1f,trans.position.y), Vector3.down, lung, groundMask))
 		{
 			terra = true;
-			salto = false;
 			tempoSalto = 0;
 		}
 		else
@@ -154,6 +159,8 @@ public class CharacterAction : MonoBehaviour {
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		rgbody.AddForce (new Vector2(fisVel.x*100,fisVel.y*100));
 
+		if (!(We.Input.Jump) && terra == true)
+			salto = false;
 
 	}
 	//Gestione Input////
@@ -169,6 +176,9 @@ public class CharacterAction : MonoBehaviour {
 
 		else if (We.Input.MoveLeft == true)	
 			statoCorrente = StatoInput.CamminaSx;
+
+		else if (We.Input.MoveDown == true)	
+			statoCorrente = StatoInput.Abbassato;
 			
 		else
 			statoCorrente = StatoInput.Base;
@@ -181,6 +191,7 @@ public class CharacterAction : MonoBehaviour {
 			            fisVel.y = 0f;
 	                     		}
 				}
+
 
 
 	}
