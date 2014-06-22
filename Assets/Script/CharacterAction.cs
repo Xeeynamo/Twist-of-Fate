@@ -36,7 +36,7 @@ public class CharacterAction : MonoBehaviour {
 	private float forzaSalto = 150f;
 	private float gravità = 200f;
 
-	private float maxTempoSalto = 0.09f;
+	private float maxTempoSalto = 0.10f;
 	public float tempoSalto = 0f;
 
 	//Variabile contenente la velocità ATTUALE assunta dal personaggio
