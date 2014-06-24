@@ -180,7 +180,7 @@ public class CharacterAction : MonoBehaviour {
 		Debug.DrawRay (new Vector2(trans.position.x-0.1f,trans.position.y), Vector3.down*lung,col);
 		Debug.DrawRay (new Vector2(trans.position.x+0.1f,trans.position.y), Vector3.down*lung,col);
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////
-		rgbody.AddForce (new Vector2(fisVel.x*100,fisVel.y*100));
+        rgbody.velocity = new Vector2(fisVel.x, fisVel.y);
 
 		if (!(We.Input.Jump) && terra == true)
 			salto = false;
