@@ -83,6 +83,10 @@ public class CharacterAnimation : MonoBehaviour {
 		case CharacterAction.StatoInput.Muro:
 			
 			break;
+
+		case CharacterAction.StatoInput.Salta:
+			anim.SetInteger("Stato", 3);
+			break;
 		}
 	}
 }

@@ -112,6 +112,7 @@ public class CharacterAction : MonoBehaviour {
 
 		if (statoCorrente == StatoInput.Salta) {
 			if(!salto){
+				anim.setAnimation(StatoInput.Salta);
 				tempoSalto += Time.deltaTime;
 
 				if(tempoSalto<maxTempoSalto)
@@ -189,6 +190,9 @@ public class CharacterAction : MonoBehaviour {
 			lung = 0.30f;
 		else
 			lung = 0.48f;
+
+		if (statoCorrente == StatoInput.Salta && terra == true)
+			anim.setAnimation (StatoInput.Base);
 
 	}
 	//Gestione Input////
