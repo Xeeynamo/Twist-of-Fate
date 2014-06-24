@@ -3,7 +3,7 @@ using System.Collections;
 
 public class FollowCamera : MonoBehaviour
 {
-    public enum BackgroundAlign
+    public enum Alignment
     {
         BottomLeft,
         BottomRight,
@@ -12,6 +12,13 @@ public class FollowCamera : MonoBehaviour
         Centered,
         Stretched
     }
+
+    public bool ShowPlayerHUD;
+    public bool ShowEnemyHUD;
+    public GameObject PlayerHUD;
+    public Alignment PlayerHudAlignment;
+    public GameObject EnemyHUD;
+    public Alignment EnemyHudAlignment;
 
 	/// <summary>
 	/// Quando un oggetto è impostato in questa variabile, la telecamera
@@ -49,7 +56,7 @@ public class FollowCamera : MonoBehaviour
     /// <summary>
     /// Modalità con cui lo sfondo si applica alla vista della telecamera
     /// </summary>
-    public BackgroundAlign BackgroundAlignment;
+    public Alignment BackgroundAlignment;
     
     private float BackgroundBoundsSizeX;
     private float BackgroundBoundsSizeY;
@@ -64,18 +71,18 @@ public class FollowCamera : MonoBehaviour
             Vector3 newScale = new Vector3(1, 1, 1);
             switch (BackgroundAlignment)
             {
-                case BackgroundAlign.BottomLeft:
+                case Alignment.BottomLeft:
                     break;
-                case BackgroundAlign.BottomRight:
+                case Alignment.BottomRight:
                     break;
-                case BackgroundAlign.TopLeft:
+                case Alignment.TopLeft:
                     break;
-                case BackgroundAlign.TopRight:
+                case Alignment.TopRight:
                     break;
-                case BackgroundAlign.Centered:
+                case Alignment.Centered:
                     newPos = transform.position;
                     break;
-                case BackgroundAlign.Stretched:
+                case Alignment.Stretched:
                     newPos = transform.position;
                     newScale.x = width / BackgroundBoundsSizeX * 2;
                     newScale.y = height / BackgroundBoundsSizeY * 2;
@@ -138,6 +145,39 @@ public class FollowCamera : MonoBehaviour
 		return UNREACHABLE_BORDER;
 	}
 
+    void Align(GameObject obj, Alignment type)
+    {
+        if (obj == null)
+            return;
+        Vector3 pos = transform.position;
+        float cameraHeight = Camera.main.orthographicSize;
+        float cameraWidth = cameraHeight * Camera.main.aspect;
+        float objHeight = obj.renderer.bounds.size.x;
+        float objWidth = obj.renderer.bounds.size.y;
+
+        Vector3 dstPos = PlayerHUD.transform.localPosition;
+        switch (type)
+        {
+            case Alignment.TopLeft:
+                dstPos.x = -cameraWidth;
+                dstPos.y = +cameraHeight;
+                break;
+            case Alignment.TopRight:
+                dstPos.x = +cameraWidth - objWidth;
+                dstPos.y = +cameraHeight;
+                break;
+            case Alignment.BottomLeft:
+                dstPos.x = -cameraWidth;
+                dstPos.y = -cameraHeight + objHeight;
+                break;
+            case Alignment.BottomRight:
+                dstPos.x = +cameraWidth - objWidth;
+                dstPos.y = -cameraHeight + objHeight;
+                break;
+        }
+        obj.transform.localPosition = dstPos;
+    }
+
 	void Update ()
 	{
 		// Memorizza la vecchia posizione della telcamera, che poi verrà modificata
@@ -168,5 +208,11 @@ public class FollowCamera : MonoBehaviour
 		// inserisce i cambiamenti nella telcamera, spostandola. Questo avviene solo
 		// dopo aver fatto tutti i calcoli necessari.
 		transform.position = pos;
+
+        // stampa le HUD
+        if (ShowPlayerHUD)
+            Align(PlayerHUD, PlayerHudAlignment);
+        if (ShowEnemyHUD)
+            Align(EnemyHUD, EnemyHudAlignment);
 	}
 }
