@@ -20,7 +20,6 @@ public class CharacterAction : MonoBehaviour {
 
 	//Variabile che contiene lo stato dell'input attuale
 	public StatoInput statoCorrente = StatoInput.Base;
-	public EdgeCollider2D Scala;
 
 	//Tipo enumerativo delledirezioni che può assumere il personaggio
 	[HideInInspector] public enum Direzione { DX, Sx }
@@ -39,7 +38,9 @@ public class CharacterAction : MonoBehaviour {
 
 	public bool movimento = false;
 	public bool abbassato = false;
-	public bool scale = false;
+	public static bool scale = false;
+	public static bool tastoScale = false;
+	public bool st = true;
 
 	private float maxTempoSalto = 0.10f;
 	public float tempoSalto = 0f;
@@ -49,9 +50,11 @@ public class CharacterAction : MonoBehaviour {
 	//controlla se il personaggio collide o meno con il terreno
 	public bool terra = false;
 	public bool salto = false;
-	private int groundMask = 1 << 8; // Ground layer mask
-	private int stairMask = 1 << 10; // Stairs layer mask
+	private int groundMask = 1 << 8 | 1 << 10; // Ground layer mask
+	private int stairMask = 1 << 10 | 1 << 11; // Stairs layer mask
 	private float lung = 0.48f; //Lunghezza raycast 
+
+	private Vector3 direction;
 
 	//Animatore
 	private CharacterAnimation anim;
@@ -61,7 +64,6 @@ public class CharacterAction : MonoBehaviour {
 		trans = transform;
 		rgbody = rigidbody2D;
 		anim = this.GetComponent<CharacterAnimation>();
-		Scala = GameObject.FindGameObjectWithTag("Stairs").GetComponent<EdgeCollider2D>();
 	}
 
 	// Use this for initialization
@@ -120,6 +122,7 @@ public class CharacterAction : MonoBehaviour {
 				else{
 				salto = true;
 					fisVel.y = 0f;
+					st = false;		
 				}
 
 			}
@@ -149,20 +152,24 @@ public class CharacterAction : MonoBehaviour {
 		}
 
 		//Gestione Collisione scale
-
-		if (Physics2D.Raycast (new Vector2 (trans.position.x, trans.position.y), -Vector3.left, 1, stairMask)) {
+		if (trans.rotation.y == 1)
+			direction = Vector3.left; 
+				else
+			direction = Vector3.right;
+		if (Physics2D.Raycast (new Vector2 (trans.position.x, trans.position.y -0.4f), direction, 1.85f, stairMask) || Physics2D.Raycast (new Vector2 (trans.position.x, trans.position.y + 1f), direction, 1.85f, stairMask) ) {
 						scale = true;
 				} else {
 						scale = false;
-			            Scala.enabled = false;
+			            tastoScale = false;
 				}
 		Color cul = Color.green;
 		if (scale)
 			cul = Color.red;
-		Debug.DrawRay (new Vector2 (trans.position.x, trans.position.y), -Vector3.left* 1, cul);
+		Debug.DrawRay (new Vector2 (trans.position.x, trans.position.y-0.4f), direction* 1.85f, cul);
+		Debug.DrawRay (new Vector2 (trans.position.x, trans.position.y +1f), direction * 1.85f, cul);
 
 		//Gestione gravità e terreno///////////////////////////////////////////////////////////////////////////////
-		if (Physics2D.Raycast(new Vector2(trans.position.x-0.1f,trans.position.y), Vector3.down, lung, groundMask)||Physics2D.Raycast(new Vector2(trans.position.x+0.1f,trans.position.y), Vector3.down, lung, groundMask))
+		if (Physics2D.Raycast(new Vector2(trans.position.x-0.05f,trans.position.y), Vector3.down, lung, groundMask)||Physics2D.Raycast(new Vector2(trans.position.x+0.05f,trans.position.y), Vector3.down, lung, groundMask))
 		{
 			terra = true;
 			tempoSalto = 0;
@@ -183,16 +190,21 @@ public class CharacterAction : MonoBehaviour {
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////
         rgbody.velocity = new Vector2(fisVel.x, fisVel.y);
 
-		if (!(We.Input.Jump) && terra == true)
-			salto = false;
-
+		if (!(We.Input.Jump) && terra == true) {
+						salto = false;
+						st = true;
+				}
 		if (anim.abbassato == true)
 			lung = 0.30f;
 		else
 			lung = 0.48f;
 
-		if (statoCorrente == StatoInput.Salta && terra == true)
-			anim.setAnimation (StatoInput.Base);
+		if (statoCorrente == StatoInput.Salta && terra == true ) {
+
+
+				}
+
+	
 
 	}
 	//Gestione Input////
@@ -212,15 +224,14 @@ public class CharacterAction : MonoBehaviour {
 
 		else if (We.Input.MoveDown == true && movimento == false )	
 			statoCorrente = StatoInput.Abbassato;
-			
 		else
 			statoCorrente = StatoInput.Base;
 
 		if ((We.Input.MoveRight == true) && (We.Input.MoveUp == true) && abbassato == false && scale )
-						Scala.enabled = true;
+						tastoScale = true;
 
 		
-		if (We.Input.Jump && statoCorrente != StatoInput.Abbassato)
+		if (We.Input.Jump && statoCorrente != StatoInput.Abbassato && st)
 						statoCorrente = StatoInput.Salta;
 				else {
 		         	if(!terra){
