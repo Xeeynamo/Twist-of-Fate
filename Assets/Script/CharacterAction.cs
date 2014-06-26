@@ -20,14 +20,13 @@ public class CharacterAction : MonoBehaviour {
 
 	//Variabile che contiene lo stato dell'input attuale
 	public StatoInput statoCorrente = StatoInput.Base;
-	public EdgeCollider2D Scala;
 
 	//Tipo enumerativo delledirezioni che può assumere il personaggio
 	[HideInInspector] public enum Direzione { DX, Sx }
 	[HideInInspector] public Direzione direzionePg;
 
 	//Variabile per la trasformazione grafica della sprite del personaggio
-	protected Transform trans;
+	static public Transform trans;
 	//Variabile rigidbody delle proprietà fisiche del personaggio
 	protected Rigidbody2D rgbody;
 
@@ -37,21 +36,36 @@ public class CharacterAction : MonoBehaviour {
 	private float forzaSalto = 150f;
 	private float gravità = 200f;
 
+	//Controlla se il personaggio si sta muovendo
 	public bool movimento = false;
+	//Controlla se il personaggio è abbassato
 	public bool abbassato = false;
-	public bool scale = false;
+	//Controlla se il personaggio è in prossimità delle scale
+	public static bool scale = false;
+	//Controlla se il giocatore ha premuto il tasto per salire le scale
+	public static bool tastoScale = false;
+	//Controlla se il giocatore ha premuto il tasto per scendere le scale
+	public static bool scendiScale = false;
 
+	//Fixa un bug relativo al salto
+	public bool st = true;
+
+	//Variabili che consentono di realizzare il salto pesato
 	private float maxTempoSalto = 0.10f;
 	public float tempoSalto = 0f;
 
 	//Variabile contenente la velocità ATTUALE assunta dal personaggio
 	public Vector2 fisVel = new Vector2();
-	//controlla se il personaggio collide o meno con il terreno
+	//Controlla se il personaggio collide o meno con il terreno
 	public bool terra = false;
+	//Controlla se il personaggio ha saltato o meno
 	public bool salto = false;
-	private int groundMask = 1 << 8; // Ground layer mask
-	private int stairMask = 1 << 10; // Stairs layer mask
+	private int groundMask = 1 << 8 | 1 << 10; // Ground layer mask
+	private int stairMask = 1 << 10 | 1 << 11; // Stairs layer mask
 	private float lung = 0.48f; //Lunghezza raycast 
+
+	//Direzione raycast del controllo dlle scale
+	private Vector3 direction;
 
 	//Animatore
 	private CharacterAnimation anim;
@@ -61,7 +75,6 @@ public class CharacterAction : MonoBehaviour {
 		trans = transform;
 		rgbody = rigidbody2D;
 		anim = this.GetComponent<CharacterAnimation>();
-		Scala = GameObject.FindGameObjectWithTag("Stairs").GetComponent<EdgeCollider2D>();
 	}
 
 	// Use this for initialization
@@ -118,8 +131,10 @@ public class CharacterAction : MonoBehaviour {
 				if(tempoSalto<maxTempoSalto)
 					fisVel.y=tempoSalto*forzaSalto;
 				else{
+				//Se il giocatore ha tenuto premuto il pulsante di salto per un certo periodo di tempo, il personaggio scende
 				salto = true;
 					fisVel.y = 0f;
+					st = false;		
 				}
 
 			}
@@ -149,23 +164,31 @@ public class CharacterAction : MonoBehaviour {
 		}
 
 		//Gestione Collisione scale
-
-		if (Physics2D.Raycast (new Vector2 (trans.position.x, trans.position.y), -Vector3.left, 1, stairMask)) {
-						scale = true;
+		if (trans.rotation.y == 1)
+			direction = Vector3.left; 
+				else
+			direction = Vector3.right;
+		if (Physics2D.Raycast (new Vector2 (trans.position.x, trans.position.y -0.4f), direction, 1.85f, stairMask) || Physics2D.Raycast (new Vector2 (trans.position.x, trans.position.y + 1f), direction, 1.85f, stairMask) || Physics2D.Raycast (new Vector2 (trans.position.x, trans.position.y), Vector3.down, 1.4f, stairMask) ) {
+						scale = true;			            
 				} else {
 						scale = false;
-			            Scala.enabled = false;
+			           			           
 				}
+
+		//Debug raycast collisioni scale
 		Color cul = Color.green;
 		if (scale)
 			cul = Color.red;
-		Debug.DrawRay (new Vector2 (trans.position.x, trans.position.y), -Vector3.left* 1, cul);
-
+		Debug.DrawRay (new Vector2 (trans.position.x, trans.position.y-0.4f), direction* 1.85f, cul);
+		Debug.DrawRay (new Vector2 (trans.position.x, trans.position.y +1f), direction * 1.85f, cul);
+		Debug.DrawRay (new Vector2 (trans.position.x, trans.position.y), Vector3.down * 1.4f, cul);
 		//Gestione gravità e terreno///////////////////////////////////////////////////////////////////////////////
-		if (Physics2D.Raycast(new Vector2(trans.position.x-0.1f,trans.position.y), Vector3.down, lung, groundMask)||Physics2D.Raycast(new Vector2(trans.position.x+0.1f,trans.position.y), Vector3.down, lung, groundMask))
+		if (Physics2D.Raycast(new Vector2(trans.position.x-0.05f,trans.position.y), Vector3.down, lung, groundMask)||Physics2D.Raycast(new Vector2(trans.position.x+0.05f,trans.position.y), Vector3.down, lung, groundMask))
 		{
 			terra = true;
 			tempoSalto = 0;
+
+			//Il personaggio può abbassarsi solo quando tocca terra
 			if(statoCorrente==StatoInput.Abbassato)
 			anim.abbassato = true;
 		}
@@ -175,61 +198,77 @@ public class CharacterAction : MonoBehaviour {
 			anim.abbassato = false;
 			rgbody.AddForce(Vector3.down * gravità);
 		}
+
+		//Debug raycast collisioni terreno
 		Color col = Color.green;
 		if (terra)
 		col = Color.red;
 		Debug.DrawRay (new Vector2(trans.position.x-0.1f,trans.position.y), Vector3.down*lung,col);
 		Debug.DrawRay (new Vector2(trans.position.x+0.1f,trans.position.y), Vector3.down*lung,col);
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        rgbody.velocity = new Vector2(fisVel.x, fisVel.y);
 
-		if (!(We.Input.Jump) && terra == true)
-			salto = false;
+        //Controllo sull'input del salto, se il giocatore tiene premuto il personaggio non continua a saltare
+		//Le variabili che permettono al pesonaggio di saltare vengono riattivate solo quando tocca terra e viene rilasciato il pulsante
+		if (!(We.Input.Jump) && terra == true) {
+						salto = false;
+						st = true;
+				}
 
+		//Controllo sulla lunghezza del raycast quando il personaggio è abassato
 		if (anim.abbassato == true)
 			lung = 0.30f;
 		else
 			lung = 0.48f;
 
-		if (statoCorrente == StatoInput.Salta && terra == true)
-			anim.setAnimation (StatoInput.Base);
+		//Applica le forze al personaggio solo se non è abbassato
+		if(!abbassato)
+		rgbody.velocity = new Vector2(fisVel.x, fisVel.y);
 
 	}
 	//Gestione Input////
 	public void setStato(){
+		//Salto
+		if (We.Input.Jump && statoCorrente != StatoInput.Abbassato && st)
+			statoCorrente = StatoInput.Salta;
+		else {
+			if(!terra){
+				salto = true;
+				fisVel.y = 0f;
+			}
+
+	    //Salire le scale
+		if (((We.Input.MoveRight == true)||(We.Input.MoveLeft == true)) && (We.Input.MoveUp == true) && !abbassato )
+			tastoScale = true;
+			else if (!scale)
+			tastoScale = false;
+		//Scendere le scale
+		if (((We.Input.MoveRight == true)||(We.Input.MoveLeft == true)) && (We.Input.MoveDown == true) && !abbassato  ){
+				scendiScale = true;
+			    tastoScale = true;
+			}
+			else
+				scendiScale = false;
         
-		if ((We.Input.MoveRight == true) && (We.Input.Attack == true) && abbassato == false)
+		//Camminata e corsa
+		if ((We.Input.MoveRight == true) && (We.Input.Attack == true) && !abbassato )
 						statoCorrente = StatoInput.CorriDx;
 						
-		else if ((We.Input.MoveLeft == true) && (We.Input.Attack == true) && abbassato == false) 
+		else if ((We.Input.MoveLeft == true) && (We.Input.Attack == true) && !abbassato ) 
 						statoCorrente = StatoInput.CorriSx;
-						
-		else if (We.Input.MoveRight == true && abbassato == false) 
-						statoCorrente = StatoInput.CamminaDx;	
 
-		else if (We.Input.MoveLeft == true &&  abbassato == false) 	
-						statoCorrente = StatoInput.CamminaSx;				
+		else if (We.Input.MoveLeft == true &&  !abbassato ) 	
+						statoCorrente = StatoInput.CamminaSx;
 
-		else if (We.Input.MoveDown == true && movimento == false )	
+		else if (We.Input.MoveRight == true && !abbassato ) 
+				        statoCorrente = StatoInput.CamminaDx;
+
+		//Abbassato
+		else if (We.Input.MoveDown == true && !movimento  )	
 			statoCorrente = StatoInput.Abbassato;
-			
 		else
-			statoCorrente = StatoInput.Base;
+			statoCorrente = StatoInput.Base;		
 
-		if ((We.Input.MoveRight == true) && (We.Input.MoveUp == true) && abbassato == false && scale )
-						Scala.enabled = true;
-
-		
-		if (We.Input.Jump && statoCorrente != StatoInput.Abbassato)
-						statoCorrente = StatoInput.Salta;
-				else {
-		         	if(!terra){
-						salto = true;
-			            fisVel.y = 0f;
-	                     		}
-				}
-
-
+		}
 
 	}
 	////
