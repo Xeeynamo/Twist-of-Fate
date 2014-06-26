@@ -40,6 +40,8 @@ public class CharacterAction : MonoBehaviour {
 	public bool movimento = false;
 	//Controlla se il personaggio è abbassato
 	public bool abbassato = false;
+	//Controlla se il personaggio è abbassato
+	public bool attacco = false;
 	//Controlla se il personaggio è in prossimità delle scale
 	public static bool scale = false;
 	//Controlla se il giocatore ha premuto il tasto per salire le scale
@@ -156,7 +158,9 @@ public class CharacterAction : MonoBehaviour {
 		}
 
 		if (statoCorrente == StatoInput.Attacco) {
-			
+			//richiama l'animazione dell'attacco
+
+			anim.setAnimation(StatoInput.Attacco);
 		}
 
 		if (statoCorrente == StatoInput.Difesa) {
@@ -213,7 +217,6 @@ public class CharacterAction : MonoBehaviour {
 						salto = false;
 						st = true;
 				}
-
 		//Controllo sulla lunghezza del raycast quando il personaggio è abassato
 		if (anim.abbassato == true)
 			lung = 0.30f;
@@ -227,6 +230,10 @@ public class CharacterAction : MonoBehaviour {
 	}
 	//Gestione Input////
 	public void setStato(){
+
+		if (!We.Input.Attack2)
+			attacco = false;
+
 		//Salto
 		if (We.Input.Jump && statoCorrente != StatoInput.Abbassato && st)
 			statoCorrente = StatoInput.Salta;
@@ -234,8 +241,8 @@ public class CharacterAction : MonoBehaviour {
 			if(!terra){
 				salto = true;
 				fisVel.y = 0f;
-			}
-
+			}		
+		
 	    //Salire le scale
 		if (((We.Input.MoveRight == true)||(We.Input.MoveLeft == true)) && (We.Input.MoveUp == true) && !abbassato )
 			tastoScale = true;
@@ -249,11 +256,17 @@ public class CharacterAction : MonoBehaviour {
 			else
 				scendiScale = false;
         
+		
+		//Attacco
+			if(We.Input.Attack2 && !movimento && !attacco){
+				statoCorrente = StatoInput.Attacco;
+				attacco = true;
+			}
 		//Camminata e corsa
-		if ((We.Input.MoveRight == true) && (We.Input.Attack == true) && !abbassato )
+		else if ((We.Input.MoveRight == true) && (Input.GetKey(KeyCode.Z)) && !abbassato )
 						statoCorrente = StatoInput.CorriDx;
 						
-		else if ((We.Input.MoveLeft == true) && (We.Input.Attack == true) && !abbassato ) 
+		else if ((We.Input.MoveLeft == true) && (Input.GetKey(KeyCode.Z)) && !abbassato ) 
 						statoCorrente = StatoInput.CorriSx;
 
 		else if (We.Input.MoveLeft == true &&  !abbassato ) 	

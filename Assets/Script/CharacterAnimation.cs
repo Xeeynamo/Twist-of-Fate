@@ -60,7 +60,7 @@ public class CharacterAnimation : MonoBehaviour {
 			break;
 
 		case CharacterAction.StatoInput.Attacco:
-			
+			anim.SetInteger("Stato", 4);
 			break;
 
 		case CharacterAction.StatoInput.Difesa:

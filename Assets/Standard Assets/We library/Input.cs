@@ -39,5 +39,9 @@ namespace We
 		{
 			get { return UnityEngine.Input.GetButton ("Fire1"); }
 		}
+		public static bool Attack2
+		{
+			get { return UnityEngine.Input.GetButton ("Fire2"); }
+		}
 	}
 }

@@ -35,7 +35,6 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 50
   alphaIsTransparency: 1
   textureType: 8
@@ -51,7 +50,6 @@ TextureImporter:
         height: 48
       alignment: 1
       pivot: {x: 0, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
     - name: BG2_Part2
       rect:
         serializedVersion: 2
@@ -61,7 +59,6 @@ TextureImporter:
         height: 64
       alignment: 1
       pivot: {x: 0, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
     - name: BG2_Part3
       rect:
         serializedVersion: 2
@@ -71,7 +68,6 @@ TextureImporter:
         height: 32
       alignment: 1
       pivot: {x: 0, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
     - name: BG2_Part4
       rect:
         serializedVersion: 2
@@ -81,7 +77,6 @@ TextureImporter:
         height: 56
       alignment: 1
       pivot: {x: 0, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
     - name: BG2_Part5
       rect:
         serializedVersion: 2
@@ -91,7 +86,6 @@ TextureImporter:
         height: 40
       alignment: 1
       pivot: {x: 0, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
     - name: BG2_Column1
       rect:
         serializedVersion: 2
@@ -101,7 +95,6 @@ TextureImporter:
         height: 64
       alignment: 1
       pivot: {x: 0, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
     - name: BG2_Column2
       rect:
         serializedVersion: 2
@@ -111,7 +104,6 @@ TextureImporter:
         height: 64
       alignment: 1
       pivot: {x: 0, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
     - name: BG2_Column3
       rect:
         serializedVersion: 2
@@ -121,6 +113,5 @@ TextureImporter:
         height: 64
       alignment: 1
       pivot: {x: 0, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
