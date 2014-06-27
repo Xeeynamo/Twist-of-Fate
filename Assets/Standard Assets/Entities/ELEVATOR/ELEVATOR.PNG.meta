@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c6ba2767220d8d845ac5646c333eb07f
+guid: 8453f70ca86e86e4d9901008955a7000
 TextureImporter:
   serializedVersion: 2
   mipmaps:
@@ -20,10 +20,10 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -1
-  maxTextureSize: 1024
+  textureFormat: -2
+  maxTextureSize: 128
   textureSettings:
-    filterMode: -1
+    filterMode: 0
     aniso: 1
     mipBias: -1
     wrapMode: 1
@@ -33,58 +33,64 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 1
+  alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 50
   alphaIsTransparency: 1
   textureType: 8
-  buildTargetSettings:
-  - buildTarget: iPhone
-    maxTextureSize: 1024
-    textureFormat: -2
-    compressionQuality: 50
+  buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: CameraLimit_BottomRight
+    - name: ELEVATOR_TYPE1
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
-        width: 32
-        height: 32
+        y: 104
+        width: 128
+        height: 24
       alignment: 1
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: CameraLimit_BottomLeft
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
-      alignment: 3
-      pivot: {x: 1, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: CameraLimit_TopRight
+    - name: ELEVATOR_TYPE2
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 32
-        height: 32
-      alignment: 6
-      pivot: {x: 0, y: 0}
+        y: 80
+        width: 128
+        height: 24
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: CameraLimit_TopLeft
+    - name: ELEVATOR_TYPE3
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 0
+        y: 56
+        width: 128
+        height: 24
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ELEVATOR_TYPE4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 96
+        height: 24
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ELEVATOR_TYPE5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8
+        width: 96
+        height: 24
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
