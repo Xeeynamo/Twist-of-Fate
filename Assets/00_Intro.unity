@@ -181,7 +181,7 @@ GUIText:
   serializedVersion: 3
   m_Text: Gui Text
   m_Anchor: 4
-  m_Alignment: 1
+  m_Alignment: 0
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
   m_TabSize: 4
@@ -217,6 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   caratteriAlSecondo: 8
-  showText:
-  - "Questa \xE8 una stringa di Prova"
-  - "Anche Questa \xE8 una stringa di prova"
+  showText: []
+  NomeGiocatore: 
+  areaWidth: 300
+  areaHeight: 100
