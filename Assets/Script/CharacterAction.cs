@@ -155,6 +155,14 @@ public class CharacterAction : MonoBehaviour {
 
 			anim.setAnimation(StatoInput.Abbassato);
 
+
+			//aggiunge forze scivolata
+			if(tastosciDx && scivolata)
+			fisVel.x = corsa;
+
+			if(tastosciSx && scivolata)
+				fisVel.x = -corsa;
+
 			//Rimuove le forze (per la scivolata)
 			if(!scivolata)
 			fisVel = Vector2.zero;
@@ -181,12 +189,10 @@ public class CharacterAction : MonoBehaviour {
         
 		if (statoCorrente == StatoInput.ScivolataDx) {
 			anim.setAnimation(StatoInput.ScivolataDx);
-			fisVel.x = camminata;
 		}
 		 
 		else  if (statoCorrente == StatoInput.ScivolataSx) {
 			anim.setAnimation(StatoInput.ScivolataSx);
-			fisVel.x = -camminata;
 		}
 		//Gestione Collisione scale
 		if (trans.rotation.y == 1)
@@ -242,11 +248,11 @@ public class CharacterAction : MonoBehaviour {
 		//if (!We.Input.Attack2)
 		//	attacco = false;
 		
-	//	if(!We.Input.MoveRight && abbassato)
-	//		tastosciDx = false;
+	  if(!We.Input.MoveRight && abbassato)
+	    	tastosciDx = false;
 		
-	//	if(!We.Input.MoveLeft && abbassato)
-	//		tastosciSx = false;
+		if(!We.Input.MoveLeft && abbassato)
+			tastosciSx = false;
 		//Controllo sulla lunghezza del raycast quando il personaggio è abassato
 		if (abbassato)
 			lung = 0.30f;
@@ -294,10 +300,12 @@ public class CharacterAction : MonoBehaviour {
 
 		else if (abbassato && (We.Input.MoveRight == true) && !tastosciDx ){
 				statoCorrente = StatoInput.ScivolataDx;
+				tastosciDx = true;
 
 			}
 		else if (abbassato && (We.Input.MoveLeft == true) && !tastosciSx ){
 				statoCorrente = StatoInput.ScivolataSx;
+				tastosciSx = true;
 
 			}
 		else if (We.Input.MoveDown == true && !movimento  ){
