@@ -154,6 +154,52 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!1 &1075061894
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1075061896}
+  - 131: {fileID: 1075061895}
+  m_Layer: 0
+  m_Name: ImmaginiStoria
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!131 &1075061895
+GUITexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1075061894}
+  m_Enabled: 1
+  m_Texture: {fileID: 2800000, guid: 039634a774e6cbd4292f8421c3333288, type: 3}
+  m_Color: {r: .5, g: .5, b: .5, a: .5}
+  m_PixelInset:
+    serializedVersion: 2
+    x: -298.5
+    y: -200
+    width: 597
+    height: 400
+  m_LeftBorder: 0
+  m_RightBorder: 0
+  m_TopBorder: 0
+  m_BottomBorder: 0
+--- !u!4 &1075061896
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1075061894}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .5, y: .5, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &1958077614
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,7 +227,7 @@ GUIText:
   serializedVersion: 3
   m_Text: Gui Text
   m_Anchor: 4
-  m_Alignment: 1
+  m_Alignment: 0
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
   m_TabSize: 4
@@ -217,6 +263,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   caratteriAlSecondo: 8
-  showText:
-  - "Questa \xE8 una stringa di Prova"
-  - "Anche Questa \xE8 una stringa di prova"
+  showText: []
+  NomeGiocatore: 
+  areaWidth: 300
+  areaHeight: 100
+  imgStory: {fileID: 1075061895}
+  imgList:
+  - {fileID: 2800000, guid: 039634a774e6cbd4292f8421c3333288, type: 3}
+  - {fileID: 2800000, guid: 1805c15a19b7ce141b640055606ed186, type: 3}
+  - {fileID: 2800000, guid: a99d553db44eeb74d8cf027f715590cb, type: 3}
+  - {fileID: 2800000, guid: d9d3dc0705ac17f41bd01a08bacd3b15, type: 3}
