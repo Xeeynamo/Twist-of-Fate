@@ -84,6 +84,16 @@ public class CharacterAnimation : MonoBehaviour {
 			
 			break;
 
+		case CharacterAction.StatoInput.ScivolataDx:
+			anim.SetInteger("Stato", 5);
+			Directon = true;
+			break;
+
+		case CharacterAction.StatoInput.ScivolataSx:
+			anim.SetInteger("Stato", 5);
+			Directon = false;
+			break;
+
 		case CharacterAction.StatoInput.Salta:
 			anim.SetInteger("Stato", 3);
 			break;

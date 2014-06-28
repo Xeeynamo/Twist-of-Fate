@@ -14,7 +14,9 @@ public class CharacterAction : MonoBehaviour {
 		Muro,
 		Arrampicata,
 		Attacco,
-		Difesa
+		Difesa,
+		ScivolataDx,
+		ScivolataSx
 
 	}
 
@@ -42,12 +44,18 @@ public class CharacterAction : MonoBehaviour {
 	public bool abbassato = false;
 	//Controlla se il personaggio è abbassato
 	public bool attacco = false;
+	//Controlla se il personaggio sta scivolando
+	public bool scivolata = false;
 	//Controlla se il personaggio è in prossimità delle scale
 	public static bool scale = false;
 	//Controlla se il giocatore ha premuto il tasto per salire le scale
 	public static bool tastoScale = false;
 	//Controlla se il giocatore ha premuto il tasto per scendere le scale
 	public static bool scendiScale = false;
+	//Controllo input tasti scivolata
+	public bool tastosciDx = false;
+
+	public bool tastosciSx = false;
 
 	//Fixa un bug relativo al salto
 	public bool st = true;
@@ -147,6 +155,10 @@ public class CharacterAction : MonoBehaviour {
 
 			anim.setAnimation(StatoInput.Abbassato);
 
+			//Rimuove le forze (per la scivolata)
+			if(!scivolata)
+			fisVel = Vector2.zero;
+
 		}
 
 		if (statoCorrente == StatoInput.Muro) {
@@ -159,14 +171,23 @@ public class CharacterAction : MonoBehaviour {
 
 		if (statoCorrente == StatoInput.Attacco) {
 			//richiama l'animazione dell'attacco
-
 			anim.setAnimation(StatoInput.Attacco);
+
 		}
 
 		if (statoCorrente == StatoInput.Difesa) {
 			
 		}
-
+        
+		if (statoCorrente == StatoInput.ScivolataDx) {
+			anim.setAnimation(StatoInput.ScivolataDx);
+			fisVel.x = camminata;
+		}
+		 
+		else  if (statoCorrente == StatoInput.ScivolataSx) {
+			anim.setAnimation(StatoInput.ScivolataSx);
+			fisVel.x = -camminata;
+		}
 		//Gestione Collisione scale
 		if (trans.rotation.y == 1)
 			direction = Vector3.left; 
@@ -211,28 +232,35 @@ public class CharacterAction : MonoBehaviour {
 		Debug.DrawRay (new Vector2(trans.position.x+0.1f,trans.position.y), Vector3.down*lung,col);
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        //Controllo sull'input del salto, se il giocatore tiene premuto il personaggio non continua a saltare
-		//Le variabili che permettono al pesonaggio di saltare vengono riattivate solo quando tocca terra e viene rilasciato il pulsante
+        //Controllo sull'input, se il giocatore tiene premuto il personaggio non continua a saltare-attaccare-scivolare
+		//Le variabili che permettono al pesonaggio di saltare-attaccare-scivolare vengono riattivate solo quando tocca terra e viene rilasciato il pulsante
 		if (!(We.Input.Jump) && terra == true) {
 						salto = false;
 						st = true;
 				}
+
+		//if (!We.Input.Attack2)
+		//	attacco = false;
+		
+	//	if(!We.Input.MoveRight && abbassato)
+	//		tastosciDx = false;
+		
+	//	if(!We.Input.MoveLeft && abbassato)
+	//		tastosciSx = false;
 		//Controllo sulla lunghezza del raycast quando il personaggio è abassato
-		if (anim.abbassato == true)
+		if (abbassato)
 			lung = 0.30f;
 		else
 			lung = 0.48f;
 
 		//Applica le forze al personaggio solo se non è abbassato
-		if(!abbassato)
+		//if(!abbassato)
 		rgbody.velocity = new Vector2(fisVel.x, fisVel.y);
 
 	}
 	//Gestione Input////
 	public void setStato(){
 
-		if (!We.Input.Attack2)
-			attacco = false;
 
 		//Salto
 		if (We.Input.Jump && statoCorrente != StatoInput.Abbassato && st)
@@ -260,7 +288,21 @@ public class CharacterAction : MonoBehaviour {
 		//Attacco
 			if(We.Input.Attack2 && !movimento && !attacco){
 				statoCorrente = StatoInput.Attacco;
-				attacco = true;
+			}
+
+		//Abbassato
+
+		else if (abbassato && (We.Input.MoveRight == true) && !tastosciDx ){
+				statoCorrente = StatoInput.ScivolataDx;
+
+			}
+		else if (abbassato && (We.Input.MoveLeft == true) && !tastosciSx ){
+				statoCorrente = StatoInput.ScivolataSx;
+
+			}
+		else if (We.Input.MoveDown == true && !movimento  ){
+				statoCorrente = StatoInput.Abbassato;
+
 			}
 		//Camminata e corsa
 		else if ((We.Input.MoveRight == true) && (Input.GetKey(KeyCode.Z)) && !abbassato )
@@ -274,10 +316,6 @@ public class CharacterAction : MonoBehaviour {
 
 		else if (We.Input.MoveRight == true && !abbassato ) 
 				        statoCorrente = StatoInput.CamminaDx;
-
-		//Abbassato
-		else if (We.Input.MoveDown == true && !movimento  )	
-			statoCorrente = StatoInput.Abbassato;
 		else
 			statoCorrente = StatoInput.Base;		
 

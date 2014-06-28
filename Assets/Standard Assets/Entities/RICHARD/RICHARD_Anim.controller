@@ -134,6 +134,24 @@ Transition:
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
+--- !u!1101 &110115647
+Transition:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 110296075}
+  m_DstState: {fileID: 110242845}
+  m_TransitionDuration: .120000005
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 6
+    m_ConditionEvent: Stato
+    m_EventTreshold: 5
+    m_ExitTime: .879999995
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
 --- !u!1101 &110118139
 Transition:
   m_ObjectHideFlags: 3
@@ -336,6 +354,24 @@ Transition:
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
+--- !u!1101 &110163015
+Transition:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 110242845}
+  m_DstState: {fileID: 110296075}
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 5
+    m_ConditionEvent: 
+    m_EventTreshold: 0
+    m_ExitTime: 1
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
 --- !u!1101 &110163817
 Transition:
   m_ObjectHideFlags: 3
@@ -504,6 +540,21 @@ State:
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
+--- !u!1102 &110242845
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Scivolata
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: ba4d51cfdc828514a8b8c0494dd995c6, type: 2}
+  m_ParentStateMachine: {fileID: 110700000}
+  m_Position: {x: -216, y: -312, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
 --- !u!1102 &110260168
 State:
   m_ObjectHideFlags: 3
@@ -581,9 +632,14 @@ StateMachine:
   - {fileID: 110226671}
   - {fileID: 110213889}
   - {fileID: 110200000}
+  - {fileID: 110242845}
   m_ChildStateMachine: []
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
+    data:
+      first: {fileID: 110242845}
+      second:
+      - {fileID: 110163015}
     data:
       first: {fileID: 0}
       second:
@@ -610,6 +666,7 @@ StateMachine:
       first: {fileID: 110296075}
       second:
       - {fileID: 110118139}
+      - {fileID: 110115647}
     data:
       first: {fileID: 110226671}
       second:

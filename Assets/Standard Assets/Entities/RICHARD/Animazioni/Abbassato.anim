@@ -75,20 +75,6 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 0
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 31
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: m_Enabled
-    path: 
-    classID: 58
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -104,6 +90,44 @@ AnimationClip:
     path: 
     classID: 114
     script: {fileID: 11500000, guid: c1b82d7d12404384b8a7760b28bc5a69, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 3.08333325
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_Center.x
+    path: 
+    classID: 58
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -.109999999
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 3.08333325
+        value: -.109999999
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_Center.y
+    path: 
+    classID: 58
+    script: {fileID: 0}
   m_PPtrCurves:
   - curve:
     - time: 0
@@ -120,7 +144,7 @@ AnimationClip:
   m_AnimationClipSettings:
     serializedVersion: 2
     m_StartTime: 0
-    m_StopTime: 2.08333325
+    m_StopTime: 3.08333325
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -195,20 +219,6 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 0
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 31
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    attribute: m_Enabled
-    path: 
-    classID: 58
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -224,5 +234,43 @@ AnimationClip:
     path: 
     classID: 114
     script: {fileID: 11500000, guid: c1b82d7d12404384b8a7760b28bc5a69, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 3.08333325
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_Center.x
+    path: 
+    classID: 58
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -.109999999
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 3.08333325
+        value: -.109999999
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_Center.y
+    path: 
+    classID: 58
+    script: {fileID: 0}
   m_EulerEditorCurves: []
   m_Events: []
