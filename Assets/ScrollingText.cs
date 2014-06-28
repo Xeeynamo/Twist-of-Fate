@@ -8,6 +8,8 @@ public class ScrollingText : MonoBehaviour {
 	public string NomeGiocatore;
 	public int areaWidth;
 	public int areaHeight;
+	public GUITexture imgStory;
+	public Texture[] imgList;
 
 	private float secondiPerOgniCarattere;
 	private float timer = 0f;
@@ -25,6 +27,7 @@ public class ScrollingText : MonoBehaviour {
 		testo.text = "";
 		curChar = 0;
 		secondiPerOgniCarattere = 1.0f/caratteriAlSecondo;
+		imgStory.texture = imgList[0];
 		actText = 0;
 		showText [0] = "Impero di Heisenfall - 21° anno dalla grande unificazione\nLa guerra che portò i 12 regni della congregazione di Heisen sotto una sola corona era orami un lontano e triste ricordo.";
 		showText [1] = "La ricostruzione procedeva per il meglio in quasi tutti regni, solo uno faceva tristemente eccezione:\nl'undicesimo regno, Artemir"; 
@@ -39,6 +42,18 @@ public class ScrollingText : MonoBehaviour {
 		{
 			Time.timeScale = 0;
 			inputName = true;
+		}
+		if(actText == 2)
+		{
+			imgStory.texture = imgList[1];
+		}
+		if(actText == 5)
+		{
+			imgStory.texture = imgList[2];
+		}
+		if(actText == 7)
+		{
+			imgStory.texture = imgList[3];
 		}
 		if(timer > secondiPerOgniCarattere && curChar < showText[actText].Length)
 		{
