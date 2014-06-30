@@ -64,7 +64,7 @@ public class CharacterAnimation : MonoBehaviour {
 			break;
 
 		case CharacterAction.StatoInput.Difesa:
-			
+			anim.SetInteger("Stato", 6);
 			break;
 
 		case CharacterAction.StatoInput.Abbassato:

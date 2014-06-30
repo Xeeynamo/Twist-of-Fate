@@ -57,6 +57,9 @@ public class CharacterAction : MonoBehaviour {
 
 	public bool tastosciSx = false;
 
+	//Controllo input difesa
+	public bool difesa;
+
 	//Fixa un bug relativo al salto
 	public bool st = true;
 
@@ -184,7 +187,8 @@ public class CharacterAction : MonoBehaviour {
 		}
 
 		if (statoCorrente == StatoInput.Difesa) {
-			
+			//richiama l'animazione della difesa
+			anim.setAnimation(StatoInput.Difesa);
 		}
         
 		if (statoCorrente == StatoInput.ScivolataDx) {
@@ -247,8 +251,11 @@ public class CharacterAction : MonoBehaviour {
 
 		//if (!We.Input.Attack2)
 		//	attacco = false;
+
+	   // if (Input.GetKeyUp(KeyCode.C))
+		//	difesa = false;
 		
-	  if(!We.Input.MoveRight && abbassato)
+	    if(!We.Input.MoveRight && abbassato)
 	    	tastosciDx = false;
 		
 		if(!We.Input.MoveLeft && abbassato)
@@ -294,6 +301,11 @@ public class CharacterAction : MonoBehaviour {
 		//Attacco
 			if(We.Input.Attack2 && !movimento && !attacco){
 				statoCorrente = StatoInput.Attacco;
+			}
+		//Schivata-Difesa
+			else if(We.Input.Attack3 && !movimento && !difesa){
+				statoCorrente = StatoInput.Difesa;
+				difesa = true;
 			}
 
 		//Abbassato
