@@ -42,263 +42,103 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: KNIGHT_0
+    - name: KNIGHT_IDLE1
       rect:
         serializedVersion: 2
-        x: 8
-        y: 132
-        width: 16
-        height: 16
+        x: 1
+        y: 48
+        width: 23
+        height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KNIGHT_1
+    - name: KNIGHT_IDLE2
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 48
+        width: 24
+        height: 46
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: KNIGHT_IDLE3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 24
+        height: 46
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LANCE3
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 48
+        width: 48
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LANCE2
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 91
+        width: 48
+        height: 4
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: KNIGHT_ALERT1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 44
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: KNIGHT_ALERT2
       rect:
         serializedVersion: 2
         x: 32
-        y: 132
-        width: 16
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KNIGHT_PATTUGLIA
-      rect:
-        serializedVersion: 2
-        x: 56
-        y: 132
-        width: 14
-        height: 30
+        y: 0
+        width: 32
+        height: 43
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KNIGHT_3
-      rect:
-        serializedVersion: 2
-        x: 78
-        y: 132
-        width: 15
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KNIGHT_4
-      rect:
-        serializedVersion: 2
-        x: 101
-        y: 132
-        width: 27
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KNIGHT_5
-      rect:
-        serializedVersion: 2
-        x: 148
-        y: 140
-        width: 10
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KNIGHT_6
-      rect:
-        serializedVersion: 2
-        x: 168
-        y: 142
-        width: 19
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KNIGHT_7
-      rect:
-        serializedVersion: 2
-        x: 5
-        y: 107
-        width: 28
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KNIGHT_8
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 107
-        width: 24
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KNIGHT_9
-      rect:
-        serializedVersion: 2
-        x: 70
-        y: 107
-        width: 27
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KNIGHT_10
-      rect:
-        serializedVersion: 2
-        x: 105
-        y: 107
-        width: 31
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KNIGHT_11
-      rect:
-        serializedVersion: 2
-        x: 145
-        y: 107
-        width: 20
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KNIGHT_WALK1
-      rect:
-        serializedVersion: 2
-        x: 172
-        y: 107
-        width: 14
-        height: 16
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KNIGHT_WALK2
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 107
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KNIGHT_14
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 66
-        width: 22
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KNIGHT_15
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 66
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KNIGHT_16
+    - name: KNIGHT_ATTACK1
       rect:
         serializedVersion: 2
         x: 64
-        y: 66
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KNIGHT_17
-      rect:
-        serializedVersion: 2
-        x: 90
-        y: 66
-        width: 27
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KNIGHT_18
-      rect:
-        serializedVersion: 2
-        x: 125
-        y: 68
-        width: 16
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KNIGHT_19
-      rect:
-        serializedVersion: 2
-        x: 149
-        y: 68
-        width: 16
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KNIGHT_20
-      rect:
-        serializedVersion: 2
-        x: 173
-        y: 20
-        width: 37
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KNIGHT_21
-      rect:
-        serializedVersion: 2
-        x: 3
-        y: 23
-        width: 4
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KNIGHT_22
-      rect:
-        serializedVersion: 2
-        x: 9
-        y: 23
-        width: 15
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KNIGHT_23
-      rect:
-        serializedVersion: 2
-        x: 26
-        y: 25
-        width: 68
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KNIGHT_24
-      rect:
-        serializedVersion: 2
-        x: 99
-        y: 36
+        y: 0
         width: 32
-        height: 15
+        height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KNIGHT_25
+    - name: KNIGHT_ATTACK2
       rect:
         serializedVersion: 2
-        x: 136
-        y: 4
-        width: 30
-        height: 58
+        x: 96
+        y: 0
+        width: 44
+        height: 41
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LANCE1
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 48
+        width: 5
+        height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
