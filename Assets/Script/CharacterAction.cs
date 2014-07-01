@@ -36,7 +36,7 @@ public class CharacterAction : MonoBehaviour {
 	private float camminata = 1f;
 	private float corsa = 2.2f;
 	private float forzaSalto = 150f;
-	private float gravità = 200f;
+	private float gravità = 400f;
 
 	//Controlla se il personaggio si sta muovendo
 	public bool movimento = false;
@@ -64,7 +64,7 @@ public class CharacterAction : MonoBehaviour {
 	public bool st = true;
 
 	//Variabili che consentono di realizzare il salto pesato
-	private float maxTempoSalto = 0.10f;
+	private float maxTempoSalto = 0.12f;
 	public float tempoSalto = 0f;
 
 	//Variabile contenente la velocità ATTUALE assunta dal personaggio
