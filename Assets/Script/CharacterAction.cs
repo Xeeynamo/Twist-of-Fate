@@ -273,7 +273,7 @@ public class CharacterAction : MonoBehaviour {
 
 
 		//Salto
-		if (We.Input.Jump && statoCorrente != StatoInput.Abbassato && st)
+		if (We.Input.Jump && statoCorrente != StatoInput.Abbassato && st &&!tastoScale)
 			statoCorrente = StatoInput.Salta;
 		else {
 			if(!terra){
