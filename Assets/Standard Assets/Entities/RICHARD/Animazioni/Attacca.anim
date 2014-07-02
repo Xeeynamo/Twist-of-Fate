@@ -23,14 +23,14 @@ AnimationClip:
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 31
-      - time: .450000018
-        value: 0
+      - time: .400000006
+        value: 1
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 31
       m_PreInfinity: 2
       m_PostInfinity: 2
-    attribute: attacco
+    attribute: abbassato
     path: 
     classID: 114
     script: {fileID: 11500000, guid: c1b82d7d12404384b8a7760b28bc5a69, type: 3}
@@ -81,14 +81,14 @@ AnimationClip:
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 31
-      - time: .450000018
-        value: 0
+      - time: .400000006
+        value: 1
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 31
       m_PreInfinity: 2
       m_PostInfinity: 2
-    attribute: attacco
+    attribute: abbassato
     path: 
     classID: 114
     script: {fileID: 11500000, guid: c1b82d7d12404384b8a7760b28bc5a69, type: 3}

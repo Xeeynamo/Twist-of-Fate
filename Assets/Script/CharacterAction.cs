@@ -249,12 +249,9 @@ public class CharacterAction : MonoBehaviour {
 						st = true;
 				}
 
-		//if (!We.Input.Attack2)
-		//	attacco = false;
+		if (!We.Input.Attack2)
+			attacco = false;
 
-	   // if (Input.GetKeyUp(KeyCode.C))
-		//	difesa = false;
-		
 	    if(!We.Input.MoveRight && abbassato)
 	    	tastosciDx = false;
 		
@@ -301,11 +298,11 @@ public class CharacterAction : MonoBehaviour {
 		//Attacco
 			if(We.Input.Attack2 && !movimento && !attacco){
 				statoCorrente = StatoInput.Attacco;
+				attacco = true;
 			}
-		//Schivata-Difesa
-			else if(We.Input.Attack3 && !movimento && !difesa){
+		//Difesa
+			else if(We.Input.Attack3 && !movimento ){
 				statoCorrente = StatoInput.Difesa;
-				difesa = true;
 			}
 
 		//Abbassato

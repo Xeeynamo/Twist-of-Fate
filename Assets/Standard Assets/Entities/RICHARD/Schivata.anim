@@ -23,9 +23,28 @@ AnimationClip:
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 31
+      - time: .25
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 31
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: difesa
+    path: 
+    classID: 114
+    script: {fileID: 11500000, guid: c1b82d7d12404384b8a7760b28bc5a69, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 31
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: abbassato
     path: 
     classID: 114
     script: {fileID: 11500000, guid: c1b82d7d12404384b8a7760b28bc5a69, type: 3}
@@ -33,12 +52,8 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 21300152, guid: d0284a4ab1309c84a87668d50bd409c8, type: 3}
-    - time: .5
+    - time: .25
       value: {fileID: 21300152, guid: d0284a4ab1309c84a87668d50bd409c8, type: 3}
-    - time: .583333313
-      value: {fileID: 21300000, guid: d0284a4ab1309c84a87668d50bd409c8, type: 3}
-    - time: .75
-      value: {fileID: 21300000, guid: d0284a4ab1309c84a87668d50bd409c8, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -51,7 +66,7 @@ AnimationClip:
   m_AnimationClipSettings:
     serializedVersion: 2
     m_StartTime: 0
-    m_StopTime: .766666651
+    m_StopTime: .266666681
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -74,9 +89,28 @@ AnimationClip:
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 31
+      - time: .25
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 31
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: difesa
+    path: 
+    classID: 114
+    script: {fileID: 11500000, guid: c1b82d7d12404384b8a7760b28bc5a69, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 31
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: abbassato
     path: 
     classID: 114
     script: {fileID: 11500000, guid: c1b82d7d12404384b8a7760b28bc5a69, type: 3}

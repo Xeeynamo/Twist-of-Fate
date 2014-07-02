@@ -732,10 +732,10 @@ TextureImporter:
     - name: RICHARD_76
       rect:
         serializedVersion: 2
-        x: 389
+        x: 391
         y: 721
-        width: 30
-        height: 52
+        width: 28
+        height: 42
       alignment: 0
       pivot: {x: .5, y: .5}
   spritePackingTag: 
