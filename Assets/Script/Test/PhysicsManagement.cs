@@ -56,31 +56,34 @@ public class PhysicsManagement : MonoBehaviour
             IsOnGround = false;
         }
 
-        switch (state.state)
-        {
-            case StateManagement.State.Stand:
-                if (IsOnGround == true)
-                {
-                    speedX = 0.0f;
-                }
-                else
-                {
-                    if (speedY >= JumpMinimum)
-                        speedY = JumpMinimum;
-                }
-                break;
-            case StateManagement.State.Walk:
-                speedX = Direction ? +WalkSpeed : -WalkSpeed;
-                break;
-            case StateManagement.State.Jump:
-                if (IsOnGround == true)
-                {
-                    IsOnGround = false;
-                    Jumping = true;
-                    speedY = JumpStrength;
-                }
-                break;
-        }
+		if (state != null)
+		{
+	        switch (state.state)
+	        {
+	            case StateManagement.State.Stand:
+	                if (IsOnGround == true)
+	                {
+	                    speedX = 0.0f;
+	                }
+	                else
+	                {
+	                    if (speedY >= JumpMinimum)
+	                        speedY = JumpMinimum;
+	                }
+	                break;
+	            case StateManagement.State.Walk:
+	                speedX = Direction ? +WalkSpeed : -WalkSpeed;
+	                break;
+	            case StateManagement.State.Jump:
+	                if (IsOnGround == true)
+	                {
+	                    IsOnGround = false;
+	                    Jumping = true;
+	                    speedY = JumpStrength;
+	                }
+	                break;
+	        }
+		}
 
         speedY -= Gravity;
 
