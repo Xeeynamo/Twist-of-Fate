@@ -9,9 +9,9 @@ public class MovingPlatform : MonoBehaviour {
 	public static int ID = -1;
 	public int active;
 
-	private Transform t;
 	private int currentNode;
-	private int nextNode{
+	private int nextNode
+	{
 		get
 		{
 			return ((currentNode + 1) % nodi.Length);
@@ -21,20 +21,22 @@ public class MovingPlatform : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		currentNode = 1;
-		t = this.transform;
 	}
 	
 	void FixedUpdate()
 	{
-		Vector2 velocity = (nodi [currentNode].position - t.position).normalized * speed * Time.deltaTime;
-		if(Vector2.Distance(t.position, nodi [currentNode].position) <= 0.5f)
+		Vector2 nodePos = new Vector2 (nodi [currentNode].position.x, nodi [currentNode].position.y);
+		Vector2 currentPos = new Vector2 (transform.position.x, transform.position.y);
+		Vector2 velocity = (nodePos - currentPos).normalized * speed * Time.deltaTime;
+		if(Vector2.Distance(currentPos, nodePos) <= 0.5f)
 		{
-			velocity = Vector2.ClampMagnitude(velocity, (t.position - nodi[currentNode].position).magnitude);
+			velocity = Vector2.ClampMagnitude(velocity, (currentPos - nodePos).magnitude);
 			currentNode = nextNode;
 		}
-		t.Translate (velocity);
 		if (currentNode == 0)
-			t.position = nodi [currentNode].position;
+			this.transform.position = new Vector3(nodePos.x, nodePos.y, transform.position.z);
+		else
+			this.transform.Translate (velocity);
 	}
 	// Update is called once per frame
 	void Update () {
