@@ -11,8 +11,8 @@ GameObject:
   - 212: {fileID: 21200000}
   - 61: {fileID: 6100000}
   - 114: {fileID: 11400000}
-  m_Layer: 8
-  m_Name: Turret
+  m_Layer: 0
+  m_Name: Coltello
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,7 +25,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.6287956, y: 9.50118065, z: 0}
+  m_LocalPosition: {x: 9.88121319, y: 8.72282887, z: -.683349609}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -38,8 +38,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .479999989, y: .119999997}
-  m_Center: {x: .180000007, y: .0500000007}
+  m_Size: {x: .140000001, y: .0399999991}
+  m_Center: {x: 0, y: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -48,11 +48,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 747276d61b04d1043904e5a19d420cbe, type: 3}
+  m_Script: {fileID: 11500000, guid: c4f27d86bebf32a41998b3ff0e83ce58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 100000, guid: 873f0f91fc1590e44b86cf3788e66aeb, type: 2}
-  TimeShoot: 1.20000005
   "Velocit\xE0": 4
 --- !u!212 &21200000
 SpriteRenderer:
@@ -75,7 +73,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: 4b5d9d1f95df16342a358a79c47b61d7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e4e7d2d6467f02c4f9b0ea50cfcbc977, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

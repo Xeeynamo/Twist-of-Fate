@@ -4,8 +4,8 @@ using System.Collections;
 public class LanciaProiettili : MonoBehaviour
 {
     public GameObject Bullet;
-    public float TimeShoot = 1.2f;
-    public float Velocità = 4;
+    public float TimeShoot = 0f;
+    public float Velocità = 6;
     // Use this for initialization
 
     private bool Direzione
@@ -22,7 +22,7 @@ public class LanciaProiettili : MonoBehaviour
     void Update()
     {
         TimeShoot -= Time.deltaTime;
-        if (TimeShoot < 0)
+        if (TimeShoot < 0 && Attiva())
         {
             GameObject istance = (GameObject)Instantiate(Bullet, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), transform.rotation);
             MuoviProiettile bullet = istance.GetComponent<MuoviProiettile>();
@@ -30,4 +30,17 @@ public class LanciaProiettili : MonoBehaviour
             TimeShoot = 1.2f;
         }
     }
+
+	bool Attiva (){
+		Debug.DrawRay (new Vector2 (this.transform.position.x, this.transform.position.y), Direz() * 4f, Color.red);
+		return(Physics2D.Raycast (new Vector2 (this.transform.position.x, this.transform.position.y), Direz(), 4f, 1 << 13));
+
+	}
+	Vector3 Direz(){
+		if (Direzione)
+						return(Vector3.right);
+				else
+						return (Vector3.left);
+
+	}
 }

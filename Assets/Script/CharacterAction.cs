@@ -14,6 +14,7 @@ public class CharacterAction : MonoBehaviour {
 		Muro,
 		Arrampicata,
 		Attacco,
+		Attacco2,
 		Difesa,
 		ScivolataDx,
 		ScivolataSx
@@ -23,9 +24,11 @@ public class CharacterAction : MonoBehaviour {
 	//Variabile che contiene lo stato dell'input attuale
 	public StatoInput statoCorrente = StatoInput.Base;
 
-	//Tipo enumerativo delledirezioni che può assumere il personaggio
-	[HideInInspector] public enum Direzione { DX, Sx }
-	[HideInInspector] public Direzione direzionePg;
+	//Direzioni che può assumere il personaggio
+	private bool Direzione
+	{
+		get { return transform.rotation.y != 0; }
+	}
 
 	//Variabile per la trasformazione grafica della sprite del personaggio
 	static public Transform trans;
@@ -38,12 +41,12 @@ public class CharacterAction : MonoBehaviour {
 	private float forzaSalto = 150f;
 	private float gravità = 400f;
 
+	//Coltello
+	public GameObject Bullet;
 	//Controlla se il personaggio si sta muovendo
 	public bool movimento = false;
 	//Controlla se il personaggio è abbassato
 	public bool abbassato = false;
-	//Controlla se il personaggio è abbassato
-	public bool attacco = false;
 	//Controlla se il personaggio sta scivolando
 	public bool scivolata = false;
 	//Controlla se il personaggio è in prossimità delle scale
@@ -59,7 +62,7 @@ public class CharacterAction : MonoBehaviour {
 
 	//Controllo input difesa
 	public bool difesa;
-
+	
 	//Fixa un bug relativo al salto
 	public bool st = true;
 
@@ -186,6 +189,15 @@ public class CharacterAction : MonoBehaviour {
 
 		}
 
+		if (statoCorrente == StatoInput.Attacco2) {
+			//richiama l'animazione dell'attacco
+			anim.setAnimation(StatoInput.Attacco);
+
+				/*GameObject istance = (GameObject)Instantiate(Bullet, new Vector3(this.transform.position.x+0.25f, this.transform.position.y+0.15f, this.transform.position.z), transform.rotation);
+				MuoviProiettile bullet = istance.GetComponent<MuoviProiettile>();
+				bullet.Velocità = Direzione ? -bullet.Velocità : +bullet.Velocità;*/
+		}
+
 		if (statoCorrente == StatoInput.Difesa) {
 			//richiama l'animazione della difesa
 			anim.setAnimation(StatoInput.Difesa);
@@ -249,9 +261,6 @@ public class CharacterAction : MonoBehaviour {
 						st = true;
 				}
 
-		if (!We.Input.Attack2)
-			attacco = false;
-
 	    if(!We.Input.MoveRight && abbassato)
 	    	tastosciDx = false;
 		
@@ -296,9 +305,12 @@ public class CharacterAction : MonoBehaviour {
         
 		
 		//Attacco
-			if(We.Input.Attack2 && !movimento && !attacco){
+			if(Input.GetKeyDown(KeyCode.X)  && !movimento ){
 				statoCorrente = StatoInput.Attacco;
-				attacco = true;
+			}
+		//Attacco secondario
+			else if(Input.GetKeyDown(KeyCode.V) && !movimento ){
+				statoCorrente = StatoInput.Attacco2;
 			}
 		//Difesa
 			else if(We.Input.Attack3 && !movimento ){
@@ -307,12 +319,11 @@ public class CharacterAction : MonoBehaviour {
 
 		//Abbassato
 
-		else if (abbassato && (We.Input.MoveRight == true) && !tastosciDx ){
+			else if (abbassato && (Input.GetKeyDown(KeyCode.RightArrow))){
 				statoCorrente = StatoInput.ScivolataDx;
 				tastosciDx = true;
-
 			}
-		else if (abbassato && (We.Input.MoveLeft == true) && !tastosciSx ){
+		else if (abbassato && (Input.GetKeyDown(KeyCode.LeftArrow)) ){
 				statoCorrente = StatoInput.ScivolataSx;
 				tastosciSx = true;
 

@@ -41,7 +41,7 @@ namespace We
 		}
 		public static bool Attack2
 		{
-			get { return UnityEngine.Input.GetButton ("Fire2"); }
+			get { return UnityEngine.Input.GetKeyDown(KeyCode.X); }
 		}
 		public static bool Attack3
 		{
