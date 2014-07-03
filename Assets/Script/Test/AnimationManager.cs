@@ -3,34 +3,33 @@ using System.Collections;
 
 public class AnimationManager : MonoBehaviour
 {
-    public StateManagement state;
-    protected Transform transform;
-    private Animator animator;
+    Transform transform;
+    Animator animator;
+    public StateManager.State state;
 
     void Awake()
     {
-        state = GetComponent<StateManagement>();
         animator = this.GetComponent<Animator>();
     }
 
     void FixedUpdate()
     {
         int s;
-        switch (state.state)
+        switch (state)
         {
-            case StateManagement.State.Stand:
+            case StateManager.State.Stand:
                 s = 0;
                 break;
-            case StateManagement.State.Walk:
+            case StateManager.State.Walk:
                 s = 1;
                 break;
-            case StateManagement.State.Crouch:
+            case StateManager.State.Crouch:
                 s = 2;
                 break;
-            case StateManagement.State.Jump:
+            case StateManager.State.Jump:
                 s = 3;
                 break;
-            case StateManagement.State.Attack:
+            case StateManager.State.Attack:
                 s = 4;
                 break;
             default:

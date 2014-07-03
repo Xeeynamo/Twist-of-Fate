@@ -3,18 +3,17 @@ using System.Collections;
 
 public class EntityManagement : MonoBehaviour
 {
-    PhysicsManagement physics;
-    AnimationManager animation;
+    PhysicsManager physManager;
 
     // Use this for initialization
     void Start()
     {
-        physics = GetComponent<PhysicsManagement>();
-        animation = this.GetComponent<AnimationManager>();
+        physManager = GetComponent<PhysicsManager>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        physManager.State = StateManager.getStateFromInput(physManager);
     }
 }

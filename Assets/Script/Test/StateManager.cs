@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class StateManagement : MonoBehaviour
+public class StateManager
 {
     public enum State
     {
@@ -11,22 +11,17 @@ public class StateManagement : MonoBehaviour
         Jump,
         Attack,
         Crouch,
+        /// <summary>
+        /// Quando si gira
+        /// </summary>
+        Turn,
+        /// <summary>
+        /// Entità allerta
+        /// </summary>
+        Alert,
     }
 
-    public State state = State.Stand;
-    PhysicsManagement physics;
-
-    void Awake()
-    {
-        physics = GetComponent<PhysicsManagement>();
-    }
-
-    void FixedUpdate()
-    {
-        state = GetState(physics);
-    }
-
-    public State GetState(PhysicsManagement physics)
+    public static State getStateFromInput(PhysicsManager physics)
     {
         if (We.Input.Jump == true)
         {
