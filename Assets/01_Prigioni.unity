@@ -52295,11 +52295,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -.0279783905
+      value: 6.11757183
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.07252431
+      value: 2.24598742
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.z
@@ -54352,9 +54352,6 @@ GameObject:
   - 114: {fileID: 1607201385}
   - 58: {fileID: 1607201389}
   - 61: {fileID: 1607201390}
-  - 114: {fileID: 1607201393}
-  - 114: {fileID: 1607201392}
-  - 114: {fileID: 1607201391}
   - 114: {fileID: 1607201388}
   m_Layer: 0
   m_Name: Richard
@@ -54394,7 +54391,7 @@ Transform:
   m_PrefabInternal: {fileID: 1525900328}
   m_GameObject: {fileID: 1607201382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.0279783905, y: 2.07252431, z: 0}
+  m_LocalPosition: {x: 6.11757183, y: 2.24598742, z: 0}
   m_LocalScale: {x: 1.00823271, y: 1.00823271, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -54463,10 +54460,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1607201382}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fb2bbecb01b58b49b5e7eccfc1d0d6c, type: 3}
+  m_Script: {fileID: 11500000, guid: dcfa806c657fb4545885671f51178af7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: 1
+  animCorrente: 0
+  abbassato: 0
 --- !u!58 &1607201389
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -54491,50 +54489,6 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: .330000013, y: .720000029}
   m_Center: {x: 0, y: .0599999987}
---- !u!114 &1607201391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1607201382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6375bb9d1503da64d9c6f668672c9ef7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsOnGround: 0
-  Jumping: 0
-  Gravity: 8
-  WalkSpeed: 32
-  RunSpeed: 32
-  JumpStrength: 256
-  JumpMinimum: 32
-  JumpMaximum: 4
-  speedX: 0
-  speedY: 0
---- !u!114 &1607201392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1607201382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48c637c8424422a4bb4fa38d4faada32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1607201393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1607201382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc79a58fe7894ba49898e01559804c56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  state: {fileID: 0}
 --- !u!1 &1610501286
 GameObject:
   m_ObjectHideFlags: 0
@@ -68220,6 +68174,7 @@ GameObject:
   - 50: {fileID: 1988806503}
   - 61: {fileID: 1988806502}
   - 114: {fileID: 1988806504}
+  - 114: {fileID: 1988806505}
   m_Layer: 11
   m_Name: Knight
   m_TagString: Enemy
@@ -68330,6 +68285,17 @@ MonoBehaviour:
   JumpMaximum: 4
   speedX: 0
   speedY: 0
+--- !u!114 &1988806505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1988806498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cabccb8e691b584488cc39a618130ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1988941554
 GameObject:
   m_ObjectHideFlags: 0
