@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Knight : MonoBehaviour {
+public class Knight : MonoBehaviour
+{
+    private int playerMask = 1 << 6;
 
 	// Use this for initialization
 	void Start ()
@@ -15,7 +17,7 @@ public class Knight : MonoBehaviour {
 		Vector3 vEnd = new Vector3 (0.1f, 0, 0);
 
 		Debug.DrawRay (vStart, vEnd);
-		if (Physics2D.Raycast (vStart, vEnd, 0.5f) != null)
+        if (Physics2D.Raycast(vStart, vEnd, 0.5f, playerMask) != null)
 		{
 			Debug.LogError("SDFSDSFSDFSDFS");
 		}
