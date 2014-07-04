@@ -6,10 +6,15 @@ public class StateManager
     public enum State
     {
         Unchanged,
-        Stand,
-        Walk,
+		Stand,
+		Walk,
+		Run,
         Jump,
         Attack,
+		Attack2,
+		PreScivolata,
+		Scivolata,
+		Defence,
         Crouch,
         /// <summary>
         /// Quando si gira
@@ -19,32 +24,7 @@ public class StateManager
         /// Entità allerta
         /// </summary>
         Alert,
-    }
 
-    public static State getStateFromInput(PhysicsManager physics)
-    {
-        if (We.Input.Jump == true)
-        {
-            return State.Jump;
-        }
-        if (We.Input.MoveLeft == true)
-        {
-            physics.Direction = false;
-            return State.Walk;
-        }
-        if (We.Input.MoveRight == true)
-        {
-            physics.Direction = true;
-            return State.Walk;
-        }
-        if (We.Input.MoveDown == true)
-        {
-            return State.Crouch;
-        }
-        if (We.Input.Attack2 == true)
-        {
-            return State.Attack;
-        }
-        return State.Stand;
     }
 }
+

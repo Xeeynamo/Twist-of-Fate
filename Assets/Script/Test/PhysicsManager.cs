@@ -175,10 +175,13 @@ public class PhysicsManager : MonoBehaviour
                     if (speedY >= JumpMinimum)
                         speedY = JumpMinimum;
                 }
-                break;
-            case StateManager.State.Walk:
-                speedX = Direction ? +WalkSpeed : -WalkSpeed;
-                break;
+			break;
+		case StateManager.State.Walk:
+			speedX = Direction ? +WalkSpeed : -WalkSpeed;
+			break;
+		case StateManager.State.Run:
+			speedX = Direction ? +RunSpeed : -RunSpeed;
+			break;
             case StateManager.State.Jump:
                 if (IsOnGround == true)
                 {
@@ -187,6 +190,18 @@ public class PhysicsManager : MonoBehaviour
                     speedY = JumpStrength;
                 }
                 break;
+		case StateManager.State.PreScivolata:
+			speedX = Direction ? 250.0f : -250.0f;
+			State = StateManager.State.Scivolata;
+			break;
+		case StateManager.State.Scivolata:
+			speedX = speedX - (Direction ? 5.0f : -5.0f);
+			if (Direction ? speedX <= 0 : speedX >= 0)
+			{
+				speedX = 0;
+				State = StateManager.State.Crouch;
+			}
+			break;
         }
 
         speedY -= Gravity;

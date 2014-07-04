@@ -12,12 +12,12 @@ public class DisattivaBlocchi : MonoBehaviour {
 	void Update () {
 		//blocco.enabled = ((blocco.transform.position.y + 0.32f) < CharacterAction.trans.position.y) && !CharacterAction.scendiScale;
 
-		if (((blocco.transform.position.y + 0.29f) < CharacterAction.trans.position.y))
+		if (((blocco.transform.position.y + 0.29f) < Richard._Transform.position.y))
 						blocco.enabled = true;
 				else
 						blocco.enabled = false;
 
-		if(CharacterAction.scendiScale && CharacterAction.scale)
-			blocco.enabled = false;
+		/*if(Richard.scendiScale && Richard.scale)
+			blocco.enabled = false;*/
 	}
 }
