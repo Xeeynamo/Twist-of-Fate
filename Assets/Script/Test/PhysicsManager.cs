@@ -18,7 +18,7 @@ public class PhysicsManager : MonoBehaviour
     /// <summary>
     /// Numero di pixel percorribili al secondo in corsa
     /// </summary>
-    public float RunSpeed = 32.0f;
+    public float RunSpeed = 160.0f;
     public float JumpStrength = 256.0f;
     public float JumpMinimum = 64.0f;
     public float JumpMaximum = 4.0f;
@@ -175,13 +175,13 @@ public class PhysicsManager : MonoBehaviour
                     if (speedY >= JumpMinimum)
                         speedY = JumpMinimum;
                 }
-			break;
-		case StateManager.State.Walk:
-			speedX = Direction ? +WalkSpeed : -WalkSpeed;
-			break;
-		case StateManager.State.Run:
-			speedX = Direction ? +RunSpeed : -RunSpeed;
-			break;
+                break;
+            case StateManager.State.Walk:
+                speedX = Direction ? +WalkSpeed : -WalkSpeed;
+                break;
+            case StateManager.State.Run:
+                speedX = Direction ? +RunSpeed : -RunSpeed;
+                break;
             case StateManager.State.Jump:
                 if (IsOnGround == true)
                 {
@@ -190,18 +190,18 @@ public class PhysicsManager : MonoBehaviour
                     speedY = JumpStrength;
                 }
                 break;
-		case StateManager.State.PreScivolata:
-			speedX = Direction ? 250.0f : -250.0f;
-			State = StateManager.State.Scivolata;
-			break;
-		case StateManager.State.Scivolata:
-			speedX = speedX - (Direction ? 5.0f : -5.0f);
-			if (Direction ? speedX <= 0 : speedX >= 0)
-			{
-				speedX = 0;
-				State = StateManager.State.Crouch;
-			}
-			break;
+            case StateManager.State.PreScivolata:
+                speedX = Direction ? 250.0f : -250.0f;
+                State = StateManager.State.Scivolata;
+                break;
+            case StateManager.State.Scivolata:
+                speedX = speedX - (Direction ? 5.0f : -5.0f);
+                if (Direction ? speedX <= 0 : speedX >= 0)
+                {
+                    speedX = 0;
+                    State = StateManager.State.Crouch;
+                }
+                break;
         }
 
         speedY -= Gravity;
