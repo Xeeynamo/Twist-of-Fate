@@ -18,10 +18,12 @@ public class PhysicsManager : MonoBehaviour
     /// <summary>
     /// Numero di pixel percorribili al secondo in corsa
     /// </summary>
-    public float RunSpeed = 32.0f;
+    public float RunSpeed = 160.0f;
     public float JumpStrength = 256.0f;
     public float JumpMinimum = 64.0f;
     public float JumpMaximum = 4.0f;
+    public float ScivolataForza = 250.0f;
+    public float ScivolataInerzia = 5.0f;
 
     public float speedX = 0;
     public float speedY = 0;
@@ -38,7 +40,7 @@ public class PhysicsManager : MonoBehaviour
             AnimationManager anim = GetComponent<AnimationManager>();
             if (anim != null)
                 return anim.state;
-            else return StateManager.State.Stand;
+            else return StateManager.State.Unpressed;
         }
         set
         {
@@ -47,6 +49,7 @@ public class PhysicsManager : MonoBehaviour
                 anim.state = value;
         }
     }
+    private StateManager.State PrevState;
 
     /// <summary>
     /// Ottiene oppure imposta la direzione corrente del personaggio
@@ -113,14 +116,25 @@ public class PhysicsManager : MonoBehaviour
 
 
     /// <summary>
+    /// Controlla se la visuale del nemico incontra un suo nemico ad una certa
+    /// distanza né troppo vicina né troppo lontana. Usata durante le fasi di guardia.
+    /// </summary>
+    /// <returns></returns>
+    public bool CheckEnemyNear()
+    {
+        return EvaluateRaycastH(0.0f, 0.48f, 1.0f, playerMask, Color.magenta) ||
+            EvaluateRaycastH(0.0f, -0.24f, 1.0f, playerMask, Color.magenta);
+    }
+
+    /// <summary>
     /// Controlla se la visuale del nemico incontra un suo nemico a distanza
     /// ravvicinata. Usata durante le fasi di guardia.
     /// </summary>
     /// <returns></returns>
     public bool CheckEnemyAround()
     {
-        return EvaluateRaycastH(0.0f, 0.48f, 1.0f, playerMask, Color.blue) ||
-            EvaluateRaycastH(0.0f, 0.0f, 1.0f, playerMask, Color.blue);
+        return EvaluateRaycastH(0.0f, 0.48f, 1.5f, playerMask, Color.blue) ||
+            EvaluateRaycastH(0.0f, 0.0f, 1.5f, playerMask, Color.blue);
     }
 
     /// <summary>
@@ -157,13 +171,18 @@ public class PhysicsManager : MonoBehaviour
             IsOnGround = true;
             Jumping = false;
             speedY = 0;
+            if (State == StateManager.State.Unpressed ||
+                PrevState == StateManager.State.Falling)
+                State = StateManager.State.Stand;
         }
         else
         {
             IsOnGround = false;
+            if (speedY <= 0)
+                State = StateManager.State.Falling;
         }
 
-        switch (State)
+        switch (State) 
         {
             case StateManager.State.Stand:
                 if (IsOnGround == true)
@@ -179,7 +198,10 @@ public class PhysicsManager : MonoBehaviour
             case StateManager.State.Walk:
                 speedX = Direction ? +WalkSpeed : -WalkSpeed;
                 break;
-            case StateManager.State.Jump:
+            case StateManager.State.Run:
+                speedX = Direction ? +RunSpeed : -RunSpeed;
+                break;
+            case StateManager.State.Jumping:
                 if (IsOnGround == true)
                 {
                     IsOnGround = false;
@@ -187,10 +209,26 @@ public class PhysicsManager : MonoBehaviour
                     speedY = JumpStrength;
                 }
                 break;
+            case StateManager.State.Falling:
+                if (IsOnGround)
+                    State = StateManager.State.Stand;
+                break;
+            case StateManager.State.PreScivolata:
+                speedX = Direction ? +ScivolataForza : -ScivolataForza;
+                State = StateManager.State.Scivolata;
+                break;
+            case StateManager.State.Scivolata:
+                speedX += (Direction ? -ScivolataInerzia : +ScivolataInerzia);
+                if (Direction ? speedX <= 0 : speedX >= 0)
+                {
+                    speedX = 0;
+                    State = StateManager.State.Crouch;
+                }
+                break;
         }
 
         speedY -= Gravity;
-
+        PrevState = State;
         rigidbody2D.velocity = new Vector3(speedX * Time.deltaTime, speedY * Time.deltaTime, 0.0f);
     }
 }

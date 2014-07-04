@@ -35,6 +35,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 50
   alphaIsTransparency: 1
   textureType: 8
@@ -50,6 +51,7 @@ TextureImporter:
         height: 19
       alignment: 9
       pivot: {x: .119999997, y: .680000007}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: TURRET_ARROW
       rect:
         serializedVersion: 2
@@ -59,5 +61,6 @@ TextureImporter:
         height: 7
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

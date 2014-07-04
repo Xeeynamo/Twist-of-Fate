@@ -16,7 +16,7 @@ public class Knight : MonoBehaviour
     {
         switch (physManager.State)
         {
-            case StateManager.State.Stand:
+            case StateManager.State.Unpressed:
                 physManager.speedX = 0;
                 break;
             case StateManager.State.Walk:

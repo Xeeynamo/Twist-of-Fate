@@ -5,11 +5,34 @@ public class StateManager
 {
     public enum State
     {
-        Unchanged,
+        /// <summary>
+        /// Usato per dire che, dall'input, non è stato premuto alcun pulsante.
+        /// Ciò significa che non ci saranno veri e propri cambi di stato o
+        /// nuove animazioni da eseguire.
+        /// </summary>
+        Unpressed,
+        /// <summary>
+        /// Personaggio nella posizione standard.
+        /// </summary>
         Stand,
-        Walk,
-        Jump,
+		Walk,
+        Run,
+        /// <summary>
+        /// Quando il personaggio salta (da fermo)
+        /// </summary>
+        Jumping,
         Attack,
+		Attack2,
+		PreScivolata,
+		Scivolata,
+
+        /// <summary>
+        /// Posizione di difesa
+        /// </summary>
+		Defense,
+        /// <summary>
+        /// QUando si abbassa
+        /// </summary>
         Crouch,
         /// <summary>
         /// Quando si gira
@@ -19,32 +42,20 @@ public class StateManager
         /// Entità allerta
         /// </summary>
         Alert,
-    }
-
-    public static State getStateFromInput(PhysicsManager physics)
-    {
-        if (We.Input.Jump == true)
-        {
-            return State.Jump;
-        }
-        if (We.Input.MoveLeft == true)
-        {
-            physics.Direction = false;
-            return State.Walk;
-        }
-        if (We.Input.MoveRight == true)
-        {
-            physics.Direction = true;
-            return State.Walk;
-        }
-        if (We.Input.MoveDown == true)
-        {
-            return State.Crouch;
-        }
-        if (We.Input.Attack2 == true)
-        {
-            return State.Attack;
-        }
-        return State.Stand;
+        /// <summary>
+        /// Quando il personaggio sta cadendo.
+        /// Usato quando si salta ed il personaggio comincia a cadere, oppure
+        /// quando il personaggio cade dal bordo di una piattaforma.
+        /// </summary>
+        Falling,
+        /// <summary>
+        /// Si sta preparando per sferrare l'attacco
+        /// </summary>
+        PrepareAttack,
+        /// <summary>
+        /// Entità allerta, ma in questo caso indietreggia
+        /// </summary>
+        AlertBack,
     }
 }
+
