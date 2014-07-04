@@ -12,11 +12,11 @@ public class Richard : MonoBehaviour
 		get { return physManager.State; }
 	}
 
-	float TimerScatto = 0.5f;
-	public float TimerScattoRimastoLeft = 0f;
-	public float TimerScattoRimastoRight = 0f;
-	public bool TastoDirezionalePrecedentementePremuto = false;
-	public bool ScattoAttivato = false;
+	public float TimerScatto = 0.5f;
+	private float TimerScattoRimastoLeft = 0f;
+    private float TimerScattoRimastoRight = 0f;
+    private bool TastoDirezionalePrecedentementePremuto = false;
+    private bool ScattoAttivato = false;
 
     // Use this for initialization
     void Start()
@@ -129,6 +129,7 @@ public class Richard : MonoBehaviour
 
 		if (We.Input.MoveDown == true)
         {
+            // Abbassa il personaggio
             transform.position = new Vector2(transform.position.x, transform.position.y - 0.15f);
 			return StateManager.State.Crouch;
 		}
