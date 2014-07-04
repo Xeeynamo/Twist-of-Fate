@@ -47,6 +47,7 @@ public class PhysicsManager : MonoBehaviour
                 anim.state = value;
         }
     }
+    private StateManager.State PrevState;
 
     /// <summary>
     /// Ottiene oppure imposta la direzione corrente del personaggio
@@ -157,7 +158,8 @@ public class PhysicsManager : MonoBehaviour
             IsOnGround = true;
             Jumping = false;
             speedY = 0;
-            if (State == StateManager.State.Unpressed)
+            if (State == StateManager.State.Unpressed ||
+                PrevState == StateManager.State.Falling)
                 State = StateManager.State.Stand;
         }
         else
@@ -167,7 +169,7 @@ public class PhysicsManager : MonoBehaviour
                 State = StateManager.State.Falling;
         }
 
-        switch (State)
+        switch (State) 
         {
             case StateManager.State.Stand:
                 if (IsOnGround == true)
@@ -213,7 +215,7 @@ public class PhysicsManager : MonoBehaviour
         }
 
         speedY -= Gravity;
-
+        PrevState = State;
         rigidbody2D.velocity = new Vector3(speedX * Time.deltaTime, speedY * Time.deltaTime, 0.0f);
     }
 }
