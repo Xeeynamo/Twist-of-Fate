@@ -936,5 +936,25 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RICHARD_JUMP-RUNNING1
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 976
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RICHARD_JUMP-RUNNING2
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 976
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

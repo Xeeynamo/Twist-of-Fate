@@ -16,13 +16,23 @@ public class StateManager
         /// </summary>
         Stand,
 		Walk,
-		Run,
+        Run,
+        /// <summary>
+        /// Quando il personaggio salta (da fermo)
+        /// </summary>
         Jumping,
         Attack,
 		Attack2,
 		PreScivolata,
 		Scivolata,
-		Defence,
+
+        /// <summary>
+        /// Posizione di difesa
+        /// </summary>
+		Defense,
+        /// <summary>
+        /// QUando si abbassa
+        /// </summary>
         Crouch,
         /// <summary>
         /// Quando si gira
