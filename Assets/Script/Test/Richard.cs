@@ -7,7 +7,7 @@ public class Richard : MonoBehaviour
 
     PhysicsManager physManager;
 
-	StateManager.State PrevState
+	StateManager.State CurrentState
 	{
 		get { return physManager.State; }
 	}
@@ -28,7 +28,7 @@ public class Richard : MonoBehaviour
     void FixedUpdate()
 	{
         // Mi memorizzo lo stato precedente per fare delle comparazioni
-		StateManager.State state = PrevState;
+		StateManager.State state = CurrentState;
 		switch (state)
 		{
             case StateManager.State.Scivolata:
@@ -43,8 +43,7 @@ public class Richard : MonoBehaviour
             // Ottiene lo stato a partire dai tasti premuti
 			state = getStateFromInput ();
 
-            // Se
-			if (PrevState == StateManager.State.Crouch && state == StateManager.State.Walk)
+			if (CurrentState == StateManager.State.Crouch && state == StateManager.State.Walk)
 			{
 				state = StateManager.State.PreScivolata;
 			}

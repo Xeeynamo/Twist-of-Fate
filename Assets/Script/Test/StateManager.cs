@@ -5,7 +5,6 @@ public class StateManager
 {
     public enum State
     {
-        Unchanged,
 		Stand,
 		Walk,
 		Run,
@@ -24,7 +23,12 @@ public class StateManager
         /// Entità allerta
         /// </summary>
         Alert,
-
+        /// <summary>
+        /// Quando il personaggio sta cadendo.
+        /// Usato quando si salta ed il personaggio comincia a cadere, oppure
+        /// quando il personaggio cade dal bordo di una piattaforma.
+        /// </summary>
+        Falling,
     }
 }
 

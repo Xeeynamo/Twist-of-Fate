@@ -576,7 +576,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RICHARD_JUMP
+    - name: RICHARD_JUMPLOOP1
       rect:
         serializedVersion: 2
         x: 946
@@ -586,7 +586,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RICHARD_JUMPDOWN1
+    - name: RICHARD_JUMPLOOP2
       rect:
         serializedVersion: 2
         x: 970
@@ -596,7 +596,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RICHARD_JUMPDOWN2
+    - name: RICHARD_JUMPBOH
       rect:
         serializedVersion: 2
         x: 994
@@ -686,23 +686,23 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RICHARD_64
+    - name: RICHARD_STARTFALLING5
       rect:
         serializedVersion: 2
-        x: 896
-        y: 929
-        width: 32
-        height: 45
+        x: 895
+        y: 928
+        width: 40
+        height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RICHARD_65
+    - name: RICHARD_STARTFALLING4
       rect:
         serializedVersion: 2
         x: 855
-        y: 929
-        width: 36
-        height: 45
+        y: 928
+        width: 40
+        height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -726,33 +726,33 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RICHARD_68
+    - name: RICHARD_STARTFALLING1
       rect:
         serializedVersion: 2
-        x: 641
-        y: 929
-        width: 37
-        height: 45
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RICHARD_69
-      rect:
-        serializedVersion: 2
-        x: 679
-        y: 929
-        width: 37
-        height: 45
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RICHARD_70
-      rect:
-        serializedVersion: 2
-        x: 716
+        x: 640
         y: 928
-        width: 45
-        height: 46
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RICHARD_STARTFALLING2
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 928
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RICHARD_STARTFALLING3
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 928
+        width: 40
+        height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -813,6 +813,126 @@ TextureImporter:
         y: 721
         width: 28
         height: 42
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RICHARD_STARTFALLING6
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 800
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RICHARD_STARTFALLING7
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 976
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RICHARD_FALLINGLOOP1
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 976
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RICHARD_FALLINGLOOP2
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 976
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RICHARD_LANDING1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 848
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RICHARD_LANDING2
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 848
+        width: 40
+        height: 48
+      alignment: 9
+      pivot: {x: .600000024, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RICHARD_LANDING3
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 800
+        width: 33
+        height: 48
+      alignment: 9
+      pivot: {x: .514999986, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RICHARD_LANDING4
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 800
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RICHARD_LANDING5
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 800
+        width: 26
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RICHARD_LANDING6
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 800
+        width: 24
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RICHARD_LANDING7
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 848
+        width: 24
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RICHARD_LANDING8
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 848
+        width: 24
+        height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
