@@ -48,6 +48,14 @@ public class StateManager
         /// quando il personaggio cade dal bordo di una piattaforma.
         /// </summary>
         Falling,
+        /// <summary>
+        /// Si sta preparando per sferrare l'attacco
+        /// </summary>
+        PrepareAttack,
+        /// <summary>
+        /// Entità allerta, ma in questo caso indietreggia
+        /// </summary>
+        AlertBack,
     }
 }
 

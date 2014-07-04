@@ -53,6 +53,12 @@ public class AnimationManager : MonoBehaviour
             case StateManager.State.Falling:
                 s = 7;
                 break;
+            case StateManager.State.Alert:
+                s = 11;
+                break;
+            case StateManager.State.PrepareAttack:
+                s = 12;
+                break;
             default:
                 s = 0;
                 break;

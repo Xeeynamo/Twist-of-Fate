@@ -116,14 +116,25 @@ public class PhysicsManager : MonoBehaviour
 
 
     /// <summary>
+    /// Controlla se la visuale del nemico incontra un suo nemico ad una certa
+    /// distanza né troppo vicina né troppo lontana. Usata durante le fasi di guardia.
+    /// </summary>
+    /// <returns></returns>
+    public bool CheckEnemyNear()
+    {
+        return EvaluateRaycastH(0.0f, 0.48f, 1.0f, playerMask, Color.magenta) ||
+            EvaluateRaycastH(0.0f, -0.24f, 1.0f, playerMask, Color.magenta);
+    }
+
+    /// <summary>
     /// Controlla se la visuale del nemico incontra un suo nemico a distanza
     /// ravvicinata. Usata durante le fasi di guardia.
     /// </summary>
     /// <returns></returns>
     public bool CheckEnemyAround()
     {
-        return EvaluateRaycastH(0.0f, 0.48f, 1.0f, playerMask, Color.blue) ||
-            EvaluateRaycastH(0.0f, 0.0f, 1.0f, playerMask, Color.blue);
+        return EvaluateRaycastH(0.0f, 0.48f, 1.5f, playerMask, Color.blue) ||
+            EvaluateRaycastH(0.0f, 0.0f, 1.5f, playerMask, Color.blue);
     }
 
     /// <summary>
