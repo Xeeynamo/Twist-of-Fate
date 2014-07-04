@@ -38,7 +38,7 @@ public class PhysicsManager : MonoBehaviour
             AnimationManager anim = GetComponent<AnimationManager>();
             if (anim != null)
                 return anim.state;
-            else return StateManager.State.Stand;
+            else return StateManager.State.Unpressed;
         }
         set
         {
@@ -157,10 +157,14 @@ public class PhysicsManager : MonoBehaviour
             IsOnGround = true;
             Jumping = false;
             speedY = 0;
+            if (State == StateManager.State.Unpressed)
+                State = StateManager.State.Stand;
         }
         else
         {
             IsOnGround = false;
+            if (speedY <= 0)
+                State = StateManager.State.Falling;
         }
 
         switch (State)
@@ -182,13 +186,17 @@ public class PhysicsManager : MonoBehaviour
             case StateManager.State.Run:
                 speedX = Direction ? +RunSpeed : -RunSpeed;
                 break;
-            case StateManager.State.Jump:
+            case StateManager.State.Jumping:
                 if (IsOnGround == true)
                 {
                     IsOnGround = false;
                     Jumping = true;
                     speedY = JumpStrength;
                 }
+                break;
+            case StateManager.State.Falling:
+                if (IsOnGround)
+                    State = StateManager.State.Stand;
                 break;
             case StateManager.State.PreScivolata:
                 speedX = Direction ? 250.0f : -250.0f;

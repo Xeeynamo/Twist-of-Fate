@@ -17,9 +17,12 @@ public class AnimationManager : MonoBehaviour
         int s;
         switch (state)
         {
-	    case StateManager.State.Stand:
-	        s = 0;
-			break;
+        case StateManager.State.Unpressed:
+            s = 0;
+            break;
+        case StateManager.State.Stand:
+            s = 0;
+            break;
 		case StateManager.State.Walk:
 			s = 1;
 			break;
@@ -29,7 +32,7 @@ public class AnimationManager : MonoBehaviour
 	    case StateManager.State.Crouch:
 	        s = 2;
 	        break;
-	    case StateManager.State.Jump:
+	    case StateManager.State.Jumping:
 	        s = 3;
 	        break;
 	    case StateManager.State.Attack:
@@ -43,10 +46,13 @@ public class AnimationManager : MonoBehaviour
 			break;
 		case StateManager.State.Scivolata:
 			s = 5;
-			break;
-		case StateManager.State.Defence:
-			s = 6;
-			break;
+            break;
+        case StateManager.State.Defence:
+            s = 6;
+            break;
+        case StateManager.State.Falling:
+            s = 7;
+            break;
 	    default:
 	        s = 0;
 	        break;

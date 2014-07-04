@@ -29,8 +29,10 @@ public class Richard : MonoBehaviour
 	{
         // Mi memorizzo lo stato precedente per fare delle comparazioni
 		StateManager.State state = CurrentState;
-		switch (state)
-		{
+        switch (state)
+        {
+            case StateManager.State.Jumping:
+            case StateManager.State.Falling:
             case StateManager.State.Scivolata:
                 // Se in scivolata, disabilita ogni altro cambio di stato:
                 // il motore della fisica funziona che, una volta che il
@@ -38,17 +40,17 @@ public class Richard : MonoBehaviour
                 // fa fermare la forza inizialmente assegnata dalla scivolata:
                 // di conseguenza disabilita ogni altro tasto di input. Questo
                 // per offrire un realismo maggiore.
-			break;
-		default:
-            // Ottiene lo stato a partire dai tasti premuti
-			state = getStateFromInput ();
+                break;
+            default:
+                // Ottiene lo stato a partire dai tasti premuti
+                state = getStateFromInput();
 
-			if (CurrentState == StateManager.State.Crouch && state == StateManager.State.Walk)
-			{
-				state = StateManager.State.PreScivolata;
-			}
-			break;
-		}
+                if (CurrentState == StateManager.State.Crouch && state == StateManager.State.Walk)
+                {
+                    state = StateManager.State.PreScivolata;
+                }
+                break;
+        }
 		physManager.State = state;
 		_Transform = transform;
     }
@@ -69,7 +71,7 @@ public class Richard : MonoBehaviour
         // bisogno di continuare la corsa. Sarebbe stato stupido il contrario, indi.
 		if (We.Input.Jump == true)
 		{
-			return StateManager.State.Jump;
+			return StateManager.State.Jumping;
 		}
 		if (We.Input.MoveLeft == true)
 		{
@@ -136,6 +138,6 @@ public class Richard : MonoBehaviour
 		{
 			return StateManager.State.Attack;
 		}
-		return StateManager.State.Stand;
+		return StateManager.State.Unpressed;
 	}
 }

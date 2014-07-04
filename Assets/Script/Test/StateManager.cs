@@ -5,10 +5,19 @@ public class StateManager
 {
     public enum State
     {
-		Stand,
+        /// <summary>
+        /// Usato per dire che, dall'input, non è stato premuto alcun pulsante.
+        /// Ciò significa che non ci saranno veri e propri cambi di stato o
+        /// nuove animazioni da eseguire.
+        /// </summary>
+        Unpressed,
+        /// <summary>
+        /// Personaggio nella posizione standard.
+        /// </summary>
+        Stand,
 		Walk,
 		Run,
-        Jump,
+        Jumping,
         Attack,
 		Attack2,
 		PreScivolata,
