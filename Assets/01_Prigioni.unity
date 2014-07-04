@@ -52883,11 +52883,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.0737052
+      value: 1.04438627
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.19108987
+      value: 2.04449463
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.z
@@ -52921,6 +52921,10 @@ Prefab:
       propertyPath: Bullet
       value: 
       objectReference: {fileID: 100000, guid: 5a60516f644ecf94bb9d158ca806b860, type: 2}
+    - target: {fileID: 100000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
+      propertyPath: m_Name
+      value: RICHARD
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11400002, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
     - {fileID: 11400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
@@ -54956,7 +54960,7 @@ GameObject:
   - 114: {fileID: 1607201388}
   - 114: {fileID: 1607201385}
   m_Layer: 13
-  m_Name: Richard
+  m_Name: RICHARD
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54992,7 +54996,7 @@ Transform:
   m_PrefabInternal: {fileID: 1525900328}
   m_GameObject: {fileID: 1607201382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.0737052, y: 2.19108987, z: 0}
+  m_LocalPosition: {x: 1.04438627, y: 2.04449463, z: 0}
   m_LocalScale: {x: 1.00823271, y: 1.00823271, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -55059,6 +55063,8 @@ MonoBehaviour:
   JumpStrength: 256
   JumpMinimum: 64
   JumpMaximum: 4
+  ScivolataForza: 250
+  ScivolataInerzia: 5
   speedX: 0
   speedY: 0
 --- !u!58 &1607201389
@@ -69140,6 +69146,8 @@ MonoBehaviour:
   JumpStrength: 256
   JumpMinimum: 64
   JumpMaximum: 4
+  ScivolataForza: 250
+  ScivolataInerzia: 5
   speedX: 0
   speedY: 0
 --- !u!114 &1988806506

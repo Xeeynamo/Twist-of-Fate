@@ -45,6 +45,12 @@ public class Richard : MonoBehaviour
                 // Ottiene lo stato a partire dai tasti premuti
                 state = getStateFromInput();
 
+                // Controllo che evita di far saltare il personaggio mentre è abbassato
+                if (CurrentState == StateManager.State.Crouch && state == StateManager.State.Jumping)
+                {
+                    state = CurrentState;
+                }
+                // Controllo che permette di fare la scivolata
                 if (CurrentState == StateManager.State.Crouch && state == StateManager.State.Walk)
                 {
                     state = StateManager.State.PreScivolata;
@@ -131,7 +137,7 @@ public class Richard : MonoBehaviour
 		if (We.Input.MoveDown == true)
         {
             // Abbassa il personaggio
-            transform.position = new Vector2(transform.position.x, transform.position.y - 0.15f);
+            transform.position = new Vector2(transform.position.x, transform.position.y - 0.10f);
 			return StateManager.State.Crouch;
 		}
 		if (We.Input.Attack2 == true)

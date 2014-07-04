@@ -22,6 +22,8 @@ public class PhysicsManager : MonoBehaviour
     public float JumpStrength = 256.0f;
     public float JumpMinimum = 64.0f;
     public float JumpMaximum = 4.0f;
+    public float ScivolataForza = 250.0f;
+    public float ScivolataInerzia = 5.0f;
 
     public float speedX = 0;
     public float speedY = 0;
@@ -201,11 +203,11 @@ public class PhysicsManager : MonoBehaviour
                     State = StateManager.State.Stand;
                 break;
             case StateManager.State.PreScivolata:
-                speedX = Direction ? 250.0f : -250.0f;
+                speedX = Direction ? +ScivolataForza : -ScivolataForza;
                 State = StateManager.State.Scivolata;
                 break;
             case StateManager.State.Scivolata:
-                speedX = speedX - (Direction ? 5.0f : -5.0f);
+                speedX += (Direction ? -ScivolataInerzia : +ScivolataInerzia);
                 if (Direction ? speedX <= 0 : speedX >= 0)
                 {
                     speedX = 0;
