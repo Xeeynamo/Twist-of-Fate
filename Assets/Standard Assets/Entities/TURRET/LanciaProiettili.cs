@@ -24,6 +24,7 @@ public class LanciaProiettili : MonoBehaviour
         TimeShoot -= Time.deltaTime;
         if (TimeShoot < 0 && Attiva())
         {
+			audio.Play();
             GameObject istance = (GameObject)Instantiate(Bullet, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), transform.rotation);
             MuoviProiettile bullet = istance.GetComponent<MuoviProiettile>();
             bullet.Velocità = Direzione ? +Velocità : -Velocità;
