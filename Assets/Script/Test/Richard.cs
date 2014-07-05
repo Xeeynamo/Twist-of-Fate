@@ -17,7 +17,8 @@ public class Richard : MonoBehaviour
     private float TimerScattoRimastoRight = 0f;
     private bool TastoDirezionalePrecedentementePremuto = false;
     private bool ScattoAttivato = false;
-
+	private int stairMask = 1 << 10;
+	public Color col;
     // Use this for initialization
     void Start()
     {
@@ -144,6 +145,7 @@ public class Richard : MonoBehaviour
 		{
 			return StateManager.State.Attack;
 		}
+
 		return StateManager.State.Unpressed;
 	}
 }
