@@ -295,7 +295,7 @@ GUIText:
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Font: {fileID: 0}
   m_Material: {fileID: 0}
   m_FontSize: 0
   m_FontStyle: 0
@@ -311,7 +311,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1958077614}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .5, y: .25, z: 0}
+  m_LocalPosition: {x: .5, y: .25, z: .579999983}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -330,8 +330,8 @@ MonoBehaviour:
   caratteriAlSecondo: 8
   showText: []
   NomeGiocatore: 
-  areaWidth: 300
-  areaHeight: 100
+  areaWidth: 20
+  areaHeight: 10
   imgStory: {fileID: 1075061895}
   imgList:
   - {fileID: 2800000, guid: 039634a774e6cbd4292f8421c3333288, type: 3}

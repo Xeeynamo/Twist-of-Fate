@@ -35,6 +35,6 @@ public class MainMenuBtn : MonoBehaviour {
 		if (quitButton)
 			Application.Quit ();
 		else
-			Application.LoadLevel (levelToLoad);
+			Application.LoadLevel (1);
 	}
 }
