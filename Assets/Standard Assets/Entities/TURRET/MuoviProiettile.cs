@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MuoviProiettile : MonoBehaviour {
-	private float movimento = 500; // vellocità di spostamento del proiettile
+public class MuoviProiettile : MonoBehaviour
+{
 
     public float Velocità;
 

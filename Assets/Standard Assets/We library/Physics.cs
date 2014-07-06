@@ -14,7 +14,7 @@ namespace We
 		float deceleration;
 		float friction;
 		float maxspeed;
-		bool isInAir;
+        bool isInAir;
 
 		private float DeltaTime
 		{
