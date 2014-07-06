@@ -38087,11 +38087,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.x
-      value: .334564835
+      value: 1.52364278
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.37924933
+      value: 12.2341862
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.z
@@ -47044,7 +47044,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1351324297}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.53674316e-07, y: -12.1599989, z: 0}
+  m_LocalPosition: {x: -9.53674316e-07, y: -12.1599989, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1435770036}
@@ -54906,7 +54906,7 @@ Transform:
   m_PrefabInternal: {fileID: 1074959724}
   m_GameObject: {fileID: 1607201382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .334564835, y: 2.37924933, z: 0}
+  m_LocalPosition: {x: 1.52364278, y: 12.2341862, z: 0}
   m_LocalScale: {x: 1.00823271, y: 1.00823271, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -58822,6 +58822,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ddfc7a23c6cb804d905bba1e1c10e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowPlayerHUD: 0
+  ShowEnemyHUD: 0
+  PlayerHUD: {fileID: 0}
+  PlayerHudAlignment: 0
+  EnemyHUD: {fileID: 0}
+  EnemyHudAlignment: 0
   ObjectToFollow: {fileID: 1607201382}
   BoundTopLeft: {fileID: 1178098461}
   BoundTopRight: {fileID: 1197186411}
