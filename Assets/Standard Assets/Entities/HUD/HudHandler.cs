@@ -5,10 +5,10 @@ public class HudHandler : MonoBehaviour
 {
     public GameObject BarHealth;
     public GameObject BarMana;
-    public int MaxHealth = 100;
-    public int MaxMana = 100;
-    public int ValueHealth;
-    public int ValueMana;
+    public float MaxHealth = 100.0f;
+    public float MaxMana = 100.0f;
+    public float ValueHealth;
+    public float ValueMana;
 
     void Start()
     {
@@ -16,7 +16,7 @@ public class HudHandler : MonoBehaviour
         ValueMana = MaxMana;
     }
 
-    void UpdateBar(GameObject objBar, int value, int max)
+    void UpdateBar(GameObject objBar, float value, float max)
     {
         if (objBar != null)
         {
@@ -27,7 +27,7 @@ public class HudHandler : MonoBehaviour
             {
                 if (value > max)
                     value = max;
-                scale.x = (float)value / (float)max * 50.0f;
+                scale.x = value / max * 50.0f;
             }
             else
             {

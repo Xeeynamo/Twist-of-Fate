@@ -7,7 +7,52 @@ public class PhysicsManager : MonoBehaviour
     private int stairMask = 1 << 10 | 1 << 11;
     private int playerMask = 1 << 13;
 
+    /// <summary>
+    /// Rappresenta l'HUD collegata al personaggio.
+    /// Non per forza deve essere un oggetto che rappresenta qualcosa di
+    /// grafico, ma basti che abbia attaccato lo script HudHandler in modo
+    /// da leggere e scrivere i valori necessari.
+    /// </summary>
+    public GameObject hud;
+
+    public float Health
+    {
+        get
+        {
+            if (hud != null)
+                return hud.GetComponent<HudHandler>().ValueHealth;
+            else
+                return 1;
+        }
+        set
+        {
+            if (hud != null)
+                hud.GetComponent<HudHandler>().ValueHealth = value;
+        }
+    }
+    public float Stamina
+    {
+        get
+        {
+            if (hud != null)
+                return hud.GetComponent<HudHandler>().ValueMana;
+            else
+                return 1;
+        }
+        set
+        {
+            if (hud != null)
+                hud.GetComponent<HudHandler>().ValueMana = value;
+        }
+    }
+
+    /// <summary>
+    /// Dice se il personaggio sta collidendo sul terreno o meno
+    /// </summary>
     public bool IsOnGround;
+    /// <summary>
+    /// Dice se il personaggio sta in salto o meno
+    /// </summary>
     public bool Jumping = false;
 
     public float Gravity = 8.0f;
@@ -40,7 +85,23 @@ public class PhysicsManager : MonoBehaviour
     public float ScivolataInerzia = 5.0f;
 
     /// <summary>
+    /// Quanta stamina viene recuperata mentre si è fermi
+    /// </summary>
+    public int RecuperoStamina = 10;
+    /// <summary>
+    /// Quanta stamina viene consumata con la corsa
+    /// Il valore è diluito in un secondo
+    /// </summary>
+    public int ConsumoStaminaCorsa = 35;
+    /// <summary>
+    /// Quanta stamina viene consumata con il salto
+    /// Il valore diminuisce la stamina di netto
+    /// </summary>
+    public int ConsumoStaminaSalto = 40;
+
+    /// <summary>
     /// La velocità orizzontale e verticale del personaggio
+    /// Ogni valore è espresso per pixel al secondo.
     /// </summary>
     public Vector2 speed;
 
@@ -216,13 +277,17 @@ public class PhysicsManager : MonoBehaviour
                 break;
             case StateManager.State.Run:
                 speed.x = Direction ? +RunSpeed : -RunSpeed;
+                Stamina -= ConsumoStaminaCorsa * Time.deltaTime;
+                if (Stamina <= 0)
+                    State = StateManager.State.Walk;
                 break;
             case StateManager.State.Jumping:
-                if (IsOnGround == true)
+                if (IsOnGround == true && Stamina >= ConsumoStaminaSalto)
                 {
                     IsOnGround = false;
                     Jumping = true;
                     speed.y = JumpStrengthMaximum;
+                    Stamina -= ConsumoStaminaSalto;
                 }
                 break;
             case StateManager.State.Falling:
@@ -243,6 +308,7 @@ public class PhysicsManager : MonoBehaviour
                 break;
         }
 
+        Stamina += RecuperoStamina * Time.deltaTime;
         speed.y -= Gravity;
         PrevState = State;
         rigidbody2D.velocity = new Vector3(speed.x * Time.deltaTime, speed.y * Time.deltaTime, 0.0f);
