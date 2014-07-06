@@ -155,8 +155,6 @@ public class FollowCamera : MonoBehaviour
         float objWidth = obj.renderer.bounds.size.x;
         float objHeight = obj.renderer.bounds.size.y;
 
-        Debug.Log(string.Format("camera ({0}, {1})  object ({2}, {3})", cameraWidth, cameraHeight, objWidth, objHeight));
-
         Vector3 dstPos = obj.transform.localPosition;
         switch (type)
         {
