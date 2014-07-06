@@ -26,6 +26,10 @@ public class FadeInOut : MonoBehaviour {
 			fadeIn = false;
 			testo.color = Color.white;
 		}
-
+        else if (fadeOut && testo.color == endBlack)
+        {
+            fadeOut = false;
+            testo.color = Color.black;
+        }
 	}
 }

@@ -50,7 +50,6 @@ public class Tutorial_Script : MonoBehaviour {
 		tutorialString.Add (childTransform[6], "Tutorial (Comandi Base 5)\nPremere Barra Spaziatrice per saltare.");
 	}
 
-	int i = 0;
 	// Update is called once per frame
 	void Update () {
 		foreach (Transform t in childTransform)

@@ -6,9 +6,6 @@ public class MovingPlatform : MonoBehaviour {
 	public Transform[] nodi;
 	public float speed;
 
-	public static int ID = -1;
-	public int active;
-
 	private int currentNode;
 	private int nextNode
 	{

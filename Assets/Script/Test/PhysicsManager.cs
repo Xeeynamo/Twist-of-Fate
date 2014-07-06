@@ -4,7 +4,6 @@ using System.Collections;
 public class PhysicsManager : MonoBehaviour
 {
     private int groundMask = 1 << 8 | 1 << 10;
-    private int stairMask = 1 << 10 | 1 << 11;
     private int playerMask = 1 << 13;
 
     /// <summary>
@@ -104,8 +103,6 @@ public class PhysicsManager : MonoBehaviour
     /// Ogni valore è espresso per pixel al secondo.
     /// </summary>
     public Vector2 speed;
-
-    private float raycastWidth = 0.45f;
 
     /// <summary>
     /// Ottiene oppure imposta lo stato corrente

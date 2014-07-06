@@ -3,8 +3,6 @@ using System.Collections;
 
 public class Knight : MonoBehaviour
 {
-    private int groundMask = 1 << 8;
-
     PhysicsManager physManager;
 
     public float AttackStrength = 200.0f;

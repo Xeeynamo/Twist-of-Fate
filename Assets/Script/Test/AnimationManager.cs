@@ -3,7 +3,6 @@ using System.Collections;
 
 public class AnimationManager : MonoBehaviour
 {
-    Transform transform;
     Animator animator;
     public StateManager.State state;
 
