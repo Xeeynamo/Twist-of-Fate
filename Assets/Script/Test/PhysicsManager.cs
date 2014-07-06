@@ -3,8 +3,8 @@ using System.Collections;
 
 public class PhysicsManager : MonoBehaviour
 {
-    private int groundMask = 1 << 8 | 1 << 10;
-    private int playerMask = 1 << 13;
+    public static int groundMask = 1 << 8 | 1 << 10;
+    public static int playerMask = 1 << 13;
 
     /// <summary>
     /// Rappresenta l'HUD collegata al personaggio.
@@ -147,16 +147,29 @@ public class PhysicsManager : MonoBehaviour
     /// <param name="mask">Maschera su cui lavorare</param>
     /// <param name="color">Colore del raggio in modalità debug</param>
     /// <returns>true se collide, altrimenti false</returns>
-    public bool EvaluateRaycastH(float x, float y, float width, int mask, Color color)
+    public static bool EvaluateRaycastH(Transform t, float x, float y, float width, int mask, Color color)
     {
         float distance = width;
-        Vector2 vOrigin = new Vector2(transform.position.x + x, transform.position.y + y);
-        Vector3 vDirection = Direction ? Vector3.right : Vector3.left;
+        Vector2 vOrigin = new Vector2(t.position.x + x, t.position.y + y);
+        Vector3 vDirection = width >= 0 ? Vector3.right : Vector3.left;
 
         Debug.DrawRay(vOrigin, vDirection * distance, color);
         if (Physics2D.Raycast(vOrigin, vDirection, distance, mask))
             return true;
         return false;
+    }
+
+    /// <summary>
+    /// Processa un raycast che lavora orizzontalmente
+    /// </summary>
+    /// <param name="y">Posizione Y dal quale far partire il raggio</param>
+    /// <param name="width">Lunghezza del raggio</param>
+    /// <param name="mask">Maschera su cui lavorare</param>
+    /// <param name="color">Colore del raggio in modalità debug</param>
+    /// <returns>true se collide, altrimenti false</returns>
+    public bool EvaluateRaycastH(float x, float y, float width, int mask, Color color)
+    {
+        return EvaluateRaycastH(transform, x, y, Direction ? width : -width, mask, color);
     }
 
     /// <summary>
