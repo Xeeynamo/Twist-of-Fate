@@ -142,11 +142,8 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
   m_HDR: 0
   m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: .0219999999
 --- !u!4 &335698301
 Transform:
   m_ObjectHideFlags: 0
@@ -158,7 +155,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
 --- !u!82 &335698302
 AudioSource:
   m_ObjectHideFlags: 0
@@ -169,7 +165,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: 1077aa88a79abbd4ea58efa990079167, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: .5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -263,7 +259,6 @@ Transform:
   m_LocalScale: {x: 0, y: 0, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
 --- !u!1 &1958077614
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,7 +267,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1958077616}
-  - 132: {fileID: 1958077615}
   - 114: {fileID: 1958077617}
   m_Layer: 0
   m_Name: Storia
@@ -281,29 +275,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!132 &1958077615
-GUIText:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1958077614}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Text: Gui Text
-  m_Anchor: 4
-  m_Alignment: 0
-  m_PixelOffset: {x: 0, y: 0}
-  m_LineSpacing: 1
-  m_TabSize: 4
-  m_Font: {fileID: 0}
-  m_Material: {fileID: 0}
-  m_FontSize: 0
-  m_FontStyle: 0
-  m_Color:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_PixelCorrect: 1
-  m_RichText: 1
 --- !u!4 &1958077616
 Transform:
   m_ObjectHideFlags: 0
@@ -315,7 +286,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
 --- !u!114 &1958077617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,11 +300,18 @@ MonoBehaviour:
   caratteriAlSecondo: 8
   showText: []
   NomeGiocatore: 
-  areaWidth: 20
-  areaHeight: 10
+  areaWidth: 300
+  areaHeight: 76
   imgStory: {fileID: 1075061895}
   imgList:
   - {fileID: 2800000, guid: 039634a774e6cbd4292f8421c3333288, type: 3}
   - {fileID: 2800000, guid: 1805c15a19b7ce141b640055606ed186, type: 3}
   - {fileID: 2800000, guid: a99d553db44eeb74d8cf027f715590cb, type: 3}
   - {fileID: 2800000, guid: d9d3dc0705ac17f41bd01a08bacd3b15, type: 3}
+  storyBg: {fileID: 0}
+  nameBg: {fileID: 0}
+  storyText: 
+  screenXT: .5
+  screenYT: .800000012
+  areaWidthT: 500
+  areaHeightT: 100

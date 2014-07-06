@@ -8,9 +8,11 @@ public class MainMenuBtn : MonoBehaviour {
 	public Texture2D rollOverTexture;
 	public AudioClip beep;
 	public bool quitButton = false;
+
+	private AudioSource music;
 	// Use this for initialization
 	void Start () {
-	
+		music = GetComponent<AudioSource> ();
 	}
 	
 	// Update is called once per frame
@@ -31,7 +33,7 @@ public class MainMenuBtn : MonoBehaviour {
 	IEnumerator OnMouseUp()
 	{
 		audio.PlayOneShot (beep);
-		yield return new WaitForSeconds(0.35f);
+		yield return new WaitForSeconds(1f);
 		if (quitButton)
 			Application.Quit ();
 		else
