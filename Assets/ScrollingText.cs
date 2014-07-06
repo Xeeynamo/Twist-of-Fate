@@ -55,6 +55,10 @@ public class ScrollingText : MonoBehaviour {
 		{
 			imgStory.texture = imgList[3];
 		}
+		if(actText == 7)
+		{
+			Application.LoadLevel (2);
+		}
 		if(timer > secondiPerOgniCarattere && curChar < showText[actText].Length)
 		{
 			int actChar = Mathf.FloorToInt(timer/secondiPerOgniCarattere);

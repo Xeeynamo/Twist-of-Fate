@@ -10,6 +10,6 @@ public class attivaScale : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		att.enabled= (SaliScale.scaleSu);
+		att.enabled= (SaliScale.scaleSu || ScendiScale.scaleGiù);
 	}
 }

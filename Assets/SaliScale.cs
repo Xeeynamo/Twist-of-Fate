@@ -21,6 +21,7 @@ public class SaliScale : MonoBehaviour {
 			else
 			{
 				scaleSu = false;
+				ScendiScale.scaleGiù = false;
 			}
 		}
 		else 
