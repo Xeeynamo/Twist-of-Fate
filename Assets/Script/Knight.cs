@@ -35,7 +35,7 @@ public class Knight : MonoBehaviour
         switch (State)
         {
             case StateManager.State.Stand:
-                physManager.speedX = 0;
+                physManager.speed.x = 0;
                 State = StateManager.State.Turn;
                 break;
             case StateManager.State.Walk:
@@ -52,7 +52,7 @@ public class Knight : MonoBehaviour
                 physManager.State = StateManager.State.Walk;
                 break;
             case StateManager.State.Alert:
-                physManager.speedX = (physManager.Direction ? physManager.WalkSpeed : -physManager.WalkSpeed) / 2.0f;
+                physManager.speed.x = (physManager.Direction ? physManager.WalkSpeed : -physManager.WalkSpeed) / 2.0f;
                 if (physManager.CheckEnemyNear())
                 {
                     timerBeforeAttack = 0;
@@ -70,10 +70,10 @@ public class Knight : MonoBehaviour
                 }
                 break;
             case StateManager.State.AlertBack:
-                physManager.speedX = (physManager.Direction ? physManager.WalkSpeed : -physManager.WalkSpeed) / 2.0f;
+                physManager.speed.x = (physManager.Direction ? physManager.WalkSpeed : -physManager.WalkSpeed) / 2.0f;
                 if (physManager.CheckEnemyAround())
                 {
-                    physManager.speedX *= -1;
+                    physManager.speed.x *= -1;
                 }
                 timerAlertBack += Time.deltaTime;
                 if (timerAlertBack >= TimeAlertBack)
@@ -83,7 +83,7 @@ public class Knight : MonoBehaviour
                 }
                 break;
             case StateManager.State.PrepareAttack:
-                physManager.speedX = 0;
+                physManager.speed.x = 0;
                 timerBeforeAttack += Time.deltaTime;
                 if (timerBeforeAttack >= TimeBeforeAttack)
                 {
@@ -96,11 +96,11 @@ public class Knight : MonoBehaviour
                 if (strength < 0)
                 {
                     timerAlertBack = 0;
-                    physManager.speedX = 0;
+                    physManager.speed.x = 0;
                     State = StateManager.State.AlertBack;
                 }
                 else
-                    physManager.speedX = physManager.Direction ? strength : -strength;
+                    physManager.speed.x = physManager.Direction ? strength : -strength;
                 break;
         }
     }

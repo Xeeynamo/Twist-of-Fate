@@ -19,14 +19,30 @@ public class PhysicsManager : MonoBehaviour
     /// Numero di pixel percorribili al secondo in corsa
     /// </summary>
     public float RunSpeed = 160.0f;
-    public float JumpStrength = 256.0f;
-    public float JumpMinimum = 64.0f;
-    public float JumpMaximum = 4.0f;
+    /// <summary>
+    /// Forza del salto (praticamente la velocità con cui salta).
+    /// Dato che il salto è pesato, questa sarà la massima forza
+    /// che un salto può avere.
+    /// </summary>
+    public float JumpStrengthMaximum = 256.0f;
+    /// <summary>
+    /// Il minimo di forza applicabile nel salto.
+    /// </summary>
+    public float JumpStrengthMinimum = 64.0f;
+    /// <summary>
+    /// Forza della scivolata. Con questa si decide la sua velocità.
+    /// </summary>
     public float ScivolataForza = 250.0f;
+    /// <summary>
+    /// Inerzia della scivolata. Determina la forza che oppone quella della
+    /// scivolata, in modo da farlo rallentare più o meno velocemente.
+    /// </summary>
     public float ScivolataInerzia = 5.0f;
 
-    public float speedX = 0;
-    public float speedY = 0;
+    /// <summary>
+    /// La velocità orizzontale e verticale del personaggio
+    /// </summary>
+    public Vector2 speed;
 
     private float raycastWidth = 0.45f;
 
@@ -170,7 +186,7 @@ public class PhysicsManager : MonoBehaviour
         {
             IsOnGround = true;
             Jumping = false;
-            speedY = 0;
+            speed.y = 0;
             if (State == StateManager.State.Unpressed ||
                 PrevState == StateManager.State.Falling)
                 State = StateManager.State.Stand;
@@ -178,7 +194,7 @@ public class PhysicsManager : MonoBehaviour
         else
         {
             IsOnGround = false;
-            if (speedY <= 0)
+            if (speed.y <= 0)
                 State = StateManager.State.Falling;
         }
 
@@ -187,26 +203,26 @@ public class PhysicsManager : MonoBehaviour
             case StateManager.State.Stand:
                 if (IsOnGround == true)
                 {
-                    speedX = 0.0f;
+                    speed.x = 0.0f;
                 }
                 else
                 {
-                    if (speedY >= JumpMinimum)
-                        speedY = JumpMinimum;
+                    if (speed.y >= JumpStrengthMinimum)
+                        speed.y = JumpStrengthMinimum;
                 }
                 break;
             case StateManager.State.Walk:
-                speedX = Direction ? +WalkSpeed : -WalkSpeed;
+                speed.x = Direction ? +WalkSpeed : -WalkSpeed;
                 break;
             case StateManager.State.Run:
-                speedX = Direction ? +RunSpeed : -RunSpeed;
+                speed.x = Direction ? +RunSpeed : -RunSpeed;
                 break;
             case StateManager.State.Jumping:
                 if (IsOnGround == true)
                 {
                     IsOnGround = false;
                     Jumping = true;
-                    speedY = JumpStrength;
+                    speed.y = JumpStrengthMaximum;
                 }
                 break;
             case StateManager.State.Falling:
@@ -214,21 +230,21 @@ public class PhysicsManager : MonoBehaviour
                     State = StateManager.State.Stand;
                 break;
             case StateManager.State.PreScivolata:
-                speedX = Direction ? +ScivolataForza : -ScivolataForza;
+                speed.x = Direction ? +ScivolataForza : -ScivolataForza;
                 State = StateManager.State.Scivolata;
                 break;
             case StateManager.State.Scivolata:
-                speedX += (Direction ? -ScivolataInerzia : +ScivolataInerzia);
-                if (Direction ? speedX <= 0 : speedX >= 0)
+                speed.x += (Direction ? -ScivolataInerzia : +ScivolataInerzia);
+                if (Direction ? speed.x <= 0 : speed.x >= 0)
                 {
-                    speedX = 0;
+                    speed.x = 0;
                     State = StateManager.State.Crouch;
                 }
                 break;
         }
 
-        speedY -= Gravity;
+        speed.y -= Gravity;
         PrevState = State;
-        rigidbody2D.velocity = new Vector3(speedX * Time.deltaTime, speedY * Time.deltaTime, 0.0f);
+        rigidbody2D.velocity = new Vector3(speed.x * Time.deltaTime, speed.y * Time.deltaTime, 0.0f);
     }
 }
