@@ -17,6 +17,7 @@ public class Richard : MonoBehaviour
     private float TimerScattoRimastoRight = 0f;
     private bool TastoDirezionalePrecedentementePremuto = false;
     private bool ScattoAttivato = false;
+	public bool salto = false;
 	public Color col;
     // Use this for initialization
     void Start()
@@ -63,6 +64,11 @@ public class Richard : MonoBehaviour
 
 	StateManager.State getStateFromInput()
 	{
+		//Controllo sul rilascio dei tasti
+		if (!We.Input.Jump) {
+			salto = false;	
+		     }
+
         // TimerScatto serve per far scattare il personaggio alla doppia
         // pressione (velocememnte) di un tasto direzionale. Avremo due
         // contatori (uno per la freccia direzionale destra ed uno per la
@@ -75,8 +81,9 @@ public class Richard : MonoBehaviour
         // personaggio di farlo saltare sia in camminata sia in corsa. Inoltre, se
         // lo scatto è attivato ed il personaggio salta in corsa, all'atterraggio ha
         // bisogno di continuare la corsa. Sarebbe stato stupido il contrario, indi.
-		if (We.Input.Jump == true)
+		if (We.Input.Jump == true && !salto)
 		{
+			salto = true;
 			return StateManager.State.Jumping;
 		}
 		if (We.Input.MoveLeft == true)
