@@ -94,9 +94,9 @@ public class Richard : MonoBehaviour
             // Se il tasto corrente (che è stato appena premuto) non è stato premuto nel frame precedente
             // ed il tempo che è passato dalla prima volta che è stato premuto è minore del tempo richiesto
             // della doppia pressione per attivare lo scatto, allora vai e permetti lo scatto!
-            if ((TastoDirezionalePrecedentementePremuto == false && TimerScattoRimastoLeft < TimerScatto)
+            if (((TastoDirezionalePrecedentementePremuto == false && TimerScattoRimastoLeft < TimerScatto)
                 // Ritorna Run invece che Walk anche se lo scatto è comunque attivo.
-                || ScattoAttivato == true)
+			     || ScattoAttivato == true)&&physManager.Stamina > 0 )
             {
                 // Dice che è in scatto.
                 ScattoAttivato = true;
@@ -120,8 +120,8 @@ public class Richard : MonoBehaviour
             // Cambia direzione del personaggio in base al tasto direzionale premuto
 			physManager.Direction = true;
 
-            if ((TastoDirezionalePrecedentementePremuto == false && TimerScattoRimastoRight < TimerScatto)
-                || ScattoAttivato == true)
+            if (((TastoDirezionalePrecedentementePremuto == false && TimerScattoRimastoRight < TimerScatto)
+			     || ScattoAttivato == true)&&physManager.Stamina > 0)
             {
                 ScattoAttivato = true;
                 return StateManager.State.Run;

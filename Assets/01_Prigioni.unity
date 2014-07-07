@@ -44953,7 +44953,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: WalkSpeed
-      value: 80
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: hud
@@ -65060,7 +65060,6 @@ GameObject:
   - 114: {fileID: 1607201391}
   - 114: {fileID: 1607201388}
   - 114: {fileID: 1607201385}
-  - 114: {fileID: 1607201392}
   m_Layer: 13
   m_Name: RICHARD
   m_TagString: Player
@@ -65165,7 +65164,7 @@ MonoBehaviour:
   IsOnGround: 0
   Jumping: 0
   Gravity: 8
-  WalkSpeed: 80
+  WalkSpeed: 60
   RunSpeed: 160
   JumpStrengthMaximum: 256
   JumpStrengthMinimum: 64
@@ -65212,30 +65211,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 1
---- !u!114 &1607201392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1607201382}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1b82d7d12404384b8a7760b28bc5a69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  statoCorrente: 0
-  Bullet: {fileID: 0}
-  movimento: 0
-  abbassato: 0
-  scivolata: 0
-  tastosciDx: 0
-  tastosciSx: 0
-  difesa: 0
-  st: 1
-  tempoSalto: 0
-  fisVel: {x: 0, y: 0}
-  terra: 0
-  salto: 0
 --- !u!1 &1610501286
 GameObject:
   m_ObjectHideFlags: 0
