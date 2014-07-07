@@ -33,7 +33,7 @@ AnimationClip:
     attribute: movimento
     path: 
     classID: 114
-    script: {fileID: 11500000, guid: c1b82d7d12404384b8a7760b28bc5a69, type: 3}
+    script: {fileID: 11500000, guid: 48c637c8424422a4bb4fa38d4faada32, type: 3}
   m_PPtrCurves:
   - curve:
     - time: 0
@@ -81,7 +81,7 @@ AnimationClip:
     genericBindings:
     - path: 0
       attribute: 1541466389
-      script: {fileID: 11500000, guid: c1b82d7d12404384b8a7760b28bc5a69, type: 3}
+      script: {fileID: 11500000, guid: 48c637c8424422a4bb4fa38d4faada32, type: 3}
       classID: 114
       customType: 0
       isPPtrCurve: 0
@@ -144,6 +144,6 @@ AnimationClip:
     attribute: movimento
     path: 
     classID: 114
-    script: {fileID: 11500000, guid: c1b82d7d12404384b8a7760b28bc5a69, type: 3}
+    script: {fileID: 11500000, guid: 48c637c8424422a4bb4fa38d4faada32, type: 3}
   m_EulerEditorCurves: []
   m_Events: []

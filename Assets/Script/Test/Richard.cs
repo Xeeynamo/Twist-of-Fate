@@ -18,6 +18,9 @@ public class Richard : MonoBehaviour
     private bool TastoDirezionalePrecedentementePremuto = false;
     private bool ScattoAttivato = false;
 	public bool salto = false;
+	public bool abbassato;
+	public bool movimento;
+	public bool scivo=false;
 	public Color col;
     // Use this for initialization
     void Start()
@@ -52,14 +55,22 @@ public class Richard : MonoBehaviour
                     state = CurrentState;
                 }
                 // Controllo che permette di fare la scivolata
-                if (CurrentState == StateManager.State.Crouch && state == StateManager.State.Walk)
-                {
+			if (CurrentState == StateManager.State.Crouch && (We.Input.MoveLeft || We.Input.MoveRight) && !scivo)
+			{
                     state = StateManager.State.PreScivolata;
+				if (We.Input.MoveLeft )
+					physManager.Direction = false;
+				else
+					physManager.Direction = true;
+				scivo = true;
                 }
                 break;
         }
 		physManager.State = state;
 		_Transform = transform;
+
+		if(!We.Input.MoveLeft && ! We.Input.MoveRight)
+			scivo = false;
     }
 
 	StateManager.State getStateFromInput()
@@ -86,7 +97,7 @@ public class Richard : MonoBehaviour
 			salto = true;
 			return StateManager.State.Jumping;
 		}
-		if (We.Input.MoveLeft == true)
+		if (We.Input.MoveLeft == true && !abbassato )
 		{
             // Cambia direzione del personaggio in base al tasto direzionale premuto
 			physManager.Direction = false;
@@ -115,7 +126,7 @@ public class Richard : MonoBehaviour
                 return StateManager.State.Walk;
             }
 		}
-		if (We.Input.MoveRight == true)
+		if (We.Input.MoveRight == true && !abbassato)
         {
             // Cambia direzione del personaggio in base al tasto direzionale premuto
 			physManager.Direction = true;
@@ -141,10 +152,11 @@ public class Richard : MonoBehaviour
         // e che lo scatto per la corsa è disattivato
 		ScattoAttivato = false;
 
-		if (We.Input.MoveDown == true)
+		if (We.Input.MoveDown == true && ! movimento)
         {
             // Abbassa il personaggio
             transform.position = new Vector2(transform.position.x, transform.position.y - 0.10f);
+
 			return StateManager.State.Crouch;
 		}
 		if (We.Input.Attack2 == true)

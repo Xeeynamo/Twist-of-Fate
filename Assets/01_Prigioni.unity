@@ -44909,11 +44909,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.x
-      value: .849106014
+      value: 6.02368164
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 7.46518326
+      value: 5.00109911
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.z
@@ -65097,7 +65097,7 @@ Transform:
   m_PrefabInternal: {fileID: 1074959724}
   m_GameObject: {fileID: 1607201382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .849106014, y: 7.46518326, z: 0}
+  m_LocalPosition: {x: 6.02368164, y: 5.00109911, z: 0}
   m_LocalScale: {x: 1.00823271, y: 1.00823271, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -65116,6 +65116,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimerScatto: .5
   salto: 0
+  abbassato: 0
+  movimento: 0
+  scivo: 0
   col: {r: 0, g: 0, b: 0, a: 0}
 --- !u!95 &1607201386
 Animator:
