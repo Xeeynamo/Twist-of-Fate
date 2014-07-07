@@ -299,8 +299,9 @@ public class PhysicsManager : MonoBehaviour
                     speed.y = JumpStrengthMaximum;
                     Stamina -= ConsumoStaminaSalto;
                 }
+
                 break;
-            case StateManager.State.Falling:
+			case StateManager.State.Falling:
                 if (IsOnGround)
                     State = StateManager.State.Stand;
                 break;

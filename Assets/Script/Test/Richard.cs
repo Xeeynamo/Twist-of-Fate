@@ -81,7 +81,7 @@ public class Richard : MonoBehaviour
         // personaggio di farlo saltare sia in camminata sia in corsa. Inoltre, se
         // lo scatto è attivato ed il personaggio salta in corsa, all'atterraggio ha
         // bisogno di continuare la corsa. Sarebbe stato stupido il contrario, indi.
-		if (We.Input.Jump == true && !salto)
+		if (We.Input.Jump == true && !salto && physManager.Stamina >= physManager.ConsumoStaminaSalto)
 		{
 			salto = true;
 			return StateManager.State.Jumping;

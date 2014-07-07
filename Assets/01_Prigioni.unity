@@ -252,7 +252,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 5827040}
   - 212: {fileID: 5827041}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Scalino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -303,7 +303,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 6027342}
   - 212: {fileID: 6027343}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Dietro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -453,7 +453,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 11351114}
   - 212: {fileID: 11351115}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Scalino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1801,7 +1801,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 52861371}
   - 212: {fileID: 52861372}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Dietro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2309,95 +2309,99 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100036, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100038, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100012, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100028, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100008, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100018, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100042, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100016, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100014, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100040, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100044, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100032, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100024, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100020, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100026, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100022, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100030, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100010, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100034, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
+      propertyPath: lato
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
@@ -7847,7 +7851,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 191025082}
   - 212: {fileID: 191025084}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Gradino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9647,7 +9651,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 227618056}
   - 212: {fileID: 227618057}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Dietro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10632,7 +10636,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 241941593}
   - 212: {fileID: 241941594}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Dietro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13393,7 +13397,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 292797322}
   - 212: {fileID: 292797324}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Gradino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18081,7 +18085,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 404827265}
   - 212: {fileID: 404827268}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Gradino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22356,7 +22360,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 512660165}
   - 212: {fileID: 512660166}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Dietro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22860,7 +22864,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 522676353}
   - 212: {fileID: 522676354}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Scalino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23389,7 +23393,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 530398659}
   - 212: {fileID: 530398661}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Gradino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24536,7 +24540,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 554472868}
   - 212: {fileID: 554472869}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Scalino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25142,7 +25146,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 572492994}
   - 212: {fileID: 572492996}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Gradino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26195,7 +26199,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 595786085}
   - 212: {fileID: 595786088}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Gradino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30586,7 +30590,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 712184233}
   - 212: {fileID: 712184234}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Scalino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33199,7 +33203,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 779355916}
   - 212: {fileID: 779355919}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Gradino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33256,7 +33260,7 @@ GameObject:
   - 68: {fileID: 779853791}
   - 114: {fileID: 779853794}
   - 114: {fileID: 779853795}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Scala
   m_TagString: Stairs
   m_Icon: {fileID: 0}
@@ -33355,6 +33359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ae9ab494a6635e4cb6dc2f86f6a0ae7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lato: 1
 --- !u!1 &780943874
 GameObject:
   m_ObjectHideFlags: 0
@@ -33364,7 +33369,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 780943875}
   - 212: {fileID: 780943876}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Scalino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35504,7 +35509,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 838588614}
   - 212: {fileID: 838588615}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Gradino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36043,7 +36048,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 854069268}
   - 212: {fileID: 854069270}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Gradino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37422,7 +37427,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 893900888}
   - 212: {fileID: 893900889}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Dietro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37996,7 +38001,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 905448992}
   - 212: {fileID: 905448995}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Gradino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40210,7 +40215,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 952656722}
   - 212: {fileID: 952656724}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Gradino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42851,7 +42856,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1006923265}
   - 212: {fileID: 1006923264}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Gradino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42953,7 +42958,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1013331053}
   - 212: {fileID: 1013331054}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Dietro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43838,7 +43843,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1036810225}
   - 212: {fileID: 1036810226}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Dietro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44904,11 +44909,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 6.74857712
+      value: .849106014
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.11506844
+      value: 7.46518326
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.z
@@ -44961,6 +44966,14 @@ Prefab:
     - target: {fileID: 11400002, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: ConsumoStaminaSalto
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
+      propertyPath: JumpStrengthMaximum
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
+      propertyPath: JumpStrengthMinimum
+      value: 64
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
@@ -47026,7 +47039,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1128462890}
   - 212: {fileID: 1128462891}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Scalino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47600,7 +47613,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1145142031}
   - 212: {fileID: 1145142032}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Dietro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49693,7 +49706,7 @@ GameObject:
   - 68: {fileID: 1199876171}
   - 114: {fileID: 1199876170}
   - 114: {fileID: 1199876174}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Scala
   m_TagString: Stairs
   m_Icon: {fileID: 0}
@@ -49792,6 +49805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ae9ab494a6635e4cb6dc2f86f6a0ae7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lato: 0
 --- !u!1 &1206057569
 GameObject:
   m_ObjectHideFlags: 0
@@ -51885,11 +51899,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100042, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100044, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400042, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_LocalScale.x
@@ -51933,87 +51947,87 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100032, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100008, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100018, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100014, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100012, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100024, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100034, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100030, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100010, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100040, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100026, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100038, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100028, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100036, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100016, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100020, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100022, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
       propertyPath: m_Layer
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 304ad6542e6d5fc49b8857b064383905, type: 2}
@@ -52416,7 +52430,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1280319522}
   - 212: {fileID: 1280319525}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Gradino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57160,7 +57174,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1383568337}
   - 212: {fileID: 1383568338}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Scalino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57900,7 +57914,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1404443146}
   - 212: {fileID: 1404443147}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Dietro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61922,7 +61936,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1508360766}
   - 212: {fileID: 1508360767}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Scalino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64572,7 +64586,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1586440864}
   - 212: {fileID: 1586440866}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Gradino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65046,6 +65060,7 @@ GameObject:
   - 114: {fileID: 1607201391}
   - 114: {fileID: 1607201388}
   - 114: {fileID: 1607201385}
+  - 114: {fileID: 1607201392}
   m_Layer: 13
   m_Name: RICHARD
   m_TagString: Player
@@ -65083,7 +65098,7 @@ Transform:
   m_PrefabInternal: {fileID: 1074959724}
   m_GameObject: {fileID: 1607201382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.74857712, y: 2.11506844, z: 0}
+  m_LocalPosition: {x: .849106014, y: 7.46518326, z: 0}
   m_LocalScale: {x: 1.00823271, y: 1.00823271, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -65197,6 +65212,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 1
+--- !u!114 &1607201392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1607201382}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1b82d7d12404384b8a7760b28bc5a69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statoCorrente: 0
+  Bullet: {fileID: 0}
+  movimento: 0
+  abbassato: 0
+  scivolata: 0
+  tastosciDx: 0
+  tastosciSx: 0
+  difesa: 0
+  st: 1
+  tempoSalto: 0
+  fisVel: {x: 0, y: 0}
+  terra: 0
+  salto: 0
 --- !u!1 &1610501286
 GameObject:
   m_ObjectHideFlags: 0
@@ -67857,7 +67896,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1677579318}
   - 212: {fileID: 1677579319}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Dietro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70543,7 +70582,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1736120987}
   - 212: {fileID: 1736120988}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Dietro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71139,7 +71178,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1743744496}
   - 212: {fileID: 1743744499}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Gradino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72314,7 +72353,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1781765966}
   - 212: {fileID: 1781765967}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Scalino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73684,7 +73723,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1815562321}
   - 212: {fileID: 1815562322}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Scalino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75009,7 +75048,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1843154899}
   - 212: {fileID: 1843154900}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Scalino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76646,7 +76685,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1884820044}
   - 212: {fileID: 1884820047}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Gradino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80316,7 +80355,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1968939193}
   - 212: {fileID: 1968939194}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Scalino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81752,7 +81791,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1991212516}
   - 212: {fileID: 1991212517}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Dietro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83144,7 +83183,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2030178255}
   - 212: {fileID: 2030178256}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Dietro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87160,7 +87199,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2127039406}
   - 212: {fileID: 2127039405}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Scalino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
