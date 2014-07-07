@@ -7,8 +7,33 @@ public class HudHandler : MonoBehaviour
     public GameObject BarMana;
     public float MaxHealth = 100.0f;
     public float MaxMana = 100.0f;
-    public float ValueHealth;
-    public float ValueMana;
+    public float ValueHealth
+    {
+        get { return valueHealth; }
+        set
+        {
+            valueHealth = value;
+            if (valueHealth < 0)
+                valueHealth = 0;
+            else if (valueHealth > MaxHealth)
+                valueHealth = MaxHealth;
+        }
+    }
+    public float ValueMana
+    {
+        get { return valueHealth; }
+        set
+        {
+            valueMana = value;
+            if (valueMana < 0)
+                valueMana = 0;
+            else if (valueMana > MaxMana)
+                valueMana = MaxMana;
+        }
+    }
+
+    private float valueHealth;
+    private float valueMana;
 
     void Start()
     {
