@@ -29,6 +29,16 @@ public class FollowCamera : MonoBehaviour
     public GameObject ObjectToFollow;
 
     /// <summary>
+    /// Sguardo temporaneo verso un determinato oggetto
+    /// </summary>
+    public GameObject ObjectPeek;
+
+    /// <summary>
+    /// Quanto tempo per lo sguardo
+    /// </summary>
+    public float PeekTime = 8.0f;
+
+    /// <summary>
     /// Bordo in alto a sinistra della telecamera
     /// </summary>
     public GameObject BoundTopLeft;
@@ -60,6 +70,14 @@ public class FollowCamera : MonoBehaviour
 
     private float BackgroundBoundsSizeX;
     private float BackgroundBoundsSizeY;
+    public float timer;
+    private Vector2 prevCoord;
+
+    public void setObjectToFollow(GameObject obj)
+    {
+        timer = 0;
+        ObjectToFollow = obj;
+    }
 
     private void AdjustBackground()
     {
@@ -99,6 +117,15 @@ public class FollowCamera : MonoBehaviour
         BackgroundBoundsSizeX = SpriteBackground.renderer.bounds.size.x;
         BackgroundBoundsSizeY = SpriteBackground.renderer.bounds.size.y;
         AdjustBackground();
+
+        // prende la posizione X ed Y, salvandosi la Z originale
+        if (ObjectToFollow != null)
+        {
+            transform.position = new Vector3(ObjectToFollow.transform.position.x,
+                                      ObjectToFollow.transform.position.y,
+                // la z deve rimanere sempre la stessa
+                                      this.transform.position.z);
+        }
     }
 
     private enum BorderType
@@ -178,6 +205,24 @@ public class FollowCamera : MonoBehaviour
         obj.transform.localPosition = dstPos;
     }
 
+    float ReachThatPoint(float pSrc, float pDst, float speed)
+    {
+        if (pSrc > pDst)
+        {
+            pSrc -= speed * Time.deltaTime;
+            if (pSrc < pDst)
+                pSrc = pDst;
+        }
+        else if (pSrc < pDst)
+        {
+            pSrc += speed * Time.deltaTime;
+            if (pSrc > pDst)
+                pSrc = pDst;
+        }
+        else pSrc = pDst;
+        return pSrc;
+    }
+
     void Update()
     {
         // Memorizza la vecchia posizione della telcamera, che poi verrà modificata
@@ -187,13 +232,28 @@ public class FollowCamera : MonoBehaviour
 
         // verifica inanzitutto che l'oggetto da seguire esista e sia impostato,
         // altrimenti non seguire alcun oggetto
-        if (ObjectToFollow != null)
+        const float CameraSpeed = 9.6f;
+        if (ObjectPeek != null)
         {
-            // prende la posizione X ed Y, salvandosi la Z originale
-            pos = new Vector3(ObjectToFollow.transform.position.x,
-                                      ObjectToFollow.transform.position.y,
-                // la z deve rimanere sempre la stessa
-                                      this.transform.position.z);
+            pos.x = ReachThatPoint(pos.x, ObjectPeek.transform.position.x, CameraSpeed);
+            pos.y = ReachThatPoint(pos.y, ObjectPeek.transform.position.y, CameraSpeed);
+            if (Mathf.Abs(pos.x - prevCoord.x) < 0.01 &&
+                Mathf.Abs(pos.y - prevCoord.y) < 0.01)
+            {
+                timer += Time.deltaTime;
+                if (timer >= PeekTime)
+                {
+                    timer = 0;
+                    ObjectPeek = null;
+                }
+            }
+            else
+                prevCoord = new Vector2(pos.x, pos.y);
+        }
+        else if (ObjectToFollow != null)
+        {
+            pos.x = ReachThatPoint(pos.x, ObjectToFollow.transform.position.x, CameraSpeed);
+            pos.y = ReachThatPoint(pos.y, ObjectToFollow.transform.position.y, CameraSpeed);
         }
 
         // aggiusta i bordi della telecamera
