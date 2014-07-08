@@ -3,36 +3,70 @@ using System.Collections;
 
 public class Richard : MonoBehaviour
 {
-	public static Transform _Transform;
+    public static Transform _Transform;
 
     PhysicsManager physManager;
 
-	StateManager.State CurrentState
-	{
-		get { return physManager.State; }
-	}
+    StateManager.State CurrentState
+    {
+        get { return physManager.State; }
+    }
 
-	public float TimerScatto = 0.5f;
-	private float TimerScattoRimastoLeft = 0f;
-    private float TimerScattoRimastoRight = 0f;
-    private bool TastoDirezionalePrecedentementePremuto = false;
-    private bool ScattoAttivato = false;
-	public bool salto = false;
-	public bool abbassato;
-	public bool movimento;
-	public bool scivo=false;
-	public Color col;
-    // Use this for initialization
+    #region PARTE DEDICATA ALLO SCATTO
+    /// <summary>
+    /// Tempo minimo necessario per attivare lo scatto alla doppia pressione
+    /// della freccia direzionale
+    /// </summary>
+    public float TimerScatto = 0.5f;
+    /// <summary>
+    /// Timer usato per la freccia direzionale sinistra
+    /// </summary>
+    float timerScattoRimastoLeft = 0f;
+    /// <summary>
+    /// Timer usato per la freccia direzionale destra
+    /// </summary>
+    float timerScattoRimastoRight = 0f;
+    /// <summary>
+    /// Controllo per la freccia direzionale
+    /// </summary>
+    bool tastoDirezionalePrecedentementePremuto = false;
+    /// <summary>
+    /// Controlla se lo scatto è stato attivato.
+    /// Questa variabile è necessaria per dire che lo scatto esiste anche se
+    /// il timer scatto ha raggiunto il suo valore di non-scatto.
+    /// </summary>
+    bool ScattoAttivato = false;
+    #endregion
+
+    #region CONTROLLO TASTI PREMUTI
+    /// <summary>
+    /// Indica se il tasto del salto è stato rilasciato o meno
+    /// </summary>
+    public bool keySalto = false;
+    /// <summary>
+    /// Indica se il tasto della scivolata è stato rilasciato o meno
+    /// </summary>
+    public bool keyScivolata = false;
+    #endregion
+
+    public bool abbassato;
+    public bool movimento;
+
+    /// <summary>
+    /// Inizializzazione
+    /// </summary>
     void Start()
     {
         physManager = GetComponent<PhysicsManager>();
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Chiamato ad ogni frame
+    /// </summary>
     void FixedUpdate()
-	{
+    {
         // Mi memorizzo lo stato precedente per fare delle comparazioni
-		StateManager.State state = CurrentState;
+        StateManager.State state = CurrentState;
         switch (state)
         {
             case StateManager.State.Jumping:
@@ -55,59 +89,61 @@ public class Richard : MonoBehaviour
                     state = CurrentState;
                 }
                 // Controllo che permette di fare la scivolata
-			if (CurrentState == StateManager.State.Crouch && (We.Input.MoveLeft || We.Input.MoveRight) && !scivo)
-			{
+                if (CurrentState == StateManager.State.Crouch && (We.Input.MoveLeft || We.Input.MoveRight) && !keyScivolata)
+                {
                     state = StateManager.State.PreScivolata;
-				if (We.Input.MoveLeft )
-					physManager.Direction = false;
-				else
-					physManager.Direction = true;
-				scivo = true;
+                    if (We.Input.MoveLeft)
+                        physManager.Direction = false;
+                    else
+                        physManager.Direction = true;
+                    keyScivolata = true;
                 }
                 break;
         }
-		physManager.State = state;
-		_Transform = transform;
+        physManager.State = state;
+        _Transform = transform;
 
-		if(!We.Input.MoveLeft && ! We.Input.MoveRight)
-			scivo = false;
+        // controllo se il tasto della scivolata è stato rilasciato
+        if (!We.Input.MoveLeft && !We.Input.MoveRight)
+            keyScivolata = false;
     }
 
-	StateManager.State getStateFromInput()
-	{
-		//Controllo sul rilascio dei tasti
-		if (!We.Input.Jump) {
-			salto = false;	
-		     }
+    StateManager.State getStateFromInput()
+    {
+        // controllo se il tasto del salto è stato rilasciato
+        if (!We.Input.Jump)
+        {
+            keySalto = false;
+        }
 
         // TimerScatto serve per far scattare il personaggio alla doppia
         // pressione (velocememnte) di un tasto direzionale. Avremo due
         // contatori (uno per la freccia direzionale destra ed uno per la
         // sinistra) che aumenteranno all'infinito. Più avanti è spiegato
         // il perché viene fatta questa procedura.
-		TimerScattoRimastoLeft += Time.deltaTime;
-		TimerScattoRimastoRight += Time.deltaTime;
+        timerScattoRimastoLeft += Time.deltaTime;
+        timerScattoRimastoRight += Time.deltaTime;
 
         // Il salto è posizionato qui sopra perché il giocatore deve permettere al
         // personaggio di farlo saltare sia in camminata sia in corsa. Inoltre, se
         // lo scatto è attivato ed il personaggio salta in corsa, all'atterraggio ha
         // bisogno di continuare la corsa. Sarebbe stato stupido il contrario, indi.
-		if (We.Input.Jump == true && !salto && physManager.Stamina >= physManager.ConsumoStaminaSalto)
-		{
-			salto = true;
-			return StateManager.State.Jumping;
-		}
-		if (We.Input.MoveLeft == true && !abbassato )
-		{
+        if (We.Input.Jump == true && !keySalto && physManager.Stamina >= physManager.ConsumoStaminaSalto)
+        {
+            keySalto = true;
+            return StateManager.State.Jumping;
+        }
+        if (We.Input.MoveLeft == true && !abbassato)
+        {
             // Cambia direzione del personaggio in base al tasto direzionale premuto
-			physManager.Direction = false;
+            physManager.Direction = false;
 
             // Se il tasto corrente (che è stato appena premuto) non è stato premuto nel frame precedente
             // ed il tempo che è passato dalla prima volta che è stato premuto è minore del tempo richiesto
             // della doppia pressione per attivare lo scatto, allora vai e permetti lo scatto!
-            if (((TastoDirezionalePrecedentementePremuto == false && TimerScattoRimastoLeft < TimerScatto)
+            if (((tastoDirezionalePrecedentementePremuto == false && timerScattoRimastoLeft < TimerScatto)
                 // Ritorna Run invece che Walk anche se lo scatto è comunque attivo.
-			     || ScattoAttivato == true)&&physManager.Stamina > 0 )
+                 || ScattoAttivato == true) && physManager.Stamina > 0)
             {
                 // Dice che è in scatto.
                 ScattoAttivato = true;
@@ -116,54 +152,54 @@ public class Richard : MonoBehaviour
             else
             {
                 // Vede se il tasto direzionale è stato precedentemente premuto
-                if (TastoDirezionalePrecedentementePremuto == false)
+                if (tastoDirezionalePrecedentementePremuto == false)
                 {
                     // Se no, ora dice il contrario
-                    TastoDirezionalePrecedentementePremuto = true;
+                    tastoDirezionalePrecedentementePremuto = true;
                     // Ma se ne approfitta per resettare il tempo utile per lo scatto
-                    TimerScattoRimastoLeft = 0;
+                    timerScattoRimastoLeft = 0;
                 }
                 return StateManager.State.Walk;
             }
-		}
-		if (We.Input.MoveRight == true && !abbassato)
+        }
+        if (We.Input.MoveRight == true && !abbassato)
         {
             // Cambia direzione del personaggio in base al tasto direzionale premuto
-			physManager.Direction = true;
+            physManager.Direction = true;
 
-            if (((TastoDirezionalePrecedentementePremuto == false && TimerScattoRimastoRight < TimerScatto)
-			     || ScattoAttivato == true)&&physManager.Stamina > 0)
+            if (((tastoDirezionalePrecedentementePremuto == false && timerScattoRimastoRight < TimerScatto)
+                 || ScattoAttivato == true) && physManager.Stamina > 0)
             {
                 ScattoAttivato = true;
                 return StateManager.State.Run;
             }
             else
             {
-                if (TastoDirezionalePrecedentementePremuto == false)
+                if (tastoDirezionalePrecedentementePremuto == false)
                 {
-                    TastoDirezionalePrecedentementePremuto = true;
-                    TimerScattoRimastoRight = 0;
+                    tastoDirezionalePrecedentementePremuto = true;
+                    timerScattoRimastoRight = 0;
                 }
                 return StateManager.State.Walk;
             }
-		}
+        }
         // Qui dice che non è stato premuto alcun tasto direzionale
-		TastoDirezionalePrecedentementePremuto = false;
+        tastoDirezionalePrecedentementePremuto = false;
         // e che lo scatto per la corsa è disattivato
-		ScattoAttivato = false;
+        ScattoAttivato = false;
 
-		if (We.Input.MoveDown == true && ! movimento)
+        if (We.Input.MoveDown == true && !movimento)
         {
             // Abbassa il personaggio
             transform.position = new Vector2(transform.position.x, transform.position.y - 0.10f);
 
-			return StateManager.State.Crouch;
-		}
-		if (We.Input.Attack2 == true)
-		{
-			return StateManager.State.Attack;
-		}
+            return StateManager.State.Crouch;
+        }
+        if (We.Input.Attack2 == true)
+        {
+            return StateManager.State.Attack;
+        }
 
-		return StateManager.State.Unpressed;
-	}
+        return StateManager.State.Unpressed;
+    }
 }

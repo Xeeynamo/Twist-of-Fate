@@ -956,5 +956,25 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RICHARD_HITFRONT1
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 560
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RICHARD_HITFRONT2
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 512
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
