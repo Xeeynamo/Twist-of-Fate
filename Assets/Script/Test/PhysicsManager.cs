@@ -198,7 +198,7 @@ public class PhysicsManager : MonoBehaviour
     /// <returns></returns>
     public bool CheckGround()
     {
-        return EvaluateRaycastH(Direction ? -0.14f : -0.14f, -0.48f, 0.28f, groundMask, Color.green);
+        return EvaluateRaycastH(Direction ? -0.14f : +0.14f, -0.48f, 0.28f, groundMask, Color.green);
     }
 
 
