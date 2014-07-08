@@ -5,6 +5,7 @@ public class PhysicsManager : MonoBehaviour
 {
     public static int groundMask = 1 << 8 | 1 << 10;
     public static int playerMask = 1 << 13;
+    public static int movingPlatformMask = 1 << 14;
 
     /// <summary>
     /// Rappresenta l'HUD collegata al personaggio.
@@ -201,6 +202,19 @@ public class PhysicsManager : MonoBehaviour
         return EvaluateRaycastH(Direction ? -0.14f : +0.14f, -0.48f, 0.28f, groundMask, Color.green);
     }
 
+    /// <summary>
+    /// Controlla se sotto il personaggio c'è il pavimento o meno
+    /// Controllo alternativo, con due raycast verticali ai lati del personaggio
+    /// </summary>
+    /// <returns></returns>
+    public bool CheckMovingPlatform()
+    {
+        bool b1 = EvaluateRaycastV(-0.14f, -0.28f, 0.32f, movingPlatformMask, Color.cyan);
+        bool b2 = EvaluateRaycastV(+0.14f, -0.28f, 0.32f, movingPlatformMask, Color.cyan);
+        return b1 | b2;
+        //return EvaluateRaycastH(Direction ? -0.14f : +0.14f, -0.48f, 0.28f, groundMask, Color.green);
+    }
+
 
     /// <summary>
     /// Controlla se la visuale del nemico incontra un suo nemico ad una certa
@@ -253,11 +267,12 @@ public class PhysicsManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (CheckGround())
+        if (CheckGround() || CheckMovingPlatform())
         {
             IsOnGround = true;
             Jumping = false;
-            speed.y = 0;
+            if (!CheckMovingPlatform())
+                speed.y = 0;
             if (State == StateManager.State.Unpressed ||
                 PrevState == StateManager.State.Falling)
                 State = StateManager.State.Stand;
@@ -265,7 +280,7 @@ public class PhysicsManager : MonoBehaviour
         else
         {
             IsOnGround = false;
-            if (speed.y <= 0)
+            if (speed.y < Gravity)
                 State = StateManager.State.Falling;
         }
 
@@ -320,7 +335,8 @@ public class PhysicsManager : MonoBehaviour
         }
 
         Stamina += RecuperoStamina * Time.deltaTime;
-        speed.y -= Gravity;
+        if (IsOnGround == false)
+            speed.y -= Gravity;
         PrevState = State;
         rigidbody2D.velocity = new Vector3(speed.x * Time.deltaTime, speed.y * Time.deltaTime, 0.0f);
     }

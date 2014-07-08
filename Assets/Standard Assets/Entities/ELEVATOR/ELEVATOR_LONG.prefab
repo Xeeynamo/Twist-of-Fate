@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21200000}
   - 114: {fileID: 11400000}
   - 61: {fileID: 6100000}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: ELEVATOR_PLATFORM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ GameObject:
   - 212: {fileID: 21200002}
   - 114: {fileID: 11400002}
   - 61: {fileID: 6100002}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: ELEVATOR_PLATFORM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - 212: {fileID: 21200004}
   - 114: {fileID: 11400004}
   - 61: {fileID: 6100004}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: ELEVATOR_PLATFORM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - 212: {fileID: 21200010}
   - 114: {fileID: 11400006}
   - 61: {fileID: 6100006}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: ELEVATOR_PLATFORM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   - 212: {fileID: 21200012}
   - 114: {fileID: 11400008}
   - 61: {fileID: 6100008}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: ELEVATOR_PLATFORM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
