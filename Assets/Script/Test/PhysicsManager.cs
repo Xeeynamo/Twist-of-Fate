@@ -149,7 +149,7 @@ public class PhysicsManager : MonoBehaviour
     /// <returns>true se collide, altrimenti false</returns>
     public static bool EvaluateRaycastH(Transform t, float x, float y, float width, int mask, Color color)
     {
-        float distance = width;
+        float distance = Mathf.Abs(width);
         Vector2 vOrigin = new Vector2(t.position.x + x, t.position.y + y);
         Vector3 vDirection = width >= 0 ? Vector3.right : Vector3.left;
 
