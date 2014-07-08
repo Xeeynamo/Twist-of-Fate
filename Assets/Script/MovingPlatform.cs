@@ -15,8 +15,8 @@ public class MovingPlatform : MonoBehaviour {
 		}
 	}
 
-	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
 		currentNode = 1;
 	}
 	
@@ -34,9 +34,5 @@ public class MovingPlatform : MonoBehaviour {
 			this.transform.position = new Vector3(nodePos.x, nodePos.y, transform.position.z);
 		else
 			this.transform.Translate (velocity);
-	}
-	// Update is called once per frame
-	void Update () {
-	
 	}
 }
