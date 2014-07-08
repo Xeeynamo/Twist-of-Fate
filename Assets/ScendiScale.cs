@@ -13,7 +13,7 @@ public class ScendiScale : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Physics2D.Raycast (new Vector2 (this.transform.position.x , this.transform.position.y +0.01f),lato? Vector3.right : Vector3.left, 0.50f, playerMask)) {
+		if (Physics2D.Raycast (new Vector2 (this.transform.position.x , this.transform.position.y +0.08f),lato? Vector3.right : Vector3.left, 0.50f, playerMask)) {
 			c = Color.red;		
 			if(We.Input.MoveDown){
 				scaleGiù = true;
@@ -27,6 +27,6 @@ public class ScendiScale : MonoBehaviour {
 		else 
 			c = Color.blue;
 		
-		Debug.DrawRay(new Vector2 (this.transform.position.x, this.transform.position.y + 0.01f),lato? Vector3.right * 0.50f : Vector3.left * 0.50f, c);
+		Debug.DrawRay(new Vector2 (this.transform.position.x, this.transform.position.y + 0.08f),lato? Vector3.right * 0.50f : Vector3.left * 0.50f, c);
 	}
 }
