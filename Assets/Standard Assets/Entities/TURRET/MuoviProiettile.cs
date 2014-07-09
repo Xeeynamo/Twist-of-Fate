@@ -16,5 +16,17 @@ public class MuoviProiettile : MonoBehaviour
 
 		if (this.transform.position.x < -2.384186e-07 || this.transform.position.x >19.2)
 						Destroy (this.gameObject);
+
+	
 }
+
+ void OnCollisionEnter2D(Collision2D coll) {
+		if (coll.gameObject.tag == "Player") {
+						audio.Play ();
+
+						//Destroy (this.gameObject);
+				}
+		//applica danno
+	}
+
 }

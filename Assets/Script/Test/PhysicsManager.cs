@@ -273,6 +273,8 @@ public class PhysicsManager : MonoBehaviour
             Jumping = false;
             if (!CheckMovingPlatform())
                 speed.y = 0;
+			else
+				speed.y = -60;
             if (State == StateManager.State.Unpressed ||
                 PrevState == StateManager.State.Falling)
                 State = StateManager.State.Stand;
@@ -335,7 +337,7 @@ public class PhysicsManager : MonoBehaviour
         }
 
         Stamina += RecuperoStamina * Time.deltaTime;
-        if (IsOnGround == false)
+		if (!IsOnGround)
             speed.y -= Gravity;
         PrevState = State;
         rigidbody2D.velocity = new Vector3(speed.x * Time.deltaTime, speed.y * Time.deltaTime, 0.0f);

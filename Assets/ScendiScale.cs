@@ -28,5 +28,6 @@ public class ScendiScale : MonoBehaviour {
 			c = Color.blue;
 		
 		Debug.DrawRay(new Vector2 (this.transform.position.x, this.transform.position.y + 0.08f),lato? Vector3.right * 0.50f : Vector3.left * 0.50f, c);
+
 	}
 }
