@@ -17425,11 +17425,11 @@ Transform:
   m_LocalPosition: {x: 20.4799995, y: 16.4799995, z: 8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1865760809}
-  - {fileID: 1124404455}
   - {fileID: 1792281204}
   - {fileID: 1945026107}
   - {fileID: 1735935105}
+  - {fileID: 1865760809}
+  - {fileID: 1124404455}
   m_Father: {fileID: 0}
   m_RootOrder: 31
 --- !u!1 &371771057
@@ -38165,6 +38165,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 855852354}
   - 212: {fileID: 855852355}
+  - 114: {fileID: 855852356}
   m_Layer: 8
   m_Name: Tile pavimento
   m_TagString: Untagged
@@ -38207,6 +38208,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3a16e26e24391b142a649004d793ff85, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &855852356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 855852353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37b18918d69505847998271b2a2e77a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &856179251
 GameObject:
   m_ObjectHideFlags: 0
@@ -45029,6 +45041,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1006923265}
   - 212: {fileID: 1006923264}
+  - 114: {fileID: 1006923266}
   m_Layer: 10
   m_Name: Gradino
   m_TagString: Untagged
@@ -45071,6 +45084,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 779853790}
   m_RootOrder: 0
+--- !u!114 &1006923266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1006923263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37b18918d69505847998271b2a2e77a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1009072040
 GameObject:
   m_ObjectHideFlags: 0
@@ -49295,7 +49319,7 @@ Transform:
   - {fileID: 1995565283}
   - {fileID: 1770748053}
   m_Father: {fileID: 367130270}
-  m_RootOrder: 1
+  m_RootOrder: 4
 --- !u!212 &1124404456
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -53014,6 +53038,7 @@ GameObject:
   - 4: {fileID: 1220911352}
   - 212: {fileID: 1220911354}
   - 61: {fileID: 1220911353}
+  - 114: {fileID: 1220911355}
   m_Layer: 8
   m_Name: Pavimento 4x1
   m_TagString: Untagged
@@ -53071,6 +53096,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3a16e26e24391b142a649004d793ff85, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &1220911355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1220911351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37b18918d69505847998271b2a2e77a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1222978110
 GameObject:
   m_ObjectHideFlags: 0
@@ -53131,6 +53167,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1223233885}
   - 212: {fileID: 1223233886}
+  - 114: {fileID: 1223233887}
   m_Layer: 8
   m_Name: Tile pavimento
   m_TagString: Untagged
@@ -53173,6 +53210,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3a16e26e24391b142a649004d793ff85, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &1223233887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1223233884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37b18918d69505847998271b2a2e77a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1224038901
 GameObject:
   m_ObjectHideFlags: 0
@@ -74625,7 +74673,7 @@ Transform:
   - {fileID: 452756011}
   - {fileID: 37467526}
   m_Father: {fileID: 367130270}
-  m_RootOrder: 4
+  m_RootOrder: 2
 --- !u!212 &1735935106
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -76936,7 +76984,7 @@ Transform:
   - {fileID: 1358165046}
   - {fileID: 216228453}
   m_Father: {fileID: 367130270}
-  m_RootOrder: 2
+  m_RootOrder: 0
 --- !u!1 &1794618426
 GameObject:
   m_ObjectHideFlags: 0
@@ -77152,6 +77200,7 @@ GameObject:
   - 4: {fileID: 1796648049}
   - 212: {fileID: 1796648051}
   - 61: {fileID: 1796648050}
+  - 114: {fileID: 1796648052}
   m_Layer: 8
   m_Name: Pavimento 4x1
   m_TagString: Untagged
@@ -77209,6 +77258,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3a16e26e24391b142a649004d793ff85, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &1796648052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1796648048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37b18918d69505847998271b2a2e77a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1796968170
 Prefab:
   m_ObjectHideFlags: 0
@@ -80260,7 +80320,7 @@ Transform:
   - {fileID: 1992065024}
   - {fileID: 563237345}
   m_Father: {fileID: 367130270}
-  m_RootOrder: 0
+  m_RootOrder: 3
 --- !u!212 &1865760810
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -84412,7 +84472,7 @@ Transform:
   - {fileID: 1763736759}
   - {fileID: 729284274}
   m_Father: {fileID: 367130270}
-  m_RootOrder: 3
+  m_RootOrder: 1
 --- !u!212 &1945026108
 SpriteRenderer:
   m_ObjectHideFlags: 0
