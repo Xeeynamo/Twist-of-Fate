@@ -313,8 +313,6 @@ public class PhysicsManager : MonoBehaviour
             Jumping = false;
             if (!CheckMovingPlatform())
                 speed.y = 0;
-            else
-                speed.y = -60;
             if (State == StateManager.State.Unpressed ||
                 PrevState == StateManager.State.Falling)
                 State = StateManager.State.Stand;
