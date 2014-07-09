@@ -68884,9 +68884,6 @@ MonoBehaviour:
   TimerScatto: .5
   keySalto: 0
   keyScivolata: 0
-  keyAttackOne: 0
-  keyAttackTwo: 0
-  keyDefense: 0
   cantMove: 0
   movimento: 0
 --- !u!95 &1607201386

@@ -47,18 +47,6 @@ public class Richard : MonoBehaviour
     /// Indica se il tasto della scivolata è stato rilasciato o meno
     /// </summary>
     public bool keyScivolata = false;
-	/// <summary>
-	/// Indica se il tasto del primo attacco è stato rilasciato o meno
-	/// </summary>
-	public bool keyAttackOne = false;
-	/// <summary>
-	/// Indica se il tasto del secondo attacco è stato rilasciato o meno
-	/// </summary>
-	public bool keyAttackTwo = false;
-	/// <summary>
-	/// Indica se il tasto della difesa è stato rilasciato o meno
-	/// </summary>
-	public bool keyDefense = false;
 
 	#endregion
 	/// <summary>
@@ -137,14 +125,7 @@ public class Richard : MonoBehaviour
         {
             keySalto = false;
         }
-		if (!Input.GetKeyDown (KeyCode.Z))
-						keyAttackOne = false;
 
-		if (!Input.GetKeyDown (KeyCode.X))
-			keyAttackTwo = false;
-
-		if (!Input.GetKeyDown (KeyCode.C))
-			keyDefense = false;
         // TimerScatto serve per far scattare il personaggio alla doppia
         // pressione (velocememnte) di un tasto direzionale. Avremo due
         // contatori (uno per la freccia direzionale destra ed uno per la
@@ -240,23 +221,20 @@ public class Richard : MonoBehaviour
 			            this.rigidbody2D.isKinematic = false;
 				}
 
-		if (Input.GetKeyDown (KeyCode.Z) && !movimento && !keyAttackOne) {
+		if (Input.GetKeyDown (KeyCode.Z) && !movimento) {
 				//Animazione attacco
-			keyAttackOne = true;
 			return StateManager.State.Attack;
 		
 		     }
 
-		if (Input.GetKeyDown (KeyCode.X) && !movimento && !keyAttackTwo) {
+		if (Input.GetKeyDown (KeyCode.X) && !movimento ) {
 			//Animazione attacco2
-			keyAttackTwo = true;
 			return StateManager.State.Attack2;
 			
 		}
 
-		if (Input.GetKeyDown (KeyCode.C) && !movimento && !keyDefense) {
+		if (Input.GetKey(KeyCode.C) && !movimento) {
 			//Animazione difesa
-			keyDefense = true;
 			return StateManager.State.Defense;
 			
 		}
