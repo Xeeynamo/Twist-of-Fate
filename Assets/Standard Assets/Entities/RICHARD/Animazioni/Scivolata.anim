@@ -79,11 +79,6 @@ AnimationClip:
         inSlope: 0
         outSlope: 0
         tangentMode: 10
-      - time: .666666687
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_Center.x
@@ -94,11 +89,6 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: -.109999999
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      - time: .666666687
         value: -.109999999
         inSlope: 0
         outSlope: 0
@@ -117,14 +107,14 @@ AnimationClip:
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 31
-      - time: .666666687
+      - time: .5
         value: 1
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 31
       m_PreInfinity: 2
       m_PostInfinity: 2
-    attribute: abbassato
+    attribute: cantMove
     path: 
     classID: 114
     script: {fileID: 11500000, guid: 48c637c8424422a4bb4fa38d4faada32, type: 3}
@@ -156,7 +146,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - path: 0
-      attribute: 4176303101
+      attribute: 1180913695
       script: {fileID: 11500000, guid: 48c637c8424422a4bb4fa38d4faada32, type: 3}
       classID: 114
       customType: 0
@@ -214,7 +204,7 @@ AnimationClip:
   m_AnimationClipSettings:
     serializedVersion: 2
     m_StartTime: 0
-    m_StopTime: .666666687
+    m_StopTime: .508333325
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -293,11 +283,6 @@ AnimationClip:
         inSlope: 0
         outSlope: 0
         tangentMode: 10
-      - time: .666666687
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_Center.x
@@ -308,11 +293,6 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: -.109999999
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      - time: .666666687
         value: -.109999999
         inSlope: 0
         outSlope: 0
@@ -331,14 +311,14 @@ AnimationClip:
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 31
-      - time: .666666687
+      - time: .5
         value: 1
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 31
       m_PreInfinity: 2
       m_PostInfinity: 2
-    attribute: abbassato
+    attribute: cantMove
     path: 
     classID: 114
     script: {fileID: 11500000, guid: 48c637c8424422a4bb4fa38d4faada32, type: 3}

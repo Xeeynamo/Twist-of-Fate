@@ -47,11 +47,24 @@ public class Richard : MonoBehaviour
     /// Indica se il tasto della scivolata è stato rilasciato o meno
     /// </summary>
     public bool keyScivolata = false;
+	/// <summary>
+	/// Indica se il tasto del primo attacco è stato rilasciato o meno
+	/// </summary>
+	public bool keyAttackOne = false;
+	/// <summary>
+	/// Indica se il tasto del secondo attacco è stato rilasciato o meno
+	/// </summary>
+	public bool keyAttackTwo = false;
+	/// <summary>
+	/// Indica se il tasto della difesa è stato rilasciato o meno
+	/// </summary>
+	public bool keyDefense = false;
 
+	#endregion
 	/// <summary>
 	/// Controlli animazioni
 	/// </summary>
-    public bool abbassato;
+    public bool cantMove;
     public bool movimento;
 
 	/// <summary>
@@ -59,7 +72,7 @@ public class Richard : MonoBehaviour
 	/// </summary>
 	public static bool canHide = false;
 	public static bool hide = false;
-	#endregion
+
 
     /// <summary>
     /// Inizializzazione
@@ -124,7 +137,14 @@ public class Richard : MonoBehaviour
         {
             keySalto = false;
         }
+		if (!Input.GetKeyDown (KeyCode.Z))
+						keyAttackOne = false;
 
+		if (!Input.GetKeyDown (KeyCode.X))
+			keyAttackTwo = false;
+
+		if (!Input.GetKeyDown (KeyCode.C))
+			keyDefense = false;
         // TimerScatto serve per far scattare il personaggio alla doppia
         // pressione (velocememnte) di un tasto direzionale. Avremo due
         // contatori (uno per la freccia direzionale destra ed uno per la
@@ -142,7 +162,7 @@ public class Richard : MonoBehaviour
             keySalto = true;
             return StateManager.State.Jumping;
         }
-        if (We.Input.MoveLeft == true && !abbassato)
+        if (We.Input.MoveLeft == true && !cantMove)
         {
             // Cambia direzione del personaggio in base al tasto direzionale premuto
             physManager.Direction = false;
@@ -171,7 +191,7 @@ public class Richard : MonoBehaviour
                 return StateManager.State.Walk;
             }
         }
-        if (We.Input.MoveRight == true && !abbassato)
+        if (We.Input.MoveRight == true && !cantMove)
         {
             // Cambia direzione del personaggio in base al tasto direzionale premuto
             physManager.Direction = true;
@@ -220,6 +240,28 @@ public class Richard : MonoBehaviour
 			            this.rigidbody2D.isKinematic = false;
 				}
 
+		if (Input.GetKeyDown (KeyCode.Z) && !movimento && !keyAttackOne) {
+				//Animazione attacco
+			keyAttackOne = true;
+			return StateManager.State.Attack;
+		
+		     }
+
+		if (Input.GetKeyDown (KeyCode.X) && !movimento && !keyAttackTwo) {
+			//Animazione attacco2
+			keyAttackTwo = true;
+			return StateManager.State.Attack2;
+			
+		}
+
+		if (Input.GetKeyDown (KeyCode.C) && !movimento && !keyDefense) {
+			//Animazione difesa
+			keyDefense = true;
+			return StateManager.State.Defense;
+			
+		}
+
         return StateManager.State.Unpressed;
     }
+
 }

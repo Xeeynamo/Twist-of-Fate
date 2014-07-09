@@ -68884,7 +68884,10 @@ MonoBehaviour:
   TimerScatto: .5
   keySalto: 0
   keyScivolata: 0
-  abbassato: 0
+  keyAttackOne: 0
+  keyAttackTwo: 0
+  keyDefense: 0
+  cantMove: 0
   movimento: 0
 --- !u!95 &1607201386
 Animator:
@@ -68942,6 +68945,8 @@ MonoBehaviour:
   RecuperoStamina: 10
   ConsumoStaminaCorsa: 35
   ConsumoStaminaSalto: 40
+  ConsumoStaminaAttacco: 45
+  ConsumoStaminaDifesa: 30
   speed: {x: 0, y: 0}
 --- !u!58 &1607201389
 CircleCollider2D:
@@ -86402,6 +86407,8 @@ MonoBehaviour:
   RecuperoStamina: 10
   ConsumoStaminaCorsa: 35
   ConsumoStaminaSalto: 40
+  ConsumoStaminaAttacco: 45
+  ConsumoStaminaDifesa: 30
   speed: {x: 0, y: 0}
 --- !u!114 &1988806506
 MonoBehaviour:

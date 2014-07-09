@@ -98,6 +98,16 @@ public class PhysicsManager : MonoBehaviour
     /// Il valore diminuisce la stamina di netto
     /// </summary>
     public int ConsumoStaminaSalto = 40;
+	/// <summary>
+	/// Quanta stamina viene consumata con il l'attacco
+	/// Il valore diminuisce la stamina di netto
+	/// </summary>
+	public int ConsumoStaminaAttacco = 45;
+	/// <summary>
+	/// Quanta stamina viene consumata con il la difesa
+	/// Il valore diminuisce la stamina di netto
+	/// </summary>
+	public int ConsumoStaminaDifesa = 30;
 
     /// <summary>
     /// La velocità orizzontale e verticale del personaggio
@@ -334,6 +344,24 @@ public class PhysicsManager : MonoBehaviour
                     State = StateManager.State.Crouch;
                 }
                 break;
+
+		case StateManager.State.Attack:
+			//Attacco logica
+			if(Stamina > ConsumoStaminaAttacco)
+				Stamina -= ConsumoStaminaAttacco;
+			break;
+
+		case StateManager.State.Attack2:
+			//Attacco2 logica
+			if(Stamina > ConsumoStaminaAttacco)
+				Stamina -= ConsumoStaminaAttacco;
+			break;
+
+		case StateManager.State.Defense:
+			//Difesa logica
+			if(Stamina > ConsumoStaminaDifesa)
+				Stamina -= ConsumoStaminaDifesa;
+			break;
         }
 
         Stamina += RecuperoStamina * Time.deltaTime;
