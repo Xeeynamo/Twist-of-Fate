@@ -13,6 +13,7 @@ TagManager:
   - TRAP
   - DOOR
   - 
+  - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
   Builtin Layer 2: Ignore Raycast
@@ -28,8 +29,8 @@ TagManager:
   User Layer 12: EnemyWeapon
   User Layer 13: Player
   User Layer 14: MovingPlatform
-  User Layer 15: 
-  User Layer 16: 
+  User Layer 15: PlayerHide
+  User Layer 16: Hideout
   User Layer 17: 
   User Layer 18: 
   User Layer 19: 

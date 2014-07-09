@@ -56,6 +56,10 @@ public class StateManager
         /// Entità allerta, ma in questo caso indietreggia
         /// </summary>
         AlertBack,
+        /// <summary>
+        /// Entità si nasconde
+        /// </summary>
+        Hide,
     }
 }
 

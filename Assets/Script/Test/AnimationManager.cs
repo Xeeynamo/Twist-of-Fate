@@ -58,6 +58,9 @@ public class AnimationManager : MonoBehaviour
             case StateManager.State.PrepareAttack:
                 s = 12;
                 break;
+            case StateManager.State.Hide:
+                s = 13;
+                break;
             default:
                 s = 0;
                 break;

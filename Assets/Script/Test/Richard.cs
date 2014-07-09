@@ -7,7 +7,7 @@ public class Richard : MonoBehaviour
 
     PhysicsManager physManager;
 
-    StateManager.State CurrentState
+    StateManager.State PreviousState
     {
         get { return physManager.State; }
     }
@@ -59,8 +59,11 @@ public class Richard : MonoBehaviour
 	/// Controlli nascondigli
 	/// </summary>
 	public static bool canHide = false;
-	public static bool hide = false;
-
+    public bool Hide
+    {
+        get { return physManager.Hide; }
+        set { physManager.Hide = value; }
+    }
 
     /// <summary>
     /// Inizializzazione
@@ -76,7 +79,7 @@ public class Richard : MonoBehaviour
     void FixedUpdate()
     {
         // Mi memorizzo lo stato precedente per fare delle comparazioni
-        StateManager.State state = CurrentState;
+        StateManager.State state = PreviousState;
         switch (state)
         {
             case StateManager.State.Jumping:
@@ -94,12 +97,23 @@ public class Richard : MonoBehaviour
                 state = getStateFromInput();
 
                 // Controllo che evita di far saltare il personaggio mentre è abbassato
-                if (CurrentState == StateManager.State.Crouch && state == StateManager.State.Jumping)
+                if (PreviousState == StateManager.State.Stand && state == StateManager.State.Hide &&
+                    physManager.CheckHideout())
                 {
-                    state = CurrentState;
+                    Hide = true;
+                }
+                else
+                {
+                    state = PreviousState;
+                    Hide = false;
+                }
+
+                if (PreviousState == StateManager.State.Crouch && state == StateManager.State.Jumping)
+                {
+                    state = PreviousState;
                 }
                 // Controllo che permette di fare la scivolata
-                if (CurrentState == StateManager.State.Crouch && (We.Input.MoveLeft || We.Input.MoveRight) && !keyScivolata)
+                if (PreviousState == StateManager.State.Crouch && (We.Input.MoveLeft || We.Input.MoveRight) && !keyScivolata)
                 {
                     state = StateManager.State.PreScivolata;
                     if (We.Input.MoveLeft)
@@ -206,38 +220,15 @@ public class Richard : MonoBehaviour
             return StateManager.State.Crouch;
         }
         if (We.Input.Attack2 == true)
-        {
             return StateManager.State.Attack;
-        }
-
-		if (We.Input.MoveUp == true && !movimento && canHide) {
-						// Animazione Nascondiglio
-						hide = true;
-
-			            //Lo rende attraversabile
-						this.rigidbody2D.isKinematic = true;
-				} else {
-						hide = false;
-			            this.rigidbody2D.isKinematic = false;
-				}
-
-		if (Input.GetKeyDown (KeyCode.Z) && !movimento) {
-				//Animazione attacco
-			return StateManager.State.Attack;
-		
-		     }
-
-		if (Input.GetKeyDown (KeyCode.X) && !movimento ) {
-			//Animazione attacco2
-			return StateManager.State.Attack2;
-			
-		}
-
-		if (Input.GetKey(KeyCode.C) && !movimento) {
-			//Animazione difesa
+        if (We.Input.MoveUp == true)
+            return StateManager.State.Hide;
+        if (Input.GetKeyDown(KeyCode.Z) && !movimento)
+            return StateManager.State.Attack;
+        if (Input.GetKeyDown(KeyCode.X) && !movimento)
+            return StateManager.State.Attack2;
+		if (Input.GetKey(KeyCode.C) && !movimento)
 			return StateManager.State.Defense;
-			
-		}
 
         return StateManager.State.Unpressed;
     }

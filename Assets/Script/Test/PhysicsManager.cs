@@ -3,9 +3,17 @@ using System.Collections;
 
 public class PhysicsManager : MonoBehaviour
 {
-    public static int groundMask = 1 << 8 | 1 << 10;
-    public static int playerMask = 1 << 13;
-    public static int movingPlatformMask = 1 << 14;
+    public static readonly int GROUND_LAYER = 8;
+    public static readonly int PLAYER_LAYER = 13;
+    public static readonly int MOVINGPLATFORM_LAYER = 14;
+    public static readonly int PLAYERHIDE_LAYER = 15;
+    public static readonly int HIDEOUT_LAYER = 16;
+
+    public static int GROUND_MASK = 1 << 8 | 1 << 10;
+    public static int PLAYER_MASK = 1 << PLAYER_LAYER;
+    public static int MOVINGPLATFORM_MASK = 1 << MOVINGPLATFORM_LAYER;
+    public static int PLAYERHIDE_MASK = 1 << PLAYERHIDE_LAYER;
+    public static int HIDEOUT_MASK = 1 << HIDEOUT_LAYER;
 
     /// <summary>
     /// Rappresenta l'HUD collegata al personaggio.
@@ -115,6 +123,19 @@ public class PhysicsManager : MonoBehaviour
     /// </summary>
     public Vector2 speed;
 
+    public bool Hide
+    {
+        get { return isHide; }
+        set
+        {
+            rigidbody2D.isKinematic = isHide = value;
+            gameObject.layer = value ? PLAYERHIDE_LAYER : PLAYER_LAYER;
+        }
+    }
+
+
+    private bool isHide;
+
     /// <summary>
     /// Ottiene oppure imposta lo stato corrente
     /// </summary>
@@ -209,7 +230,7 @@ public class PhysicsManager : MonoBehaviour
     /// <returns></returns>
     public bool CheckGround()
     {
-        return EvaluateRaycastH(Direction ? -0.14f : +0.14f, -0.48f, 0.28f, groundMask, Color.green);
+        return EvaluateRaycastH(Direction ? -0.14f : +0.14f, -0.48f, 0.28f, GROUND_MASK, Color.green);
     }
 
     /// <summary>
@@ -219,12 +240,11 @@ public class PhysicsManager : MonoBehaviour
     /// <returns></returns>
     public bool CheckMovingPlatform()
     {
-        bool b1 = EvaluateRaycastV(-0.14f, -0.28f, 0.32f, movingPlatformMask, Color.cyan);
-        bool b2 = EvaluateRaycastV(+0.14f, -0.28f, 0.32f, movingPlatformMask, Color.cyan);
+        bool b1 = EvaluateRaycastV(-0.14f, -0.28f, 0.32f, MOVINGPLATFORM_MASK, Color.cyan);
+        bool b2 = EvaluateRaycastV(+0.14f, -0.28f, 0.32f, MOVINGPLATFORM_MASK, Color.cyan);
         return b1 | b2;
         //return EvaluateRaycastH(Direction ? -0.14f : +0.14f, -0.48f, 0.28f, groundMask, Color.green);
     }
-
 
     /// <summary>
     /// Controlla se la visuale del nemico incontra un suo nemico ad una certa
@@ -233,8 +253,8 @@ public class PhysicsManager : MonoBehaviour
     /// <returns></returns>
     public bool CheckEnemyNear()
     {
-        return ((EvaluateRaycastH(0.0f, 0.48f, 1.0f, playerMask, Color.magenta) ||
-			EvaluateRaycastH(0.0f, -0.24f, 1.0f, playerMask, Color.magenta))&& !Richard.hide);
+        return EvaluateRaycastH(0.0f, 0.48f, 1.0f, PLAYER_MASK, Color.magenta) ||
+            EvaluateRaycastH(0.0f, -0.24f, 1.0f, PLAYER_MASK, Color.magenta);
     }
 
     /// <summary>
@@ -244,8 +264,18 @@ public class PhysicsManager : MonoBehaviour
     /// <returns></returns>
     public bool CheckEnemyAround()
     {
-        return(( EvaluateRaycastH(0.0f, 0.48f, 1.5f, playerMask, Color.blue) ||
-            EvaluateRaycastH(0.0f, 0.0f, 1.5f, playerMask, Color.blue))&& !Richard.hide);
+        return EvaluateRaycastH(0.0f, 0.48f, 1.5f, PLAYER_MASK, Color.blue) ||
+            EvaluateRaycastH(0.0f, 0.0f, 1.5f, PLAYER_MASK, Color.blue);
+    }
+
+    /// <summary>
+    /// Controlla se la visuale del nemico incontra un suo nemico a distanza
+    /// ravvicinata. Usata durante le fasi di guardia.
+    /// </summary>
+    /// <returns></returns>
+    public bool CheckHideout()
+    {
+        return EvaluateRaycastH(Direction ? -0.14f : +0.14f, -0.48f, 0.28f, HIDEOUT_MASK, Color.yellow);
     }
 
     /// <summary>
@@ -256,7 +286,7 @@ public class PhysicsManager : MonoBehaviour
     public bool CheckNearEdge()
     {
         float distanza = 0.24f;
-        return EvaluateRaycastV(Direction ? -distanza : +distanza, 0.0f, 0.72f, groundMask, Color.green) == false;
+        return EvaluateRaycastV(Direction ? -distanza : +distanza, 0.0f, 0.72f, GROUND_MASK, Color.green) == false;
     }
 
     /// <summary>
@@ -267,7 +297,7 @@ public class PhysicsManager : MonoBehaviour
     /// <returns></returns>
     public bool CheckNearWall()
     {
-        return EvaluateRaycastH(0.0f, -0.24f, 1.0f, groundMask, Color.green) == true;
+        return EvaluateRaycastH(0.0f, -0.24f, 1.0f, GROUND_MASK, Color.green) == true;
     }
 
     void Awake()
@@ -283,8 +313,8 @@ public class PhysicsManager : MonoBehaviour
             Jumping = false;
             if (!CheckMovingPlatform())
                 speed.y = 0;
-			else
-				speed.y = -60;
+            else
+                speed.y = -60;
             if (State == StateManager.State.Unpressed ||
                 PrevState == StateManager.State.Falling)
                 State = StateManager.State.Stand;

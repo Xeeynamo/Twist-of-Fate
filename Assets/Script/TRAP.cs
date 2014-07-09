@@ -59,7 +59,7 @@ public class TRAP : MonoBehaviour
                 break;
             case State.Attack:
                 speed.y -= Gravity;
-                if (PhysicsManager.EvaluateRaycastH(transform, -0.16f, -1.30f, 0.32f, PhysicsManager.groundMask, Color.green))
+                if (PhysicsManager.EvaluateRaycastH(transform, -0.16f, -1.30f, 0.32f, PhysicsManager.GROUND_MASK, Color.green))
                 {
                     speed.y = -speed.y / 2;
                 }
