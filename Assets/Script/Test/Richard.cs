@@ -47,10 +47,19 @@ public class Richard : MonoBehaviour
     /// Indica se il tasto della scivolata è stato rilasciato o meno
     /// </summary>
     public bool keyScivolata = false;
-    #endregion
 
+	/// <summary>
+	/// Controlli animazioni
+	/// </summary>
     public bool abbassato;
     public bool movimento;
+
+	/// <summary>
+	/// Controlli nascondigli
+	/// </summary>
+	public static bool canHide = false;
+	public static bool hide = false;
+	#endregion
 
     /// <summary>
     /// Inizializzazione
@@ -199,6 +208,17 @@ public class Richard : MonoBehaviour
         {
             return StateManager.State.Attack;
         }
+
+		if (We.Input.MoveUp == true && !movimento && canHide) {
+						// Animazione Nascondiglio
+						hide = true;
+
+			            //Lo rende attraversabile
+						this.rigidbody2D.isKinematic = true;
+				} else {
+						hide = false;
+			            this.rigidbody2D.isKinematic = false;
+				}
 
         return StateManager.State.Unpressed;
     }

@@ -223,8 +223,8 @@ public class PhysicsManager : MonoBehaviour
     /// <returns></returns>
     public bool CheckEnemyNear()
     {
-        return EvaluateRaycastH(0.0f, 0.48f, 1.0f, playerMask, Color.magenta) ||
-            EvaluateRaycastH(0.0f, -0.24f, 1.0f, playerMask, Color.magenta);
+        return ((EvaluateRaycastH(0.0f, 0.48f, 1.0f, playerMask, Color.magenta) ||
+			EvaluateRaycastH(0.0f, -0.24f, 1.0f, playerMask, Color.magenta))&& !Richard.hide);
     }
 
     /// <summary>
@@ -234,8 +234,8 @@ public class PhysicsManager : MonoBehaviour
     /// <returns></returns>
     public bool CheckEnemyAround()
     {
-        return EvaluateRaycastH(0.0f, 0.48f, 1.5f, playerMask, Color.blue) ||
-            EvaluateRaycastH(0.0f, 0.0f, 1.5f, playerMask, Color.blue);
+        return(( EvaluateRaycastH(0.0f, 0.48f, 1.5f, playerMask, Color.blue) ||
+            EvaluateRaycastH(0.0f, 0.0f, 1.5f, playerMask, Color.blue))&& !Richard.hide);
     }
 
     /// <summary>

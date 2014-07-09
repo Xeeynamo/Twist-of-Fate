@@ -47211,11 +47211,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 9.36449337
+      value: 4.27860594
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.27474022
+      value: 2.0816052
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.z
@@ -47271,7 +47271,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: JumpStrengthMaximum
-      value: 256
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: JumpStrengthMinimum
@@ -68864,7 +68864,7 @@ Transform:
   m_PrefabInternal: {fileID: 1074959724}
   m_GameObject: {fileID: 1607201382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.36449337, y: 2.27474022, z: 0}
+  m_LocalPosition: {x: 4.27860594, y: 2.0816052, z: 0}
   m_LocalScale: {x: 1.00823271, y: 1.00823271, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -68935,7 +68935,7 @@ MonoBehaviour:
   Gravity: 8
   WalkSpeed: 60
   RunSpeed: 160
-  JumpStrengthMaximum: 256
+  JumpStrengthMaximum: 200
   JumpStrengthMinimum: 64
   ScivolataForza: 250
   ScivolataInerzia: 5
@@ -91026,6 +91026,10 @@ Prefab:
     - target: {fileID: 100002, guid: 9056dfd283e1b0e4dadf28f096647d1e, type: 2}
       propertyPath: m_Name
       value: Knight
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000000, guid: 9056dfd283e1b0e4dadf28f096647d1e, type: 2}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9056dfd283e1b0e4dadf28f096647d1e, type: 2}
