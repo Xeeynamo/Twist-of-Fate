@@ -21,7 +21,7 @@ public class HudHandler : MonoBehaviour
     }
     public float ValueMana
     {
-        get { return valueHealth; }
+        get { return valueMana; }
         set
         {
             valueMana = value;
