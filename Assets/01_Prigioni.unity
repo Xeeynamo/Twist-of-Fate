@@ -47267,7 +47267,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: ConsumoStaminaSalto
-      value: 40
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: JumpStrengthMaximum
@@ -68941,7 +68941,7 @@ MonoBehaviour:
   ScivolataInerzia: 5
   RecuperoStamina: 10
   ConsumoStaminaCorsa: 35
-  ConsumoStaminaSalto: 40
+  ConsumoStaminaSalto: 20
   ConsumoStaminaAttacco: 45
   ConsumoStaminaDifesa: 30
   speed: {x: 0, y: 0}

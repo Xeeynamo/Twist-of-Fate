@@ -102,7 +102,7 @@ public class Richard : MonoBehaviour
                 {
                     Hide = true;
                 }
-                else
+                else if (state == StateManager.State.Hide)
                 {
                     state = PreviousState;
                     Hide = false;
@@ -219,15 +219,17 @@ public class Richard : MonoBehaviour
 
             return StateManager.State.Crouch;
         }
-        if (We.Input.Attack2 == true)
-            return StateManager.State.Attack;
+        if (We.Input.SwitchItem == true)
+        {
+
+        }
         if (We.Input.MoveUp == true)
             return StateManager.State.Hide;
-        if (Input.GetKeyDown(KeyCode.Z) && !movimento)
+        if (We.Input.AttackPrimary && !movimento)
             return StateManager.State.Attack;
-        if (Input.GetKeyDown(KeyCode.X) && !movimento)
+        if (We.Input.AttackSecondary && !movimento)
             return StateManager.State.Attack2;
-		if (Input.GetKey(KeyCode.C) && !movimento)
+		if (We.Input.Defense && !movimento)
 			return StateManager.State.Defense;
 
         return StateManager.State.Unpressed;
