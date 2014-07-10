@@ -70,7 +70,7 @@ TextureImporter:
         width: 96
         height: 88
       alignment: 9
-      pivot: {x: .400000006, y: .5}
+      pivot: {x: .680000007, y: .25}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: GRANDKNIGHT_ATTACK2
       rect:
@@ -80,7 +80,7 @@ TextureImporter:
         width: 56
         height: 87
       alignment: 9
-      pivot: {x: .550000012, y: .5}
+      pivot: {x: .550000012, y: .25}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: GRANDKNIGHT_ATTACK3
       rect:
@@ -90,7 +90,7 @@ TextureImporter:
         width: 104
         height: 87
       alignment: 9
-      pivot: {x: .699999988, y: .5}
+      pivot: {x: .349999994, y: .25}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
