@@ -19,14 +19,4 @@ public class MuoviProiettile : MonoBehaviour
 
 	
 }
-
- void OnCollisionEnter2D(Collision2D coll) {
-		if (coll.gameObject.tag == "Player") {
-						audio.Play ();
-
-						//Destroy (this.gameObject);
-				}
-		//applica danno
-	}
-
 }
