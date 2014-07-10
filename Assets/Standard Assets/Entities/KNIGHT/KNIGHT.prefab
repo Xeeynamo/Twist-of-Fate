@@ -57,7 +57,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -4.37113883e-08}
-  m_LocalPosition: {x: 3.95973301, y: 2.09476018, z: -2.5}
+  m_LocalPosition: {x: 11.1335049, y: 2.03260088, z: -2.50000095}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400000}
@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hud: {fileID: 0}
+  IsPlayableCharacter: 0
   IsOnGround: 0
   Jumping: 0
   Gravity: 8
@@ -143,6 +144,10 @@ MonoBehaviour:
   RecuperoStamina: 10
   ConsumoStaminaCorsa: 35
   ConsumoStaminaSalto: 40
+  ConsumoStaminaAttacco: 45
+  ConsumoStaminaDifesa: 30
+  ConsumoVitaFrecce: 15
+  ConsumoVitaTrappole: 50
   speed: {x: 0, y: 0}
 --- !u!114 &11400004
 MonoBehaviour:
