@@ -420,8 +420,12 @@ public class PhysicsManager : MonoBehaviour
 
 		case StateManager.State.Defense:
 			//Difesa logica
-			if(Stamina > ConsumoStaminaDifesa)
-				Stamina -= ConsumoStaminaDifesa;
+			if(Stamina >= 0){
+				Stamina -= ConsumoStaminaDifesa*Time.deltaTime;
+			
+			}
+			if(Stamina <= ConsumoStaminaDifesa)
+				State = StateManager.State.Stand;
 			break;
         }
 
@@ -442,11 +446,13 @@ public class PhysicsManager : MonoBehaviour
 
 	
 	void OnCollisionEnter2D(Collision2D coll) {
-		if (coll.gameObject.tag == "Arrow") {
+		if (coll.gameObject.tag == "Arrow" ) {
+			if(State!=StateManager.State.Defense){
 			audio.Play ();
 			//applica danno
 			GetComponent<Animator>().SetBool("Colpito", true);
 			Health -= ConsumoVitaFrecce;
+			}
 				Destroy (coll.gameObject);
 		}
 		else
