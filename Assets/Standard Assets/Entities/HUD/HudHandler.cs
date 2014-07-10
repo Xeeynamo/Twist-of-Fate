@@ -41,7 +41,7 @@ public class HudHandler : MonoBehaviour
         ValueMana = MaxMana;
     }
 
-    void UpdateBar(GameObject objBar, float value, float max)
+    void UpdateBar(GameObject objBar, float value, float max, Color color)
     {
         if (objBar != null)
         {
@@ -61,12 +61,32 @@ public class HudHandler : MonoBehaviour
                 scale.x = 0.0000001f;
             }
             objBar.transform.localScale = scale;
+            BarMana.GetComponent<SpriteRenderer>().color = color;
         }
     }
 
+    float warning = 1.0f;
+    float multiplier = -1.0f;
+
     void Update()
     {
-        UpdateBar(BarHealth, ValueHealth, MaxHealth);
-        UpdateBar(BarMana, ValueMana, MaxMana);
+        UpdateBar(BarHealth, ValueHealth, MaxHealth, Color.white);
+        if (ValueMana <= MaxMana / 3)
+        {
+            Debug.Log("FSGDSFSD");
+            warning += multiplier * Time.deltaTime * 4;
+            if (warning <= 0.0f)
+            {
+                warning = 0.0f;
+                multiplier *= -1.0f;
+            }
+            else if (warning >= 1.0f)
+            {
+                warning = 1.0f;
+                multiplier *= -1.0f;
+            }
+        }
+        else warning = 1.0f;
+        UpdateBar(BarMana, ValueMana, MaxMana, new Color(warning, warning, warning));
     }
 }

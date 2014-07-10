@@ -146,7 +146,6 @@ public class PhysicsManager : MonoBehaviour
         get { return isHide; }
         set
 		{
-			Debug.Log("HIDE? " + value.ToString());
             rigidbody2D.isKinematic = isHide = value;
             gameObject.layer = value ? PLAYERHIDE_LAYER : PLAYER_LAYER;
         }
