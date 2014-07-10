@@ -8,12 +8,15 @@ public class PhysicsManager : MonoBehaviour
     public static readonly int MOVINGPLATFORM_LAYER = 14;
     public static readonly int PLAYERHIDE_LAYER = 15;
     public static readonly int HIDEOUT_LAYER = 16;
+    public static readonly int ENEMY_LAYER = 11;
+    public static readonly int ENEMYWEAPON_LAYER = 12;
 
-    public static int GROUND_MASK = 1 << 8 | 1 << 10;
-    public static int PLAYER_MASK = 1 << PLAYER_LAYER;
-    public static int MOVINGPLATFORM_MASK = 1 << MOVINGPLATFORM_LAYER;
-    public static int PLAYERHIDE_MASK = 1 << PLAYERHIDE_LAYER;
-    public static int HIDEOUT_MASK = 1 << HIDEOUT_LAYER;
+    public static readonly int GROUND_MASK = 1 << 8 | 1 << 10;
+    public static readonly int PLAYER_MASK = 1 << PLAYER_LAYER;
+    public static readonly int MOVINGPLATFORM_MASK = 1 << MOVINGPLATFORM_LAYER;
+    public static readonly int PLAYERHIDE_MASK = 1 << PLAYERHIDE_LAYER;
+    public static readonly int HIDEOUT_MASK = 1 << HIDEOUT_LAYER;
+    public static readonly int ENEMYALL_MASK = 1 << (ENEMYWEAPON_LAYER);
 
     /// <summary>
     /// Rappresenta l'HUD collegata al personaggio.
@@ -22,6 +25,8 @@ public class PhysicsManager : MonoBehaviour
     /// da leggere e scrivere i valori necessari.
     /// </summary>
     public GameObject hud;
+
+    public bool IsPlayableCharacter = false;
 
     public float Health
     {
@@ -230,7 +235,7 @@ public class PhysicsManager : MonoBehaviour
     /// <returns></returns>
     public bool CheckGround()
     {
-        return EvaluateRaycastH(Direction ? -0.14f : +0.14f, -0.48f, 0.28f, GROUND_MASK, Color.green);
+        return EvaluateRaycastH(Direction ? -0.14f : +0.14f, -0.45f, 0.28f, GROUND_MASK, Color.green);
     }
 
     /// <summary>
@@ -278,6 +283,13 @@ public class PhysicsManager : MonoBehaviour
         return EvaluateRaycastH(Direction ? -0.14f : +0.14f, -0.48f, 0.28f, HIDEOUT_MASK, Color.yellow);
     }
 
+    public bool CheckEnemyHitted()
+    {
+        bool b1 = EvaluateRaycastV(-0.17f, 0.42f, 0.96f, ENEMYALL_MASK, Color.yellow);
+        bool b2 = EvaluateRaycastV(+0.17f, 0.42f, 0.96f, ENEMYALL_MASK, Color.yellow);
+        return b1 | b2;
+    }
+
     /// <summary>
     /// Controlla se si è vicini al bordo del pavimento, usato solitamente per
     /// evitare di cadere dalla piattaforma corrente.
@@ -307,6 +319,13 @@ public class PhysicsManager : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (IsPlayableCharacter)
+        {
+            if (CheckEnemyHitted())
+            {
+                GetComponent<Animator>().SetBool("Colpito", true);
+            }
+        }
         if (CheckGround() || CheckMovingPlatform())
         {
             IsOnGround = true;
