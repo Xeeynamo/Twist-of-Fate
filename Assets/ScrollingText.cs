@@ -38,7 +38,8 @@ public class ScrollingText : MonoBehaviour {
 		showText [0] = "Impero di Heisenfall - 21° anno dalla grande unificazione\nLa guerra che portò i 12 regni della congregazione di Heisen sotto una sola corona era orami un lontano e triste ricordo.";
 		showText [1] = "La ricostruzione procedeva per il meglio in quasi tutti regni, solo uno faceva tristemente eccezione:\nl'undicesimo regno, Artemir"; 
 		showText [2] = "Ad Artemir non solo la ricostruzione non procedeva ma, in alcuni punti, la popolazione viveva in condizioni ben peggiori di quelle vissute nel recente conflitto.\nLa colpa di questa situazione è da attribuire all'attuale govarnante che, da pieno sostenitore dell'impero, diventò con il passare del tempo sempre più ostile \nall'imperatore.";
-	
+		showText [3] = "";
+
 		storyBg = new Texture2D (areaWidthT, areaHeightT);
 		for (int i = 0; i < storyBg.width; i++)
 		{
@@ -58,6 +59,7 @@ public class ScrollingText : MonoBehaviour {
 			}
 		}
 		nameBg.Apply ();
+
 	}
 	
 	// Update is called once per frame
@@ -80,7 +82,7 @@ public class ScrollingText : MonoBehaviour {
 		{
 			imgStory.texture = imgList[3];
 		}
-		if(actText == 8)
+		if(actText >= 8)
 		{
 			Application.LoadLevel(2);
 		}
@@ -93,7 +95,7 @@ public class ScrollingText : MonoBehaviour {
 			timer -= actChar * secondiPerOgniCarattere;
 			storyText = showText[actText].Substring(0, curChar);
 		}
-		if(Input.GetKeyDown(KeyCode.X))
+		if(Input.GetKeyDown(KeyCode.X) || Input.GetMouseButtonDown(0))
 		{
 			if(curChar == showText[actText].Length)
 			{	
@@ -121,6 +123,7 @@ public class ScrollingText : MonoBehaviour {
 			NomeGiocatore = GUILayout.TextField (NomeGiocatore, 15);
 			if (GUILayout.Button("Conferma"))
 			{
+				PlayerPrefs.SetString("Player_Name", NomeGiocatore);
 				showText [4] = "Il sovrano prese in mano la situazione mandando un proprio emissario a prendere in mano la situazione deponento l'inetto governante.\nVenne scelto dunque un giovane diplomatico tale " + NomeGiocatore + " distintosi ai tempi dell'accademia per la sua intelligenza e per lo spiccato senso di attaccamento all'impero.";
 				showText [5] = "Accettato l'incarico " + NomeGiocatore + " si diresse verso Artemir con la piena convizione di adempiere al proprio compito e compiacere l'imperatore\nma una brutta sorpresa lo attendeva a destinazione...";
 				showText [6] = "Infatti il governatore decise, come atto finale di disprezzo nei confronti dell'imperatore, di imprigionare il giovane diplomatico con la piena intenzione di GIUSTIZIARLO.";
