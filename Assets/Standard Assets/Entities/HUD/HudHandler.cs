@@ -61,7 +61,8 @@ public class HudHandler : MonoBehaviour
                 scale.x = 0.0000001f;
             }
             objBar.transform.localScale = scale;
-            BarMana.GetComponent<SpriteRenderer>().color = color;
+            if (BarMana != null)
+                BarMana.GetComponent<SpriteRenderer>().color = color;
         }
     }
 
@@ -73,7 +74,6 @@ public class HudHandler : MonoBehaviour
         UpdateBar(BarHealth, ValueHealth, MaxHealth, Color.white);
         if (ValueMana <= MaxMana / 3)
         {
-            Debug.Log("FSGDSFSD");
             warning += multiplier * Time.deltaTime * 4;
             if (warning <= 0.0f)
             {
