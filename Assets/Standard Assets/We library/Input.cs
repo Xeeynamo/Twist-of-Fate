@@ -35,17 +35,21 @@ namespace We
 		{
 			get { return UnityEngine.Input.GetButton ("Jump"); }
 		}
-		public static bool Attack
+		public static bool SwitchItem
 		{
-			get { return UnityEngine.Input.GetButton ("Fire1"); }
+            get { return UnityEngine.Input.GetKeyDown(KeyCode.Z); }
 		}
-		public static bool Attack2
+		public static bool Defense
 		{
 			get { return UnityEngine.Input.GetKeyDown(KeyCode.X); }
 		}
-		public static bool Attack3
-		{
-			get { return UnityEngine.Input.GetButton ("Fire3"); }
-		}
+        public static bool AttackSecondary
+        {
+            get { return UnityEngine.Input.GetKeyDown(KeyCode.C); }
+        }
+        public static bool AttackPrimary
+        {
+            get { return UnityEngine.Input.GetKeyDown(KeyCode.V); }
+        }
 	}
 }

@@ -150,7 +150,7 @@ public class char_contr : MonoBehaviour {
 		Directon = true;
 		anim.SetInteger("Stato", 1);
 		rigidbody2D.AddForce(new Vector2(Acceleration, rigidbody2D.velocity.magnitude));
-		if (We.Input.Attack == true)
+		if (We.Input.AttackPrimary == true)
 			rigidbody2D.AddForce(new Vector2(Acceleration, rigidbody2D.velocity.magnitude));
 	    timewait = 0.25f;
 		print ("ok");
@@ -167,7 +167,7 @@ public class char_contr : MonoBehaviour {
 		Directon = false;
 		anim.SetInteger("Stato", 1);
 		rigidbody2D.AddForce(new Vector2(-Acceleration,0));
-		if (We.Input.Attack == true)
+        if (We.Input.AttackPrimary == true)
 			rigidbody2D.AddForce(new Vector2(-Acceleration,0));
 		timewait = 0.25f;
 		print ("ok");

@@ -47211,11 +47211,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 4.27860594
+      value: 6.07771158
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.0816052
+      value: 2.12203455
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.z
@@ -47267,7 +47267,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: ConsumoStaminaSalto
-      value: 40
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: JumpStrengthMaximum
@@ -68864,7 +68864,7 @@ Transform:
   m_PrefabInternal: {fileID: 1074959724}
   m_GameObject: {fileID: 1607201382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.27860594, y: 2.0816052, z: 0}
+  m_LocalPosition: {x: 6.07771158, y: 2.12203455, z: 0}
   m_LocalScale: {x: 1.00823271, y: 1.00823271, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -68941,7 +68941,7 @@ MonoBehaviour:
   ScivolataInerzia: 5
   RecuperoStamina: 10
   ConsumoStaminaCorsa: 35
-  ConsumoStaminaSalto: 40
+  ConsumoStaminaSalto: 20
   ConsumoStaminaAttacco: 45
   ConsumoStaminaDifesa: 30
   speed: {x: 0, y: 0}
@@ -86325,7 +86325,7 @@ Transform:
   m_PrefabInternal: {fileID: 2098843414}
   m_GameObject: {fileID: 1988806498}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -4.37113883e-08}
-  m_LocalPosition: {x: 14.9768028, y: 2.23171616, z: -2.50000095}
+  m_LocalPosition: {x: 11.15623, y: 2.06999874, z: -2.50000095}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2143031172}
@@ -90993,11 +90993,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400002, guid: 9056dfd283e1b0e4dadf28f096647d1e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 14.9768028
+      value: 11.15623
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 9056dfd283e1b0e4dadf28f096647d1e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.23171616
+      value: 2.06999874
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 9056dfd283e1b0e4dadf28f096647d1e, type: 2}
       propertyPath: m_LocalPosition.z
