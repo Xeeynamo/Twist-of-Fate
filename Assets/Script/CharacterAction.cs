@@ -313,7 +313,7 @@ public class CharacterAction : MonoBehaviour {
 				statoCorrente = StatoInput.Attacco2;
 			}
 		//Difesa
-			else if(We.Input.Attack3 && !movimento ){
+			else if(We.Input.Defense && !movimento ){
 				statoCorrente = StatoInput.Difesa;
 			}
 
