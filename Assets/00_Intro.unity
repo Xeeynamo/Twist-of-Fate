@@ -306,6 +306,7 @@ MonoBehaviour:
   imgList:
   - {fileID: 2800000, guid: 039634a774e6cbd4292f8421c3333288, type: 3}
   - {fileID: 2800000, guid: 1805c15a19b7ce141b640055606ed186, type: 3}
+  - {fileID: 2800000, guid: 3b974130254324b45add8d425eb0221e, type: 3}
   - {fileID: 2800000, guid: a99d553db44eeb74d8cf027f715590cb, type: 3}
   - {fileID: 2800000, guid: d9d3dc0705ac17f41bd01a08bacd3b15, type: 3}
   storyBg: {fileID: 0}

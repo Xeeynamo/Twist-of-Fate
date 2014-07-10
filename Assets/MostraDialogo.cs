@@ -4,7 +4,7 @@ using System.Collections;
 public class MostraDialogo : MonoBehaviour {
 
 	private GameObject player; 
-	public string nomeGiocatore;
+	public static string nomeGiocatore;
 	public int numUccisioni;
 
 	private string[] dialoghi;
@@ -30,6 +30,7 @@ public class MostraDialogo : MonoBehaviour {
 			}
 		}
 		dialogueBg.Apply ();
+		nomeGiocatore = PlayerPrefs.GetString ("Player_Name");
 		dialoghi = new string[5];
 		dialoghi[0] = "Prigioniero\nPuoi Sentirmi?\n- Premi X per continuare -";
 		dialoghi[1] = nomeGiocatore +"\nCerto che posso. Chi sei?\n- Premi X per continuare -";
