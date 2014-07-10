@@ -33,7 +33,10 @@ public class TRAP : MonoBehaviour
     /// <summary>
     /// Stato dell'oggetto
     /// </summary>
-    State state;
+    public State state;
+
+    public bool CanBeBroken;
+    public bool IsBroken;
 
     float initialPosY;
     float timer;
@@ -47,6 +50,14 @@ public class TRAP : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (CanBeBroken)
+        {
+            if (transform.position.x < Richard._Transform.position.x - 0.64)
+            {
+                IsBroken = true;
+                state = State.Attack;
+            }
+        }
         switch (state)
         {
             case State.Wait:
@@ -67,7 +78,14 @@ public class TRAP : MonoBehaviour
                 {
                     speed.y = 0;
                     timer = 0;
-                    state = State.Return;
+                    if (!IsBroken)
+                    {
+                        state = State.Return;
+                    }
+                    else
+                    {
+                        GetComponent<Animator>().SetBool("BROKEN", true);
+                    }
                 }
                 break;
             case State.Return:
