@@ -451,11 +451,11 @@ public class PhysicsManager : MonoBehaviour
 		}
 		else
 		if (coll.gameObject.tag == "TRAP") {
-			audio.Play ();
 			//applica danno
 			if(!colpito){
 			GetComponent<Animator>().SetBool("Colpito", true);
 			Health -= ConsumoVitaTrappole;
+			audio.Play ();
 			}
 			colpito = true;
 		}

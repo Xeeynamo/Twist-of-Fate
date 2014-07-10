@@ -3121,7 +3121,7 @@ Transform:
   - {fileID: 1615619757}
   - {fileID: 276043085}
   m_Father: {fileID: 367130270}
-  m_RootOrder: 8
+  m_RootOrder: 2
 --- !u!212 &64420184
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6123,7 +6123,7 @@ Transform:
   - {fileID: 262421008}
   - {fileID: 403833705}
   m_Father: {fileID: 367130270}
-  m_RootOrder: 7
+  m_RootOrder: 1
 --- !u!212 &123976615
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15832,7 +15832,7 @@ Transform:
   - {fileID: 1302862035}
   - {fileID: 533735100}
   m_Father: {fileID: 367130270}
-  m_RootOrder: 5
+  m_RootOrder: 8
 --- !u!212 &310709050
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18890,15 +18890,15 @@ Transform:
   m_LocalPosition: {x: 20.4799995, y: 16.4799995, z: 8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1459445762}
+  - {fileID: 123976614}
+  - {fileID: 64420183}
   - {fileID: 1865760809}
   - {fileID: 1124404455}
   - {fileID: 1792281204}
   - {fileID: 1945026107}
   - {fileID: 1735935105}
   - {fileID: 310709049}
-  - {fileID: 1459445762}
-  - {fileID: 123976614}
-  - {fileID: 64420183}
   m_Father: {fileID: 0}
   m_RootOrder: 32
 --- !u!1 &368888229
@@ -48608,6 +48608,8 @@ MonoBehaviour:
   ConsumoStaminaSalto: 40
   ConsumoStaminaAttacco: 45
   ConsumoStaminaDifesa: 30
+  ConsumoVitaFrecce: 15
+  ConsumoVitaTrappole: 50
   speed: {x: 0, y: 0}
 --- !u!114 &1002935797
 MonoBehaviour:
@@ -53441,7 +53443,7 @@ Transform:
   - {fileID: 1995565283}
   - {fileID: 1770748053}
   m_Father: {fileID: 367130270}
-  m_RootOrder: 1
+  m_RootOrder: 4
 --- !u!212 &1124404456
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -53946,11 +53948,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 33.9880409
+      value: 31.3358002
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 14.8600578
+      value: 14.9616337
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.z
@@ -63927,6 +63929,7 @@ GameObject:
   - 4: {fileID: 1354036542}
   - 212: {fileID: 1354036541}
   - 114: {fileID: 1354036540}
+  - 61: {fileID: 1354036543}
   m_Layer: 0
   m_Name: THORNS
   m_TagString: TRAP
@@ -63985,6 +63988,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 27
+--- !u!61 &1354036543
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6100000, guid: f0e0c38fda3ad974d9f96055ba0e521e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1187514920}
+  m_GameObject: {fileID: 1354036539}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: .300000012, y: .319999993}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1354805359
 GameObject:
   m_ObjectHideFlags: 0
@@ -69138,7 +69153,7 @@ Transform:
   - {fileID: 1246237618}
   - {fileID: 1451177465}
   m_Father: {fileID: 367130270}
-  m_RootOrder: 6
+  m_RootOrder: 0
 --- !u!212 &1459445763
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -74623,6 +74638,7 @@ GameObject:
   - 114: {fileID: 1607201391}
   - 114: {fileID: 1607201388}
   - 114: {fileID: 1607201385}
+  - 82: {fileID: 1607201392}
   m_Layer: 13
   m_Name: RICHARD
   m_TagString: Player
@@ -74660,7 +74676,7 @@ Transform:
   m_PrefabInternal: {fileID: 1137792818}
   m_GameObject: {fileID: 1607201382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 33.9880409, y: 14.8600578, z: 0}
+  m_LocalPosition: {x: 31.3358002, y: 14.9616337, z: 0}
   m_LocalScale: {x: 1.00823271, y: 1.00823271, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -74741,6 +74757,8 @@ MonoBehaviour:
   ConsumoStaminaSalto: 20
   ConsumoStaminaAttacco: 45
   ConsumoStaminaDifesa: 30
+  ConsumoVitaFrecce: 15
+  ConsumoVitaTrappole: 50
   speed: {x: 0, y: 0}
 --- !u!58 &1607201389
 CircleCollider2D:
@@ -74779,6 +74797,64 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 1
+--- !u!82 &1607201392
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1607201382}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: f3b1da146bbb57242beecaa35990ddd2, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 2.04999995
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &1610501286
 GameObject:
   m_ObjectHideFlags: 0
@@ -80893,7 +80969,7 @@ Transform:
   - {fileID: 452756011}
   - {fileID: 37467526}
   m_Father: {fileID: 367130270}
-  m_RootOrder: 4
+  m_RootOrder: 7
 --- !u!212 &1735935106
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -83518,7 +83594,7 @@ Transform:
   - {fileID: 1358165046}
   - {fileID: 216228453}
   m_Father: {fileID: 367130270}
-  m_RootOrder: 2
+  m_RootOrder: 5
 --- !u!1 &1794618426
 GameObject:
   m_ObjectHideFlags: 0
@@ -87204,7 +87280,7 @@ Transform:
   - {fileID: 1992065024}
   - {fileID: 563237345}
   m_Father: {fileID: 367130270}
-  m_RootOrder: 0
+  m_RootOrder: 3
 --- !u!212 &1865760810
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -91623,7 +91699,7 @@ Transform:
   - {fileID: 1763736759}
   - {fileID: 729284274}
   m_Father: {fileID: 367130270}
-  m_RootOrder: 3
+  m_RootOrder: 6
 --- !u!212 &1945026108
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -93556,6 +93632,8 @@ MonoBehaviour:
   ConsumoStaminaSalto: 40
   ConsumoStaminaAttacco: 45
   ConsumoStaminaDifesa: 30
+  ConsumoVitaFrecce: 15
+  ConsumoVitaTrappole: 50
   speed: {x: 0, y: 0}
 --- !u!114 &1988806506
 MonoBehaviour:
