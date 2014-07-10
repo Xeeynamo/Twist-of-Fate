@@ -74,14 +74,19 @@ public class ScrollingText : MonoBehaviour {
 		{
 			imgStory.texture = imgList[1];
 		}
-		if(actText == 5)
+		if(actText == 4)
 		{
 			imgStory.texture = imgList[2];
 		}
-		if(actText == 7)
+		if(actText == 5)
 		{
 			imgStory.texture = imgList[3];
 		}
+		if(actText == 7)
+		{
+			imgStory.texture = imgList[4];
+		}
+
 		if(actText >= 8)
 		{
 			Application.LoadLevel(2);
