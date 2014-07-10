@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class ZonaCellaRotta : MonoBehaviour {
-	private int playerMask = 1 << 13;
+	private int playerMask = (1 << 13) | (1 << 15);
 	private Color c;
 	//Exe sta per execute, permette di far si che il settaggio del flag sia fatto solo una volta così da non interferire con gli altri
 	private bool exe = false;

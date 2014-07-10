@@ -97,9 +97,8 @@ public class Richard : MonoBehaviour
                 state = getStateFromInput();
 
                 // Controllo che evita di far saltare il personaggio mentre è abbassato
-                if (PreviousState == StateManager.State.Stand && state == StateManager.State.Hide &&
-                    physManager.CheckHideout())
-                {
+                if (!movimento && state == StateManager.State.Hide && canHide){
+				Debug.Log("CanHide? " + canHide.ToString());
                     Hide = true;
                 }
                 else if (state == StateManager.State.Hide)
@@ -223,8 +222,11 @@ public class Richard : MonoBehaviour
         {
 
         }
-        if (We.Input.MoveUp == true)
-            return StateManager.State.Hide;
+        if (We.Input.MoveUp == true ) {
+						return StateManager.State.Hide;
+				} else
+						Hide = false;
+						
         if (We.Input.AttackPrimary && !movimento)
             return StateManager.State.Attack;
         if (We.Input.AttackSecondary && !movimento)
