@@ -229,9 +229,11 @@ public class Richard : MonoBehaviour
 						
         if (We.Input.AttackPrimary && !movimento)
             return StateManager.State.Attack;
+
         if (We.Input.AttackSecondary && !movimento)
             return StateManager.State.Attack2;
-		if (We.Input.Defense && !movimento)
+
+		if (We.Input.Defense && !movimento && physManager.Stamina >= physManager.ConsumoStaminaDifesa)
 			return StateManager.State.Defense;
 
         return StateManager.State.Unpressed;
