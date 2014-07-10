@@ -49,7 +49,9 @@ public class Knight : MonoBehaviour
                     State = StateManager.State.Alert;
                 }
                 else if (physManager.CheckNearWall())
+                {
                     State = StateManager.State.Turn;
+                }
                 break;
             case StateManager.State.Turn:
                 physManager.Direction = !physManager.Direction;
