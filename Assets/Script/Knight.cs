@@ -34,7 +34,13 @@ public class Knight : MonoBehaviour
         {
             case StateManager.State.Stand:
                 physManager.speed.x = 0;
-                State = StateManager.State.Turn;
+                if (physManager.CheckEnemyAround())
+                {
+                    timerOutOfAlert = 0;
+                    State = StateManager.State.Alert;
+                }
+                else if (physManager.CheckNearWall())
+                    State = StateManager.State.Turn;
                 break;
             case StateManager.State.Walk:
                 if (physManager.CheckEnemyAround())
