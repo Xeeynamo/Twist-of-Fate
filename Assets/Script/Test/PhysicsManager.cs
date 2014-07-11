@@ -470,7 +470,7 @@ public class PhysicsManager : MonoBehaviour
 		if (CheckCeiling () && IsOnGround) {
 			Health = 0;
 				}
-		if (CheckMovingPlatform2 () && IsOnGround && !CheckMovingPlatform()) {
+		if (CheckMovingPlatform2 () && IsOnGround && !CheckMovingPlatform() && this.transform.position.y > 7) {
 			Health = 0;
 		}
     }
