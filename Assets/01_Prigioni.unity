@@ -21715,6 +21715,10 @@ Prefab:
       propertyPath: m_Name
       value: Knight
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 9056dfd283e1b0e4dadf28f096647d1e, type: 2}
+      propertyPath: GravityDisabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9056dfd283e1b0e4dadf28f096647d1e, type: 2}
   m_RootGameObject: {fileID: 2050694477}
@@ -39441,6 +39445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hud: {fileID: 0}
   IsPlayableCharacter: 0
+  GravityDisabled: 1
   IsOnGround: 0
   Jumping: 0
   Gravity: 8
@@ -49130,6 +49135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hud: {fileID: 0}
   IsPlayableCharacter: 0
+  GravityDisabled: 0
   IsOnGround: 0
   Jumping: 0
   Gravity: 16
@@ -51793,6 +51799,10 @@ Prefab:
     - target: {fileID: 100002, guid: 9056dfd283e1b0e4dadf28f096647d1e, type: 2}
       propertyPath: m_Name
       value: Knight
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 9056dfd283e1b0e4dadf28f096647d1e, type: 2}
+      propertyPath: GravityDisabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9056dfd283e1b0e4dadf28f096647d1e, type: 2}
@@ -75507,6 +75517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hud: {fileID: 109090612}
   IsPlayableCharacter: 0
+  GravityDisabled: 0
   IsOnGround: 0
   Jumping: 0
   Gravity: 8
@@ -81025,6 +81036,10 @@ Prefab:
     - target: {fileID: 100002, guid: 9056dfd283e1b0e4dadf28f096647d1e, type: 2}
       propertyPath: m_Name
       value: Knight
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 9056dfd283e1b0e4dadf28f096647d1e, type: 2}
+      propertyPath: GravityDisabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9056dfd283e1b0e4dadf28f096647d1e, type: 2}
@@ -94662,6 +94677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hud: {fileID: 0}
   IsPlayableCharacter: 0
+  GravityDisabled: 1
   IsOnGround: 0
   Jumping: 0
   Gravity: 8
@@ -97514,6 +97530,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hud: {fileID: 0}
   IsPlayableCharacter: 0
+  GravityDisabled: 1
   IsOnGround: 0
   Jumping: 0
   Gravity: 8
