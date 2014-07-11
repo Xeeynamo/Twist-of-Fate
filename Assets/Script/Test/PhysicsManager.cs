@@ -478,12 +478,14 @@ public class PhysicsManager : MonoBehaviour
         PrevState = State;
         rigidbody2D.velocity = new Vector3(speed.x * Time.deltaTime, speed.y * Time.deltaTime, 0.0f);
 
-		if (CheckCeiling () && IsOnGround) {
-			Health = 0;
-				}
-		if (CheckMovingPlatform2 () && IsOnGround && !CheckMovingPlatform() && this.transform.position.y > 6.5f) {
-			Health = 0;
-		}
+        if (CheckCeiling() && IsOnGround)
+        {
+            Health = 0;
+        }
+        if (CheckMovingPlatform2() && IsOnGround && !CheckMovingPlatform() && this.transform.position.y > 6.5f)
+        {
+            Health = 0;
+        }
     }
 
 
