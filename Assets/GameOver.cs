@@ -15,6 +15,7 @@ public class GameOver : MonoBehaviour
 
     public State state;
     public float timer = 1.0f;
+    bool canSkip = false;
 
     void SetFadeAlpha(float alpha)
     {
@@ -35,6 +36,8 @@ public class GameOver : MonoBehaviour
         {
             case State.Opening:
                 timer -= TimeFade * Time.deltaTime;
+                if (timer < 0.5f)
+                    canSkip = true;
                 if (timer <= 0.0f)
                 {
                     timer = 0.0f;
@@ -55,7 +58,7 @@ public class GameOver : MonoBehaviour
                 break;
         }
 
-        if (Input.anyKey)
+        if (canSkip == true && Input.anyKey)
             state = State.Exiting;
     }
 }
