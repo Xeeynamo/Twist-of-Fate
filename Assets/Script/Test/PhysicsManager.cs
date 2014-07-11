@@ -481,41 +481,45 @@ public class PhysicsManager : MonoBehaviour
 		}
     }
 
-	
-	void OnCollisionEnter2D(Collision2D coll) {
-		print (coll.gameObject.name);
-		if (coll.gameObject.tag == "Arrow" ) {
-			if(State!=StateManager.State.Defense)
-			{
-				audio.Play ();
-				//applica danno
-				GetComponent<Animator>().SetBool("Colpito", true);
-				Health -= ConsumoVitaFrecce;
 
-			}
-			Destroy (coll.gameObject);
-		}
-		if (coll.gameObject.tag == "TRAP") {
-			//applica danno
-			if(!colpito){
-			GetComponent<Animator>().SetBool("Colpito", true);
-			Health -= ConsumoVitaTrappole;
-			audio.Play ();
-			}
-			colpito = true;
-		}
-		if(coll.gameObject.tag == "Enemy")
-		{
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        if (coll.gameObject.tag == "Arrow")
+        {
+            if (State != StateManager.State.Defense)
+            {
+                audio.Play();
+                //applica danno
+                GetComponent<Animator>().SetBool("Colpito", true);
+                Health -= ConsumoVitaFrecce;
 
-			if(!colpito && (State!=StateManager.State.Defense)){
-				audio.Play ();
-				//applica danno
-				GetComponent<Animator>().SetBool("Colpito", true);
-				Health -= ConsumoVitaColpoNemico;
-			}
-			colpito = true;
-		}
-	
-		GetComponent<Animator>().SetBool("Colpito", false);
-	}
+            }
+            Destroy(coll.gameObject);
+        }
+        if (coll.gameObject.tag == "TRAP")
+        {
+            //applica danno
+            if (!colpito)
+            {
+                GetComponent<Animator>().SetBool("Colpito", true);
+                Health -= ConsumoVitaTrappole;
+                audio.Play();
+            }
+            colpito = true;
+        }
+        if (coll.gameObject.tag == "Enemy")
+        {
+
+            if (!colpito && (State != StateManager.State.Defense))
+            {
+                audio.Play();
+                //applica danno
+                GetComponent<Animator>().SetBool("Colpito", true);
+                Health -= ConsumoVitaColpoNemico;
+            }
+            colpito = true;
+        }
+
+        GetComponent<Animator>().SetBool("Colpito", false);
+    }
 }

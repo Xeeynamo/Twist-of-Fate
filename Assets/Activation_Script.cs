@@ -17,7 +17,7 @@ public class Activation_Script : MonoBehaviour {
     {
         if ((Vector2.Distance(playerPos.position, transform.position) <= 1) && Input.GetKeyDown(KeyCode.X))
         {
-            GameObject o = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<FollowCamera>().ObjectPeek = door;
+            GameObject.FindGameObjectWithTag("MainCamera").GetComponent<FollowCamera>().ObjectPeek = door;
             anim.SetBool("Open", true);
         }
 		if(!anim.GetCurrentAnimatorStateInfo(0).IsName("Base"))
