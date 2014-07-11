@@ -500,7 +500,8 @@ public class PhysicsManager : MonoBehaviour
 		}
 		if(coll.gameObject.tag == "Enemy")
 		{
-			if(!colpito){
+
+			if(!colpito && (State!=StateManager.State.Defense)){
 				audio.Play ();
 				//applica danno
 				GetComponent<Animator>().SetBool("Colpito", true);
