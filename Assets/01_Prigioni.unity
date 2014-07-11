@@ -7311,6 +7311,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 771639321}
   m_RootOrder: 6
+--- !u!1 &150887136
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 150887138}
+  - 212: {fileID: 150887137}
+  m_Layer: 0
+  m_Name: Cella rotta
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &150887137
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 150887136}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: a7e909ce10bc9d54db106514c0aec38c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!4 &150887138
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 150887136}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.49195862, y: 4.57945728, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 40
 --- !u!1 &150949491
 GameObject:
   m_ObjectHideFlags: 0
@@ -19400,7 +19450,7 @@ Transform:
   - {fileID: 1111197615}
   - {fileID: 1337803263}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 20
 --- !u!114 &380960326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29382,7 +29432,7 @@ Transform:
   - {fileID: 1371934349}
   - {fileID: 1323903937}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 22
 --- !u!212 &591455065
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -48657,6 +48707,8 @@ MonoBehaviour:
   ConsumoStaminaDifesa: 30
   ConsumoVitaFrecce: 15
   ConsumoVitaTrappole: 50
+  ConsumoVitaColpoArmaNemico: 10
+  ConsumoVitaColpoNemico: 5
   speed: {x: 0, y: 0}
 --- !u!114 &1002935797
 MonoBehaviour:
@@ -54047,11 +54099,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.32064557
+      value: 3.58968782
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.17641139
+      value: 10.0588169
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.z
@@ -74644,7 +74696,7 @@ Transform:
   m_PrefabInternal: {fileID: 1137792818}
   m_GameObject: {fileID: 1607201382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.32064557, y: 2.17641139, z: 0}
+  m_LocalPosition: {x: 3.58968782, y: 10.0588169, z: 0}
   m_LocalScale: {x: 1.00823271, y: 1.00823271, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -74727,6 +74779,8 @@ MonoBehaviour:
   ConsumoStaminaDifesa: 30
   ConsumoVitaFrecce: 15
   ConsumoVitaTrappole: 50
+  ConsumoVitaColpoArmaNemico: 10
+  ConsumoVitaColpoNemico: 5
   speed: {x: 0, y: 0}
 --- !u!58 &1607201389
 CircleCollider2D:
@@ -75306,6 +75360,56 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300008, guid: 3a16e26e24391b142a649004d793ff85, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &1629022148
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1629022150}
+  - 212: {fileID: 1629022149}
+  m_Layer: 0
+  m_Name: Cella rotta
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &1629022149
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1629022148}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: a7e909ce10bc9d54db106514c0aec38c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!4 &1629022150
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1629022148}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.2246122, y: 4.63946438, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 39
 --- !u!1 &1630383930
 GameObject:
   m_ObjectHideFlags: 0
@@ -93563,6 +93667,8 @@ MonoBehaviour:
   ConsumoStaminaDifesa: 30
   ConsumoVitaFrecce: 15
   ConsumoVitaTrappole: 50
+  ConsumoVitaColpoArmaNemico: 10
+  ConsumoVitaColpoNemico: 5
   speed: {x: 0, y: 0}
 --- !u!114 &1988806506
 MonoBehaviour:
@@ -96456,7 +96562,7 @@ Transform:
   - {fileID: 667741644}
   - {fileID: 1621586022}
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 21
 --- !u!1 &2055463539
 GameObject:
   m_ObjectHideFlags: 0

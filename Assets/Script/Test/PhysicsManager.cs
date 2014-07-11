@@ -266,8 +266,8 @@ public class PhysicsManager : MonoBehaviour
     /// <returns></returns>
     public bool CheckMovingPlatform()
     {
-        bool b1 = EvaluateRaycastV(-0.14f, -0.28f, 0.32f, MOVINGPLATFORM_MASK, Color.cyan);
-        bool b2 = EvaluateRaycastV(+0.14f, -0.28f, 0.32f, MOVINGPLATFORM_MASK, Color.cyan);
+        bool b1 = EvaluateRaycastV(-0.14f, -0.28f, 0.22f, MOVINGPLATFORM_MASK, Color.cyan);
+        bool b2 = EvaluateRaycastV(+0.14f, -0.28f, 0.22f, MOVINGPLATFORM_MASK, Color.cyan);
         return b1 | b2;
         //return EvaluateRaycastH(Direction ? -0.14f : +0.14f, -0.48f, 0.28f, groundMask, Color.green);
     }
@@ -353,6 +353,8 @@ public class PhysicsManager : MonoBehaviour
             Jumping = false;
             if (!CheckMovingPlatform())
                 speed.y = 0;
+			else if (State != StateManager.State.Jumping)
+				speed.y = -40;
             if (State == StateManager.State.Unpressed ||
                 PrevState == StateManager.State.Falling)
                 State = StateManager.State.Stand;
