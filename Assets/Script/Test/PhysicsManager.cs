@@ -128,11 +128,11 @@ public class PhysicsManager : MonoBehaviour
 	/// <summary>
 	/// Quanta vita viene consumata dal contatto con le trappole
 	/// </summary>
-	public int ConsumoVitaTrappole = 50;
+	public int ConsumoVitaTrappole = 40;
 	/// <summary>
 	/// Quanta vita viene consumata dal contatto con l'arma del nemico
 	/// </summary>
-	public int ConsumoVitaColpoArmaNemico = 10;
+	public int ConsumoVitaColpoArmaNemico = 20;
 	/// <summary>
 	/// Quanta vita viene consumata dal contatto con il nemico
 	/// </summary>
@@ -144,10 +144,6 @@ public class PhysicsManager : MonoBehaviour
     public Vector2 speed;
 
 	private bool colpito = false;
-
-	private float tempoInvincibile = 1.5f;
-
-	private float time = 0f;
 
     public bool Hide
     {
@@ -197,6 +193,7 @@ public class PhysicsManager : MonoBehaviour
         }
     }
 
+    #region PARTE DEDICATA AI RAYCAST
     /// <summary>
     /// Processa un raycast che lavora orizzontalmente
     /// </summary>
@@ -354,6 +351,7 @@ public class PhysicsManager : MonoBehaviour
     {
         return EvaluateRaycastH(0.0f, -0.24f, 1.0f, GROUND_MASK, Color.green) == true;
     }
+    #endregion
 
     void Awake()
     {
@@ -371,15 +369,25 @@ public class PhysicsManager : MonoBehaviour
         }
         if (CheckGround() || CheckMovingPlatform())
         {
-            IsOnGround = true;
-            Jumping = false;
-            if (!CheckMovingPlatform())
-                speed.y = 0;
-			else if (State != StateManager.State.Jumping)
-				speed.y = -40;
-            if (State == StateManager.State.Unpressed ||
-                PrevState == StateManager.State.Falling)
+            if (colpito == true && speed.y < 0)
+            {
+                colpito = false;
+                IsOnGround = true;
                 State = StateManager.State.Stand;
+                GetComponent<Animator>().SetBool("Colpito", false);
+            }
+            else if (colpito == false)
+            {
+                IsOnGround = true;
+                Jumping = false;
+                if (!CheckMovingPlatform())
+                    speed.y = 0;
+                else if (State != StateManager.State.Jumping)
+                    speed.y = -40;
+                if (State == StateManager.State.Unpressed ||
+                    PrevState == StateManager.State.Falling)
+                    State = StateManager.State.Stand;
+            }
         }
         else
         {
@@ -388,91 +396,88 @@ public class PhysicsManager : MonoBehaviour
                 State = StateManager.State.Falling;
         }
 
-        switch (State) 
+        if (colpito == false)
         {
-            case StateManager.State.Stand:
-                if (IsOnGround == true)
-                {
-                    speed.x = 0.0f;
-                }
-                else
-                {
-                    if (speed.y >= JumpStrengthMinimum)
-                        speed.y = JumpStrengthMinimum;
-                }
-                break;
-            case StateManager.State.Walk:
-                speed.x = Direction ? +WalkSpeed : -WalkSpeed;
-                break;
-            case StateManager.State.Run:
-                speed.x = Direction ? +RunSpeed : -RunSpeed;
-                Stamina -= ConsumoStaminaCorsa * Time.deltaTime;
-                if (Stamina <= 0)
-                    State = StateManager.State.Walk;
-                break;
-            case StateManager.State.Jumping:
-                if (IsOnGround == true && Stamina >= ConsumoStaminaSalto)
-                {
-                    IsOnGround = false;
-                    Jumping = true;
-                    speed.y = JumpStrengthMaximum;
-                    Stamina -= ConsumoStaminaSalto;
-                }
+            Stamina += RecuperoStamina * Time.deltaTime;
 
-                break;
-			case StateManager.State.Falling:
-                if (IsOnGround)
-                    State = StateManager.State.Stand;
-                break;
-            case StateManager.State.PreScivolata:
-                speed.x = Direction ? +ScivolataForza : -ScivolataForza;
-                State = StateManager.State.Scivolata;
-                break;
-            case StateManager.State.Scivolata:
-                speed.x += (Direction ? -ScivolataInerzia : +ScivolataInerzia);
-                if (Direction ? speed.x <= 0 : speed.x >= 0)
-                {
-                    speed.x = 0;
-                    State = StateManager.State.Crouch;
-                }
-                break;
+            switch (State)
+            {
+                case StateManager.State.Stand:
+                    if (IsOnGround == true)
+                    {
+                        speed.x = 0.0f;
+                    }
+                    else
+                    {
+                        if (speed.y >= JumpStrengthMinimum)
+                            speed.y = JumpStrengthMinimum;
+                    }
+                    break;
+                case StateManager.State.Walk:
+                    speed.x = Direction ? +WalkSpeed : -WalkSpeed;
+                    break;
+                case StateManager.State.Run:
+                    speed.x = Direction ? +RunSpeed : -RunSpeed;
+                    Stamina -= ConsumoStaminaCorsa * Time.deltaTime;
+                    if (Stamina <= 0)
+                        State = StateManager.State.Walk;
+                    break;
+                case StateManager.State.Jumping:
+                    if (IsOnGround == true && Stamina >= ConsumoStaminaSalto)
+                    {
+                        IsOnGround = false;
+                        Jumping = true;
+                        speed.y = JumpStrengthMaximum;
+                        Stamina -= ConsumoStaminaSalto;
+                    }
 
-		case StateManager.State.Attack:
-			//Attacco logica
-			if(Stamina > ConsumoStaminaAttacco)
-				Stamina -= ConsumoStaminaAttacco;
-			break;
+                    break;
+                case StateManager.State.Falling:
+                    if (IsOnGround)
+                        State = StateManager.State.Stand;
+                    break;
+                case StateManager.State.PreScivolata:
+                    speed.x = Direction ? +ScivolataForza : -ScivolataForza;
+                    State = StateManager.State.Scivolata;
+                    break;
+                case StateManager.State.Scivolata:
+                    speed.x += (Direction ? -ScivolataInerzia : +ScivolataInerzia);
+                    if (Direction ? speed.x <= 0 : speed.x >= 0)
+                    {
+                        speed.x = 0;
+                        State = StateManager.State.Crouch;
+                    }
+                    break;
 
-		case StateManager.State.Attack2:
-			//Attacco2 logica
-			if(Stamina > ConsumoStaminaAttacco)
-				Stamina -= ConsumoStaminaAttacco;
-			break;
+                case StateManager.State.Attack:
+                    //Attacco logica
+                    if (Stamina > ConsumoStaminaAttacco)
+                        Stamina -= ConsumoStaminaAttacco;
+                    break;
 
-		case StateManager.State.Defense:
-			//Difesa logica
-			if(Stamina >= 0){
-				Stamina -= ConsumoStaminaDifesa*Time.deltaTime;
-			
-			}
-			if(Stamina <= ConsumoStaminaDifesa)
-				State = StateManager.State.Stand;
-			break;
+                case StateManager.State.Attack2:
+                    //Attacco2 logica
+                    if (Stamina > ConsumoStaminaAttacco)
+                        Stamina -= ConsumoStaminaAttacco;
+                    break;
+
+                case StateManager.State.Defense:
+                    //Difesa logica
+                    if (Stamina >= 0)
+                    {
+                        Stamina -= ConsumoStaminaDifesa * Time.deltaTime;
+
+                    }
+                    if (Stamina <= ConsumoStaminaDifesa)
+                        State = StateManager.State.Stand;
+                    break;
+            }
         }
-
-        Stamina += RecuperoStamina * Time.deltaTime;
 		if (!IsOnGround)
             speed.y -= Gravity;
         PrevState = State;
         rigidbody2D.velocity = new Vector3(speed.x * Time.deltaTime, speed.y * Time.deltaTime, 0.0f);
 
-		if (colpito) {
-			time+=Time.deltaTime;
-			if(time >= tempoInvincibile){
-				colpito = false;
-				time = 0;
-				 }
-		}
 		if (CheckCeiling () && IsOnGround) {
 			Health = 0;
 				}
@@ -482,44 +487,57 @@ public class PhysicsManager : MonoBehaviour
     }
 
 
-    void OnCollisionEnter2D(Collision2D coll)
+    void OnCollisionEnter2D(Collision2D obj)
     {
-        if (coll.gameObject.tag == "Arrow")
+        if (!colpito)
         {
-            if (State != StateManager.State.Defense)
+            bool ahia = false;
+            if (obj.gameObject.tag == "Arrow")
             {
-                audio.Play();
-                //applica danno
-                GetComponent<Animator>().SetBool("Colpito", true);
-                Health -= ConsumoVitaFrecce;
+                if (State != StateManager.State.Defense)
+                {
+                    audio.Play();
+                    GetComponent<Animator>().SetBool("Colpito", true);
+                    Health -= ConsumoVitaFrecce;
+                    ahia = true;
 
+                }
+                Destroy(obj.gameObject);
             }
-            Destroy(coll.gameObject);
-        }
-        if (coll.gameObject.tag == "TRAP")
-        {
-            //applica danno
-            if (!colpito)
+            else if (obj.gameObject.tag == "TRAP")
             {
                 GetComponent<Animator>().SetBool("Colpito", true);
                 Health -= ConsumoVitaTrappole;
                 audio.Play();
+                ahia = true;
             }
-            colpito = true;
-        }
-        if (coll.gameObject.tag == "Enemy")
-        {
-
-            if (!colpito && (State != StateManager.State.Defense))
+            else if (obj.gameObject.tag == "Enemy")
             {
-                audio.Play();
-                //applica danno
-                GetComponent<Animator>().SetBool("Colpito", true);
-                Health -= ConsumoVitaColpoNemico;
+                if (State != StateManager.State.Defense)
+                {
+                    audio.Play();
+                    Health -= ConsumoVitaColpoArmaNemico;
+                    ahia = true;
+                }
             }
-            colpito = true;
+            else if (obj.gameObject.tag == "EnemyWeapon")
+            {
+                if (State != StateManager.State.Defense)
+                {
+                    audio.Play();
+                    Health -= ConsumoVitaColpoNemico;
+                    ahia = true;
+                }
+            }
+            // Controlla se è stato colpito o meno
+            if (ahia == true)
+            {
+                speed.x = Direction ? -JumpStrengthMinimum : +JumpStrengthMinimum;
+                speed.y = JumpStrengthMaximum;
+                IsOnGround = false;
+                colpito = true;
+                GetComponent<Animator>().SetBool("Colpito", true);
+            }
         }
-
-        GetComponent<Animator>().SetBool("Colpito", false);
     }
 }
