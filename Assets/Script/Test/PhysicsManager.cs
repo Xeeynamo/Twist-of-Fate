@@ -27,6 +27,7 @@ public class PhysicsManager : MonoBehaviour
     public GameObject hud;
 
     public bool IsPlayableCharacter = false;
+    public bool GravityDisabled = false;
 
     public float Health
     {
@@ -389,7 +390,7 @@ public class PhysicsManager : MonoBehaviour
                     State = StateManager.State.Stand;
             }
         }
-        else
+        else if (!GravityDisabled)
         {
             IsOnGround = false;
             if (speed.y < Gravity)
@@ -473,7 +474,7 @@ public class PhysicsManager : MonoBehaviour
                     break;
             }
         }
-		if (!IsOnGround)
+        if (!IsOnGround && !GravityDisabled)
             speed.y -= Gravity;
         PrevState = State;
         rigidbody2D.velocity = new Vector3(speed.x * Time.deltaTime, speed.y * Time.deltaTime, 0.0f);
