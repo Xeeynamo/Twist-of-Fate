@@ -277,7 +277,10 @@ public class PhysicsManager : MonoBehaviour
 	/// </summary>
 	/// <returns></returns>
 	public bool CheckMovingPlatform2(){	
-		return EvaluateRaycastH(-0.04f, 0.45f, 0.11f, MOVINGPLATFORM_MASK, Color.red);
+		if(State != StateManager.State.Scivolata && State != StateManager.State.Crouch)
+			return EvaluateRaycastH(-0.04f, 0.45f, 0.11f, MOVINGPLATFORM_MASK, Color.red);
+		else
+			return EvaluateRaycastH(-0.04f, 0.28f, 0.11f, MOVINGPLATFORM_MASK, Color.yellow);
 		//return EvaluateRaycastH(Direction ? -0.14f : +0.14f, -0.48f, 0.28f, groundMask, Color.green);
 	}
 	/// <summary>
@@ -285,7 +288,10 @@ public class PhysicsManager : MonoBehaviour
 	/// </summary>
 	/// <returns></returns>
 	public bool CheckCeiling(){	
-		return EvaluateRaycastH(-0.04f, 0.45f, 0.11f, GROUND_MASK, Color.red);
+		if(State != StateManager.State.Scivolata && State != StateManager.State.Crouch)
+		    return EvaluateRaycastH(-0.04f, 0.45f, 0.11f, GROUND_MASK, Color.red);
+		else
+			return EvaluateRaycastH(-0.04f, 0.28f, 0.11f, GROUND_MASK, Color.yellow);
 		//return EvaluateRaycastH(Direction ? -0.14f : +0.14f, -0.48f, 0.28f, groundMask, Color.green);
 	}
     /// <summary>
@@ -470,7 +476,7 @@ public class PhysicsManager : MonoBehaviour
 		if (CheckCeiling () && IsOnGround) {
 			Health = 0;
 				}
-		if (CheckMovingPlatform2 () && IsOnGround && !CheckMovingPlatform() && this.transform.position.y > 7) {
+		if (CheckMovingPlatform2 () && IsOnGround && !CheckMovingPlatform() && this.transform.position.y > 6.5f) {
 			Health = 0;
 		}
     }
