@@ -143,8 +143,9 @@ public class Richard : MonoBehaviour
             keyScivolata = false;
 
 		if (physManager.Health == 0) {
-		 //animazione morte
-		// aspetta un po'
+		    //animazione morte
+		    // aspetta un po'
+			//fade out
 			Application.LoadLevel(3);
 		
 		}

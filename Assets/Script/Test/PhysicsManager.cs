@@ -460,7 +460,7 @@ public class PhysicsManager : MonoBehaviour
 				time = 0;
 				 }
 		}
-		if (CheckMovingPlatform2 () && IsOnGround) {
+		if (CheckMovingPlatform2 () && IsOnGround && !CheckMovingPlatform()) {
 			Health = 0;
 				}
     }
