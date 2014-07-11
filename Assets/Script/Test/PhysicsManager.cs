@@ -28,7 +28,7 @@ public class PhysicsManager : MonoBehaviour
 
     public bool IsPlayableCharacter = false;
 
-    float Health
+    public float Health
     {
         get
         {
@@ -462,9 +462,6 @@ public class PhysicsManager : MonoBehaviour
 		}
 		if (CheckMovingPlatform2 () && IsOnGround) {
 			Health = 0;
-			//animazione morte
-			//aspetta un po'
-			//gameover
 				}
     }
 

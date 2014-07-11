@@ -141,6 +141,13 @@ public class Richard : MonoBehaviour
         // controllo se il tasto della scivolata è stato rilasciato
         if (!We.Input.MoveLeft && !We.Input.MoveRight)
             keyScivolata = false;
+
+		if (physManager.Health == 0) {
+		 //animazione morte
+		// aspetta un po'
+			Application.LoadLevel(3);
+		
+		}
     }
 
     StateManager.State getStateFromInput()
