@@ -13,13 +13,14 @@ TagManager:
   - TRAP
   - DOOR
   - Arrow
+  - Barrel
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
   Builtin Layer 2: Ignore Raycast
   Builtin Layer 3: 
   Builtin Layer 4: Water
-  Builtin Layer 5: UI
+  Builtin Layer 5: 
   Builtin Layer 6: 
   Builtin Layer 7: 
   User Layer 8: Ground
@@ -31,7 +32,7 @@ TagManager:
   User Layer 14: MovingPlatform
   User Layer 15: PlayerHide
   User Layer 16: Hideout
-  User Layer 17: 
+  User Layer 17: Barrel
   User Layer 18: 
   User Layer 19: 
   User Layer 20: 
