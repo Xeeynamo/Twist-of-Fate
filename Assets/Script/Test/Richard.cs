@@ -65,6 +65,8 @@ public class Richard : MonoBehaviour
         set { physManager.Hide = value; }
     }
 
+    float colorHide = 1.0f;
+
     /// <summary>
     /// Inizializzazione
     /// </summary>
@@ -97,8 +99,11 @@ public class Richard : MonoBehaviour
                 state = getStateFromInput();
 
                 // Controllo che evita di far saltare il personaggio mentre è abbassato
-                if (state == StateManager.State.Hide && canHide){
-				Debug.Log("CanHide? " + canHide.ToString());
+                if (state == StateManager.State.Hide && canHide)
+                {
+                    colorHide -= Time.deltaTime * 2;
+                    if (colorHide <= 0.25f)
+                        colorHide = 0.25f;
                     Hide = true;
                 }
                 else if (state == StateManager.State.Hide)
@@ -106,6 +111,13 @@ public class Richard : MonoBehaviour
                     state = PreviousState;
                     Hide = false;
                 }
+                else
+                {
+                    colorHide += Time.deltaTime * 2;
+                    if (colorHide >= 1.0f)
+                        colorHide = 1.0f;
+                }
+                GetComponent<SpriteRenderer>().color = new Color(colorHide, colorHide, colorHide);
 
                 if (PreviousState == StateManager.State.Crouch && state == StateManager.State.Jumping)
                 {
