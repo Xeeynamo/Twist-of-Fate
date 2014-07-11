@@ -460,7 +460,7 @@ public class PhysicsManager : MonoBehaviour
 				time = 0;
 				 }
 		}
-		if (CheckMovingPlatform2 ()) {
+		if (CheckMovingPlatform2 () && IsOnGround) {
 			Health = 0;
 			//animazione morte
 			//aspetta un po'
