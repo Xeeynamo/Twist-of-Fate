@@ -129,6 +129,14 @@ public class PhysicsManager : MonoBehaviour
 	/// Quanta vita viene consumata dal contatto con le trappole
 	/// </summary>
 	public int ConsumoVitaTrappole = 50;
+	/// <summary>
+	/// Quanta vita viene consumata dal contatto con l'arma del nemico
+	/// </summary>
+	public int ConsumoVitaColpoArmaNemico = 10;
+	/// <summary>
+	/// Quanta vita viene consumata dal contatto con il nemico
+	/// </summary>
+	public int ConsumoVitaColpoNemico = 5;
     /// <summary>
     /// La velocità orizzontale e verticale del personaggio
     /// Ogni valore è espresso per pixel al secondo.
@@ -137,7 +145,7 @@ public class PhysicsManager : MonoBehaviour
 
 	private bool colpito = false;
 
-	private float tempoInvincibile = 1f;
+	private float tempoInvincibile = 1.5f;
 
 	private float time = 0f;
 
@@ -445,22 +453,34 @@ public class PhysicsManager : MonoBehaviour
 
 	
 	void OnCollisionEnter2D(Collision2D coll) {
+		print (coll.gameObject.name);
 		if (coll.gameObject.tag == "Arrow" ) {
-			if(State!=StateManager.State.Defense){
-			audio.Play ();
-			//applica danno
-			GetComponent<Animator>().SetBool("Colpito", true);
-			Health -= ConsumoVitaFrecce;
+			if(State!=StateManager.State.Defense)
+			{
+				audio.Play ();
+				//applica danno
+				GetComponent<Animator>().SetBool("Colpito", true);
+				Health -= ConsumoVitaFrecce;
+
 			}
-				Destroy (coll.gameObject);
+			Destroy (coll.gameObject);
 		}
-		else
 		if (coll.gameObject.tag == "TRAP") {
 			//applica danno
 			if(!colpito){
 			GetComponent<Animator>().SetBool("Colpito", true);
 			Health -= ConsumoVitaTrappole;
 			audio.Play ();
+			}
+			colpito = true;
+		}
+		if(coll.gameObject.tag == "Enemy")
+		{
+			if(!colpito){
+				audio.Play ();
+				//applica danno
+				GetComponent<Animator>().SetBool("Colpito", true);
+				Health -= ConsumoVitaColpoNemico;
 			}
 			colpito = true;
 		}
