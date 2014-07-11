@@ -486,6 +486,16 @@ public class PhysicsManager : MonoBehaviour
 			}
 			colpito = true;
 		}
+		if(coll.gameObject.tag == "Montacarichi" && IsOnGround && !CheckMovingPlatform())
+		{
+		
+				audio.Play ();
+			    Health = 0;
+			   //animazione morte
+			   //aspetta un po'
+			   //game Over
+	
+		}
 		GetComponent<Animator>().SetBool("Colpito", false);
 	}
 }
