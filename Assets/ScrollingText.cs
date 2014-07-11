@@ -35,10 +35,14 @@ public class ScrollingText : MonoBehaviour {
 		secondiPerOgniCarattere = 1.0f/caratteriAlSecondo;
 		imgStory.texture = imgList[0];
 		actText = 0;
-		showText [0] = "Impero di Heisenfall - 21° anno dalla grande unificazione\nLa guerra che portò i 12 regni della congregazione di Heisen sotto una sola corona era orami un lontano e triste ricordo.";
-		showText [1] = "La ricostruzione procedeva per il meglio in quasi tutti regni, solo uno faceva tristemente eccezione:\nl'undicesimo regno, Artemir"; 
-		showText [2] = "Ad Artemir non solo la ricostruzione non procedeva ma, in alcuni punti, la popolazione viveva in condizioni ben peggiori di quelle vissute nel recente conflitto.\nLa colpa di questa situazione è da attribuire all'attuale govarnante che, da pieno sostenitore dell'impero, diventò con il passare del tempo sempre più ostile \nall'imperatore.";
-		showText [3] = "";
+		showText[0] = "Impero di Heisenfall - 21° anno dalla grande unificazione\nLa guerra che portò i 12 regni della congregazione di Heisen sotto una sola corona era orami un lontano e triste ricordo.";
+		showText[1] = "La ricostruzione procedeva per il meglio in quasi tutti regni, solo uno faceva tristemente eccezione:\nl'undicesimo regno, Artemir"; 
+		showText[2] = "Ad Artemir non solo la ricostruzione non procedeva ma, in alcuni punti, la popolazione viveva in condizioni ben peggiori di quelle vissute nel recente conflitto.\nLa colpa di questa situazione è da attribuire all'attuale govarnante che, da pieno sostenitore dell'impero, diventò con il passare del tempo sempre più ostile \nall'imperatore.";
+        showText[3] = "";
+        showText[4] = "";
+        showText[5] = "";
+        showText[6] = "";
+        showText[7] = "";
 
 		storyBg = new Texture2D (areaWidthT, areaHeightT);
 		for (int i = 0; i < storyBg.width; i++)
