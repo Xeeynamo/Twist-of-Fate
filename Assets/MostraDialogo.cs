@@ -31,19 +31,21 @@ public class MostraDialogo : MonoBehaviour {
 		}
 		dialogueBg.Apply ();
 		nomeGiocatore = PlayerPrefs.GetString ("Player_Name");
-		dialoghi = new string[5];
+		dialoghi = new string[6];
 		dialoghi[0] = "Prigioniero\nPuoi Sentirmi?\n- Premi X per continuare -";
 		dialoghi[1] = nomeGiocatore +"\nCerto che posso. Chi sei?\n- Premi X per continuare -";
 		dialoghi[2] = "Prigioniero\nSono il signore di questo castello, ti prego liberami.\nUn impostore ha preso il mio posto.\n- Premi X per continuare -";
 		if (numUccisioni == 0)
 		{
 			dialoghi[3] = nomeGiocatore +"\nTi credo, appena riuscirò a fuggire da questo incubo tornerò a cercarti, fidati di me.\n- Premi X per continuare -";
-			dialoghi[4] = "Prigioniero\nTi ringrazio, pregherò per te.\n- Premi X per continuare -";
+			dialoghi[4] = "Prigioniero\nTi voglio dare un consiglio: fai attenzione alla botola vicino all'uscita.\n- Premi X per continuare -";
+			dialoghi[5] = nomeGiocatore + "\nGrazie, terrò a mente il tuo consiglio.\nA presto, resisti.- Premi X per continuare -";
 		}
 		else
 		{
-			dialoghi[3] = nomeGiocatore +"\nE chi mi dice che anche tu non sia un impostore?\n*Meglio non fidarsi*\n\n- Premi X per continuare -";
-			dialoghi[4] = "Prigioniero\nTi prego Salvami.\n- Premi X per continuare -";
+			dialoghi[3] = nomeGiocatore +"\nE chi mi dice che anche tu non sia un impostore?\n- Premi X per continuare -";
+			dialoghi[4] = nomeGiocatore +"\n*Meglio non fidarsi*\n- Premi X per continuare -";
+			dialoghi[5] = "Prigioniero\nTi prego Salvami.\n- Premi X per continuare -";
 		}
 		actDialogue = 0;
 	}
