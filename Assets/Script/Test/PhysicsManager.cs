@@ -280,7 +280,14 @@ public class PhysicsManager : MonoBehaviour
 		return EvaluateRaycastH(-0.04f, 0.45f, 0.11f, MOVINGPLATFORM_MASK, Color.red);
 		//return EvaluateRaycastH(Direction ? -0.14f : +0.14f, -0.48f, 0.28f, groundMask, Color.green);
 	}
-
+	/// <summary>
+	/// Controlla se sopra il personaggio c'è il soffitto o meno
+	/// </summary>
+	/// <returns></returns>
+	public bool CheckCeiling(){	
+		return EvaluateRaycastH(-0.04f, 0.45f, 0.11f, GROUND_MASK, Color.red);
+		//return EvaluateRaycastH(Direction ? -0.14f : +0.14f, -0.48f, 0.28f, groundMask, Color.green);
+	}
     /// <summary>
     /// Controlla se la visuale del nemico incontra un suo nemico ad una certa
     /// distanza né troppo vicina né troppo lontana. Usata durante le fasi di guardia.
@@ -460,9 +467,12 @@ public class PhysicsManager : MonoBehaviour
 				time = 0;
 				 }
 		}
-		if (CheckMovingPlatform2 () && IsOnGround && !CheckMovingPlatform()) {
+		if (CheckCeiling () && IsOnGround) {
 			Health = 0;
 				}
+		if (CheckMovingPlatform2 () && IsOnGround && !CheckMovingPlatform()) {
+			Health = 0;
+		}
     }
 
 	
