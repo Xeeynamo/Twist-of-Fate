@@ -60,6 +60,10 @@ public class StateManager
         /// Entità si nasconde
         /// </summary>
         Hide,
+        /// <summary>
+        /// Entità muore
+        /// </summary>
+        Died,
     }
 }
 
