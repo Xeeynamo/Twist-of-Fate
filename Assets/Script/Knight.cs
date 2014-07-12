@@ -33,9 +33,11 @@ public class Knight : MonoBehaviour
         switch (State)
         {
             case StateManager.State.Stand:
+                physManager.hud.gameObject.GetComponent<HudHandler>().IsVisible = false;
                 physManager.speed.x = 0;
                 if (physManager.CheckEnemyAround())
                 {
+                    physManager.hud.gameObject.GetComponent<HudHandler>().IsVisible = true;
                     timerOutOfAlert = 0;
                     State = StateManager.State.Alert;
                 }

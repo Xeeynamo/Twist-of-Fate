@@ -8,6 +8,9 @@ public class HudHandler : MonoBehaviour
     public float MaxHealth = 100.0f;
     public float MaxMana = 100.0f;
 
+    public Color ColorHealth = Color.green;
+    public Color ColorStamina = Color.cyan;
+
     public bool EnableHealthWarning = true;
     public bool EnableStaminaWarning = true;
 
@@ -39,8 +42,23 @@ public class HudHandler : MonoBehaviour
     private float valueHealth;
     private float valueMana;
 
+    public bool Visible = true;
+    public bool IsVisible
+    {
+        get { return GetComponent<SpriteRenderer>().enabled; }
+        set
+        {
+            GetComponent<SpriteRenderer>().enabled = value;
+            if (BarHealth != null)
+                BarHealth.gameObject.GetComponent<SpriteRenderer>().enabled = value;
+            if (BarMana != null)
+                BarMana.gameObject.GetComponent<SpriteRenderer>().enabled = value;
+        }
+    }
+
     void Start()
     {
+        IsVisible = Visible;
         ValueHealth = MaxHealth;
         ValueMana = MaxMana;
     }
@@ -90,13 +108,13 @@ public class HudHandler : MonoBehaviour
         if (EnableHealthWarning && ValueHealth <= MaxHealth / 3)
             colorHealth = new Color(warning, Mathf.Abs(warning - 1.0f), 0.0f);
         else
-            colorHealth = new Color(0.0f, 1.0f, 0.0f);
+            colorHealth = ColorHealth;
 
         Color colorStamina;
         if (EnableStaminaWarning && ValueMana <= MaxMana / 3)
             colorStamina = new Color(0.0f, 0.0f, warning);
         else
-            colorStamina = new Color(0.0f, 1.0f, 1.0f);
+            colorStamina = ColorStamina;
 
         UpdateBar(BarHealth, ValueHealth, MaxHealth, colorHealth);
         UpdateBar(BarMana, ValueMana, MaxMana, colorStamina);
