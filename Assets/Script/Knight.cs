@@ -16,6 +16,7 @@ public class Knight : MonoBehaviour
     float timerOutOfAlert;
     float timerAlertBack;
     float timerBeforeAttack;
+	bool fix = false;
 
     StateManager.State State
     {
@@ -45,6 +46,10 @@ public class Knight : MonoBehaviour
                     State = StateManager.State.Turn;
                 break;
             case StateManager.State.Walk:
+			if(!fix){
+			Richard.visto = false;
+			fix = true;
+			}
                 if (physManager.CheckEnemyAround())
                 {
                     timerOutOfAlert = 0;
@@ -60,6 +65,8 @@ public class Knight : MonoBehaviour
                 physManager.State = StateManager.State.Walk;
                 break;
             case StateManager.State.Alert:
+			Richard.visto = true;
+			fix = false;
                 physManager.speed.x = (physManager.Direction ? physManager.WalkSpeed : -physManager.WalkSpeed) / 2.0f;
                 if (physManager.CheckEnemyNear())
                 {

@@ -61,6 +61,7 @@ public class Richard : MonoBehaviour
 	/// Controlli nascondigli
 	/// </summary>
 	public static bool canHide = false;
+	public static bool visto = false;
     public bool Hide
     {
         get { return physManager.Hide; }
@@ -106,6 +107,7 @@ public class Richard : MonoBehaviour
                     colorHide -= Time.deltaTime * 2;
                     if (colorHide <= 0.25f)
                         colorHide = 0.25f;
+				if(!visto)
                     Hide = true;
                 }
                 else if (state == StateManager.State.Hide)
