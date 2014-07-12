@@ -6,6 +6,8 @@ public class Richard : MonoBehaviour
     public static Transform _Transform;
 
     PhysicsManager physManager;
+    public float DiedTimer = 3.0f;
+    float diedTimer = 0.0f;
 
     StateManager.State PreviousState
     {
@@ -135,20 +137,23 @@ public class Richard : MonoBehaviour
                 }
                 break;
         }
-        physManager.State = state;
-        _Transform = transform;
 
         // controllo se il tasto della scivolata è stato rilasciato
         if (!We.Input.MoveLeft && !We.Input.MoveRight)
             keyScivolata = false;
 
-		if (physManager.Health == 0) {
-		    //animazione morte
-		    // aspetta un po'
-			//fade out
-			Application.LoadLevel(3);
-		
-		}
+        if (physManager.Health <= 0)
+        {
+            physManager.Gravity /= 2;
+            physManager.speed.x /= 2;
+            state = StateManager.State.Died;
+            diedTimer += Time.deltaTime;
+            if (diedTimer >= DiedTimer)
+                Application.LoadLevel(3);
+
+        }
+        physManager.State = state;
+        _Transform = transform;
     }
 
     StateManager.State getStateFromInput()

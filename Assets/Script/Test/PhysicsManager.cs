@@ -16,7 +16,7 @@ public class PhysicsManager : MonoBehaviour
     public static readonly int MOVINGPLATFORM_MASK = 1 << MOVINGPLATFORM_LAYER;
     public static readonly int PLAYERHIDE_MASK = 1 << PLAYERHIDE_LAYER;
     public static readonly int HIDEOUT_MASK = 1 << HIDEOUT_LAYER;
-    public static readonly int ENEMYALL_MASK = 1 << (ENEMYWEAPON_LAYER);
+    public static readonly int ENEMYALL_MASK = (1 << ENEMYWEAPON_LAYER) | (1 << ENEMY_LAYER);
 
     /// <summary>
     /// Rappresenta l'HUD collegata al personaggio.
@@ -519,16 +519,17 @@ public class PhysicsManager : MonoBehaviour
                 if (State != StateManager.State.Defense)
                 {
                     audio.Play();
-                    Health -= ConsumoVitaColpoArmaNemico;
+                    Health -= ConsumoVitaColpoNemico;
                     ahia = true;
                 }
             }
             else if (obj.gameObject.tag == "EnemyWeapon")
             {
+                Debug.Log("ENEMY WEAPON");
                 if (State != StateManager.State.Defense)
                 {
                     audio.Play();
-                    Health -= ConsumoVitaColpoNemico;
+                    Health -= ConsumoVitaColpoArmaNemico;
                     ahia = true;
                 }
             }

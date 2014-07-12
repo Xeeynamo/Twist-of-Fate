@@ -61,6 +61,12 @@ public class AnimationManager : MonoBehaviour
             case StateManager.State.Hide:
                 s = 13;
                 break;
+            case StateManager.State.Died:
+                s = 99;
+                animator.SetBool("Colpito", false);
+                animator.SetBool("Morto", true);
+                GetComponent<BoxCollider2D>().enabled = false;
+                break;
             default:
                 s = 0;
                 break;
