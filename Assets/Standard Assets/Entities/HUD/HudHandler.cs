@@ -7,6 +7,10 @@ public class HudHandler : MonoBehaviour
     public GameObject BarMana;
     public float MaxHealth = 100.0f;
     public float MaxMana = 100.0f;
+
+    public bool EnableHealthWarning = true;
+    public bool EnableStaminaWarning = true;
+
     public float ValueHealth
     {
         get { return valueHealth; }
@@ -61,8 +65,7 @@ public class HudHandler : MonoBehaviour
                 scale.x = 0.0000001f;
             }
             objBar.transform.localScale = scale;
-            if (BarMana != null)
-                BarMana.GetComponent<SpriteRenderer>().color = color;
+            objBar.GetComponent<SpriteRenderer>().color = color;
         }
     }
 
@@ -71,22 +74,31 @@ public class HudHandler : MonoBehaviour
 
     void Update()
     {
-        UpdateBar(BarHealth, ValueHealth, MaxHealth, Color.white);
-        if (ValueMana <= MaxMana / 3)
+        warning += multiplier * Time.deltaTime * 3;
+        if (warning <= 0.0f)
         {
-            warning += multiplier * Time.deltaTime * 4;
-            if (warning <= 0.0f)
-            {
-                warning = 0.0f;
-                multiplier *= -1.0f;
-            }
-            else if (warning >= 1.0f)
-            {
-                warning = 1.0f;
-                multiplier *= -1.0f;
-            }
+            warning = 0.0f;
+            multiplier *= -1.0f;
         }
-        else warning = 1.0f;
-        UpdateBar(BarMana, ValueMana, MaxMana, new Color(warning, warning, warning));
+        else if (warning >= 1.0f)
+        {
+            warning = 1.0f;
+            multiplier *= -1.0f;
+        }
+
+        Color colorHealth;
+        if (EnableHealthWarning && ValueHealth <= MaxHealth / 3)
+            colorHealth = new Color(warning, Mathf.Abs(warning - 1.0f), 0.0f);
+        else
+            colorHealth = new Color(0.0f, 1.0f, 0.0f);
+
+        Color colorStamina;
+        if (EnableStaminaWarning && ValueMana <= MaxMana / 3)
+            colorStamina = new Color(0.0f, 0.0f, warning);
+        else
+            colorStamina = new Color(0.0f, 1.0f, 1.0f);
+
+        UpdateBar(BarHealth, ValueHealth, MaxHealth, colorHealth);
+        UpdateBar(BarMana, ValueMana, MaxMana, colorStamina);
     }
 }
