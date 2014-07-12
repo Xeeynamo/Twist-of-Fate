@@ -12,6 +12,10 @@ public class Knight : MonoBehaviour
     public float TimeAlertBack = 3.0f;
     public float TimeBeforeAttack = 0.75f;
 
+    float TimerFade = 1.0f;
+    float timerFade1;
+    float timerFade2;
+
     float strength;
     float timerOutOfAlert;
     float timerAlertBack;
@@ -116,6 +120,24 @@ public class Knight : MonoBehaviour
                 }
                 else
                     physManager.speed.x = physManager.Direction ? strength : -strength;
+                break;
+            case StateManager.State.Died:
+                physManager.speed.x = 0;
+                timerFade1 += TimerFade * Time.deltaTime;
+                if (timerFade1 >= 1.0f)
+                    timerFade1 = 1.0f;
+                GetComponent<SpriteRenderer>().color = new Color(1.0f, Mathf.Abs(timerFade1 - 1.0f),
+                    Mathf.Abs(timerFade1 - 1.0f));
+                if (timerFade1 >= TimerFade)
+                {
+                    timerFade2 += TimerFade * Time.deltaTime;
+                    if (timerFade2 >= 1.0f)
+                    {
+                        timerFade2 = 1.0f;
+                        Destroy(this);
+                    }
+                    GetComponent<SpriteRenderer>().color = new Color(1.0f, 0.0f, 0.0f, Mathf.Abs(timerFade2 - 1.0f));
+                }
                 break;
         }
     }
