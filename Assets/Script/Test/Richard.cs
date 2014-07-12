@@ -7,7 +7,21 @@ public class Richard : MonoBehaviour
 
     PhysicsManager physManager;
     public float DiedTimer = 3.0f;
+    public GameObject Weapon;
     float diedTimer = 0.0f;
+
+    public bool WeaponVisible
+    {
+        get { if (Weapon != null) return Weapon.gameObject.GetComponent<SpriteRenderer>().enabled; else return false; }
+        set
+        {
+            if (Weapon != null)
+            {
+                Weapon.gameObject.GetComponent<SpriteRenderer>().enabled = value;
+                Weapon.gameObject.GetComponent<BoxCollider2D>().enabled = value;
+            }
+        }
+    }
 
     StateManager.State PreviousState
     {
@@ -76,6 +90,7 @@ public class Richard : MonoBehaviour
     void Start()
     {
         physManager = GetComponent<PhysicsManager>();
+        WeaponVisible = false;
     }
 
     /// <summary>
@@ -115,8 +130,13 @@ public class Richard : MonoBehaviour
                     state = PreviousState;
                     Hide = false;
                 }
+                else if (state == StateManager.State.Attack)
+                {
+                    WeaponVisible = true;
+                }
                 else
                 {
+                    WeaponVisible = false;
                     colorHide += Time.deltaTime * 2;
                     if (colorHide >= 1.0f)
                         colorHide = 1.0f;
