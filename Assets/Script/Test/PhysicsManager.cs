@@ -519,7 +519,7 @@ public class PhysicsManager : MonoBehaviour
                 if (State != StateManager.State.Defense)
                 {
                     audio.Play();
-                    Health -= ConsumoVitaColpoArmaNemico;
+					Health -= ConsumoVitaColpoNemico;
                     ahia = true;
                 }
             }
@@ -528,7 +528,7 @@ public class PhysicsManager : MonoBehaviour
                 if (State != StateManager.State.Defense)
                 {
                     audio.Play();
-                    Health -= ConsumoVitaColpoNemico;
+					Health -= ConsumoVitaColpoArmaNemico;
                     ahia = true;
                 }
             }

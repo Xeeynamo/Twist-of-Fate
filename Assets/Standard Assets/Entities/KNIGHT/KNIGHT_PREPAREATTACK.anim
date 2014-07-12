@@ -18,7 +18,7 @@ AnimationClip:
         value: {x: 0, y: 0, z: -.707106769, w: .707106769}
         inSlope: {x: 0, y: 0, z: 0, w: 0}
         outSlope: {x: 0, y: 0, z: 0, w: 0}
-        tangentMode: 2712942
+        tangentMode: 103440304
       m_PreInfinity: 2
       m_PostInfinity: 2
     path: LANCE
