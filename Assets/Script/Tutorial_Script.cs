@@ -46,8 +46,8 @@ public class Tutorial_Script : MonoBehaviour {
 		tutorialString.Add (childTransform[2], "Tutorial (Comandi Base 2)\nPremi due volte in rapida successione Freccia Dx o Freccia Sx per correre in quella direzione. ");
 		tutorialString.Add (childTransform[3], "Tutorial (Comandi Base 3)\nPremi Freccia Su per entrare in una Cella\nPremi \"V\" per Attaccare");
 		tutorialString.Add (childTransform[4], "Tutorial (Comandi Base 4)\nPer salire sulle scale cammina tenendo premuto Frecca Su.");
-		tutorialString.Add (childTransform[5], "Tutorial (Interazioni)\nPremere X per interagire con gli oggetti.");
-		tutorialString.Add (childTransform[6], "Tutorial (Comandi Base 5)\nPremere Barra Spaziatrice per saltare.");
+		tutorialString.Add (childTransform[6], "Tutorial (Interazioni)\nPremere X per interagire con gli oggetti.");
+		tutorialString.Add (childTransform[5], "Tutorial (Comandi Base 5)\nPremere Barra Spaziatrice per saltare.");
 	}
 
 	// Update is called once per frame
