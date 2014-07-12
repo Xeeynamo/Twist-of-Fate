@@ -49097,6 +49097,7 @@ GameObject:
   - 114: {fileID: 1002935797}
   - 114: {fileID: 1002935796}
   - 114: {fileID: 1002935795}
+  - 61: {fileID: 1002935803}
   m_Layer: 11
   m_Name: GrandKnihgt
   m_TagString: Enemy
@@ -49246,6 +49247,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 30
+--- !u!61 &1002935803
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1002935794}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: .639999986, y: 1.75999999}
+  m_Center: {x: 0, y: .439999968}
 --- !u!1 &1003772424
 GameObject:
   m_ObjectHideFlags: 0
@@ -54500,11 +54512,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2.31138992
+      value: 37.2008133
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.12742114
+      value: 15.1339674
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.z
@@ -54532,7 +54544,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_RootOrder
-      value: 25
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_Name
@@ -64433,7 +64445,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 26
 --- !u!61 &1354036543
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -75450,11 +75462,11 @@ Transform:
   m_PrefabInternal: {fileID: 1137792818}
   m_GameObject: {fileID: 1607201382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.31138992, y: 2.12742114, z: 0}
+  m_LocalPosition: {x: 37.2008133, y: 15.1339674, z: 0}
   m_LocalScale: {x: 1.00823271, y: 1.00823271, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 27
 --- !u!114 &1607201385
 MonoBehaviour:
   m_ObjectHideFlags: 0
