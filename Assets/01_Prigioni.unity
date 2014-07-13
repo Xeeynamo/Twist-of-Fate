@@ -3431,7 +3431,7 @@ Transform:
   - {fileID: 1615619757}
   - {fileID: 276043085}
   m_Father: {fileID: 367130270}
-  m_RootOrder: 9
+  m_RootOrder: 8
 --- !u!212 &64420184
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6026,6 +6026,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BarHealth: {fileID: 2115135146}
   BarMana: {fileID: 457821674}
+  NumberLow: {fileID: 0}
+  NumberHigh: {fileID: 0}
+  SpriteNumbers: []
   MaxHealth: 100
   MaxStamina: 100
   ColorHealth: {r: 0, g: 1, b: 0, a: 1}
@@ -7071,7 +7074,7 @@ Transform:
   - {fileID: 262421008}
   - {fileID: 403833705}
   m_Father: {fileID: 367130270}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!212 &123976615
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18055,7 +18058,7 @@ Transform:
   - {fileID: 1302862035}
   - {fileID: 533735100}
   m_Father: {fileID: 367130270}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!212 &310709050
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -21743,7 +21746,6 @@ GameObject:
   - 4: {fileID: 366500655}
   - 212: {fileID: 366500657}
   - 61: {fileID: 366500656}
-  - 114: {fileID: 366500658}
   m_Layer: 8
   m_Name: Pavimento 4x1
   m_TagString: Untagged
@@ -21801,17 +21803,6 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3a16e26e24391b142a649004d793ff85, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!114 &366500658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 366500654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37b18918d69505847998271b2a2e77a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &366758902
 GameObject:
   m_ObjectHideFlags: 0
@@ -21888,7 +21879,6 @@ Transform:
   m_LocalPosition: {x: 20.4799995, y: 16.4799995, z: 8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1184493127}
   - {fileID: 1792281204}
   - {fileID: 1945026107}
   - {fileID: 1865760809}
@@ -21898,6 +21888,7 @@ Transform:
   - {fileID: 310709049}
   - {fileID: 1124404455}
   - {fileID: 64420183}
+  - {fileID: 1184493127}
   m_Father: {fileID: 0}
   m_RootOrder: 35
 --- !u!1 &367232663
@@ -25577,6 +25568,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BarHealth: {fileID: 2019986237}
   BarMana: {fileID: 0}
+  NumberLow: {fileID: 0}
+  NumberHigh: {fileID: 0}
+  SpriteNumbers: []
   MaxHealth: 250
   MaxStamina: 100
   ColorHealth: {r: 1, g: 0, b: 0, a: 1}
@@ -25858,6 +25852,10 @@ Prefab:
     - target: {fileID: 100000, guid: 3a44aec24defde847ad86f5b5deb424a, type: 2}
       propertyPath: m_Name
       value: BARREL_LIFE
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3a44aec24defde847ad86f5b5deb424a, type: 2}
+      propertyPath: timerNextUsage
+      value: .100000001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3a44aec24defde847ad86f5b5deb424a, type: 2}
@@ -27086,7 +27084,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
 --- !u!1001 &463391414
 Prefab:
   m_ObjectHideFlags: 0
@@ -53571,6 +53569,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BarHealth: {fileID: 0}
   BarMana: {fileID: 0}
+  NumberLow: {fileID: 0}
+  NumberHigh: {fileID: 0}
+  SpriteNumbers: []
   MaxHealth: 30
   MaxStamina: 100
   ColorHealth: {r: 0, g: 1, b: 0, a: 1}
@@ -63290,7 +63291,7 @@ Transform:
   - {fileID: 1995565283}
   - {fileID: 1770748053}
   m_Father: {fileID: 367130270}
-  m_RootOrder: 8
+  m_RootOrder: 7
 --- !u!212 &1124404456
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -63845,11 +63846,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3.38250899
+      value: 1.73222291
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 4.58923531
+      value: 2.28800249
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.z
@@ -63918,7 +63919,7 @@ Prefab:
     - target: {fileID: 11400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: Bullet
       value: 
-      objectReference: {fileID: 100000, guid: 5a60516f644ecf94bb9d158ca806b860, type: 2}
+      objectReference: {fileID: 100000, guid: 09a408dfd64c8e0469c8a772c9aa6a9e, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
   m_RootGameObject: {fileID: 1607201382}
@@ -66477,7 +66478,7 @@ Transform:
   - {fileID: 567007841}
   - {fileID: 109203549}
   m_Father: {fileID: 367130270}
-  m_RootOrder: 0
+  m_RootOrder: 9
 --- !u!212 &1184493128
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -78439,7 +78440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aumentoVita: 40
   numUsage: 3
-  timerNextUsage: .5
+  timerNextUsage: .100000001
 --- !u!212 &1390991250
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -82036,7 +82037,7 @@ Transform:
   - {fileID: 1246237618}
   - {fileID: 1451177465}
   m_Father: {fileID: 367130270}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!212 &1459445763
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -85834,6 +85835,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BarHealth: {fileID: 0}
   BarMana: {fileID: 0}
+  NumberLow: {fileID: 0}
+  NumberHigh: {fileID: 0}
+  SpriteNumbers: []
   MaxHealth: 30
   MaxStamina: 100
   ColorHealth: {r: 0, g: 1, b: 0, a: 1}
@@ -87926,7 +87930,7 @@ Transform:
   - {fileID: 1374547782}
   - {fileID: 1845458846}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
 --- !u!114 &1577915672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88892,7 +88896,7 @@ Transform:
   m_PrefabInternal: {fileID: 1137792818}
   m_GameObject: {fileID: 1607201382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.38250899, y: 4.58923531, z: 0}
+  m_LocalPosition: {x: 1.73222291, y: 2.28800249, z: 0}
   m_LocalScale: {x: 1.00823271, y: 1.00823271, z: 1}
   m_Children:
   - {fileID: 462953075}
@@ -88912,7 +88916,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DiedTimer: 2
   Weapon: {fileID: 462953071}
-  Bullet: {fileID: 100000, guid: 5a60516f644ecf94bb9d158ca806b860, type: 2}
+  Bullet: {fileID: 100000, guid: 09a408dfd64c8e0469c8a772c9aa6a9e, type: 2}
   TimerScatto: .5
   keySalto: 0
   keyScivolata: 0
@@ -95466,7 +95470,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Priority: 128
   DopplerLevel: 1
@@ -96199,7 +96203,7 @@ Transform:
   - {fileID: 452756011}
   - {fileID: 37467526}
   m_Father: {fileID: 367130270}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!212 &1735935106
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -96835,6 +96839,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BarHealth: {fileID: 0}
   BarMana: {fileID: 0}
+  NumberLow: {fileID: 0}
+  NumberHigh: {fileID: 0}
+  SpriteNumbers: []
   MaxHealth: 30
   MaxStamina: 100
   ColorHealth: {r: 0, g: 1, b: 0, a: 1}
@@ -99398,7 +99405,7 @@ Transform:
   - {fileID: 1358165046}
   - {fileID: 216228453}
   m_Father: {fileID: 367130270}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!1 &1795374230
 GameObject:
   m_ObjectHideFlags: 0
@@ -103826,7 +103833,7 @@ Transform:
   - {fileID: 1992065024}
   - {fileID: 563237345}
   m_Father: {fileID: 367130270}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!212 &1865760810
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -108501,7 +108508,7 @@ Transform:
   - {fileID: 1763736759}
   - {fileID: 729284274}
   m_Father: {fileID: 367130270}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!212 &1945026108
 SpriteRenderer:
   m_ObjectHideFlags: 0
