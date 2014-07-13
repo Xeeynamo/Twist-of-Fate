@@ -4,7 +4,13 @@ using System.Collections;
 public class LanciaProiettili : MonoBehaviour
 {
     public GameObject Bullet;
+    /// <summary>
+    /// Tempo che intercorre tra un proiettile e l'altro
+    /// </summary>
     public float TimeShoot = 0f;
+    /// <summary>
+    /// Velocità del singolo proiettile
+    /// </summary>
     public float Velocità = 6;
     // Use this for initialization
 
@@ -33,7 +39,7 @@ public class LanciaProiettili : MonoBehaviour
     }
 
 	bool Attiva (){
-		Debug.DrawRay (new Vector2 (this.transform.position.x, this.transform.position.y), Direz() * 4f, Color.red);
+		Debug.DrawRay (new Vector2 (this.transform.position.x, this.transform.position.y), Direz() * 3.5f, Color.red);
 		return(Physics2D.Raycast (new Vector2 (this.transform.position.x, this.transform.position.y), Direz(), 4f, 1 << 13));
 
 	}
