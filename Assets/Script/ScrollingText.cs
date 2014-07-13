@@ -104,7 +104,7 @@ public class ScrollingText : MonoBehaviour {
 			timer -= actChar * secondiPerOgniCarattere;
 			storyText = showText[actText].Substring(0, curChar);
 		}
-		if(Input.GetKeyDown(KeyCode.X) || Input.GetMouseButtonDown(0))
+		if((Input.GetKeyDown(KeyCode.X) || Input.GetMouseButtonDown(0)) && !inputName)
 		{
 			if(curChar == showText[actText].Length)
 			{	
