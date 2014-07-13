@@ -48,7 +48,8 @@ public class Tutorial_Script : MonoBehaviour {
 		tutorialString.Add (childTransform[4], "Tutorial (Comandi Base 4)\nPer salire sulle scale cammina tenendo premuto Frecca Su.");
 		tutorialString.Add (childTransform[6], "Tutorial (Interazioni)\nPremere \"X\" per interagire con gli oggetti.");
 		tutorialString.Add (childTransform[5], "Tutorial (Comandi Base 5)\nPremere Barra Spaziatrice per saltare.");
-		tutorialString.Add (childTransform[7], "Tutorial (Interazioni)\nPremere \"C\" per usare l'arma secondaria.");
+		tutorialString.Add (childTransform[7], "Tutorial (Comandi Base 6)\nPremere \"C\" per usare l'arma secondaria.");
+		tutorialString.Add (childTransform[8], "Tutorial (Utilità)\nPremere Invio per mettere in pausa.\nPremere Esc per uscire.");
 	}
 
 	// Update is called once per frame
