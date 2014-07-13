@@ -283,12 +283,14 @@ public class Richard : MonoBehaviour
         if (We.Input.AttackPrimary && !movimento)
             return StateManager.State.Attack;
 
-        if (We.Input.AttackSecondary && !movimento) {						
-			GameObject istance = (GameObject)Instantiate(Bullet, new Vector3(this.transform.position.x, this.transform.position.y+0.25f, this.transform.position.z), transform.rotation);
-			MuoviProiettile bullet = istance.GetComponent<MuoviProiettile>();
-			bullet.Velocità = physManager.Direction ? +3 : -3;
-			return StateManager.State.Attack2;
-				}
+        if (We.Input.AttackSecondary && !movimento)
+        {
+            GameObject istance = (GameObject)Instantiate(Bullet, new Vector3(this.transform.position.x, this.transform.position.y + 0.25f, this.transform.position.z), transform.rotation);
+            MuoviProiettile bullet = istance.GetComponent<MuoviProiettile>();
+            bullet.Velocità = physManager.Direction ? +3 : -3;
+            physManager.hud.GetComponent<HudHandler>().ValueMunitions--;
+            return StateManager.State.Attack2;
+        }
 		if (We.Input.Defense && !movimento && physManager.Stamina >= physManager.ConsumoStaminaDifesa)
 			return StateManager.State.Defense;
 
