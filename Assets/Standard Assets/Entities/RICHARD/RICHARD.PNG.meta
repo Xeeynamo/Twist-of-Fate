@@ -706,25 +706,25 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RICHARD_66
+    - name: RICHARD_ATTACKING2
       rect:
         serializedVersion: 2
         x: 807
-        y: 929
+        y: 928
         width: 48
-        height: 45
+        height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: RICHARD_67
+    - name: RICHARD_ATTACKING1
       rect:
         serializedVersion: 2
-        x: 769
-        y: 929
-        width: 39
-        height: 45
-      alignment: 0
-      pivot: {x: .5, y: .5}
+        x: 767
+        y: 928
+        width: 40
+        height: 48
+      alignment: 9
+      pivot: {x: .600000024, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: RICHARD_STARTFALLING1
       rect:
@@ -1053,6 +1053,56 @@ TextureImporter:
         y: 520
         width: 48
         height: 40
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RICHARD_ATTACKING3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 848
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RICHARD_ATTACKING4
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 848
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RICHARD_ATTACKING5
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 848
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RICHARD_ATTACKING6
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 800
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RICHARD_ATTACKING7
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 800
+        width: 40
+        height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
