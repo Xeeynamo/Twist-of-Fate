@@ -20450,6 +20450,7 @@ MonoBehaviour:
   TimeOutOfAlert: 5
   TimeAlertBack: 3
   TimeBeforeAttack: .75
+  PrevHealth: 0
 --- !u!114 &376105881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55678,6 +55679,7 @@ MonoBehaviour:
   TimeOutOfAlert: 5
   TimeAlertBack: 3
   TimeBeforeAttack: .75
+  PrevHealth: 0
 --- !u!114 &1112164458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57149,11 +57151,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 35.5973587
+      value: 24.3987274
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 14.8349991
+      value: 15.0323315
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.z
@@ -61220,6 +61222,7 @@ MonoBehaviour:
   TimeOutOfAlert: 5
   TimeAlertBack: 3
   TimeBeforeAttack: .75
+  PrevHealth: 0
 --- !u!114 &1225730413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79310,7 +79313,7 @@ Transform:
   m_PrefabInternal: {fileID: 1137792818}
   m_GameObject: {fileID: 1607201382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35.5973587, y: 14.8349991, z: 0}
+  m_LocalPosition: {x: 24.3987274, y: 15.0323315, z: 0}
   m_LocalScale: {x: 1.00823271, y: 1.00823271, z: 1}
   m_Children:
   - {fileID: 462953075}
@@ -79328,7 +79331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48c637c8424422a4bb4fa38d4faada32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DiedTimer: 3
+  DiedTimer: 2
   Weapon: {fileID: 462953071}
   TimerScatto: .5
   keySalto: 0
@@ -84986,9 +84989,7 @@ GameObject:
   - 124: {fileID: 1728301621}
   - 92: {fileID: 1728301620}
   - 81: {fileID: 1728301619}
-  - 82: {fileID: 1728301625}
   - 114: {fileID: 1728301624}
-  - 82: {fileID: 1728301626}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -85091,122 +85092,6 @@ MonoBehaviour:
   SpriteBackground: {fileID: 591455063}
   BackgroundAlignment: 5
   timer: 0
---- !u!82 &1728301625
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1728301618}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 9c794398d7f0f4f4bae4eae02f692da9, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: .808000028
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
---- !u!82 &1728301626
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1728301618}
-  m_Enabled: 0
-  serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 7b67fb2f4a9d11846bd0a103334bef90, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: .620000005
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!1 &1728772706
 GameObject:
   m_ObjectHideFlags: 0
@@ -92387,6 +92272,7 @@ MonoBehaviour:
   TimeOutOfAlert: 99999
   TimeAlertBack: 11
   TimeBeforeAttack: 1.20000005
+  PrevHealth: 0
 --- !u!114 &1861644811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102190,6 +102076,7 @@ GameObject:
   - 50: {fileID: 2050740912}
   - 61: {fileID: 2050740911}
   - 114: {fileID: 2050740910}
+  - 82: {fileID: 2050740916}
   m_Layer: 0
   m_Name: TRAP
   m_TagString: TRAP
@@ -102302,6 +102189,64 @@ Transform:
   - {fileID: 1621586022}
   m_Father: {fileID: 0}
   m_RootOrder: 28
+--- !u!82 &2050740916
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2050740909}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 9c794398d7f0f4f4bae4eae02f692da9, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &2055463539
 GameObject:
   m_ObjectHideFlags: 0
