@@ -18,7 +18,7 @@ AnimationClip:
         value: {x: 0, y: 0, z: -.707106769, w: .707106769}
         inSlope: {x: 0, y: 0, z: 0, w: 0}
         outSlope: {x: 0, y: 0, z: 0, w: 0}
-        tangentMode: 103440304
+        tangentMode: 15
       m_PreInfinity: 2
       m_PostInfinity: 2
     path: LANCE
@@ -28,10 +28,10 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: {x: .360000014, y: 0, z: .00999999978}
+        value: {x: .280000001, y: 0, z: .00999999978}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 437533880
+        tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
     path: LANCE
@@ -94,7 +94,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: .360000014
+        value: .280000001
         inSlope: 0
         outSlope: 0
         tangentMode: 10
