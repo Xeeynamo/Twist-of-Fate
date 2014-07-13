@@ -18,7 +18,7 @@ public class Richard : MonoBehaviour
             if (Weapon != null)
             {
                 Weapon.gameObject.GetComponent<SpriteRenderer>().enabled = value;
-                Weapon.gameObject.GetComponent<BoxCollider2D>().enabled = value;
+//                Weapon.gameObject.GetComponent<BoxCollider2D>().enabled = value;
             }
         }
     }

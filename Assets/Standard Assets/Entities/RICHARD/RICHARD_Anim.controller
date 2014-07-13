@@ -1241,6 +1241,21 @@ State:
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
+--- !u!1102 &110238839
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Lancia
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: b0cadce7086449d4a9a966c3ccb1239a, type: 2}
+  m_ParentStateMachine: {fileID: 110700000}
+  m_Position: {x: -685, y: 101, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
 --- !u!1102 &110251017
 State:
   m_ObjectHideFlags: 3
@@ -1435,12 +1450,10 @@ StateMachine:
   - {fileID: 110259885}
   - {fileID: 110266525}
   - {fileID: 110222896}
+  - {fileID: 110238839}
   m_ChildStateMachine: []
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
-    data:
-      first: {fileID: 110222896}
-      second: []
     data:
       first: {fileID: 0}
       second:
@@ -1538,6 +1551,9 @@ StateMachine:
       - {fileID: 110103312}
     data:
       first: {fileID: 110266525}
+      second: []
+    data:
+      first: {fileID: 110222896}
       second: []
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: -456, y: 36, z: 0}
