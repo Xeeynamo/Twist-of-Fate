@@ -51,5 +51,13 @@ namespace We
         {
             get { return UnityEngine.Input.GetKeyDown(KeyCode.V); }
         }
+		public static bool Pause
+		{
+			get { return UnityEngine.Input.GetKeyDown(KeyCode.Return); }
+		}
+		public static bool Exit
+		{
+			get { return UnityEngine.Input.GetKeyDown(KeyCode.Escape); }
+		}
 	}
 }

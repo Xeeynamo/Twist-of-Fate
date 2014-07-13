@@ -53,7 +53,7 @@ public class MostraDialogo : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.X) && inDialogue)
+		if (We.Input.Defense && inDialogue)
 			actDialogue++;
 		if (Mathf.Abs (Vector2.Distance (transform.position, player.GetComponent<Transform> ().position)) < 1 && Input.GetKeyDown (KeyCode.X))
 		{
