@@ -7,8 +7,8 @@ public class esci : MonoBehaviour {
 	
 	private Texture2D exitBg;
 	
-	public int areaWidth;
-	public int areaHeight;
+	private int areaWidth = 200;
+	private int areaHeight = 50;
 	
 	public GUIStyle style;	
 	// Use this for initialization
@@ -21,6 +21,9 @@ public class esci : MonoBehaviour {
 				exitBg.SetPixel(i,j, new Color(0 , 0, 0, 0.5f));
 		}
 		exitBg.Apply ();
+		style.fontSize = 14;
+		style.normal.textColor = Color.white;
+		style.alignment = TextAnchor.UpperCenter;
 	}
 	
 	// Update is called once per frame

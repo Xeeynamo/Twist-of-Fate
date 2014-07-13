@@ -21,6 +21,10 @@ public class pausa : MonoBehaviour {
 				pauseBg.SetPixel(i,j, new Color(0 , 0, 0, 0.5f));
 		}
 		pauseBg.Apply ();
+		style.fontSize = 50;
+		style.font = (Font)Resources.Load("Resources/AlexBrush-Regular");
+		style.normal.textColor = Color.white;
+		style.alignment = TextAnchor.MiddleCenter;
 	}
 	
 	// Update is called once per frame
