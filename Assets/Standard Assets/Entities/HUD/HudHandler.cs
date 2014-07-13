@@ -5,6 +5,9 @@ public class HudHandler : MonoBehaviour
 {
     public GameObject BarHealth;
     public GameObject BarMana;
+    public GameObject NumberLow;
+    public GameObject NumberHigh;
+    public Sprite[] SpriteNumbers;
     public float MaxHealth = 100.0f;
     public float MaxStamina = 100.0f;
 
@@ -41,9 +44,22 @@ public class HudHandler : MonoBehaviour
                 valueMana = MaxStamina;
         }
     }
+    public int ValueMunitions
+    {
+        get { return valueMunitions; }
+        set
+        {
+            valueMunitions = value;
+            if (valueMunitions < 0)
+                valueMunitions = 0;
+            else if (valueMunitions > 99)
+                valueMunitions = 99;
+        }
+    }
 
     private float valueHealth;
     private float valueMana;
+    private int valueMunitions = 10;
 
     public bool Visible = true;
     public bool IsVisible
@@ -135,5 +151,12 @@ public class HudHandler : MonoBehaviour
         }
         UpdateBar(BarHealth, curHealth, MaxHealth, colorHealth);
         UpdateBar(BarMana, ValueStamina, MaxStamina, colorStamina);
+
+        if (NumberLow != null)
+        {
+            NumberLow.GetComponent<SpriteRenderer>().sprite = SpriteNumbers[ValueMunitions % 10];
+            if (NumberHigh != null)
+                NumberHigh.GetComponent<SpriteRenderer>().sprite = SpriteNumbers[ValueMunitions / 10];
+        }
     }
 }
