@@ -37,7 +37,7 @@ public class ScrollingText : MonoBehaviour {
 		actText = 0;
 		showText[0] = "Impero di Heisenfall - 21° anno dalla grande unificazione\nLa guerra che portò i 12 regni della congregazione di Heisen sotto una sola corona era orami un lontano e triste ricordo.";
 		showText[1] = "La ricostruzione procedeva per il meglio in quasi tutti regni, solo uno faceva tristemente eccezione:\nl'undicesimo regno, Artemir"; 
-		showText[2] = "Ad Artemir non solo la ricostruzione non procedeva ma, in alcuni punti, la popolazione viveva in condizioni ben peggiori di quelle vissute nel recente conflitto.\nLa colpa di questa situazione è da attribuire all'attuale govarnante che, da pieno sostenitore dell'impero, diventò con il passare del tempo sempre più ostile \nall'imperatore.";
+		showText[2] = "Ad Artemir non solo la ricostruzione non procedeva ma, in alcuni punti, la popolazione viveva in condizioni ben peggiori di quelle vissute nel recente conflitto.\nLa colpa di questa situazione è da attribuire all'attuale governante che, da pieno sostenitore dell'impero, diventò con il passare del tempo sempre più ostile \nall'imperatore.";
         showText[3] = "";
         showText[4] = "";
         showText[5] = "";
@@ -133,8 +133,8 @@ public class ScrollingText : MonoBehaviour {
 			if (GUILayout.Button("Conferma"))
 			{
 				PlayerPrefs.SetString("Player_Name", NomeGiocatore);
-				showText [4] = "Il sovrano prese in mano la situazione mandando un proprio emissario a prendere in mano la situazione deponento l'inetto governante.\nVenne scelto dunque un giovane diplomatico tale " + NomeGiocatore + " distintosi ai tempi dell'accademia per la sua intelligenza e per lo spiccato senso di attaccamento all'impero.";
-				showText [5] = "Accettato l'incarico " + NomeGiocatore + " si diresse verso Artemir con la piena convizione di adempiere al proprio compito e compiacere l'imperatore\nma una brutta sorpresa lo attendeva a destinazione...";
+				showText [4] = "Il sovrano prese in mano la situazione mandando un proprio emissario a prendere in mano la situazione deponendo l'inetto governante.\nVenne scelto dunque un giovane diplomatico tale " + NomeGiocatore + " distintosi ai tempi dell'accademia per la sua intelligenza e per lo spiccato senso di attaccamento all'impero.";
+				showText [5] = "Accettato l'incarico " + NomeGiocatore + " si diresse verso Artemir con la piena convinzione di adempiere al proprio compito e compiacere l'imperatore\nma una brutta sorpresa lo attendeva a destinazione...";
 				showText [6] = "Infatti il governatore decise, come atto finale di disprezzo nei confronti dell'imperatore, di imprigionare il giovane diplomatico con la piena intenzione di GIUSTIZIARLO.";
 				showText [7] = NomeGiocatore + " si troverà dunque chiuso nelle prigioni del castello e dovrà trovare una via d'uscita per poter adempiere al compito affidatogli dall'imperatore.\nL'occasione perfetta giunse quando una scossa di terremoto smosse la porta della cella.";
 				Time.timeScale = 1;
