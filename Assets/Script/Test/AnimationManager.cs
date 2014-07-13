@@ -38,7 +38,7 @@ public class AnimationManager : MonoBehaviour
                 s = 4;
                 break;
             case StateManager.State.Attack2:
-                s = 4;
+                s = 14;
                 break;
             case StateManager.State.PreScivolata:
                 s = 5;
