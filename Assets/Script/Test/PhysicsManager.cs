@@ -325,6 +325,16 @@ public class PhysicsManager : MonoBehaviour
     }
 
     /// <summary>
+    /// Controlla se il nemico è dietro di lui
+    /// </summary>
+    /// <returns></returns>
+    public bool CheckEnemyBack()
+    {
+        return EvaluateRaycastH(0.0f, 0.48f, -0.5f, PLAYER_MASK, Color.blue) ||
+            EvaluateRaycastH(0.0f, 0.0f, -0.5f, PLAYER_MASK, Color.blue);
+    }
+
+    /// <summary>
     /// Controlla se la visuale del nemico incontra un suo nemico a distanza
     /// ravvicinata. Usata durante le fasi di guardia.
     /// </summary>

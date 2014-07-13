@@ -50,14 +50,21 @@ public class Knight : MonoBehaviour
                     State = StateManager.State.Turn;
                 break;
             case StateManager.State.Walk:
-			if(!fix){
-			Richard.visto = false;
-			fix = true;
-			}
+                if (!fix)
+                {
+                    Richard.visto = false;
+                    fix = true;
+                }
                 if (physManager.CheckEnemyAround())
                 {
                     timerOutOfAlert = 0;
                     State = StateManager.State.Alert;
+                }
+                if (physManager.CheckEnemyBack())
+                {
+                    timerOutOfAlert = 0;
+                    physManager.Direction = !physManager.Direction;
+                    State = StateManager.State.AlertBack;
                 }
                 else if (physManager.CheckNearWall())
                 {
