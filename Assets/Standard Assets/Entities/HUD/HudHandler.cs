@@ -6,13 +6,16 @@ public class HudHandler : MonoBehaviour
     public GameObject BarHealth;
     public GameObject BarMana;
     public float MaxHealth = 100.0f;
-    public float MaxMana = 100.0f;
+    public float MaxStamina = 100.0f;
 
     public Color ColorHealth = Color.green;
     public Color ColorStamina = Color.cyan;
 
     public bool EnableHealthWarning = true;
     public bool EnableStaminaWarning = true;
+
+    float curHealth;
+    float curStamina;
 
     public float ValueHealth
     {
@@ -26,7 +29,7 @@ public class HudHandler : MonoBehaviour
                 valueHealth = MaxHealth;
         }
     }
-    public float ValueMana
+    public float ValueStamina
     {
         get { return valueMana; }
         set
@@ -34,8 +37,8 @@ public class HudHandler : MonoBehaviour
             valueMana = value;
             if (valueMana < 0)
                 valueMana = 0;
-            else if (valueMana > MaxMana)
-                valueMana = MaxMana;
+            else if (valueMana > MaxStamina)
+                valueMana = MaxStamina;
         }
     }
 
@@ -61,8 +64,8 @@ public class HudHandler : MonoBehaviour
     void Start()
     {
         IsVisible = Visible;
-        ValueHealth = MaxHealth;
-        ValueMana = MaxMana;
+        curHealth = ValueHealth = MaxHealth;
+        curStamina = ValueStamina = MaxStamina;
     }
 
     void UpdateBar(GameObject objBar, float value, float max, Color color)
@@ -113,12 +116,24 @@ public class HudHandler : MonoBehaviour
             colorHealth = ColorHealth;
 
         Color colorStamina;
-        if (EnableStaminaWarning && ValueMana <= MaxMana / 3)
+        if (EnableStaminaWarning && ValueStamina <= MaxStamina / 3)
             colorStamina = new Color(0.0f, 0.0f, warning);
         else
             colorStamina = ColorStamina;
 
-        UpdateBar(BarHealth, ValueHealth, MaxHealth, colorHealth);
-        UpdateBar(BarMana, ValueMana, MaxMana, colorStamina);
+        if (curHealth > valueHealth)
+        {
+            curHealth -= Mathf.Sqrt(Mathf.Abs(curHealth - valueHealth)) * 0.20f;
+            if (curHealth - valueHealth < 1)
+                curHealth = valueHealth;
+        }
+        else if (curHealth < valueHealth)
+        {
+            curHealth += Mathf.Sqrt(Mathf.Abs(valueHealth - curHealth)) * 0.25f;
+            if (curHealth - valueHealth > 1)
+                curHealth = valueHealth;
+        }
+        UpdateBar(BarHealth, curHealth, MaxHealth, colorHealth);
+        UpdateBar(BarMana, ValueStamina, MaxStamina, colorStamina);
     }
 }

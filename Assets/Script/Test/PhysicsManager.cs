@@ -49,14 +49,14 @@ public class PhysicsManager : MonoBehaviour
         get
         {
             if (hud != null)
-                return hud.GetComponent<HudHandler>().ValueMana;
+                return hud.GetComponent<HudHandler>().ValueStamina;
             else
                 return 1;
         }
         set
         {
             if (hud != null)
-                hud.GetComponent<HudHandler>().ValueMana = value;
+                hud.GetComponent<HudHandler>().ValueStamina = value;
         }
     }
 
