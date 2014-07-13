@@ -48,7 +48,9 @@ public class HudHandler : MonoBehaviour
         get { return GetComponent<SpriteRenderer>().enabled; }
         set
         {
-            GetComponent<SpriteRenderer>().enabled = value;
+            SpriteRenderer sr = GetComponent<SpriteRenderer>();
+            if (sr != null)
+                sr.enabled = value;
             if (BarHealth != null)
                 BarHealth.gameObject.GetComponent<SpriteRenderer>().enabled = value;
             if (BarMana != null)
