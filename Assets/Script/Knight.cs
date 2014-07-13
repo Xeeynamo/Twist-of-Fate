@@ -22,6 +22,8 @@ public class Knight : MonoBehaviour
     float timerBeforeAttack;
 	bool fix = false;
 
+    public float PrevHealth;
+
     StateManager.State State
     {
         get { return physManager.State; }
@@ -50,6 +52,12 @@ public class Knight : MonoBehaviour
                     State = StateManager.State.Turn;
                 break;
             case StateManager.State.Walk:
+                if (physManager.Health < PrevHealth)
+                {
+                    timerOutOfAlert = 0;
+                    physManager.Direction = !physManager.Direction;
+                    State = StateManager.State.AlertBack;
+                }
                 if (!fix)
                 {
                     Richard.visto = false;
@@ -76,8 +84,8 @@ public class Knight : MonoBehaviour
                 physManager.State = StateManager.State.Walk;
                 break;
             case StateManager.State.Alert:
-			Richard.visto = true;
-			fix = false;
+			    Richard.visto = true;
+			    fix = false;
                 physManager.speed.x = (physManager.Direction ? physManager.WalkSpeed : -physManager.WalkSpeed) / 2.0f;
                 if (physManager.CheckEnemyNear())
                 {
@@ -151,8 +159,7 @@ public class Knight : MonoBehaviour
 		if (physManager.Health <= 0)
 		{
 			State = StateManager.State.Died;
-
-			
-		}
+        }
+        PrevHealth = physManager.Health;
     }
 }
