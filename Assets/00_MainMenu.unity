@@ -223,8 +223,9 @@ GameObject:
   - 4: {fileID: 475693392}
   - 131: {fileID: 475693391}
   - 114: {fileID: 475693393}
+  - 82: {fileID: 475693394}
   m_Layer: 0
-  m_Name: UnityWatermark-small
+  m_Name: comandi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -276,7 +277,65 @@ MonoBehaviour:
   rollOverTexture: {fileID: 2800000, guid: e64fec7497b067c438be8314983bea3e, type: 3}
   beep: {fileID: 8300000, guid: a4763439392d9f646af6eccfa1514fee, type: 3}
   quitButton: 0
-  comandi: 0
+  comandi: 1
+--- !u!82 &475693394
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 475693390}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: a4763439392d9f646af6eccfa1514fee, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &1583629810
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,7 +360,7 @@ GUIText:
   m_GameObject: {fileID: 1583629810}
   m_Enabled: 1
   serializedVersion: 3
-  m_Text: 'Realizzato da : Luciano Ciccariello - Antonio Iacovazzi - Marcello Mancarela'
+  m_Text: 'Realizzato da : Luciano Ciccariello - Antonio Iacovazzi - Marcello Mancarella'
   m_Anchor: 3
   m_Alignment: 0
   m_PixelOffset: {x: 0, y: 0}

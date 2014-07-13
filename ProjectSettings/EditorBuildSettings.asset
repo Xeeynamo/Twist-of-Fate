@@ -15,3 +15,5 @@ EditorBuildSettings:
     path: Assets/Game_Over.unity
   - enabled: 1
     path: Assets/Messaggio_Finale.unity
+  - enabled: 1
+    path: Assets/Comandi.unity
