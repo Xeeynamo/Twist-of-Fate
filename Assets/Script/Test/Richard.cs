@@ -6,7 +6,7 @@ public class Richard : MonoBehaviour
     public static Transform _Transform;
 
     public static PhysicsManager physManager;
-    public float DiedTimer = 3.0f;
+    public float DiedTimer = 2.0f;
     public GameObject Weapon;
     float diedTimer = 0.0f;
 
@@ -83,6 +83,7 @@ public class Richard : MonoBehaviour
     }
 
     float colorHide = 1.0f;
+    bool died = false;
 
     /// <summary>
     /// Inizializzazione
@@ -166,9 +167,13 @@ public class Richard : MonoBehaviour
 
         if (physManager.Health <= 0)
         {
-            physManager.Gravity /= 2;
-            physManager.speed.x /= 2;
-            state = StateManager.State.Died;
+            if (died == false)
+            {
+                died = true;
+                physManager.Gravity /= 2;
+                physManager.speed.x /= 2;
+                state = StateManager.State.Died;
+            }
             diedTimer += Time.deltaTime;
             if (diedTimer >= DiedTimer)
                 Application.LoadLevel(3);
