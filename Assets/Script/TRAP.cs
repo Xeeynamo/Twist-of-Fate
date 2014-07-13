@@ -36,12 +36,11 @@ public class TRAP : MonoBehaviour
     public State state;
 
     public bool CanBeBroken;
-    public bool IsBroken;
+    public static bool IsBroken;
 
     float initialPosY;
     float timer;
     Vector2 speed;
-	bool x = false;
     void Start()
     {
         initialPosY = transform.position.y;
@@ -104,15 +103,5 @@ public class TRAP : MonoBehaviour
         }
         rigidbody2D.velocity = new Vector3(speed.x * Time.deltaTime, speed.y * Time.deltaTime, 0.0f);
 
-		if (IsBroken) {
-
-				if(! x){
-				x = true;
-			AudioClip combat = (AudioClip)Resources.Load("Twist Of Fate Combattimento");
-			audio.clip = combat;
-			audio.Play();
-
-			}
-		}
     }
 }

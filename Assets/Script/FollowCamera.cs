@@ -72,7 +72,7 @@ public class FollowCamera : MonoBehaviour
     private float BackgroundBoundsSizeY;
     public float timer;
     private Vector2 prevCoord;
-
+	bool x = false;
     public void setObjectToFollow(GameObject obj)
     {
         timer = 0;
@@ -274,5 +274,14 @@ public class FollowCamera : MonoBehaviour
             Align(PlayerHUD, PlayerHudAlignment);
         if (ShowEnemyHUD)
             Align(EnemyHUD, EnemyHudAlignment);
+
+		if(! x && TRAP.IsBroken){
+			x = true;
+			AudioClip combat = (AudioClip)Resources.Load("Twist Of Fate Combattimento");
+			audio.clip = combat;
+			audio.Play();
+			audio.volume = 0.42f;
+			
+		}
     }
 }
