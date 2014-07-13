@@ -19495,6 +19495,8 @@ MonoBehaviour:
   ConsumoVitaTrappole: 50
   ConsumoVitaColpoArmaNemico: 20
   ConsumoVitaColpoNemico: 5
+  ConsumoVitaColpoArmaBoss: 30
+  ConsumoVitaColpoBoss: 15
   speed: {x: 0, y: 0}
 --- !u!114 &376105882
 MonoBehaviour:
@@ -23384,6 +23386,7 @@ GameObject:
   - 212: {fileID: 462953074}
   - 61: {fileID: 462953073}
   - 50: {fileID: 462953072}
+  - 114: {fileID: 462953076}
   m_Layer: 0
   m_Name: WEAPON
   m_TagString: Untagged
@@ -23412,10 +23415,10 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 462953071}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .680000007, y: .0600000024}
+  m_Size: {x: .699999988, y: .0600000024}
   m_Center: {x: 0, y: 0}
 --- !u!212 &462953074
 SpriteRenderer:
@@ -23451,6 +23454,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1607201384}
   m_RootOrder: 0
+--- !u!114 &462953076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 462953071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70d8d5225408f254c97076953318405a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armaAttiva: 0
 --- !u!1 &462975697
 GameObject:
   m_ObjectHideFlags: 0
@@ -40008,6 +40023,8 @@ MonoBehaviour:
   ConsumoVitaTrappole: 50
   ConsumoVitaColpoArmaNemico: 20
   ConsumoVitaColpoNemico: 5
+  ConsumoVitaColpoArmaBoss: 30
+  ConsumoVitaColpoBoss: 15
   speed: {x: 0, y: 0}
 --- !u!114 &798114238
 MonoBehaviour:
@@ -55082,11 +55099,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.46937346
+      value: 6.43839645
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 4.77699041
+      value: 2.5477562
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.z
@@ -55144,6 +55161,10 @@ Prefab:
       propertyPath: Weapon
       value: 
       objectReference: {fileID: 462953071}
+    - target: {fileID: 5000000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
   m_RootGameObject: {fileID: 1607201382}
@@ -58843,6 +58864,8 @@ MonoBehaviour:
   ConsumoVitaTrappole: 50
   ConsumoVitaColpoArmaNemico: 20
   ConsumoVitaColpoNemico: 5
+  ConsumoVitaColpoArmaBoss: 30
+  ConsumoVitaColpoBoss: 15
   speed: {x: 0, y: 0}
 --- !u!114 &1225730414
 MonoBehaviour:
@@ -76451,7 +76474,7 @@ Transform:
   m_PrefabInternal: {fileID: 1137792818}
   m_GameObject: {fileID: 1607201382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.46937346, y: 4.77699041, z: 0}
+  m_LocalPosition: {x: 6.43839645, y: 2.5477562, z: 0}
   m_LocalScale: {x: 1.00823271, y: 1.00823271, z: 1}
   m_Children:
   - {fileID: 462953075}
@@ -76540,6 +76563,8 @@ MonoBehaviour:
   ConsumoVitaTrappole: 40
   ConsumoVitaColpoArmaNemico: 20
   ConsumoVitaColpoNemico: 5
+  ConsumoVitaColpoArmaBoss: 30
+  ConsumoVitaColpoBoss: 15
   speed: {x: 0, y: 0}
 --- !u!58 &1607201389
 CircleCollider2D:
@@ -76586,10 +76611,10 @@ AudioSource:
   m_GameObject: {fileID: 1607201382}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: f3b1da146bbb57242beecaa35990ddd2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: eaadda5b00df21c4792b6a741d70757f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 2.04999995
+  m_Pitch: 1
   Loop: 0
   Mute: 0
   Priority: 128
@@ -89232,6 +89257,8 @@ MonoBehaviour:
   ConsumoVitaTrappole: 50
   ConsumoVitaColpoArmaNemico: 10
   ConsumoVitaColpoNemico: 5
+  ConsumoVitaColpoArmaBoss: 30
+  ConsumoVitaColpoBoss: 15
   speed: {x: 0, y: 0}
 --- !u!114 &1861644812
 MonoBehaviour:

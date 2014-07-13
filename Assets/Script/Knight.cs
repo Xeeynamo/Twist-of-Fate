@@ -140,5 +140,11 @@ public class Knight : MonoBehaviour
                 }
                 break;
         }
+		if (physManager.Health <= 0)
+		{
+			State = StateManager.State.Died;
+
+			
+		}
     }
 }

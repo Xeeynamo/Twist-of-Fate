@@ -142,6 +142,16 @@ public class PhysicsManager : MonoBehaviour
     /// La velocità orizzontale e verticale del personaggio
     /// Ogni valore è espresso per pixel al secondo.
     /// </summary>
+    public int ConsumoVitaColpoArmaBoss = 30;
+	/// <summary>
+	/// Quanta vita viene consumata dal contatto con il nemico
+	/// </summary>
+	public int ConsumoVitaColpoBoss = 15;
+    /// <summary>
+    /// La velocità orizzontale e verticale del personaggio
+    /// Ogni valore è espresso per pixel al secondo.
+    /// </summary>
+	/// 
     public Vector2 speed;
 
 	private bool colpito = false;
@@ -533,6 +543,25 @@ public class PhysicsManager : MonoBehaviour
                     ahia = true;
                 }
             }
+			else if (obj.gameObject.tag == "Boss")
+			{
+				if (State != StateManager.State.Defense)
+				{
+					audio.Play();
+					Health -= ConsumoVitaColpoBoss;
+					ahia = true;
+				}
+			}
+			else if (obj.gameObject.tag == "BossWeapon")
+			{
+				Debug.Log("ENEMY WEAPON");
+				if (State != StateManager.State.Defense)
+				{
+					audio.Play();
+					Health -= ConsumoVitaColpoArmaBoss;
+					ahia = true;
+				}
+			}
             // Controlla se è stato colpito o meno
             if (ahia == true)
             {

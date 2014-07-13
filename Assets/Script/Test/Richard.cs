@@ -5,7 +5,7 @@ public class Richard : MonoBehaviour
 {
     public static Transform _Transform;
 
-    PhysicsManager physManager;
+    public static PhysicsManager physManager;
     public float DiedTimer = 3.0f;
     public GameObject Weapon;
     float diedTimer = 0.0f;
