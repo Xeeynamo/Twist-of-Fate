@@ -57211,6 +57211,10 @@ Prefab:
       propertyPath: JumpStrengthMinimum
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
+      propertyPath: Bullet
+      value: 
+      objectReference: {fileID: 100000, guid: 5a60516f644ecf94bb9d158ca806b860, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
   m_RootGameObject: {fileID: 1607201382}
@@ -79330,6 +79334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DiedTimer: 2
   Weapon: {fileID: 462953071}
+  Bullet: {fileID: 100000, guid: 5a60516f644ecf94bb9d158ca806b860, type: 2}
   TimerScatto: .5
   keySalto: 0
   keyScivolata: 0

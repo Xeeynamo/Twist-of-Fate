@@ -8,6 +8,7 @@ public class Richard : MonoBehaviour
     public static PhysicsManager physManager;
     public float DiedTimer = 2.0f;
     public GameObject Weapon;
+	public GameObject Bullet;
     float diedTimer = 0.0f;
 
     public bool WeaponVisible
@@ -282,9 +283,12 @@ public class Richard : MonoBehaviour
         if (We.Input.AttackPrimary && !movimento)
             return StateManager.State.Attack;
 
-        if (We.Input.AttackSecondary && !movimento)
-            return StateManager.State.Attack2;
-
+        if (We.Input.AttackSecondary && !movimento) {						
+			GameObject istance = (GameObject)Instantiate(Bullet, new Vector3(this.transform.position.x, this.transform.position.y+0.25f, this.transform.position.z), transform.rotation);
+			MuoviProiettile bullet = istance.GetComponent<MuoviProiettile>();
+			bullet.Velocità = physManager.Direction ? +3 : -3;
+			return StateManager.State.Attack2;
+				}
 		if (We.Input.Defense && !movimento && physManager.Stamina >= physManager.ConsumoStaminaDifesa)
 			return StateManager.State.Defense;
 
