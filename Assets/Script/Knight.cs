@@ -134,6 +134,7 @@ public class Knight : MonoBehaviour
                     if (timerFade2 >= 1.0f)
                     {
                         timerFade2 = 1.0f;
+                        transform.position = new Vector3(0, -9999.0f, 0);
                         Destroy(this);
                     }
                     GetComponent<SpriteRenderer>().color = new Color(1.0f, 0.0f, 0.0f, Mathf.Abs(timerFade2 - 1.0f));
