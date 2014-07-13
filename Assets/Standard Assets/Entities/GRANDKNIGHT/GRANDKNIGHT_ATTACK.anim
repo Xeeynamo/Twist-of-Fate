@@ -23,7 +23,7 @@ AnimationClip:
         value: {x: -.848048091, y: -.529919267, z: -3.70693591e-08, w: -2.31635067e-08}
         inSlope: {x: -9.34778214, y: 6.66706848, z: -4.08604535e-07, w: 2.91426801e-07}
         outSlope: {x: -9.34778214, y: 6.66706848, z: -4.08604535e-07, w: 2.91426801e-07}
-        tangentMode: 0
+        tangentMode: 7471205
       m_PreInfinity: 2
       m_PostInfinity: 2
     path: Weapon collision
@@ -36,7 +36,7 @@ AnimationClip:
         value: {x: .260608673, y: .75582695, z: 0}
         inSlope: {x: 8.4895134, y: -14.3038406, z: 1.08392385e-06}
         outSlope: {x: 8.4895134, y: -14.3038406, z: 1.08392385e-06}
-        tangentMode: 0
+        tangentMode: 794052679
       - time: .0666666701
         value: {x: .826576233, y: -.197762489, z: 7.22615923e-08}
         inSlope: {x: 8.4895134, y: -14.3038406, z: 1.08392385e-06}

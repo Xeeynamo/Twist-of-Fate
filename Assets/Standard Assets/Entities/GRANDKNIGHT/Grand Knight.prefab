@@ -32,7 +32,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400002}
   - 65: {fileID: 6500000}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Weapon collision
   m_TagString: BossWeapon
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ BoxCollider:
   m_GameObject: {fileID: 100002}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: .159999996, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -175,6 +175,8 @@ MonoBehaviour:
   ConsumoVitaTrappole: 50
   ConsumoVitaColpoArmaNemico: 10
   ConsumoVitaColpoNemico: 5
+  ConsumoVitaColpoArmaBoss: 30
+  ConsumoVitaColpoBoss: 15
   speed: {x: 0, y: 0}
 --- !u!114 &11400004
 MonoBehaviour:
