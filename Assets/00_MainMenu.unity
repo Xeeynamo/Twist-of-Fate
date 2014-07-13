@@ -213,6 +213,70 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!1 &475693390
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 475693392}
+  - 131: {fileID: 475693391}
+  - 114: {fileID: 475693393}
+  m_Layer: 0
+  m_Name: UnityWatermark-small
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!131 &475693391
+GUITexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 475693390}
+  m_Enabled: 1
+  m_Texture: {fileID: 2800000, guid: 3a2c43e44f0e4874cbf0fe696c74051a, type: 3}
+  m_Color: {r: .5, g: .5, b: .5, a: .5}
+  m_PixelInset:
+    serializedVersion: 2
+    x: -167
+    y: -33
+    width: 344
+    height: 67
+  m_LeftBorder: 0
+  m_RightBorder: 0
+  m_TopBorder: 0
+  m_BottomBorder: 0
+--- !u!4 &475693392
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 475693390}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .5, y: .400000006, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &475693393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 475693390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4659a2f87016b754cac63b8087695666, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelToLoad: 
+  normalTexture: {fileID: 2800000, guid: 3a2c43e44f0e4874cbf0fe696c74051a, type: 3}
+  rollOverTexture: {fileID: 2800000, guid: e64fec7497b067c438be8314983bea3e, type: 3}
+  beep: {fileID: 8300000, guid: a4763439392d9f646af6eccfa1514fee, type: 3}
+  quitButton: 0
+  comandi: 0
 --- !u!1 &1583629810
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,6 +419,7 @@ MonoBehaviour:
   rollOverTexture: {fileID: 2800000, guid: 13fd874b1ef7c734296f27990ed25586, type: 3}
   beep: {fileID: 8300000, guid: a4763439392d9f646af6eccfa1514fee, type: 3}
   quitButton: 0
+  comandi: 0
 --- !u!131 &1974437146
 GUITexture:
   m_ObjectHideFlags: 0
@@ -419,6 +484,7 @@ MonoBehaviour:
   rollOverTexture: {fileID: 2800000, guid: 6e1e301728a18fa4898f2012bbb83a78, type: 3}
   beep: {fileID: 8300000, guid: a4763439392d9f646af6eccfa1514fee, type: 3}
   quitButton: 1
+  comandi: 0
 --- !u!131 &2007420348
 GUITexture:
   m_ObjectHideFlags: 0
@@ -445,7 +511,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2007420346}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .5, y: .400000006, z: 0}
+  m_LocalPosition: {x: .5, y: .200000003, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

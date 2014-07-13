@@ -36,11 +36,6 @@ public class esci : MonoBehaviour {
 				Time.timeScale = 0;
 				GetComponent<AudioSource>().Pause();
 			}
-			else
-			{
-				Time.timeScale = 1;
-				GetComponent<AudioSource>().Play();
-			}
 		}
 	}
 	
@@ -51,17 +46,17 @@ public class esci : MonoBehaviour {
 			float screenY = ((Screen.height * 0.5f) - (areaHeight * 0.5f)); 
 			
 			GUILayout.BeginArea (new Rect(screenX, screenY, areaWidth, areaHeight), exitBg);
-			GUILayout.Label ("Sei sicuro di voler uscire?", style);
-			GUILayout.BeginHorizontal();
-			if(GUILayout.Button("Si"))
-				Application.LoadLevel(0);
-			if(GUILayout.Button("No"))
-			{
-				exit= false;
-				Time.timeScale = 1;
-				GetComponent<AudioSource>().Play();
-			}
-			GUILayout.EndHorizontal();
+			GUILayout.Label ("Sei sicuro di voler uscire?");
+				GUILayout.BeginHorizontal();
+				if(GUILayout.Button("Si"))
+					Application.LoadLevel(0);
+				if(GUILayout.Button("No"))
+				{
+					exit= false;
+					Time.timeScale = 1;
+					GetComponent<AudioSource>().Play();
+				}
+				GUILayout.EndHorizontal();
 			GUILayout.EndArea();
 		}
 	}

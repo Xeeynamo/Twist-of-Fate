@@ -4,7 +4,7 @@ using System.Collections;
 public class ScrollingText : MonoBehaviour {
 	
 	
-	public int caratteriAlSecondo = 8;
+	public int caratteriAlSecondo = 12;
 	public string[] showText;
 	public string NomeGiocatore;
 	public int areaWidth;

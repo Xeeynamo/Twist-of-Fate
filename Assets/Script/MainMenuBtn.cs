@@ -8,6 +8,7 @@ public class MainMenuBtn : MonoBehaviour {
 	public Texture2D rollOverTexture;
 	public AudioClip beep;
 	public bool quitButton = false;
+	public bool comandi = false;
 
 	private AudioSource music;
 	// Use this for initialization
@@ -36,6 +37,8 @@ public class MainMenuBtn : MonoBehaviour {
 		yield return new WaitForSeconds(1f);
 		if (quitButton)
 			Application.Quit ();
+		else if (comandi)
+			Application.LoadLevel (5);
 		else
 			Application.LoadLevel (1);
 	}
