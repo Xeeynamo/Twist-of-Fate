@@ -280,7 +280,7 @@ public class FollowCamera : MonoBehaviour
 			AudioClip combat = (AudioClip)Resources.Load("Twist Of Fate Combattimento");
 			audio.clip = combat;
 			audio.Play();
-			audio.volume = 0.42f;
+			audio.volume = 0.15f;
 			
 		}
     }
