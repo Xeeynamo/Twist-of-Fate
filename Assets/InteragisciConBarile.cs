@@ -19,7 +19,7 @@ public class InteragisciConBarile : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Physics2D.Raycast (new Vector2 (this.transform.position.x, this.transform.position.y),Vector3.right, 0.50f, playerMask)) 
+		if (Physics2D.Raycast (new Vector2 (this.transform.position.x-0.50f, this.transform.position.y-0.25f),Vector3.right, 1f, playerMask)) 
 		{
 			c = Color.red;		
 			if(We.Input.Defense && numUsage > 0 && timer <= 0){
@@ -35,7 +35,7 @@ public class InteragisciConBarile : MonoBehaviour {
 			timer -= Time.deltaTime;
 		}
 
-		Debug.DrawRay(new Vector2 (this.transform.position.x - sr.sprite.bounds.center.x, this.transform.position.y),Vector3.right , c);
+		Debug.DrawRay(new Vector2 (this.transform.position.x-0.50f, this.transform.position.y-0.25f),Vector3.right*1f, c);
 		
 	}
 }

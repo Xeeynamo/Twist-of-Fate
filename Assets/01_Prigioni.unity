@@ -30638,6 +30638,7 @@ GameObject:
   - 4: {fileID: 603201299}
   - 212: {fileID: 603201298}
   - 114: {fileID: 603201297}
+  - 61: {fileID: 603201300}
   m_Layer: 17
   m_Name: BARREL_LIFE
   m_TagString: Barrel
@@ -30695,6 +30696,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
+--- !u!61 &603201300
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 603201296}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: .75999999, y: .75999999}
+  m_Center: {x: 0, y: 0}
 --- !u!1001 &603590350
 Prefab:
   m_ObjectHideFlags: 0
@@ -55042,11 +55054,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 5.0774188
+      value: 1.46937346
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.07539988
+      value: 4.77699041
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.z
@@ -55074,7 +55086,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_RootOrder
-      value: 28
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_Name
@@ -67358,6 +67370,7 @@ GameObject:
   - 4: {fileID: 1390991251}
   - 212: {fileID: 1390991250}
   - 114: {fileID: 1390991249}
+  - 61: {fileID: 1390991252}
   m_Layer: 17
   m_Name: BARREL_LIFE
   m_TagString: Barrel
@@ -67415,6 +67428,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
+--- !u!61 &1390991252
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1390991248}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: .75999999, y: .75999999}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1391192584
 GameObject:
   m_ObjectHideFlags: 0
@@ -76399,7 +76423,7 @@ Transform:
   m_PrefabInternal: {fileID: 1137792818}
   m_GameObject: {fileID: 1607201382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.0774188, y: 2.07539988, z: 0}
+  m_LocalPosition: {x: 1.46937346, y: 4.77699041, z: 0}
   m_LocalScale: {x: 1.00823271, y: 1.00823271, z: 1}
   m_Children:
   - {fileID: 462953075}
