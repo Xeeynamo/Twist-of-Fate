@@ -138,7 +138,7 @@ public class Knight : MonoBehaviour
                 break;
             case StateManager.State.Died:
                 physManager.speed.x = 0;
-                timerFade1 += TimerFade * Time.deltaTime;
+                timerFade1 += TimerFade * Time.deltaTime * 2.0f;
                 if (timerFade1 >= 1.0f)
                     timerFade1 = 1.0f;
 		        Richard.visto = false;
@@ -146,7 +146,7 @@ public class Knight : MonoBehaviour
                     Mathf.Abs(timerFade1 - 1.0f));
                 if (timerFade1 >= TimerFade)
                 {
-                    timerFade2 += TimerFade * Time.deltaTime;
+                    timerFade2 += TimerFade * Time.deltaTime * 2.0f;
                     if (timerFade2 >= 1.0f)
                     {
                         timerFade2 = 1.0f;
@@ -154,6 +154,18 @@ public class Knight : MonoBehaviour
                         Destroy(this);
                     }
                     GetComponent<SpriteRenderer>().color = new Color(1.0f, 0.0f, 0.0f, Mathf.Abs(timerFade2 - 1.0f));
+                }
+                SpriteRenderer[] _sr = GetComponentsInChildren<SpriteRenderer>();
+                BoxCollider2D[] _box = GetComponentsInChildren<BoxCollider2D>();
+                foreach (SpriteRenderer sr in _sr)
+                {
+                    if (sr != null)
+                        sr.color = GetComponent<SpriteRenderer>().color;
+                }
+                foreach(BoxCollider2D box in _box)
+                {
+                    if (box != null)
+                        box.enabled = false;
                 }
                 break;
         }
