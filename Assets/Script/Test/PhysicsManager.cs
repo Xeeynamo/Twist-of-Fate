@@ -11,7 +11,7 @@ public class PhysicsManager : MonoBehaviour
     public static readonly int ENEMY_LAYER = 11;
     public static readonly int ENEMYWEAPON_LAYER = 12;
 
-    public static readonly int GROUND_MASK = 1 << 8 | 1 << 10;
+    public static readonly int GROUND_MASK = 1 << 8 | 1 << 10 | 1 << 17;
     public static readonly int PLAYER_MASK = 1 << PLAYER_LAYER;
     public static readonly int MOVINGPLATFORM_MASK = 1 << MOVINGPLATFORM_LAYER;
     public static readonly int PLAYERHIDE_MASK = 1 << PLAYERHIDE_LAYER;
@@ -545,7 +545,6 @@ public class PhysicsManager : MonoBehaviour
             }
             else if (obj.gameObject.tag == "EnemyWeapon")
             {
-                Debug.Log("ENEMY WEAPON");
                 if (State != StateManager.State.Defense)
                 {
                     audio.Play();
@@ -562,26 +561,25 @@ public class PhysicsManager : MonoBehaviour
 					ahia = true;
 				}
 			}
-			else if (obj.gameObject.tag == "BossWeapon")
-			{
-				Debug.Log("ENEMY WEAPON");
-				if (State != StateManager.State.Defense)
-				{
-					audio.Play();
-					Health -= ConsumoVitaColpoArmaBoss;
-					ahia = true;
-				}
-			else if (obj.gameObject.tag == "PlayerWeapon")
-				{
-				     	print ("cazzi");
-						audio.Play();
-						Health -= ConsumoVitaFrecce;
-						
-					}
-			}
+            else if (obj.gameObject.tag == "BossWeapon")
+            {
+                if (State != StateManager.State.Defense)
+                {
+                    audio.Play();
+                    Health -= ConsumoVitaColpoArmaBoss;
+                    ahia = true;
+                }
+                else if (obj.gameObject.tag == "PlayerWeapon")
+                {
+                    audio.Play();
+                    Health -= ConsumoVitaFrecce;
+
+                }
+            }
             // Controlla se è stato colpito o meno
             if (ahia == true)
             {
+                Direction = obj.transform.position.x > transform.position.x;
                 speed.x = Direction ? -JumpStrengthMinimum : +JumpStrengthMinimum;
                 speed.y = JumpStrengthMaximum;
                 IsOnGround = false;

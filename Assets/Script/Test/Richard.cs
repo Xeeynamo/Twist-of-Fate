@@ -171,7 +171,7 @@ public class Richard : MonoBehaviour
             if (died == false)
             {
                 died = true;
-                physManager.Gravity /= 2;
+                physManager.speed.y /= 1.5f;
                 physManager.speed.x /= 2;
                 state = StateManager.State.Died;
             }
