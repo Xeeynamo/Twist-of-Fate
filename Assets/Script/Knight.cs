@@ -141,6 +141,7 @@ public class Knight : MonoBehaviour
                 timerFade1 += TimerFade * Time.deltaTime;
                 if (timerFade1 >= 1.0f)
                     timerFade1 = 1.0f;
+		        Richard.visto = false;
                 GetComponent<SpriteRenderer>().color = new Color(1.0f, Mathf.Abs(timerFade1 - 1.0f),
                     Mathf.Abs(timerFade1 - 1.0f));
                 if (timerFade1 >= TimerFade)
