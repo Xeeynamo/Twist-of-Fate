@@ -183,23 +183,25 @@ public class FollowCamera : MonoBehaviour
         float objHeight = obj.renderer.bounds.size.y;
 
         Vector3 dstPos = obj.transform.localPosition;
+        float softDistanceX = Mathf.Sqrt(Mathf.Sqrt(cameraWidth / 2)) / 2;
+        float softDistanceY = Mathf.Sqrt(Mathf.Sqrt(cameraHeight / 2)) / 2;
         switch (type)
         {
             case Alignment.TopLeft:
-                dstPos.x = -cameraWidth;
-                dstPos.y = +cameraHeight;
+                dstPos.x = -cameraWidth + softDistanceX;
+                dstPos.y = +cameraHeight - softDistanceY;
                 break;
             case Alignment.TopRight:
-                dstPos.x = +cameraWidth - objWidth;
-                dstPos.y = +cameraHeight;
+                dstPos.x = +cameraWidth - objWidth - softDistanceX;
+                dstPos.y = +cameraHeight - softDistanceY;
                 break;
             case Alignment.BottomLeft:
-                dstPos.x = -cameraWidth;
-                dstPos.y = -cameraHeight + objHeight;
+                dstPos.x = -cameraWidth + softDistanceX;
+                dstPos.y = -cameraHeight + objHeight + softDistanceY;
                 break;
             case Alignment.BottomRight:
-                dstPos.x = +cameraWidth - objWidth;
-                dstPos.y = -cameraHeight + objHeight;
+                dstPos.x = +cameraWidth - objWidth - softDistanceX;
+                dstPos.y = -cameraHeight + objHeight + softDistanceY;
                 break;
         }
         obj.transform.localPosition = dstPos;
