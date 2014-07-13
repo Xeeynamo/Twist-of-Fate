@@ -57153,11 +57153,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 4.09590912
+      value: 24.244194
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.14991856
+      value: 15.0654936
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.z
@@ -57209,7 +57209,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: JumpStrengthMaximum
-      value: 200
+      value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: Weapon
@@ -79318,7 +79318,7 @@ Transform:
   m_PrefabInternal: {fileID: 1137792818}
   m_GameObject: {fileID: 1607201382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.09590912, y: 2.14991856, z: 0}
+  m_LocalPosition: {x: 24.244194, y: 15.0654936, z: 0}
   m_LocalScale: {x: 1.00823271, y: 1.00823271, z: 1}
   m_Children:
   - {fileID: 462953075}
@@ -79394,7 +79394,7 @@ MonoBehaviour:
   Gravity: 8
   WalkSpeed: 60
   RunSpeed: 160
-  JumpStrengthMaximum: 200
+  JumpStrengthMaximum: 256
   JumpStrengthMinimum: 64
   ScivolataForza: 250
   ScivolataInerzia: 5
@@ -79461,7 +79461,7 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
-  Priority: 128
+  Priority: 255
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
