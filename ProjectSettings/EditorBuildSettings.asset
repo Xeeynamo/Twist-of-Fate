@@ -13,3 +13,5 @@ EditorBuildSettings:
     path: Assets/01_Prigioni.unity
   - enabled: 1
     path: Assets/Game_Over.unity
+  - enabled: 1
+    path: Assets/Messaggio_Finale.unity

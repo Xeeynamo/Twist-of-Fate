@@ -46,7 +46,7 @@ public class Tutorial_Script : MonoBehaviour {
 		tutorialString.Add (childTransform[2], "Tutorial (Comandi Base 2)\nPremi due volte in rapida successione Freccia Dx o Freccia Sx per correre in quella direzione. ");
 		tutorialString.Add (childTransform[3], "Tutorial (Comandi Base 3)\nPremi Freccia Su per entrare in una Cella\nPremi \"V\" per Attaccare");
 		tutorialString.Add (childTransform[4], "Tutorial (Comandi Base 4)\nPer salire sulle scale cammina tenendo premuto Frecca Su.");
-		tutorialString.Add (childTransform[6], "Tutorial (Interazioni)\nPremere X per interagire con gli oggetti.");
+		tutorialString.Add (childTransform[6], "Tutorial (Interazioni)\nPremere \"X\" per interagire con gli oggetti.");
 		tutorialString.Add (childTransform[5], "Tutorial (Comandi Base 5)\nPremere Barra Spaziatrice per saltare.");
 	}
 
@@ -59,7 +59,6 @@ public class Tutorial_Script : MonoBehaviour {
 				if(Vector2.Distance (playerTrans.position, t.position) <= 1)
 				{
 					msgActivated.Add(t);
-					print ("Attivato " + t);
 					activations.Add(t);
 				}
 			}
@@ -81,8 +80,6 @@ public class Tutorial_Script : MonoBehaviour {
 		if (timer <= 0 && activations.Count > 0)
 		{
 			timer = time;
-
-			print(activations[0] + "Fine Messaggio");
 
 			activations.RemoveAt(0);
 		}
