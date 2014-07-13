@@ -20,11 +20,13 @@ public class Arma : MonoBehaviour {
 			if (oggettoColpito.collider.gameObject.tag == "Enemy"||oggettoColpito.collider.gameObject.tag == "Boss") {
 								if (!colpo) {
 										oggettoColpito.collider.gameObject.GetComponent<PhysicsManager> ().Health -= dannoArma;
+					                    oggettoColpito.collider.gameObject.audio.Play(); 
 										colpo = true;					                    
 								}
 						}
 
 				} else
 						colpo = false;
+
 	}
 }
