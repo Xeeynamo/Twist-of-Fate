@@ -15,11 +15,12 @@ public class Arma : MonoBehaviour {
 
 
 		if (armaAttiva) {
-			RaycastHit2D oggettoColpito = Physics2D.Raycast (new Vector2 (this.transform.position.x + 0.3f, this.transform.position.y), Richard.physManager.Direction ? Vector3.left * 0.5f : Vector3.right * 0.7f, PhysicsManager.ENEMY_LAYER);
-			Debug.DrawRay (new Vector2 (this.transform.position.x + 0.3f, this.transform.position.y), Richard.physManager.Direction ? Vector3.left * 0.5f : Vector3.right * 0.7f, Color.red);
+			RaycastHit2D oggettoColpito = Physics2D.Raycast (new Vector2 (this.transform.position.x + (Richard.physManager.Direction ? 0.3f:-0.3f) , this.transform.position.y), Richard.physManager.Direction ? Vector3.left * 0.5f : Vector3.right * 0.5f, PhysicsManager.ENEMY_LAYER);
+			Debug.DrawRay (new Vector2 (this.transform.position.x + (Richard.physManager.Direction ? 0.3f:-0.3f), this.transform.position.y), Richard.physManager.Direction ? Vector3.left * 0.5f : Vector3.right * 0.5f, Color.red);
 			if (oggettoColpito.collider.gameObject.tag == "Enemy"||oggettoColpito.collider.gameObject.tag == "Boss") {
 								if (!colpo) {
 										oggettoColpito.collider.gameObject.GetComponent<PhysicsManager> ().Health -= dannoArma;
+					                    print (oggettoColpito.collider.gameObject.GetComponent<PhysicsManager> ().Health);
 					                    oggettoColpito.collider.gameObject.audio.Play(); 
 										colpo = true;					                    
 								}
