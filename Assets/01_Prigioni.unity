@@ -16907,6 +16907,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 287491483}
   - 212: {fileID: 287491484}
+  - 114: {fileID: 287491485}
   m_Layer: 0
   m_Name: Tutorial_msg8
   m_TagString: Untagged
@@ -16947,8 +16948,20 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 51dacd5cb4db4fb478b924c49acaa3bf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 21f1a2ac10c1fbe4ea10d7be317245ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &287491485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: f5717d56ba933674894473cf7012cd17,
+    type: 2}
+  m_PrefabInternal: {fileID: 950567218}
+  m_GameObject: {fileID: 287491482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 742a3059415458c46aff974aadee8b2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &289235815
 GameObject:
   m_ObjectHideFlags: 0
@@ -54483,7 +54496,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: f5717d56ba933674894473cf7012cd17, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f5717d56ba933674894473cf7012cd17, type: 2}
@@ -64025,11 +64038,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.75697422
+      value: 1.60235918
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 12.3772278
+      value: 2.12108517
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.z
@@ -71661,6 +71674,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1281242246}
   - 212: {fileID: 1281242247}
+  - 114: {fileID: 1281242248}
   m_Layer: 0
   m_Name: Tutorial_msg6
   m_TagString: Untagged
@@ -71701,8 +71715,20 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 51dacd5cb4db4fb478b924c49acaa3bf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 21f1a2ac10c1fbe4ea10d7be317245ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &1281242248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400012, guid: f5717d56ba933674894473cf7012cd17,
+    type: 2}
+  m_PrefabInternal: {fileID: 950567218}
+  m_GameObject: {fileID: 1281242245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 742a3059415458c46aff974aadee8b2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1282114541
 GameObject:
   m_ObjectHideFlags: 0
@@ -77751,6 +77777,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1374547782}
   - 212: {fileID: 1374547781}
+  - 114: {fileID: 1374547783}
   m_Layer: 0
   m_Name: Tutorial_msg5
   m_TagString: Untagged
@@ -77779,7 +77806,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 51dacd5cb4db4fb478b924c49acaa3bf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 21f1a2ac10c1fbe4ea10d7be317245ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1374547782
 Transform:
@@ -77793,6 +77820,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1577915671}
   m_RootOrder: 6
+--- !u!114 &1374547783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400014, guid: f5717d56ba933674894473cf7012cd17,
+    type: 2}
+  m_PrefabInternal: {fileID: 950567218}
+  m_GameObject: {fileID: 1374547780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 742a3059415458c46aff974aadee8b2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1375652869
 GameObject:
   m_ObjectHideFlags: 0
@@ -79349,6 +79388,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1406542506}
   - 212: {fileID: 1406542507}
+  - 114: {fileID: 1406542508}
   m_Layer: 0
   m_Name: Tutorial_msg3
   m_TagString: Untagged
@@ -79389,8 +79429,20 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 51dacd5cb4db4fb478b924c49acaa3bf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 21f1a2ac10c1fbe4ea10d7be317245ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &1406542508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400008, guid: f5717d56ba933674894473cf7012cd17,
+    type: 2}
+  m_PrefabInternal: {fileID: 950567218}
+  m_GameObject: {fileID: 1406542505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 742a3059415458c46aff974aadee8b2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1409202800
 GameObject:
   m_ObjectHideFlags: 0
@@ -83693,6 +83745,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1493439833}
   - 212: {fileID: 1493439834}
+  - 114: {fileID: 1493439835}
   m_Layer: 0
   m_Name: Tutorial_msg2
   m_TagString: Untagged
@@ -83733,8 +83786,20 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 51dacd5cb4db4fb478b924c49acaa3bf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 21f1a2ac10c1fbe4ea10d7be317245ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &1493439835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400006, guid: f5717d56ba933674894473cf7012cd17,
+    type: 2}
+  m_PrefabInternal: {fileID: 950567218}
+  m_GameObject: {fileID: 1493439832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 742a3059415458c46aff974aadee8b2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1494230865
 Prefab:
   m_ObjectHideFlags: 0
@@ -88234,6 +88299,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   childTransform: []
+  BordersSprite:
+  - {fileID: 21300000, guid: f1fd72ff417cf4c45bdea70318c38ae6, type: 3}
+  - {fileID: 21300012, guid: f1fd72ff417cf4c45bdea70318c38ae6, type: 3}
+  - {fileID: 21300002, guid: f1fd72ff417cf4c45bdea70318c38ae6, type: 3}
+  - {fileID: 21300008, guid: f1fd72ff417cf4c45bdea70318c38ae6, type: 3}
+  - {fileID: 21300010, guid: f1fd72ff417cf4c45bdea70318c38ae6, type: 3}
+  - {fileID: 21300006, guid: f1fd72ff417cf4c45bdea70318c38ae6, type: 3}
+  - {fileID: 21300014, guid: f1fd72ff417cf4c45bdea70318c38ae6, type: 3}
+  - {fileID: 21300004, guid: f1fd72ff417cf4c45bdea70318c38ae6, type: 3}
   areaWidth: 472
   areaHeight: 74
   posX: .550000012
@@ -89186,7 +89260,7 @@ Transform:
   m_PrefabInternal: {fileID: 1137792818}
   m_GameObject: {fileID: 1607201382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.75697422, y: 12.3772278, z: 0}
+  m_LocalPosition: {x: 1.60235918, y: 2.12108517, z: 0}
   m_LocalScale: {x: 1.00823271, y: 1.00823271, z: 1}
   m_Children:
   - {fileID: 462953075}
@@ -102777,6 +102851,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1845458846}
   - 212: {fileID: 1845458847}
+  - 114: {fileID: 1845458848}
   m_Layer: 0
   m_Name: Tutorial_msg7
   m_TagString: Untagged
@@ -102817,8 +102892,20 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 51dacd5cb4db4fb478b924c49acaa3bf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 21f1a2ac10c1fbe4ea10d7be317245ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &1845458848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400016, guid: f5717d56ba933674894473cf7012cd17,
+    type: 2}
+  m_PrefabInternal: {fileID: 950567218}
+  m_GameObject: {fileID: 1845458845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 742a3059415458c46aff974aadee8b2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1847582833
 GameObject:
   m_ObjectHideFlags: 0
@@ -110256,6 +110343,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1972308799}
   - 212: {fileID: 1972308800}
+  - 114: {fileID: 1972308801}
   m_Layer: 0
   m_Name: Tutorial_msg4
   m_TagString: Untagged
@@ -110296,8 +110384,20 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 51dacd5cb4db4fb478b924c49acaa3bf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 21f1a2ac10c1fbe4ea10d7be317245ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &1972308801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400010, guid: f5717d56ba933674894473cf7012cd17,
+    type: 2}
+  m_PrefabInternal: {fileID: 950567218}
+  m_GameObject: {fileID: 1972308798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 742a3059415458c46aff974aadee8b2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1973108429
 GameObject:
   m_ObjectHideFlags: 0
@@ -113192,6 +113292,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2021638121}
   - 212: {fileID: 2021638122}
+  - 114: {fileID: 2021638123}
   m_Layer: 0
   m_Name: Tutorial_msg1
   m_TagString: Untagged
@@ -113232,8 +113333,20 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 51dacd5cb4db4fb478b924c49acaa3bf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 21f1a2ac10c1fbe4ea10d7be317245ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &2021638123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: f5717d56ba933674894473cf7012cd17,
+    type: 2}
+  m_PrefabInternal: {fileID: 950567218}
+  m_GameObject: {fileID: 2021638120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 742a3059415458c46aff974aadee8b2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2022672166
 GameObject:
   m_ObjectHideFlags: 0
