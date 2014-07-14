@@ -17,6 +17,7 @@ public class PhysicsManager : MonoBehaviour
     public static readonly int PLAYERHIDE_MASK = 1 << PLAYERHIDE_LAYER;
     public static readonly int HIDEOUT_MASK = 1 << HIDEOUT_LAYER;
     public static readonly int ENEMYALL_MASK = (1 << ENEMYWEAPON_LAYER) | (1 << ENEMY_LAYER);
+	public static readonly int STAIR_MASK = 1 << 10;
 
     /// <summary>
     /// Rappresenta l'HUD collegata al personaggio.
@@ -283,6 +284,14 @@ public class PhysicsManager : MonoBehaviour
         //return EvaluateRaycastH(Direction ? -0.14f : +0.14f, -0.48f, 0.28f, groundMask, Color.green);
     }
 
+	public bool CheckStairs()
+	{
+		bool b1 = EvaluateRaycastV(-0.14f, -0.28f, 0.22f, STAIR_MASK, Color.cyan);
+		bool b2 = EvaluateRaycastV(+0.14f, -0.28f, 0.22f, STAIR_MASK, Color.cyan);
+		return b1 | b2;
+		//return EvaluateRaycastH(Direction ? -0.14f : +0.14f, -0.48f, 0.28f, groundMask, Color.green);
+	}
+
 	/// <summary>
 	/// Controlla se sopra il personaggio c'è una piataforma o meno
 	/// </summary>
@@ -447,7 +456,7 @@ public class PhysicsManager : MonoBehaviour
                         State = StateManager.State.Walk;
                     break;
                 case StateManager.State.Jumping:
-                    if (IsOnGround == true && Stamina >= ConsumoStaminaSalto)
+                    if (IsOnGround == true && Stamina >= ConsumoStaminaSalto && !CheckStairs())
                     {
                         IsOnGround = false;
                         Jumping = true;
