@@ -456,7 +456,7 @@ public class PhysicsManager : MonoBehaviour
                         State = StateManager.State.Walk;
                     break;
                 case StateManager.State.Jumping:
-                    if (IsOnGround == true && Stamina >= ConsumoStaminaSalto && !CheckStairs())
+                    if (IsOnGround == true && Stamina >= ConsumoStaminaSalto)
                     {
                         IsOnGround = false;
                         Jumping = true;

@@ -207,7 +207,7 @@ public class Richard : MonoBehaviour
         // personaggio di farlo saltare sia in camminata sia in corsa. Inoltre, se
         // lo scatto è attivato ed il personaggio salta in corsa, all'atterraggio ha
         // bisogno di continuare la corsa. Sarebbe stato stupido il contrario, indi.
-        if (We.Input.Jump == true && !keySalto && physManager.Stamina >= physManager.ConsumoStaminaSalto)
+		if (We.Input.Jump == true && !keySalto && physManager.Stamina >= physManager.ConsumoStaminaSalto && !physManager.CheckStairs())
         {
             keySalto = true;
             return StateManager.State.Jumping;
@@ -222,7 +222,7 @@ public class Richard : MonoBehaviour
             // della doppia pressione per attivare lo scatto, allora vai e permetti lo scatto!
             if (((tastoDirezionalePrecedentementePremuto == false && timerScattoRimastoLeft < TimerScatto)
                 // Ritorna Run invece che Walk anche se lo scatto è comunque attivo.
-			     || ScattoAttivato == true) && physManager.Stamina > 0)
+			     || ScattoAttivato == true) && physManager.Stamina > 1)
             {
                 // Dice che è in scatto.
                 ScattoAttivato = true;
@@ -247,7 +247,7 @@ public class Richard : MonoBehaviour
             physManager.Direction = true;
 
             if (((tastoDirezionalePrecedentementePremuto == false && timerScattoRimastoRight < TimerScatto)
-			     || ScattoAttivato == true) && physManager.Stamina > 0)
+			     || ScattoAttivato == true) && physManager.Stamina > 1)
             {
                 ScattoAttivato = true;
                 return StateManager.State.Run;
@@ -274,10 +274,7 @@ public class Richard : MonoBehaviour
 
             return StateManager.State.Crouch;
         }
-//        if (We.Input.SwitchItem == true)
-  //      {
 
-      //  }
         if (We.Input.MoveUp == true && !movimento) {
 						return StateManager.State.Hide;
 				} else
