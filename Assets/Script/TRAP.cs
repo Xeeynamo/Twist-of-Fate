@@ -56,6 +56,10 @@ public class TRAP : MonoBehaviour
                 IsBroken = true;
                 state = State.Attack;
             }
+            if (transform.position.x > Richard._Transform.position.x - 0.64)
+            {
+                IsBroken = false;
+            }
         }
         switch (state)
         {
