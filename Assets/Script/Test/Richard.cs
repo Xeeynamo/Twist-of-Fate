@@ -285,7 +285,7 @@ public class Richard : MonoBehaviour
 
         if (We.Input.AttackSecondary && !movimento && physManager.hud.GetComponent<HudHandler>().ValueMunitions > 0)
         {
-            GameObject istance = (GameObject)Instantiate(Bullet, new Vector3(this.transform.position.x, this.transform.position.y + 0.25f, this.transform.position.z), transform.rotation);
+			GameObject istance = (GameObject)Instantiate(Bullet, new Vector3(this.transform.position.x+ (physManager.Direction? + 0.4f:-0.4f), this.transform.position.y +0.25f, this.transform.position.z), transform.rotation);
             MuoviProiettile bullet = istance.GetComponent<MuoviProiettile>();
             bullet.Velocità = physManager.Direction ? +3 : -3;
             physManager.hud.GetComponent<HudHandler>().ValueMunitions--;
