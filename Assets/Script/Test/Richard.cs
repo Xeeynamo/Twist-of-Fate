@@ -93,6 +93,7 @@ public class Richard : MonoBehaviour
     {
         physManager = GetComponent<PhysicsManager>();
         WeaponVisible = false;
+        physManager.hud.GetComponent<HudHandler>().ValueMunitions = 3;
     }
 
     /// <summary>
