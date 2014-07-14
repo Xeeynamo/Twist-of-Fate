@@ -222,7 +222,7 @@ public class Richard : MonoBehaviour
             // della doppia pressione per attivare lo scatto, allora vai e permetti lo scatto!
             if (((tastoDirezionalePrecedentementePremuto == false && timerScattoRimastoLeft < TimerScatto)
                 // Ritorna Run invece che Walk anche se lo scatto è comunque attivo.
-			     || ScattoAttivato == true) && physManager.Stamina > physManager.ConsumoStaminaSalto)
+			     || ScattoAttivato == true) && physManager.Stamina > 0)
             {
                 // Dice che è in scatto.
                 ScattoAttivato = true;
