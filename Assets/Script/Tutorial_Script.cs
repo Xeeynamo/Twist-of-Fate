@@ -39,7 +39,7 @@ public class Tutorial_Script : MonoBehaviour
         {
             for (int j = 0; j < tutorialBg.height; j++)
             {
-                tutorialBg.SetPixel(i, j, new Color(0, 0.5f, 0.75f, 0.75f));
+                tutorialBg.SetPixel(i, j, new Color(0.75f, 0.5f, 0.25f, 0.75f));
             }
         }
         tutorialBg.Apply();

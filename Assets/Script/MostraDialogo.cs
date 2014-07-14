@@ -26,7 +26,7 @@ public class MostraDialogo : MonoBehaviour {
 		{
 			for (int j = 0; j < dialogueBg.height; j++)
             {
-                dialogueBg.SetPixel(i, j, new Color(0.0f, 0.5f, 0.75f, 0.75f));
+                dialogueBg.SetPixel(i, j, new Color(0.75f, 0.5f, 0.25f, 0.75f));
 			}
 		}
 		dialogueBg.Apply ();
