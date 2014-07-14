@@ -303,6 +303,12 @@ MonoBehaviour:
   ConsumoVitaColpoNemico: 5
   ConsumoVitaColpoArmaBoss: 30
   ConsumoVitaColpoBoss: 15
+  SFX:
+  - {fileID: 8300000, guid: eef3debc49546414a80daabb46c0495b, type: 3}
+  - {fileID: 8300000, guid: eaadda5b00df21c4792b6a741d70757f, type: 3}
+  - {fileID: 8300000, guid: 5ae865d3b52fed749824557e1bcc052e, type: 3}
+  - {fileID: 8300000, guid: 6d0db05a8a76cde46812f7f574a05c0f, type: 3}
+  - {fileID: 8300000, guid: 4936835f6b7077a40a4fe514f9faaa4c, type: 3}
   speed: {x: 0, y: 0}
 --- !u!114 &11400004
 MonoBehaviour:

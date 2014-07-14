@@ -170,6 +170,8 @@ public class Richard : MonoBehaviour
         {
             if (died == false)
             {
+                GetComponent<AudioSource>().clip = physManager.SFX[0];
+                GetComponent<AudioSource>().Play();
                 died = true;
                 physManager.speed.y /= 1.5f;
                 physManager.speed.x /= 2;

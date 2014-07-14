@@ -147,6 +147,9 @@ public class PhysicsManager : MonoBehaviour
 	/// Quanta vita viene consumata dal contatto con il nemico
 	/// </summary>
 	public int ConsumoVitaColpoBoss = 15;
+
+    public AudioClip[] SFX;
+
     /// <summary>
     /// La velocità orizzontale e verticale del personaggio
     /// Ogni valore è espresso per pixel al secondo.
@@ -492,6 +495,8 @@ public class PhysicsManager : MonoBehaviour
                     if (Stamina <= ConsumoStaminaDifesa)
                         State = StateManager.State.Stand;
                     break;
+                case StateManager.State.Died:
+                    break;
             }
         }
         if (!IsOnGround && !GravityDisabled)
@@ -531,6 +536,11 @@ public class PhysicsManager : MonoBehaviour
             {
                 GetComponent<Animator>().SetBool("Colpito", true);
                 Health -= ConsumoVitaTrappole;
+                if (SFX.Length >= 5)
+                {
+                    audio.clip = SFX[4];
+                    audio.Play();
+                }
                 audio.Play();
                 ahia = true;
             }
@@ -538,7 +548,11 @@ public class PhysicsManager : MonoBehaviour
             {
                 if (State != StateManager.State.Defense)
                 {
-                    audio.Play();
+                    if (SFX.Length >= 5)
+                    {
+                        audio.clip = SFX[1];
+                        audio.Play();
+                    }
                     Health -= ConsumoVitaColpoNemico;
                     ahia = true;
                 }
@@ -547,7 +561,11 @@ public class PhysicsManager : MonoBehaviour
             {
                 if (State != StateManager.State.Defense)
                 {
-                    audio.Play();
+                    if (SFX.Length >= 5)
+                    {
+                        audio.clip = SFX[2];
+                        audio.Play();
+                    }
                     Health -= ConsumoVitaColpoArmaNemico;
                     ahia = true;
                 }
@@ -555,8 +573,12 @@ public class PhysicsManager : MonoBehaviour
 			else if (obj.gameObject.tag == "Boss")
 			{
 				if (State != StateManager.State.Defense)
-				{
-					audio.Play();
+                {
+                    if (SFX.Length >= 5)
+                    {
+                        audio.clip = SFX[1];
+                        audio.Play();
+                    }
 					Health -= ConsumoVitaColpoBoss;
 					ahia = true;
 				}
@@ -565,7 +587,11 @@ public class PhysicsManager : MonoBehaviour
             {
                 if (State != StateManager.State.Defense)
                 {
-                    audio.Play();
+                    if (SFX.Length >= 5)
+                    {
+                        audio.clip = SFX[2];
+                        audio.Play();
+                    }
                     Health -= ConsumoVitaColpoArmaBoss;
                     ahia = true;
                 }
