@@ -3431,7 +3431,7 @@ Transform:
   - {fileID: 1615619757}
   - {fileID: 276043085}
   m_Father: {fileID: 367130270}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!212 &64420184
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7087,7 +7087,7 @@ Transform:
   - {fileID: 262421008}
   - {fileID: 403833705}
   m_Father: {fileID: 367130270}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!212 &123976615
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17023,7 +17023,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 950567218}
   m_GameObject: {fileID: 287491482}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 742a3059415458c46aff974aadee8b2e, type: 3}
   m_Name: 
@@ -18150,7 +18150,7 @@ Transform:
   - {fileID: 1302862035}
   - {fileID: 533735100}
   m_Father: {fileID: 367130270}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!212 &310709050
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -22088,6 +22088,7 @@ Transform:
   m_LocalPosition: {x: 20.4799995, y: 16.4799995, z: 8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1184493127}
   - {fileID: 1792281204}
   - {fileID: 1945026107}
   - {fileID: 1865760809}
@@ -22097,7 +22098,6 @@ Transform:
   - {fileID: 310709049}
   - {fileID: 1124404455}
   - {fileID: 64420183}
-  - {fileID: 1184493127}
   m_Father: {fileID: 0}
   m_RootOrder: 36
 --- !u!1 &367232663
@@ -22563,6 +22563,7 @@ MonoBehaviour:
   ConsumoVitaColpoNemico: 5
   ConsumoVitaColpoArmaBoss: 30
   ConsumoVitaColpoBoss: 15
+  SFX: []
   speed: {x: 0, y: 0}
 --- !u!114 &376105882
 MonoBehaviour:
@@ -38914,7 +38915,7 @@ Transform:
   m_PrefabInternal: {fileID: 666790650}
   m_GameObject: {fileID: 659488533}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .185000002, y: -.189999998, z: -1}
+  m_LocalPosition: {x: .189999998, y: -.189999998, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 109090613}
@@ -39138,6 +39139,14 @@ Prefab:
     - target: {fileID: 400014, guid: 925e1e0a3785f154d874fec9ba876952, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400012, guid: 925e1e0a3785f154d874fec9ba876952, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: .119999997
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 925e1e0a3785f154d874fec9ba876952, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: .189999998
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 925e1e0a3785f154d874fec9ba876952, type: 2}
@@ -62732,6 +62741,7 @@ MonoBehaviour:
   ConsumoVitaColpoNemico: 5
   ConsumoVitaColpoArmaBoss: 30
   ConsumoVitaColpoBoss: 15
+  SFX: []
   speed: {x: 0, y: 0}
 --- !u!114 &1112164459
 MonoBehaviour:
@@ -63715,7 +63725,7 @@ Transform:
   - {fileID: 1995565283}
   - {fileID: 1770748053}
   m_Father: {fileID: 367130270}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!212 &1124404456
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -66814,7 +66824,7 @@ Transform:
   - {fileID: 567007841}
   - {fileID: 109203549}
   m_Father: {fileID: 367130270}
-  m_RootOrder: 9
+  m_RootOrder: 0
 --- !u!212 &1184493128
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -68998,6 +69008,7 @@ MonoBehaviour:
   ConsumoVitaColpoNemico: 5
   ConsumoVitaColpoArmaBoss: 30
   ConsumoVitaColpoBoss: 15
+  SFX: []
   speed: {x: 0, y: 0}
 --- !u!114 &1225730414
 MonoBehaviour:
@@ -71868,7 +71879,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 950567218}
   m_GameObject: {fileID: 1281242245}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 742a3059415458c46aff974aadee8b2e, type: 3}
   m_Name: 
@@ -74009,7 +74020,7 @@ Transform:
   m_PrefabInternal: {fileID: 666790650}
   m_GameObject: {fileID: 1314355940}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .125, y: -.189999998, z: -1}
+  m_LocalPosition: {x: .119999997, y: -.189999998, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 109090613}
@@ -77971,7 +77982,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 950567218}
   m_GameObject: {fileID: 1374547780}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 742a3059415458c46aff974aadee8b2e, type: 3}
   m_Name: 
@@ -79582,7 +79593,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 950567218}
   m_GameObject: {fileID: 1406542505}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 742a3059415458c46aff974aadee8b2e, type: 3}
   m_Name: 
@@ -81220,7 +81231,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.12295794
+      value: 2.04232311
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d16e342f95fe2384da139a6a04b10372, type: 2}
       propertyPath: m_LocalPosition.z
@@ -82579,7 +82590,7 @@ Transform:
   - {fileID: 1246237618}
   - {fileID: 1451177465}
   m_Father: {fileID: 367130270}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!212 &1459445763
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -83995,7 +84006,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 950567218}
   m_GameObject: {fileID: 1493439832}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 742a3059415458c46aff974aadee8b2e, type: 3}
   m_Name: 
@@ -89574,7 +89585,7 @@ Transform:
   m_PrefabInternal: {fileID: 1437044906}
   m_GameObject: {fileID: 1607201382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.76254988, y: 2.12295794, z: 0}
+  m_LocalPosition: {x: 1.76254988, y: 2.04232311, z: 0}
   m_LocalScale: {x: 1.00823271, y: 1.00823271, z: 1}
   m_Children:
   - {fileID: 462953075}
@@ -89666,6 +89677,12 @@ MonoBehaviour:
   ConsumoVitaColpoNemico: 5
   ConsumoVitaColpoArmaBoss: 30
   ConsumoVitaColpoBoss: 15
+  SFX:
+  - {fileID: 8300000, guid: eef3debc49546414a80daabb46c0495b, type: 3}
+  - {fileID: 8300000, guid: eaadda5b00df21c4792b6a741d70757f, type: 3}
+  - {fileID: 8300000, guid: 5ae865d3b52fed749824557e1bcc052e, type: 3}
+  - {fileID: 8300000, guid: 6d0db05a8a76cde46812f7f574a05c0f, type: 3}
+  - {fileID: 8300000, guid: 4936835f6b7077a40a4fe514f9faaa4c, type: 3}
   speed: {x: 0, y: 0}
 --- !u!58 &1607201389
 CircleCollider2D:
@@ -96882,7 +96899,7 @@ Transform:
   - {fileID: 452756011}
   - {fileID: 37467526}
   m_Father: {fileID: 367130270}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!212 &1735935106
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -100084,7 +100101,7 @@ Transform:
   - {fileID: 1358165046}
   - {fileID: 216228453}
   m_Father: {fileID: 367130270}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!1 &1795374230
 GameObject:
   m_ObjectHideFlags: 0
@@ -103216,7 +103233,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 950567218}
   m_GameObject: {fileID: 1845458845}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 742a3059415458c46aff974aadee8b2e, type: 3}
   m_Name: 
@@ -104167,6 +104184,7 @@ MonoBehaviour:
   ConsumoVitaColpoNemico: 5
   ConsumoVitaColpoArmaBoss: 30
   ConsumoVitaColpoBoss: 15
+  SFX: []
   speed: {x: 0, y: 0}
 --- !u!114 &1861644812
 MonoBehaviour:
@@ -104525,7 +104543,7 @@ Transform:
   - {fileID: 1992065024}
   - {fileID: 563237345}
   m_Father: {fileID: 367130270}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!212 &1865760810
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -109200,7 +109218,7 @@ Transform:
   - {fileID: 1763736759}
   - {fileID: 729284274}
   m_Father: {fileID: 367130270}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!212 &1945026108
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -110708,7 +110726,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 950567218}
   m_GameObject: {fileID: 1972308798}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 742a3059415458c46aff974aadee8b2e, type: 3}
   m_Name: 
@@ -113657,7 +113675,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 950567218}
   m_GameObject: {fileID: 2021638120}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 742a3059415458c46aff974aadee8b2e, type: 3}
   m_Name: 
