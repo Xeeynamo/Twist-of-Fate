@@ -19,4 +19,16 @@ public class MuoviProiettile : MonoBehaviour
 
 	
 }
+	void OnCollisionEnter2D(Collision2D obj)
+	{
+
+		if (obj.gameObject.tag == "Enemy" || obj.gameObject.tag == "EnemyWeapon" || obj.gameObject.tag == "Boss")
+		{	audio.Play();
+			print ("fdf");
+			obj.gameObject.GetComponent<PhysicsManager> ().Health -= 15;
+			Destroy (this.gameObject);
+	}
+
+
 }
+	}

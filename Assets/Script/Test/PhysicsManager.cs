@@ -575,7 +575,6 @@ public class PhysicsManager : MonoBehaviour
             {
                 audio.Play();
                 Health -= ConsumoVitaFrecce;
-
             }
             // Controlla se è stato colpito o meno
             if (ahia == true)
