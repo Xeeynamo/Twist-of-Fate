@@ -244,7 +244,7 @@ public class Richard : MonoBehaviour
             physManager.Direction = true;
 
             if (((tastoDirezionalePrecedentementePremuto == false && timerScattoRimastoRight < TimerScatto)
-			     || ScattoAttivato == true) && physManager.Stamina > physManager.ConsumoStaminaSalto)
+			     || ScattoAttivato == true) && physManager.Stamina > 0)
             {
                 ScattoAttivato = true;
                 return StateManager.State.Run;
@@ -271,10 +271,10 @@ public class Richard : MonoBehaviour
 
             return StateManager.State.Crouch;
         }
-        if (We.Input.SwitchItem == true)
-        {
+//        if (We.Input.SwitchItem == true)
+  //      {
 
-        }
+      //  }
         if (We.Input.MoveUp == true && !movimento) {
 						return StateManager.State.Hide;
 				} else
