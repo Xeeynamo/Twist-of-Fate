@@ -2,88 +2,92 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Tutorial_Script : MonoBehaviour {
+public class Tutorial_Script : MonoBehaviour
+{
 
-	public Transform[] childTransform;
-	private Transform playerTrans;
-	
-	public int areaWidth = 378;
-	public int areaHeight = 196;
+    public Transform[] childTransform;
+    private Transform playerTrans;
 
-	private ArrayList activations;
-	private ArrayList msgActivated;
+    public Sprite[] BordersSprite;
+    public int areaWidth = 378;
+    public int areaHeight = 196;
 
-	private float timer;
+    private ArrayList activations;
+    private ArrayList msgActivated;
 
-	private Dictionary<Transform, string> tutorialString;
+    private float timer;
 
-	private Texture2D tutorialBg;
+    private Dictionary<Transform, string> tutorialString;
 
-	public float posX, posY;
+    private Texture2D tutorialBg;
 
-	public float time;
+    public float posX, posY;
 
-	// Use this for initialization
-	void Start () {
-		childTransform = GetComponentsInChildren<Transform>();
-		playerTrans = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-		activations = new ArrayList ();
-		msgActivated = new ArrayList ();
-		timer = time;
+    public float time;
 
-		tutorialBg = new Texture2D (areaWidth, areaHeight );
-		for (int i = 0; i < tutorialBg.width; i++)
-		{
-			for (int j = 0; j < tutorialBg.height; j++)
-			{
-				tutorialBg.SetPixel (i, j, new Color(0,0,0,0.5f));
-			}
-		}
-		tutorialBg.Apply ();
+    // Use this for initialization
+    void Start()
+    {
+        childTransform = GetComponentsInChildren<Transform>();
+        playerTrans = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        activations = new ArrayList();
+        msgActivated = new ArrayList();
+        timer = time;
 
-		tutorialString = new Dictionary<Transform, string>();
-		tutorialString.Add (childTransform[1], "Tutorial (Comandi Base 1)\nPremi Freccia Dx per muoverti a Destra\nPremi Freccia Sx per muoverti a Sinistra");
-		tutorialString.Add (childTransform[2], "Tutorial (Comandi Base 2)\nPremi due volte in rapida successione Freccia Dx o Freccia Sx per correre in quella direzione. ");
-		tutorialString.Add (childTransform[3], "Tutorial (Comandi Base 3)\nPremi Freccia Su per entrare in una Cella\nPremi \"V\" per Attaccare\nPremi \"Z\" per schivare.");
-		tutorialString.Add (childTransform[4], "Tutorial (Comandi Base 4)\nPer salire sulle scale cammina tenendo premuto Frecca Su.");
-		tutorialString.Add (childTransform[6], "Tutorial (Interazioni)\nPremere \"X\" per interagire con gli oggetti.");
-		tutorialString.Add (childTransform[5], "Tutorial (Comandi Base 5)\nPremere Barra Spaziatrice per saltare.");
-		tutorialString.Add (childTransform[7], "Tutorial (Comandi Base 6)\nPremere \"C\" per usare l'arma secondaria.");
-		tutorialString.Add (childTransform[8], "Tutorial (Utilità)\nPremere Invio per mettere in pausa.\nPremere Esc per uscire.");
-	}
+        tutorialBg = new Texture2D(areaWidth, areaHeight);
+        for (int i = 0; i < tutorialBg.width; i++)
+        {
+            for (int j = 0; j < tutorialBg.height; j++)
+            {
+                tutorialBg.SetPixel(i, j, new Color(0, 0.5f, 0.75f, 0.75f));
+            }
+        }
+        tutorialBg.Apply();
 
-	// Update is called once per frame
-	void Update () {
-		foreach (Transform t in childTransform)
-		{
-			if(!msgActivated.Contains(t))
-			{
-				if(Vector2.Distance (playerTrans.position, t.position) <= 1)
-				{
-					msgActivated.Add(t);
-					activations.Add(t);
-				}
-			}
-		}
-	}
-	
-	void OnGUI()
-	{
-		if(timer > 0 && activations.Count > 0)
-		{
-			timer -= Time.deltaTime;
-			float screenX = ((Screen.width * posX) - (areaWidth * 0.5f)); 
-			float screenY = ((Screen.height * posY) - (areaHeight * 0.5f)); 
+        tutorialString = new Dictionary<Transform, string>();
+        tutorialString.Add(childTransform[1], "Tutorial (Comandi Base 1)\nPremi Freccia Dx per muoverti a Destra\nPremi Freccia Sx per muoverti a Sinistra");
+        tutorialString.Add(childTransform[2], "Tutorial (Comandi Base 2)\nPremi due volte in rapida successione Freccia Dx o Freccia Sx per correre in quella direzione. ");
+        tutorialString.Add(childTransform[3], "Tutorial (Comandi Base 3)\nPremi Freccia Su per entrare in una Cella\nPremi \"V\" per Attaccare\nPremi \"Z\" per schivare.");
+        tutorialString.Add(childTransform[4], "Tutorial (Comandi Base 4)\nPer salire sulle scale cammina tenendo premuto Frecca Su.");
+        tutorialString.Add(childTransform[6], "Tutorial (Interazioni)\nPremere \"X\" per interagire con gli oggetti.");
+        tutorialString.Add(childTransform[5], "Tutorial (Comandi Base 5)\nPremere Barra Spaziatrice per saltare.");
+        tutorialString.Add(childTransform[7], "Tutorial (Comandi Base 6)\nPremere \"C\" per usare l'arma secondaria.");
+        tutorialString.Add(childTransform[8], "Tutorial (Utilità)\nPremere Invio per mettere in pausa.\nPremere Esc per uscire.");
+    }
 
-			GUILayout.BeginArea (new Rect(screenX, screenY, areaWidth, areaHeight), tutorialBg);
-			GUILayout.Label (tutorialString[(Transform)activations[0]]);
-			GUILayout.EndArea();
-		}
-		if (timer <= 0 && activations.Count > 0)
-		{
-			timer = time;
+    // Update is called once per frame
+    void Update()
+    {
+        foreach (Transform t in childTransform)
+        {
+            if (!msgActivated.Contains(t))
+            {
+                if (Vector2.Distance(playerTrans.position, t.position) <= 1)
+                {
+                    msgActivated.Add(t);
+                    activations.Add(t);
+                }
+            }
+        }
+    }
 
-			activations.RemoveAt(0);
-		}
-	}
+    void OnGUI()
+    {
+        if (timer > 0 && activations.Count > 0)
+        {
+            timer -= Time.deltaTime;
+            float screenX = ((Screen.width * posX) - (areaWidth * 0.5f));
+            float screenY = ((Screen.height * posY) - (areaHeight * 0.5f));
+
+            GUILayout.BeginArea(new Rect(screenX, screenY, areaWidth, areaHeight), tutorialBg);
+            GUILayout.Label("<b>" + tutorialString[(Transform)activations[0]] + "</b>");
+            GUILayout.EndArea();
+        }
+        if (timer <= 0 && activations.Count > 0)
+        {
+            timer = time;
+
+            activations.RemoveAt(0);
+        }
+    }
 }

@@ -49,8 +49,8 @@ TextureImporter:
         y: 8
         width: 4
         height: 4
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: BORDER_TOPRIGHT
       rect:
@@ -59,8 +59,8 @@ TextureImporter:
         y: 8
         width: 4
         height: 4
-      alignment: 3
-      pivot: {x: 1, y: 1}
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: BORDER_BOTTOMRIGHT
       rect:
@@ -69,8 +69,8 @@ TextureImporter:
         y: 0
         width: 4
         height: 4
-      alignment: 8
-      pivot: {x: 1, y: 0}
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: BORDER_BOTTOMLEFT
       rect:
@@ -79,8 +79,8 @@ TextureImporter:
         y: 0
         width: 4
         height: 4
-      alignment: 6
-      pivot: {x: 0, y: 0}
+      alignment: 3
+      pivot: {x: 1, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: BORDER_LEFT
       rect:
@@ -89,8 +89,8 @@ TextureImporter:
         y: 4
         width: 4
         height: 4
-      alignment: 4
-      pivot: {x: 0, y: .5}
+      alignment: 5
+      pivot: {x: 1, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: BORDER_RIGHT
       rect:
@@ -99,8 +99,8 @@ TextureImporter:
         y: 4
         width: 4
         height: 4
-      alignment: 5
-      pivot: {x: 1, y: .5}
+      alignment: 4
+      pivot: {x: 0, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: BORDER_TOP
       rect:
@@ -109,8 +109,8 @@ TextureImporter:
         y: 8
         width: 4
         height: 4
-      alignment: 2
-      pivot: {x: .5, y: 1}
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: BORDER_BOTTOM
       rect:
@@ -119,8 +119,8 @@ TextureImporter:
         y: 0
         width: 4
         height: 4
-      alignment: 7
-      pivot: {x: .5, y: 0}
+      alignment: 2
+      pivot: {x: .5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

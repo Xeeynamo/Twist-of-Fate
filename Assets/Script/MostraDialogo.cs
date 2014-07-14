@@ -25,8 +25,8 @@ public class MostraDialogo : MonoBehaviour {
 		for (int i = 0; i < dialogueBg.width; i++)
 		{
 			for (int j = 0; j < dialogueBg.height; j++)
-			{
-				dialogueBg.SetPixel (i, j, new Color(0,0,0,0.5f));
+            {
+                dialogueBg.SetPixel(i, j, new Color(0, 0.5, 0.75, 0.75f));
 			}
 		}
 		dialogueBg.Apply ();
@@ -75,7 +75,7 @@ public class MostraDialogo : MonoBehaviour {
 			float screenY = ((Screen.height * 0.82f) - (areaHeight * 0.5f)); 
 			
 			GUILayout.BeginArea (new Rect(screenX, screenY, areaWidth, areaHeight), dialogueBg);
-			GUILayout.Label (dialoghi[actDialogue]);
+			GUILayout.Label ("<b>" + dialoghi[actDialogue] + "</b>");
 			GUILayout.EndArea();
 		}
 	}
