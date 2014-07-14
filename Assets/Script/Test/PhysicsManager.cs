@@ -512,6 +512,7 @@ public class PhysicsManager : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D obj)
     {
+        Debug.Log(obj.gameObject.tag);
         if (!colpito)
         {
             bool ahia = false;
@@ -569,12 +570,12 @@ public class PhysicsManager : MonoBehaviour
                     Health -= ConsumoVitaColpoArmaBoss;
                     ahia = true;
                 }
-                else if (obj.gameObject.tag == "PlayerWeapon")
-                {
-                    audio.Play();
-                    Health -= ConsumoVitaFrecce;
+            }
+            else if (obj.gameObject.tag == "PlayerWeapon" && !IsPlayableCharacter)
+            {
+                audio.Play();
+                Health -= ConsumoVitaFrecce;
 
-                }
             }
             // Controlla se è stato colpito o meno
             if (ahia == true)
