@@ -35,10 +35,10 @@ namespace We
 		{
 			get { return UnityEngine.Input.GetButton ("Jump"); }
 		}
-		//public static bool SwitchItem
-		//{
-          //  get { return UnityEngine.Input.GetKeyDown(KeyCode.Z); }
-		//}
+		public static bool Interaction
+	      {
+            get { return UnityEngine.Input.GetKeyDown(KeyCode.X); }
+		}
 		public static bool Defense
 		{
 			get { return UnityEngine.Input.GetKey(KeyCode.Z); }

@@ -22,7 +22,7 @@ public class InteragisciConBarile : MonoBehaviour {
 		if (Physics2D.Raycast (new Vector2 (this.transform.position.x-0.50f, this.transform.position.y-0.25f),Vector3.right, 1f, playerMask)) 
 		{
 			c = Color.red;		
-			if(Input.GetKey(KeyCode.X) && numUsage > 0 && timer <= 0){
+			if(We.Input.Interaction && numUsage > 0 && timer <= 0){
 				GameObject.FindGameObjectWithTag("Player").GetComponent<PhysicsManager>().Health += aumentoVita;
 				c = Color.white;
 				audio.Play();
