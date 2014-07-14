@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class InteragisciConBarile : MonoBehaviour {
@@ -25,6 +25,7 @@ public class InteragisciConBarile : MonoBehaviour {
 			if(We.Input.Defense && numUsage > 0 && timer <= 0){
 				GameObject.FindGameObjectWithTag("Player").GetComponent<PhysicsManager>().Health += aumentoVita;
 				c = Color.white;
+				audio.Play();
 				numUsage--;
 				timer = timerNextUsage;
 			}
